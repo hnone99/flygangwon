@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>플라이강원</title>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/reset.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/calendar.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/common.css">
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/modernizr-custom.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/calendar.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/swiper.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/ui.js"></script>
+    <script>
+        $(document).ready(function(){
+        });
+    </script>
+</head>
+
+<body>
+<div id="wrap">
+    <div id="header">
+        <div id="title">
+            <h2><span>예약취소/환불</span></h2>
+        </div>
+        <div id="back"><a href="#none"><span class="sr-only">이전 페이지로 이동</span></a></div>
+        <div id="allmenu"><a href="#"><span class="sr-only">전체메뉴</span><i></i></a></div>            
+        <div class="allmenuWrap">
+            <div class="toparea">
+                <div class="language">
+                    <select name="" id="">
+                        <option value="">한국어</option>                        
+                        <option value="">영어</option>                        
+                    </select>
+                </div>
+                <div class="welcome">
+                    <div class="logBtn">
+                        <p>로그인하시면 다양한 정보를 확인하실 수 있습니다.</p>
+                        <!--<p><strong>홍길동님,</strong> 즐거운 여행되세요!</p>-->
+                        <a href="#none" class="btn">로그인</a>
+                        <!--<a href="#none" class="btn">로그아웃</a>-->
+                    </div>
+                </div>
+                <div class="quick">
+                    <ul>
+                        <li class="q1"><a href="#none">예약조회</a></li>
+                        <li class="q2"><a href="#none">체크인</a></li>
+                        <li class="q3"><a href="#none">사전좌석구매</a></li>
+                        <li class="q4"><a href="#none">초과 수하물</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="dep1">
+                <li class="active"><div><a href="#">예매</a></div> <!-- 활성화 active -->
+                    <ul class="dep2">
+                        <li class="active"><a href="#none">항공권 예매</a></li> <!-- 활성화 active -->
+                        <li><a href="#none">운항일정 조회</a></li>
+                        <li><a href="#none">운임안내</a>
+                            <ul class="dep3">
+                                <li><a href="#none">국내선 운임안내</a></li>
+                                <li><a href="#none">국제선 운임안내</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><div><a href="#">체크인</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">체크인</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">서비스 안내</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">항공권 안내</a></li>
+                        <li><a href="#none">공항서비스 안내</a></li>
+                        <li><a href="#none">수하물 안내</a></li>
+                        <li><a href="#none">기내서비스 안내</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">이벤트/뉴스</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">이벤트</a>
+                            <ul class="dep3">
+                                <li><a href="#none">진행중인 이벤트</a></li>
+                                <li><a href="#none">지난 이벤트</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">뉴스</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">마이페이지</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">나의 예약내역</a></li>
+                        <li><a href="#none">나의 정보</a></li>
+                        <li><a href="#none">나의 문의내역</a></li>
+                        <li><a href="#none">나의 쿠폰</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">유틸리티</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">고객센터</a>
+                            <ul class="dep3">
+                                <li><a href="#non">자주하는 질문</a></li>
+                                <li><a href="#non">문의하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">회사소개</a>
+                            <ul class="dep3">
+                                <li><a href="#non">회사 현황</a></li>
+                                <li><a href="#non">CEO 인사말</a></li>
+                                <li><a href="#non">사업 비전</a></li>
+                                <li><a href="#non">CI 소개</a></li>
+                                <li><a href="#non">보도자료</a></li>
+                                <li><a href="#non">오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">이용약관</a>
+                            <ul class="dep3">
+                                <li><a href="#non">이용약관</a></li>
+                                <li><a href="#non">여객운송약관</a></li>
+                                <li><a href="#non">항공교통이용자 서비스 계획</a></li>
+                                <li><a href="#non">피해구제 계획</a></li>
+                                <li><a href="#non">개인정보처리방침</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>        
+    </div>
+    <div id="container">
+        <div id="content">            
+            <div class="myBookingInfoTop floating">
+                <div class="info"><span style="width:120px">취소된 예약번호</span><strong>452006915 (Y08HR)</strong></div>
+            </div>
+            <div class="changeDetail">
+                <div class="subtitleArea mt0">
+                    <h3 class="subtitle">취소하실 여정 정보</h3>
+                </div>
+                <div class="panel-wrap panel-set">
+                    <div class="panel-container">
+                        <div class="panel">
+                            <span class="labelPlan">여정 1</span>
+                            <div class="boldStyle">김포(GMP)<i class="airplane"></i>블라디보스토크(VVO)</div>
+                            <table class="table table-list">
+                                <colgroup>
+                                    <col style="width:90px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>편명</th>
+                                        <td class="noto">FG1451</td>
+                                    </tr>
+                                    <tr>
+                                        <th>출발일시</th>
+                                        <td>2018.10.25(목) 08:40</td>
+                                    </tr>
+                                    <tr>
+                                        <th>도착일시</th>
+                                        <td>2018.10.25(목) 08:40</td>
+                                    </tr>
+                                    <tr>
+                                        <th>좌석수</th>
+                                        <td class="noto">4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="panel">
+                            <span class="labelPlan">여정 2</span>
+                            <div class="boldStyle">김포(GMP)<i class="airplane"></i>블라디보스토크(VVO)</div>                       
+                            <table class="table table-list">
+                                <colgroup>
+                                    <col style="width:90px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>편명</th>
+                                        <td class="noto">FG1451</td>
+                                    </tr>
+                                    <tr>
+                                        <th>출발일시</th>
+                                        <td>2018.10.25(목) 08:40</td>
+                                    </tr>
+                                    <tr>
+                                        <th>도착일시</th>
+                                        <td>2018.10.25(목) 08:40</td>
+                                    </tr>
+                                    <tr>
+                                        <th>좌석수</th>
+                                        <td class="noto">4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subtitleArea">
+                    <h3 class="subtitle">취소하실 탑승객별 운임</h3>
+                </div>
+                <div class="panel-wrap">
+                    <div class="panel-container">
+                        <div class="panel">
+                            <div class="blue fz13">성인 MS / 항공권 번호 123456789</div>
+                            <div class="boldStyle noto">KIM GANGWON</div>
+                            <table class="table table-price">
+                                <colgroup>
+                                    <col style="width:50%">
+                                    <col>
+                                </colgroup>
+                                <tfoot>
+                                    <tr>
+                                        <th>합계</th>
+                                        <td class="align-right">
+                                            <div class="sum">
+                                                <i>KRW</i><strong>749,600</strong>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <th>항공운임</th>
+                                        <td class="align-right noto">39,000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>유류할증료</th>
+                                        <td class="align-right noto">6,600</td>
+                                    </tr>
+                                    <tr>
+                                        <th>기타 세금</th>
+                                        <td class="align-right noto">4,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- 국내선 -->
+                        <div class="panel">
+                            <div class="blue fz13">성인 MS</div>
+                            <div class="boldStyle noto">KIM GANGWON</div>
+                            <table class="table table-price">
+                                <colgroup>
+                                    <col>
+                                    <col style="width:25%">
+                                    <col style="width:25%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="align-right"></th>
+                                        <th class="align-right">여정 1</th>
+                                        <th class="align-right">여정 2</th>                                    
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>합계(KRW)</th>
+                                        <td class="align-right">
+                                            <div class="sum">
+                                                <strong>749,600</strong>
+                                            </div>
+                                        </td>
+                                        <td class="align-right">
+                                            <div class="sum">
+                                                <strong>749,600</strong>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <th>항공운임</th>
+                                        <td class="align-right noto">39,000</td>
+                                        <td class="align-right noto">39,000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>유류할증료</th>
+                                        <td class="align-right noto">6,600</td>
+                                        <td class="align-right noto">6,600</td>
+                                    </tr>
+                                    <tr>
+                                        <th>공시설사용료</th>
+                                        <td class="align-right noto">4,000</td>
+                                        <td class="align-right noto">4,000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>신분할인</th>
+                                        <td class="align-right noto">4,000</td>
+                                        <td class="align-right noto">4,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="panel">
+                            <div class="blue fz13">유아 MS / 항공권 번호 123456789</div>
+                            <div class="boldStyle noto">KIM GANGWON</div>
+                            <table class="table table-price">
+                                <tbody>
+                                    <tr>
+                                        <th>유아는 무료입니다.</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="panel">
+                            <div class="sum">
+                                <em>총액</em><i>KRW</i><strong>49,600</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subtitleArea">
+                    <h3 class="subtitle">예약 취소 환불금액 정보</h3>
+                    <p class="right">통화 : KRW</p>
+                </div>
+                <div class="panel-wrap">
+                    <div class="panel-container">
+                        <div class="panel">
+                            <table class="table table-price">
+                                <colgroup>
+                                    <col>
+                                    <col style="width:50%">
+                                </colgroup>
+                                <tfoot>
+                                    <tr>
+                                        <th>합계(KRW)</th>
+                                        <td class="align-right">
+                                            <div class="sum">
+                                                <strong>749,600</strong>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <th class="pt0">항공운임</th>
+                                        <td class="align-right noto pt0">39,000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>유류할증료</th>
+                                        <td class="align-right noto">6,600</td>
+                                    </tr>
+                                    <tr>
+                                        <th>공시설사용료</th>
+                                        <td class="align-right noto">4,000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>신분할인</th>
+                                        <td class="align-right noto">4,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="panel">
+                            <div class="sum">
+                                <em>총액</em><i>KRW</i><strong>49,600</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reference">
+                    <strong class="subtitle">유의사항</strong>
+                    <div class="desc">
+                        <p>일자 및 항공편의 사정에 따라 취소 후 재예약이 불가할수 있습니다.</p>
+                        <p>예매일/취소일에 따라 취소위약금이 부과되오니, 항공권 운임규정을 확인하시기 바랍니다.</p>
+                        <p>기존 여정 정보 변경과 동시에 부가서비스는 모두 취소 됩니다.</p>
+                        <p>구매일 및 환율에 따라 차이가 있을 수 있으며, 일부 해외카드 결제수수료로 인해 실제 청구금액은 최종 결제금액과 다를 수 있습니다.</p>
+                        <p>자세한 사항은 해당 카드사를 통해 확인 바랍니다.</p>
+                        <div class="line"></div>
+                        <div class="blue">부가서비스 환불 규정 안내 </div>
+                        <p>사전 위탁 수하물, 사전 좌석 구매 : 최초 출발 시간 기준 24시간 전부터 환불 불가</p>
+                        <p>사전 기내식 : 최초 출발일 기준 3일 전부터 환불 불가</p>
+                        <div class="line"></div>
+                        <div class="blue">취소수수료</div>  
+                        <p>정규운임: 20,000원</p>
+                        <p>할인운임: 40,000원</p>
+                        <p>특가운임: 60,000원</p>
+                        <div class="line"></div>
+                        <div class="blue">고객 환불 소요시간</div>
+                        <p>카드/간편결제 : 취소일로부터 영업일 기준 7 ~ 14일 소요</p>
+                    </div>
+                </div>
+                <!-- 국내선 -->
+                <div class="reference">
+                    <strong class="subtitle">유의사항</strong>
+                    <div class="desc">
+                        <p>일자 및 항공편의 사정에 따라 취소 후 재예약이 불가할수 있습니다.</p>
+                        <p>예매일/취소일에 따라 취소위약금이 부과되오니, 항공권 운임규정을 확인하시기 바랍니다.</p>
+                        <p>기존 여정 정보 변경과 동시에 부가서비스는 모두 취소 됩니다.</p>
+                        <p>구매일 및 환율에 따라 차이가 있을 수 있으며, 일부 해외카드 결제수수료로 인해 실제 청구금액은 최종 결제금액과 다를 수 있습니다.</p>
+                        <p>자세한 사항은 해당 카드사를 통해 확인 바랍니다.</p>
+                        <div class="line"></div>
+                        <div class="blue">부가서비스 환불 규정 안내 </div>
+                        <p>사전 위탁 수하물, 사전 좌석 구매 : 최초 출발 시간 기준 24시간 전부터 환불 불가</p>
+                        <p>사전 기내식 : 최초 출발일 기준 3일 전부터 환불 불가</p>
+                        <div class="line"></div>
+                        <div class="blue">취소수수료</div>  
+                        <p>정규운임: 20,000원</p>
+                        <p>할인운임: 40,000원</p>
+                        <p>특가운임: 60,000원</p>
+                        <div class="line"></div>
+                        <div class="blue">고객 환불 소요시간</div>
+                        <p>카드/간편결제 : 취소일로부터 영업일 기준 7 ~ 14일 소요(카드사별 상이)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="agreeInPop">
+                <div>
+                    <input type="checkbox" id="agreeCancel1">
+                    <label for="agreeCancel1"><span></span>항공권 운임규정을 확인하였으며, 이에 동의합니다.</label>
+                </div>
+                <div class="mt5">
+                    <input type="checkbox" id="agreeCancel2">
+                    <label for="agreeCancel2"><span></span>부가서비스 환불규정을 확인하였으며, 이에 동의합니다.</label>
+                </div>
+            </div>
+            
+            <div class="btns bottom">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a href="#" class="btn block gray">취소</a>
+                    </div>
+                    <div class="col-xs-6">
+                        <a href="#" class="btn block">예약취소/환불 신청</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 팝업 : 항공권 운임규정-->
+<div class="popup popup-full" id="fareRules">
+    <div class="popup-wrapper">
+        <div class="popup-wrap">
+            <div class="popup-header">
+                <div class="inner">
+                    <h1>항공권 운임규정</h1>
+                    <a href="javascript:void(0)" class="close" data-event="popup-close"><span class="sr-only">레이어 팝업 닫기</span></a>
+                </div>
+            </div>
+            <div class="popup-body">
+                <div class="inner">
+                    <div class="rulesIntableWrap">
+                        <table class="table table-col rulesIntable">
+                            <caption>항공권 운임규정</caption>
+                            <colgroup>
+                                <col style="width:80px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="align-left bdl0" colspan="2">
+                                        <span class="labelPlan">여정 1</span>
+                                        양양 YNY<i class="airplane"></i>제주  CJU
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <div class="blue">[특가운임]</div>
+                                    </th>
+                                    <td class="align-left">                                    
+                                        <div class="stit mt0 mb0">포함내역</div>
+                                        <div class="txt">무료 수하물 없음</div>
+                                        <div class="stit mb0">예약 변경 수수료</div>
+                                        <div class="txt">구매다음날 ~ 출발 당일 <span class="red">20,000원</span></div>
+                                        <div class="stit mb0">예약 취소 수수료</div>
+                                        <div class="txt">
+                                            ~ 출발 91일전 <span class="red">없음</span> <br>
+                                            출발 90일 전 ~ 61일 전 <span class="red">20,000원</span> <br>
+                                            출발 60일 전 ~ 31일 전 <span class="red">40,000원</span> <br>
+                                            출발 30일 전 ~ 출발 당일 <span class="red">60,000원</span>
+                                        </div>
+                                        <div class="stit mb0">예약 부도 위약금</div>
+                                        <div class="txt">출발시간 이후 <span class="red">100,000원</span></div>
+                                    </td>                                
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-col rulesIntable">
+                            <caption>항공권 운임규정</caption>
+                            <colgroup>
+                                <col style="width:80px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="align-left" colspan="2">
+                                        <span class="labelPlan">여정 2</span>
+                                        제주  CJU<i class="airplane"></i>양양 YNY
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <div class="blue">[할인운임]</div>
+                                    </th>
+                                    <td class="align-left">                                    
+                                        <div class="stit mt0 mb0">포함내역</div>
+                                        <div class="txt">무료 수하물 15kg</div>
+                                        <div class="stit mb0">예약 변경 수수료</div>
+                                        <div class="txt">구매다음날 ~ 출발 당일 <span class="red">20,000원</span></div>
+                                        <div class="stit mb0">예약 취소 수수료</div>
+                                        <div class="txt">
+                                            ~ 출발 91일전 <span class="red">없음</span> <br>
+                                            출발 90일 전 ~ 61일 전 <span class="red">20,000원</span> <br>
+                                            출발 60일 전 ~ 31일 전 <span class="red">40,000원</span> <br>
+                                            출발 30일 전 ~ 출발 당일 <span class="red">60,000원</span>
+                                        </div>
+                                        <div class="stit mb0">예약 부도 위약금</div>
+                                        <div class="txt">출발시간 이후 <span class="red">100,000원</span></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- 편도일 경우 -->
+                        <table class="table table-col rulesIntable">
+                            <caption>항공권 운임규정</caption>
+                            <colgroup>
+                                <col style="width:80px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="align-left" colspan="2">
+                                        양양 YNY<i class="airplane"></i>제주  CJU
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <div class="blue">[정상운임]</div>
+                                    </th>
+                                    <td class="align-left">                                    
+                                        <div class="stit mt0 mb0">포함내역</div>
+                                        <div class="txt">무료 수하물 20kg</div>
+                                        <div class="stit mb0">예약 변경/취소 수수료</div>
+                                        <div class="txt">구매다음날 ~ 출발 당일 <span class="red">없음</span></div>                               
+                                        <div class="stit mb0">예약 부도 위약금</div>
+                                        <div class="txt">출발시간 이후 <span class="red">15,000원</span></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>       
+
+                    <div class="desc bgNone">
+                        <p>항공권은 타인 양도가 불가능합니다.</p>
+                        <p>실제 탑승자의 성명을 정확히 입력하여 주시기 바랍니다.</p>
+                        <p>예매 후 탑승자명 변경은 기존 항공권을 환불 후 재 결제를 하셔야 하며, 변경/취소 위약금이 부과됩니다.</p>
+                        <p>항공기 출발 예정시각 20분 전까지 탑승수속을 마치지 못한 여객과 항공기 출발 예정시각 5분 전까지 탑승하지 못한 여객은 탑승이 거절될 수 있습니다. 해당 여객에 대하여 플라이강원은 환불 이외에 어떠한 책임도 부담하지 않습니다.</p>
+                        <p>미사용 항공권을 환불하는 경우 플라이강원 환불 규정에 따릅니다.</p>
+                        <p>“항공권 변경/취소 위약금”이란, 구매 익일부터 여정변경, 여정 취소, 신분할인, 결제수단 변경 등 항공권의 상태가 변경되는 모든 경우에 적용됩니다.</p>
+                        <p>국내선 항공권 여정 변경 및 결제수단 변경 시, 항공권은 환불 후 새로 결제를 완료하여야 합니다. 환불되는 항공권에는 변경/취소 위약금이 부과됩니다.</p>
+                        <p>결제 당일(온라인 구매 시 23:50분, 한국시간 기준) 예약 취소 시 위약금이 면제되며 오프라인 구매 항공권일 경우 운영시간 내 고객센터 및 공항 현장 접수만 가능합니다.</p>
+                        <p>미해당되는 신분할인이나, 할인율로 적용발권되어 정상가로 재발권해야 하는 경우에도 변경/취소 위약금은 동일하게 적용됩니다.</p>
+                        <p>당일 구매 항공권의 경우 항공기 출발 시각 전까지 해당 항공권 구매처로 변경 및 취소를 요청한 경우에는 위약금이 면제됩니다.</p>
+                        <p>인터넷 예매의 경우, 출발 예정 시각 이전에만 인터넷으로 환불 신청이 가능하며, 출발예정시각 이후에는 고객센터나 각 공항지점만에서 환불 신청 가능합니다.</p>
+                        <p>항공기 운항스케줄 변경 및 운항취소 등 고객사정에 의한 변경이 아닌 경우 고객센터를 통하여 변경 신청하시면 위약금이 면제됩니다.(단, 해당 항공권 출발시간 이전에 요청한 경우에만 면제됩니다.)</p>
+                        <p>항공권 결제완료 후에는 신분할인 적용이 불가능하며, 결제완료 후 신분할인 적용을 원할 경우에는 환불 후 재 발권해야 하므로, 결제 전에 신중히 선택하여 주십시오.</p>
+                    </div>
+
+                    <div class="btns bottom">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a href="#" class="btn block" data-event="popup-close">확인</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

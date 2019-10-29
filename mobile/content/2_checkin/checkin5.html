@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>플라이강원</title>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/reset.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/calendar.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/common.css">
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/modernizr-custom.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/calendar.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/swiper.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            //탑승권 미발급 탑승객 팝업
+            popup.open('#popBoardingPass');
+            
+            //QR코드 이미지 위치로 스크롤 이동            
+            $('#btnBoarding').on('click',function(){
+                $('html, body').stop().delay(200).animate({
+                    'scrollTop': $('#divBoarding').offset().top - 30
+                }, 400, 'swing');
+            });            
+            
+            //탑승객 선택시 버튼 노출
+            $('[name=checkinChoice]').on('change', function(){
+                $('[data-name=btns-checkin]').hide();
+                if($(this).prop('checked')){
+                    $(this).closest('.panel').find('.btns').show();
+                } 
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+<div id="wrap">
+    <div id="header">
+        <div id="title">
+            <h2><span>체크인</span></h2>
+        </div>
+        <div id="back"><a href="#none"><span class="sr-only">이전 페이지로 이동</span></a></div>
+        <div id="allmenu"><a href="#"><span class="sr-only">전체메뉴</span><i></i></a></div>            
+        <div class="allmenuWrap">
+            <div class="toparea">
+                <div class="language">
+                    <select name="" id="">
+                        <option value="">한국어</option>                        
+                        <option value="">영어</option>                        
+                    </select>
+                </div>
+                <div class="welcome">
+                    <div class="logBtn">
+                        <p>로그인하시면 다양한 정보를 확인하실 수 있습니다.</p>
+                        <!--<p><strong>홍길동님,</strong> 즐거운 여행되세요!</p>-->
+                        <a href="#none" class="btn">로그인</a>
+                        <!--<a href="#none" class="btn">로그아웃</a>-->
+                    </div>
+                </div>
+                <div class="quick">
+                    <ul>
+                        <li class="q1"><a href="#none">예약조회</a></li>
+                        <li class="q2"><a href="#none">체크인</a></li>
+                        <li class="q3"><a href="#none">사전좌석구매</a></li>
+                        <li class="q4"><a href="#none">초과 수하물</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="dep1">
+                <li class="active"><div><a href="#">예매</a></div> <!-- 활성화 active -->
+                    <ul class="dep2">
+                        <li class="active"><a href="#none">항공권 예매</a></li> <!-- 활성화 active -->
+                        <li><a href="#none">운항일정 조회</a></li>
+                        <li><a href="#none">운임안내</a>
+                            <ul class="dep3">
+                                <li><a href="#none">국내선 운임안내</a></li>
+                                <li><a href="#none">국제선 운임안내</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><div><a href="#">체크인</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">체크인</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">서비스 안내</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">항공권 안내</a></li>
+                        <li><a href="#none">공항서비스 안내</a></li>
+                        <li><a href="#none">수하물 안내</a></li>
+                        <li><a href="#none">기내서비스 안내</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">이벤트/뉴스</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">이벤트</a>
+                            <ul class="dep3">
+                                <li><a href="#none">진행중인 이벤트</a></li>
+                                <li><a href="#none">지난 이벤트</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">뉴스</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">마이페이지</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">나의 예약내역</a></li>
+                        <li><a href="#none">나의 정보</a></li>
+                        <li><a href="#none">나의 문의내역</a></li>
+                        <li><a href="#none">나의 쿠폰</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">유틸리티</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">고객센터</a>
+                            <ul class="dep3">
+                                <li><a href="#non">자주하는 질문</a></li>
+                                <li><a href="#non">문의하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">회사소개</a>
+                            <ul class="dep3">
+                                <li><a href="#non">회사 현황</a></li>
+                                <li><a href="#non">CEO 인사말</a></li>
+                                <li><a href="#non">사업 비전</a></li>
+                                <li><a href="#non">CI 소개</a></li>
+                                <li><a href="#non">보도자료</a></li>
+                                <li><a href="#non">오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">이용약관</a>
+                            <ul class="dep3">
+                                <li><a href="#non">이용약관</a></li>
+                                <li><a href="#non">여객운송약관</a></li>
+                                <li><a href="#non">항공교통이용자 서비스 계획</a></li>
+                                <li><a href="#non">피해구제 계획</a></li>
+                                <li><a href="#non">개인정보처리방침</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>        
+    </div>
+    <div id="container">
+        <div id="content">
+            <div class="step">
+                <ol>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li class="on">STEP 5. 탑승권 발급</li>
+                </ol>
+            </div>
+            <div class="hr"></div>
+            <p class="bookedMsg mb0 mt0">온라인 체크인이 완료되었습니다. <br><span>탑승권을 출력해 주시기 바랍니다. <br>QR코드 탑승권은 프린터나 이메일, SMS로 발급이 가능하며 SMS는 탑승객 본인의 스마트폰으로만 이용 가능합니다.</span></p>
+            <div class="section pt30 mt30">
+                <div class="panel-wrap">
+                    <div class="panel-container">
+                        <div class="panel">
+                            <span class="labelPlan">여정</span>
+                            <div class="boldStyle">양양(YNY)<i class="airplane"></i>블라디보스토크 VVO</div>
+                            <table class="table table-list">
+                                <colgroup>
+                                    <col style="width:100px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>편명</th>
+                                        <td class="noto">FG1451</td>
+                                    </tr>
+                                    <tr>
+                                        <th>출발일시</th>
+                                        <td>2018.05.15(목) 08:40</td>
+                                    </tr>
+                                    <tr>
+                                        <th>도착일시</th>
+                                        <td>2018.05.15(목) 08:40</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>                    
+                    </div>
+                </div>
+                <div class="subtitleArea" id="divBoarding">
+                    <h3 class="subtitle">탑승권 발급</h3>
+                </div>
+                <p class="subtitleDesc">QR코드 탑승권을 발급할 탑승객 선택 후 인쇄, 이메일, SMS를 선택하여 탑승권을 발급해 주세요. </p>
+                <div class="panel-wrap">
+                    <div class="panel-container">
+                        <div class="panel has-input">
+                            <div class="input">
+                                <input type="radio" id="rdo1" class="withoutLabel" name="checkinChoice"><label for="rdo1"><span></span></label>
+                            </div>
+                            <label for="rdo1">
+                                <div class="boldStyle noto mt0">KIM GANGWON</div>
+                            </label>
+                            <table class="table table-list">
+                                <colgroup>
+                                    <col style="width:120px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>좌석</th>
+                                        <td class="noto">21A</td>
+                                    </tr>
+                                    <tr>
+                                        <th>탑승권 발급 상태</th>
+                                        <td class="red"><b>미발급</b></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="btns" style="display:none" data-name="btns-checkin">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <a href="javascript:void(0)" class="btn medium block blue" data-event="popup-open" data-target="#popEmail">이메일</a>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <a href="javascript:void(0)" class="btn medium block blue" data-event="popup-open" data-target="#popSms">SMS</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel has-input">
+                            <div class="input">
+                                <input type="radio" id="rdo2" class="withoutLabel" name="checkinChoice" disabled><label for="rdo2"><span></span></label>
+                            </div>
+                            <label for="rdo2">
+                                <div class="boldStyle noto mt0">KIM GANGWON</div>
+                            </label>
+                            <table class="table table-list">
+                                <colgroup>
+                                    <col style="width:120px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>좌석</th>
+                                        <td class="noto">21A</td>
+                                    </tr>
+                                    <tr>
+                                        <th>탑승권 발급 상태</th>
+                                        <td class="blue"><b>발급완료</b></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="panel has-input">
+                            <div class="input">
+                                <input type="radio" id="rdo3" class="withoutLabel" name="checkinChoice" disabled><label for="rdo3"><span></span></label>
+                            </div>
+                            <label for="rdo3">
+                                <div class="boldStyle noto mt0">KIM GANGWON</div>
+                            </label>
+                            <table class="table table-list">
+                                <colgroup>
+                                    <col style="width:120px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>좌석</th>
+                                        <td class="noto">21A</td>
+                                    </tr>
+                                    <tr>
+                                        <th>탑승권 발급 상태</th>
+                                        <td class="blue"><b>발급완료</b></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                                
+                <div class="reference">
+                    <strong class="subtitle">유의사항</strong>
+                    <div class="desc">
+                        <p>위탁하실 수하물이 있으신 경우 손님께서는  수하물 전용 카운터에서 수속해주시기 바랍니다</p>
+                        <p>여행에 필요한 여권 및 기타 여행 가능 서류를 확인하여 주시고 탑승구에서 제시하여 주시기 바랍니다.</p>
+                        <p>스케줄은 정부인가 조건이며, 공항사정, 항공기 교체 등의 부득이한 사유로 사전 예고 없이 예약하신 좌석, 탑승구가 변경될 수 있습니다</p>
+                        <p>프린터, 모바일, 시스템 등 기술적인 문제로 인해 온라인 탑승권 출력 및 모바일 전송이 안될 경우, 공항 카운터에서 탑승수속을 해 주시기 바랍니다.</p>
+                        <p>인쇄하신 온라인 탑승권의 분실, 도난, 위변조로 인한 손해에 대하여 플라이강원은 책임지지 않습니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="btns bottom">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <a href="javascript:;" class="btn block">메인으로 이동</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 팝업 : 탑승권 발급 -->
+<div class="popup" id="popBoardingPass">
+    <div class="popup-wrapper">
+        <div class="popup-wrap">
+            <div class="popup-header">
+                <div class="inner">
+                    <h1>탑승권 발급</h1>
+                    <a href="javascript:void(0)" class="close" data-event="popup-close"><span class="sr-only">레이어 팝업 닫기</span></a>
+                </div>
+            </div>
+            <div class="popup-body">
+                <div class="inner">
+                    <p>다음 승객의 온라인 탑승권이 발급되지 않았습니다.</p>
+                    <table class="table table-col mt15">
+                        <caption>탑승권 미발급 탑승객</caption>
+                        <thead>
+                            <tr>
+                                <th>탑승권 미발급 탑승객</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="noto">KANG JUNGWON</td>
+                            </tr>
+                            <tr>
+                                <td class="noto">KANG JUNGWON</td>
+                            </tr>
+                            <tr>
+                                <td class="noto">KANG JUNGWON</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="desc bgNone">
+                        <p class="red">인쇄, 이메일, SMS 중 온라인 탑승권을 발급 받지 않을 경우 임의로 좌석이 변경될 수 있습니다.</p>
+                        <p>취소 버튼 선택 시 해당 탑승객의 온라인 체크인이 자동 취소되며, 공항 카운터에서 체크인하시기 바랍니다.</p>
+                    </div>
+                    <div class="btns bottom">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a href="#" class="btn block" data-event="popup-close" id="btnBoarding">탑승권 발급하기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 팝업 : 이메일 -->
+<div class="popup" id="popEmail">
+    <div class="popup-wrapper">
+        <div class="popup-wrap">
+            <div class="popup-header">
+                <div class="inner">
+                    <h1>이메일</h1>
+                    <a href="javascript:void(0)" class="close" data-event="popup-close"><span class="sr-only">레이어 팝업 닫기</span></a>
+                </div>
+            </div>
+            <div class="popup-body">
+                <div class="inner">
+                    <div class="inputArea">
+                        <div class="row mt0">
+                            <div class="col-xs-6">
+                                <div class="withAt">
+                                    <input type="email" id="ipId">
+                                    <span class="at">@</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="emailDomain emailInputWrapper" style="display:none">
+                                    <input type="email" title="이메일 도메인 입력">
+                                    <button class="emailRefrash"><span class="sr-only">이메일 도메인 선택</span></button>
+                                </div>
+                                <select name="" id="" title="이메일 도메인 선택" class="emailDomain emailDomainSelect">
+                                    <option value="">선택</option>
+                                    <option value="직접입력">직접입력</option>
+                                    <option value="">gmail.com</option>
+                                </select>  
+                            </div>
+                        </div>
+                        <p class="txt">입력하신 이메일로 탑승권이 발송됩니다. <br>정확한 이메일 주소를 입력해 주세요.</p>
+                    </div>
+                    <div class="btns bottom">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a href="#" class="btn block" data-event="popup-close">확인</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 팝업 : SMS -->
+<div class="popup" id="popSms">
+    <div class="popup-wrapper">
+        <div class="popup-wrap">
+            <div class="popup-header">
+                <div class="inner">
+                    <h1>SMS</h1>
+                    <a href="javascript:void(0)" class="close" data-event="popup-close"><span class="sr-only">레이어 팝업 닫기</span></a>
+                </div>
+            </div>
+            <div class="popup-body">
+                <div class="inner">
+                    <div class="inputArea">
+                        <div class="row mt0">                       
+                            <div class="col-xs-12">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <select name="" id="ipTel">
+                                            <option value="">+82 (대한민국)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <input type="tel" title="연락처 앞자리">
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <input type="tel" title="연락처 중간자리">
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <input type="tel" title="연락처 끝자리">
+                                    </div>
+                                </div>
+                                <p class="txt">입력하신 휴대폰번호로 탑승권이 발송됩니다. <br>정확한 휴대폰번호를 입력해 주세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btns bottom">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a href="#" class="btn block" data-event="popup-close">확인</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>플라이강원</title>
+</head>
+
+<body style="margin:0;background: #f8fafe">
+<table style="font-family:'나눔고딕',돋움,dotum,arial;font-size:14px;color:#000;width:920px;border:0;table-layout:fixed;border-collapse:collapse;border-spacing:0;">
+    <!-- container -->
+    <tr>
+        <td style="padding:0">
+            <table style="table-layout:fixed;border-collapse:collapse;border-spacing:0;width:100%;border:0;background:#ffffff">
+                <colgroup><col style="width:30px"><col><col style="width:30px"></colgroup>
+                <tr><td colspan="3" style="height:50px"></td></tr>
+                <tr>
+                    <td style="padding:0">&nbsp;</td>
+                    <td>
+                        <table style="border-spacing:0;border:0;width:100%">
+                            <tr>
+                                <td style="color: #111;font-size: 24px;font-weight: 500;line-height: 1;">전자항공권 여정안내서 <span style="color: #999;font-size: 16px;margin-left: 10px;">Elecctronic Ticket Itinerary &amp; Receipt</span></td>
+                                <td style="text-align:right"><img src="../../resources/images/pc/email_logo.png" alt="FLY GANGWON" style="border:0;vertical-align: middle"></td>
+                            </tr>
+                        </table>
+                        
+                        <!-- 예약번호 -->
+                        <table style="table-layout:fixed;border-collapse:collapse;border-top: 2px solid #111;margin-top: 20px;line-height:1;background:#f8fafe;border-spacing:0;height:140px;width:100%">
+                            <tr>
+                                <td style="width:60px"></td>
+                                <td>
+                                    <div style="font-size: 16px;color: #666;">승객성명</div>
+                                    <div style="font-size: 13px;color: #666;margin-top:5px">Passenger Name</div>
+                                    <div style="font-size: 18px;font-weight: 700;color: #111;margin-top: 12px;">박 미영(ADT)</div>
+                                </td>
+                                <td>
+                                    <div style="font-size: 16px;color: #666;">항공권번호</div>
+                                    <div style="font-size: 13px;color: #666;margin-top:5px">Ticket Number</div>
+                                    <div style="font-size: 18px;font-weight: 700;color: #111;margin-top: 12px;">LKRLH33(47616378)</div>
+                                </td>
+                                <td>
+                                    <div style="font-size: 16px;color: #666;">예약번호</div>
+                                    <div style="font-size: 13px;color: #666;margin-top:5px">9882454505822</div>
+                                    <div style="font-size: 18px;font-weight: 700;color: #111;margin-top: 12px;">LKRLH33(47616378)</div>
+                                </td>
+                                <td style="width:60px"></td>
+                            </tr>
+                        </table>
+                        
+                        <!-- 여정 -->
+                        <table style="background:#0a3a68 url('../../resources/images/pc/bg_eticket_title.jpg') no-repeat 100% 50%;margin-top:40px;border-spacing:0;border:0;height:50px;width:100%">
+                            <tr>
+                                <td style="padding: 0 20px;color:#fff;font-weight: 500;font-size: 17px;letter-spacing:-0.05em;line-height:1">여정 <span style="color: #a5afbd;font-size: 14px;margin-left: 13px">Itinerary</span></td>
+                            </tr>
+                        </table>
+                        <table style="table-layout: fixed;line-height:1.4;border-spacing:0;border:0;width:100%">
+                            <thead>
+                                <!-- 유효성 검사 에러 방지 위해 삽입 -->
+                                <tr style="display:none">
+                                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                </tr>
+                                <!-- //유효성 검사 에러 방지 위해 삽입 -->
+                                <tr>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px 5px;" colspan="2">출발<br><span style="font-size:12px;color:#999">From</span></th>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;font-weight: 500;padding: 10px 5px;" colspan="2">도착<br><span style="font-size:12px;color:#999">To</span></th>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;font-weight: 500;padding: 10px 5px;">편명<br><span style="font-size:12px;color:#999">Flight</span></th>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;font-weight: 500;padding: 10px 5px;">예약등급<br><span style="font-size:12px;color:#999">Class</span></th>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;font-weight: 500;padding: 10px 5px;">출발일<br><span style="font-size:12px;color:#999">Date(Day)</span></th>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;font-weight: 500;padding: 10px 5px;">출발시각<br><span style="font-size:12px;color:#999">Departure</span></th>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;font-weight: 500;padding: 10px 5px;">도착시각<br><span style="font-size:12px;color:#999">Arrival</span></th>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;font-weight: 500;padding: 10px 5px;">비행시간<br><span style="font-size:12px;color:#999">Flying Time</span></th>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;font-weight: 500;padding: 10px 5px;">예약상태<br><span style="font-size:12px;color:#999">Status</span></th>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;font-weight: 500;padding: 10px 5px;">좌석번호<br><span style="font-size:12px;color:#999">Seat</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;" colspan="2">SEOUL GIMPO <br>INTERNATIONAL/ 김포 <br>터미널 Terminal D</td>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd" colspan="2">JEJU JEJU <br>INTERANTIONAL/ <br>제주</td>
+                                    <td style="font-size:13px;padding:10px 0;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center">FG8915</td>
+                                    <td style="font-size:13px;padding:10px 0;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center">Y</td>
+                                    <td style="font-size:13px;padding:10px 0;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center">25MAY19 <br>(SAT)</td>
+                                    <td style="font-size:13px;padding:10px 0;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center">07:55</td>
+                                    <td style="font-size:13px;padding:10px 0;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center">07:55</td>
+                                    <td style="font-size:13px;padding:10px 0;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center">01H10M</td>
+                                    <td style="font-size:13px;padding:10px 0;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center">OK <br>확약</td>
+                                    <td style="font-size:13px;padding:10px 0;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center"></td>
+                                </tr>
+                                <tr>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left" colspan="3">무료수하물 <span style="font-size:12px;color:#999">Free Baggage Allowance</span></th>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd" colspan="3">20K</td>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left" colspan="3">운임종류 <span style="font-size:12px;color:#999">Fare Basis</span></th>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd" colspan="3">YP</td>
+                                </tr>
+                                <tr>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left" colspan="3">항공권 유효기간 <span style="font-size:12px;color:#999">Not Valid Before</span></th>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd" colspan="3"></td>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left" colspan="3">항공권번호 <span style="font-size:12px;color:#999">Ticket Number</span></th>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd" colspan="3">9882454505822</td>
+                                </tr>
+                                <tr>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left" colspan="3">항공권 유효기간 <span style="font-size:12px;color:#999">Not Valid After</span></th>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd" colspan="9">25MAY20</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;" colspan="2">SEOUL GIMPO <br>INTERNATIONAL/ 김포 <br>터미널 Terminal D</td>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd" colspan="2">JEJU JEJU <br>INTERANTIONAL/ <br>제주</td>
+                                    <td style="font-size:13px;padding:10px 0;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center">FG8915</td>
+                                    <td style="font-size:13px;padding:10px 0;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center">Y</td>
+                                    <td style="font-size:13px;padding:10px 0;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center">25MAY19 <br>(SAT)</td>
+                                    <td style="font-size:13px;padding:10px 0;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center">07:55</td>
+                                    <td style="font-size:13px;padding:10px 0;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center">07:55</td>
+                                    <td style="font-size:13px;padding:10px 0;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center">01H10M</td>
+                                    <td style="font-size:13px;padding:10px 0;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center">OK <br>확약</td>
+                                    <td style="font-size:13px;padding:10px 0;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center"></td>
+                                </tr>
+                                <tr>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left" colspan="3">무료수하물 <span style="font-size:12px;color:#999">Free Baggage Allowance</span></th>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd" colspan="3">20K</td>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left" colspan="3">운임종류 <span style="font-size:12px;color:#999">Fare Basis</span></th>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd" colspan="3">YP</td>
+                                </tr>
+                                <tr>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left" colspan="3">항공권 유효기간 <span style="font-size:12px;color:#999">Not Valid Before</span></th>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd" colspan="3"></td>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left" colspan="3">항공권번호 <span style="font-size:12px;color:#999">Ticket Number</span></th>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd" colspan="3">9882454505822</td>
+                                </tr>
+                                <tr>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left" colspan="3">항공권 유효기간 <span style="font-size:12px;color:#999">Not Valid After</span></th>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd" colspan="9">25MAY20</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style="margin:0;line-height:1.5;font-size:12px;margin-top:15px">* 상기의 모든 정보는 항공사 및 공항 사정에 의하여 변경될 수 있습니다.  <span>All conditions may vary according to circumstances of airlines and airports.</span></p>
+                        
+                        <!-- 운임정보 -->
+                        <table style="background:#0a3a68 url('../../resources/images/pc/bg_eticket_title.jpg') no-repeat 100% 50%;margin-top:40px;border-spacing:0;border:0;height:50px;width:100%">
+                            <tr>
+                                <td style="padding: 0 20px;color:#fff;font-weight: 500;font-size: 17px;letter-spacing:-0.05em;line-height:1">운임정보 <span style="color: #a5afbd;font-size: 14px;margin-left: 13px">Receipt Information</span></td>
+                            </tr>
+                        </table>
+                        <table style="table-layout: fixed;line-height:1.4;border-spacing:0;border:0;width:100%">
+                            <colgroup>
+                                <col style="width:25%">
+                                <col>
+                            </colgroup>
+                            <tr>
+                                <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left">지불수단 <span style="font-size:12px;color:#999">Form of Payment</span></th>
+                                <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd">CC CA XXXXXXXXXXXX7562.01 95432760</td>
+                            </tr>
+                            <tr>
+                                <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left">운임 <span style="font-size:12px;color:#999">Fare</span></th>
+                                <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd">KRW 199000</td>                                
+                            </tr>
+                            <tr>
+                                <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left">세금 및 제반요금 <span style="font-size:12px;color:#999">Form of Payment</span></th>
+                                <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd">KRW 8000 D</td>
+                            </tr>
+                            <tr>
+                                <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left">합계 <span style="font-size:12px;color:#999">Total Amount</span></th>
+                                <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd">KRW 215800 KRW 800 0G <span style="padding-left: 40px">KRW 28000 BP KRW 4500 QV</span> <span style="padding-left: 40px">KRW 22100 JD</span></td>
+                            </tr>
+                            <tr>
+                                <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left">발행항공사/발행일자 <span style="font-size:12px;color:#999">Issuing Airline and Date</span></th>
+                                <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd">FLYGANGWON AIRLINES 07MAY19	<span style="padding-left:40px">IATA : 17392874</span></td>
+                            </tr>
+                            <tr>
+                                <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left">제한사항 <span style="font-size:12px;color:#999">Restriction(s)</span></th>
+                                <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd">NON-ENDS/FG AWARD/TKT VALID IS 12MONTH FROM DATE OF ISSUE</td>
+                            </tr>
+                            <tr>
+                                <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left">운임계산 <span style="font-size:12px;color:#999">Fare Calculation</span></th>
+                                <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd">SEL FG CJU1130000Z SEL86000KRW199000END</td>
+                            </tr>
+                        </table>
+                        <p style="margin:0;line-height:1.5;font-size:12px;margin-top:15px">* 취소 통보를 하지 않고 확약된 항공권을 탑승하지 않는 경우, 별도로 규정한 예약부도 수수료(No-show Penalty)가 징수됩니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;">If a passenger does not show for the departure without prior notification to the airline, No-show Penalty will be charged.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;">* 전자항공권 여정안내서는 입출국 시 필요하므로 반드시 전 여행기간 동안 소지하시고, 본 안내서와 함께 제공된 법적 고지문 또한 참고하여 주시기 바랍니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;">전자항공권 여정안내서상의 영문성명과 여권상의 영문성명은 반드시 일치하여야 하며, 명의변경은 불가합니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;">탑승용 쿠폰 사용 순서 : 탑승용 쿠폰은 여객용 쿠폰에 명시된 출발지로부터 순서대로 사용되어야 합니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;">무료로 운송 가능한 수하물 무게(개수)를 초과할 경우 초과 수하물 요금이 부과되며, 요금은 여행 구간에 따라 상이합니다. 발권수수료는 환불되지 않습니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">This itinerary &amp; receipt must be presented to immigration/customs officials upon request. Accordingly, passengers are requested to keep this itinerary &amp; receipt on their person throughout their entire journey. Tickets are non-transferable and the passenger name listed on the ticket must be an exact match to the name in the passport.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">Order of Coupon Use : Flight coupons must be redeemed in the proper order, starting from the place of departure as indicated on the passenger coupon.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">If baggage exceeds the free baggage allowance, an excess baggage charge may be assessed according applicable route regulations.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">Ticketing service fees are non-refundable.</p>
+                        
+                        <!-- 부가서비스 -->
+                        <table style="background:#0a3a68 url('../../resources/images/pc/bg_eticket_title.jpg') no-repeat 100% 50%;margin-top:40px;border-spacing:0;border:0;height:50px;width:100%">
+                            <tr>
+                                <td style="padding: 0 20px;color:#fff;font-weight: 500;font-size: 17px;letter-spacing:-0.05em;line-height:1">부가서비스 <span style="color: #a5afbd;font-size: 14px;margin-left: 13px">Additional Service</span></td>
+                            </tr>
+                        </table>
+                        <table style="table-layout: fixed;line-height:1.4;border-spacing:0;border:0;width:100%">
+                            <thead>
+                                <tr>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px 5px;">승객 성명<br><span>Passenger Name</span></th>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px 5px;border-left:1px solid #ddd">구간<br><span>Route</span></th>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px 5px;border-left:1px solid #ddd">부가서비스<br><span>Additional Service</span></th>
+                                    <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px 5px;border-left:1px solid #ddd">운임<br><span>Fare</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;text-align:center"></td>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center"></td>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center"></td>
+                                    <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd;text-align:center"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style="margin:0;line-height:1.5;font-size:12px;margin-top:15px">* 상기의 모든 정보는 항공사 및 공항 사정에 의하여 변경될 수 있습니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px">탑승수속 카운터에서 승객 본인의 신분증(성인 : 주민등록증, 운전면허증, 여권 중 택일)을 제시하여 주시고 할인대상자는 할인 대상자임을 확인할 수 있는 증빙서류를 제시하셔야 합니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px">탑승수속은 출발 20분 전에 마감되며 공항이 혼잡할 경우의 대기시간을 고려하여 도착하여 주시기 바랍니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">All conditions may vary according to circumstances of airlines and airports.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">When you check-in at the counter, please make sure that you show your ID card or passport. If you get any discount for yourself, you should present your documentary evidence.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">Please make sure that you check in before at least 20minutes of the departure, considering the airport conditions.</p>
+                        
+                        <!-- 수하물 규정 안내 -->
+                        <table style="background:#0a3a68 url('../../resources/images/pc/bg_eticket_title.jpg') no-repeat 100% 50%;margin-top:40px;border-spacing:0;border:0;height:50px;width:100%">
+                            <tr>
+                                <td style="padding: 0 20px;color:#fff;font-weight: 500;font-size: 17px;letter-spacing:-0.05em;line-height:1">수하물 규정 안내 <span style="color: #a5afbd;font-size: 14px;margin-left: 13px">Baggage Information</span></td>
+                            </tr>
+                        </table>
+                        <table style="table-layout: fixed;line-height:1.4;border-spacing:0;border:0;width:100%">
+                            <tr>
+                                <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left">위탁 수하물 <span style="font-size:12px;color:#999">Checked Baggage</span></th>
+                                <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd">플라이강원의 수하물 규정이 적용됩니다. <br><span style="font-size:12px;color:#999">Flygangwon’s regulations apply.</span></td>
+                            </tr>
+                            <tr>                                    
+                                <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left">기내 휴대 수화물 <span style="font-size:12px;color:#999">Carry-on Baggage</span></th>
+                                <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd">플라이강원의 수하물 규정이 적용됩니다. <br><span style="font-size:12px;color:#999">Flygangwon’s regulations apply.</span></td>
+                            </tr>
+                            <tr>
+                                <th style="background-color: #f8fafe;font-size: 13px;color: #666;border-bottom: 1px solid #ddd;font-weight: 500;padding: 10px;text-align:left">미주노선 제외 특가운임의 경우 무료 위탁수하물이 제공되지 않습니다.<br><span style="font-size:12px;color:#999">No free checked baggage allowance on Non-U.S. route special fares</span>
+                                </th>
+                                <td style="font-size:13px;padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #ddd"></td>
+                            </tr>
+                        </table>                        
+                        <p style="margin:0;line-height:1.5;font-size:12px;margin-top:15px;">LB = 파운드, KG = 킬로그램, LI = 인치, LCM = 센티미터, MAX = 최대, PC = 수하물 개수</p>                        
+                        <p style="margin:0;line-height:1.5;font-size:12px">전자항공권 여정안내서는 입출국 시 필요하므로 반드시 전 여행기간 동안 소지하시고, 본 안내서와 함께 제공된 법적 고지문 또한 참고하여 주시기 바랍니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px">전자항공권 여정안내서상의 영문성명과 여권상의 영문성명은 반드시 일치하여야 하며, 명의변경은 불가합니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px">탑승용 쿠폰 사용 순서 : 탑승용 쿠폰은 여객용 쿠폰에 명시된 출발지로부터 순서대로 사용되어야 합니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px">무료로 운송 가능한 수하물 무게(개수)를 초과할 경우 초과 수하물 요금이 부과되며, 요금은 여행 구간에 따라 상이합니다. 발권수수료는 환불되지 않습니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">This itinerary &amp; receipt must be presented to immigration/customs officials upon request. Accordingly, passengers are requested to keep this itinerary &amp; receipt on their person throughout their entire journey. Tickets are non-transferable and the passenger name listed on the ticket must be an exact match to the name in the passport.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">Order of Coupon Use : Flight coupons must be redeemed in the proper order, starting from the place of departure as indicated on the passenger coupon.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">If baggage exceeds the free baggage allowance, an excess baggage charge may be assessed according applicable route regulations.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">Ticketing service fees are non-refundable.</p>                        
+                        
+                        <!-- 알림 -->
+                        <table style="background:#0a3a68 url('../../resources/images/pc/bg_eticket_title.jpg') no-repeat 100% 50%;margin-top:40px;border-spacing:0;border:0;height:50px;width:100%">
+                            <tr>
+                                <td style="padding: 0 20px;color:#fff;font-weight: 500;font-size: 17px;letter-spacing:-0.05em;line-height:1">알림 <span style="color: #a5afbd;font-size: 14px;margin-left: 13px">NOTICE</span></td>
+                            </tr>
+                        </table>
+                        <p style="margin:0;line-height:1.5;font-size:12px;margin-top:15px;">여객의 최종 목적지 또는 도중 착륙지가 출발지국 이외의 타국 내의 1개 지점일 경우, 동 여객은 여객의 사망 또는 상해 및 수하물의 분실 또는 손상에 대한 운송인의 책임을 통상적으로 제한하는 ‘바르샤바협약‘, ‘개정바르샤바협약‘ 또는 ‘몬트리올협약＇을 적용 받을 수 있습니다. 본 항공권에 수록된 “국제선 여객에 대한 책임 제한에 관한 고지“ 및 “수하물 배상 책임한도＂를 참조하시기 바랍니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px">스프레이류, 폭죽, 인화성 액체 등의 규정된 위험 물품은 기내 반입이 금지되어 있습니다. 자세한 사항은 항공사로 문의하시기 바랍니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">If the passenger’s journey involves an ultimate destination or stop in a country other than the country of departure ‘the Warsaw Convention’, or ‘the Warsaw Convention as amended at the Hague, 1955’, or ‘the Montreal Convention’ may be applicable and these Conventions govern and in most cases limit the liability of carriers for death or personal injury and in respect of loss of or damage to baggage. See also notices headed “Advice to International Passengers on Limitation of Liability” and “Notice of Baggage Liability Limitations. </p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">“The carriage of certain hazardous materials, like aerosols, fireworks, and flammable liquids, aboard the aircraft is forbidden. If you do not understand these restrictions, further information may be obtained from your airline.</p>
+
+                        <!-- 계약 조건 -->
+                        <table style="background:#0a3a68 url('../../resources/images/pc/bg_eticket_title.jpg') no-repeat 100% 50%;margin-top:40px;border-spacing:0;border:0;height:50px;width:100%">
+                            <tr>
+                                <td style="padding: 0 20px;color:#fff;font-weight: 500;font-size: 17px;letter-spacing:-0.05em;line-height:1">계약 조건 <span style="color: #a5afbd;font-size: 14px;margin-left: 13px">Terms and Conditions</span></td>
+                            </tr>
+                        </table>
+                        <p style="margin:0;line-height:1.5;font-size:12px;margin-top:15px;">1. 본 계약에서 사용되는 용어의 정의는 다음과 같습니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px">“항공권”이란 본 “여객항공권 및 수하물표“ 또는 “전자 항공권”의 경우 적용되는 본 여정/영수표를 말하는 것으로 본 계약 조건 및 상기 알림은 본 항공권의 일부를 구성합니다. “운송＂이란 “수송＂을 말하며, “운송인”이란 여객 또는 그의 수하물을 본 계약조건에 따라 운송하거나 또는 당해 항공 운송에 수반되는 기타 서비스를 행하는 모든 항공 운송인을 말합니다. “전자 항공권＂이란 운송인 또는 운송인을 대리한 자에 의해 발행된 전자 서식 및 탑승 증표를 말합니다. “바르샤바협약＂이란 1929년 10월 12일 “바르샤바＂에서 체결된 “국제항공 운송에 관한 일부 규칙의 통일을 위한 협약“ 또는 1955년 9월 28일 “헤이그“에서 개정된 바르샤바협약 중 적용되는 협약을 말합니다. “몬트리올협약”이란 1999년 5월 28일 몬트리올에서 개정된 “국제항공운송에 있어서의 일부 규칙 통일에 관한 협약” 을 말합니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">1. As used in this contract “ticket” means this “passenger ticket and baggage check”, or this itinerary/receipt if applicable, in the case of an “electronic ticket”, of which these conditions and the notices form part, “carriage” is equivalent to “transportation”, “carrier” means all air carriers that carry or undertake to carry the passenger or his baggage hereunder or perform any other service incidental to such air carriage, “electronic ticket” means the itinerary/receipt issued by or on behalf of Carrier, the Electronic Coupons and, if applicable, a boarding document. “Warsaw Convention” means “the Convention for the Unification of Certain Rules Relating to International Carriage” by Air signed at “Warsaw”, 12th October 1929, or that Convention as amended at The Hague, 28th September 1955, whichever may be applicable. “Montreal Convention” means “the Convention for the Unification of Certain Rules for International Carriage” by Air signed at Montreal, 28 May 1999</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px">2. 본 계약상의 운송이 바르샤바협약 또는 몬트리올협약에 정의된 국제선 운송일 경우, 그 운송은 해당 협약에서 정하고 있는 책임에 관한 규정 및 제한의 적용을 받습니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">2. Carriage hereunder is subject to the rules and limitations relating to liability established by the Warsaw Convention or the Montreal Convention unless such carriage is not “International carriage” as defined by that Convention.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px">3. 각 운송인이 행하는 운송 및 기타 서비스는 상기한 바에 저촉되지 않는 범위 내에서 (Ⅰ) 본 항공권에 기재된 규정, (Ⅱ) 유효한 태리프, (Ⅲ) 본 계약 조건의 일부로 되어 있는 운송인의 운송약관 및 관련 규정(여객이 요청할 시 운송인의 사무실에서 열람할 수 있습니다.)의 적용을 받습니다. 단, 미국 또는 캐나다 내의 1개 지점과 미국 및 캐나다 이외의 타국 내의 1개 지점 간의 운송에 관하여는 미국 및 캐나다에서 유효한 태리프가 적용됩니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">3. To the extent not in conflict with the foregoing carriage and other services performed by each carrier are subject to : (Ⅰ) provisions contained in the ticket; (Ⅱ) applicable tariffs; (Ⅲ) carrier’s conditions of carriage and related regulations which are made part hereof (and are available on application at the offices of carrier), except in transportation between a place in the United States or Canada and any place outside thereof to which tariffs in force in those countries apply.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px">4, 운송인의 명칭은 항공권상에 약호로 표기될 수 있으며, 정식 명칭 및 약호 명칭은 유효한 태리프에 기재되어 있습니다. 운송인의 주소는 항공권상에 운송인의 약호 명칭과 동일한 행에 표시된 출발지 공항을 말합니다. 여객과 운송인 간의 합의된 도중 착륙지는 본 항공권상에 명시된 도중 착륙지 또는 여객의 여정상에 계획된 도중 체류지로서 운송인의 운항시간표에 표시된 지점을 말합니다. 본 계약 조건 하에서 2개 이상의 운송인에 의하여 연속적으로 행하여지는 운송은 단일 운송으로 간주합니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">4. Carrier’s name may be abbreviated in the ticket, the full name and its abbreviation being set forth in carrier’s applicable tariffs; carrier’s address shall be the airport of departure shown opposite the first abbreviation of carrier’s name in the ticket; the agreed stopping places are those places set forth in this ticket or as shown in carrier’s timetables as scheduled stopping places on the passenger’s route; carriage to be performed hereunder by several successive carrier is regarded as a single operation.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px">5. 타 항공 운송인의 노선상의 운송을 위하여 항공권을 발행하는 항공 운송인은 단지 당해 타 항공 운송인의 대리인으로서 항공권을 발행하는 것입니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">5. An air carrier issuing a ticket for carriage over the lines of another air carrier does so only as its agent.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px">6. 운송인의 면책 또는 책임 제한에 관한 제반 규정은 운송인의 대리인, 종업원 및 대표자, 그리고 운송을 위해 운송인이 사용하는 항공기의 소유자, 그의 대리인, 종업원 및 대표자 모두에게 적용됩니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">6. Any exclusion or limitation of liability of carrier shall apply to and be for the benefit of agents, servants and representatives of carrier and any person whose aircraft is used by carrier for carriage and its agents, servants and representatives.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px">7. 위탁 수하물은 수하물표 소지자에게 인도합니다. 국제선으로 운송되는 수하물에 손상이 발생하였을 경우에는 당해 손상 발견 즉시 또는 늦어도 수하물을 수취한 날로부터 7일 이내에 운송인에게 서면 또는 전자문서로 이의를 제기해야 하며, 지연 또는 분실의 경우에는 수하물을 처분할 수 있게 된 날(지연의 경우) 또는 수하물을 처분할 수 있게 되어있어야 할 날(분실의 경우)로부터 21일 이내에 이의를 제기해야 합니다. 국제선 운송이 아닌 경우에는 국내선 태리프 또는 운송약관을 참조하시기 바랍니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">7. Checked baggage will be delivered 소 bearer of the baggage tag. In the case of damage to baggage moving in international transportation complaint must be made in writing or by electronic document to carrier forthwith after the discovery of the damage and, at the latest, within seven days from the date of receipt; in the case of delay or loss, complaint must be made within twenty-one days from the date on which the baggage has been placed at his/her disposal (in the case of delay) or should have been placed at his/her disposal (in the case of loss.) See traiffs or conditions of carriage regarding non-international transportation.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px">8. 본 항공권, 운송인의 태리프, 운송약관 또는 관련 규정에 별도로 정한 경우를 제외하고는, 본 항공권은 발행일로부터 1년간 유효합니다. 계약 조건상의 운송을 위한 운임은 운송개시 전에 변경될 수 있습니다. 유효한 운임이 지불되지 않았을 경우, 운송인은 운송을 거절할 수 있습니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">8. This ticket is good for carriage for one year from date of issue,, except as otherwise provided in this ticket, in carrier’s tariffs, conditions of carriage, or related regulations. The fare for carriage hereunder is subject to change prior to commencement of carriage. Carrier may refuse transportation if the applicable fare has not been paid.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px">9. 운항시간표 또는 기타에 표시된 시각은 보증된 것은 아니며, 본 계약의 일부를 구성하지 않습니다. 운송인은 통고 없이 운송인 또는 항공기를 타 운송인 또는 타 항공기로 대체할 수 있으며, 또한 필요한 경우에는 항공권상에 표시된 도중 착륙지를 변경하거나 생략할 수 있습니다. 스케줄도 통고 없이 변경될 수 있으며 운송인은 접속운항에 대하여 책임을 지지 않습니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">9. Times shown in timetables or elsewhere are not guaranted and form no part of this contract. Carrier ma without necessity. Schedules are subject to change without notice. Carrier assumes no responsibility for making connections.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px">10. 여객은 정부가 규정하고 있는 여행에 필요한 사항을 준수하여야 하며, 현행의 출입국 서류 및 기타 필요 서류를 정확히 준비하여 운송인이 지정한 시각까지 또는 시각이 지정되지 않을 경우에는 출국수속을 완료할 수 있는 충분한 시간적 여유를 갖고 공항에 도착하여야 합니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">10. Passenger shall comply with Government travel requirements, present exit, entry and other required documents and arrive at airport by time fixed by carrier or, if no time is fixed early enough to complete departure procedures.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px">11. 운송인의 여하한 대리인, 종업원 또는 대표자도 본 계약의 어떠한 규정을 변경하거나 수정하거나 또는 포기할 권한을 가지지 않습니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">11. No agent, servant or representative of carrier has authority to after, modify or waive any provision of this contract.</p>
+
+                        <!-- 국제선 여객에 대한 책임제한에 관한 고지 -->
+                        <table style="background:#0a3a68 url('../../resources/images/pc/bg_eticket_title.jpg') no-repeat 100% 50%;margin-top:40px;border-spacing:0;border:0;height:50px;width:100%">
+                            <tr>
+                                <td style="padding: 0 20px;color:#fff;font-weight: 500;font-size: 17px;letter-spacing:-0.05em;line-height:1">국제선 여객에 대한 책임제한에 관한 고지 <span style="color: #a5afbd;font-size: 14px;margin-left: 13px">ADVICE TH INTERNATIONAL PASSENGERS ON LIMITATION OF LIABILITY</span></td>
+                            </tr>
+                        </table>
+                        <p style="margin:0;line-height:1.5;font-size:12px;margin-top:15px;">여객이 출발지국 이외의 국가 내에 최종 목적지 또는 도중 착륙지를 둔 여행을 할 경우에는 출발지국 또는 목적지국 내의 구간을 포함한 전체 여정에 대하여 소위 바르샤바협약 또는 개정바르샤바협약 또는 몬트리올협약의 규정이 적용될 수 있습니다. 이러한 여객들을 위하여, 유효한 태리프에 명시된 특별 운송 계약을 포함한 해당 협약은 운송인의 책임을 규정하고 제한하기도 합니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">Passengers on a journey involving an ultimate destination or a stop in a country other than the country of departure are advised that international treaties known as the Montreal Convention, or its predecessor, the Warsaw Convention, including its amendments(The Warsaw Convention system), may apply to the entire journey, including any portion there of within a country. For such passengers, the applicable treaty, including special contracts special contracts of carriage embodied in any applicable tariffs, governs and may limit the liability of the carrier.</p>
+                        
+                        <!-- 수하물 배상 책임한도 -->
+                        <table style="background:#0a3a68 url('../../resources/images/pc/bg_eticket_title.jpg') no-repeat 100% 50%;margin-top:40px;border-spacing:0;border:0;height:50px;width:100%">
+                            <tr>
+                                <td style="padding: 0 20px;color:#fff;font-weight: 500;font-size: 17px;letter-spacing:-0.05em;line-height:1">수하물 배상 책임한도 <span style="color: #a5afbd;font-size: 14px;margin-left: 13px">NOTICE OF BAGGAGE LIABILITY LIMITATIONS</span></td>
+                            </tr>
+                        </table>
+                        <p style="margin:0;line-height:1.5;font-size:12px;margin-top:15px;">사전에 보다 높은 가격이 신고되고 그에 대한 추가요금이 지불되지 않는 한, 수하물의 분실, 지연 또는 손상에 대한 책임한도액은 아래와 같이 제한됩니다. 국제선 여행(국제선 여행을 구성하는 국내선 여행구간 포함) 시, 플라이강원의 위탁 수하물에 대한 책임은 킬로그램 당 250 프랑스 골드프랑 또는 그 상당액(미화 20불)을 한도로 하고, 기내 휴대 수하물 또는 기타 소유물의 경우는 여객 1인당 5,000 프랑스 골드프랑 또는 그 상당액(미화 400불)을 한도로 합니다. 다만, 몬트리올협약이 적용되는 운송인 경우 책임한도는 위탁수하물과 기내 휴대 수하물에 대해 1인당 SDR 1,131입니다. 미국 내 지점간 여행 시에는 항공사의 수하물 배상 책임한도액은 여객 1인당 최대 미화 3,400불입니다. 어떤 종류의 물품에 대하여는 상기 한도액을 초과하는 가격을 신고할 수도 있습니다. 항공사는 파손 또는 부패되기 쉬운 물품이나 귀중품에 대하여 운송약관 또는 몬트리올협약이 정하는 범위 외의 책임을 부담하지 않습니다. 자세한 사항은 해당 항공사로 문의하시기 바랍니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">Liability for loss, delay, or damage to baggage is limited unless a higher value is declared in advance and additional charges are paid, For international travel (including domestic portions of international journeys) the liability limit is approximately US$20.00 per kilogram for checked baggage and US$400.00 per passenger for unchecked baggage or other property. The liability of AAR is limited to 1,131 SDRs for checked and unchecked baggage where the Montreal Convention applies to your journey. For travel wholly between U.S points, the airline’s liability for loss, delay, or damage to baggage is limited to a maximum of US$3,400 per ticketed passenger. Excess valuation may be declared on certain types of articles. Carrier’s liability for fragile, perishable or valuable articles is governed by the Montreal Convention or the General Conditions of Carriage. Further information may be obtained from the carrier.</p>
+                        
+                        <!-- 플라이강원의 책임한도액에 관한 특별 고지 -->
+                        <table style="background:#0a3a68 url('../../resources/images/pc/bg_eticket_title.jpg') no-repeat 100% 50%;margin-top:40px;border-spacing:0;border:0;height:50px;width:100%">
+                            <tr>
+                                <td style="padding: 0 20px;color:#fff;font-weight: 500;font-size: 17px;letter-spacing:-0.05em;line-height:1">플라이강원의 책임한도액에 관한 특별 고지 <span style="color: #a5afbd;font-size: 14px;margin-left: 13px">SPECIAL NOTICE ON LIMIT OF LIABILITY</span></td>
+                            </tr>
+                        </table>
+                        <p style="margin:0;line-height:1.5;font-size:12px;margin-top:15px;">플라이강원은 협약에서 정하고 있는 여객의 사망, 부상 또는 기타 신체상해에 대한 일체의 손해배상 청구에 대하여 SDR 100,000 이하의 부분에 대해서는 바르샤바협약 제 20조 및 개정바르샤바협약 제 22조 (1)항의 규정을 적용하지 않습니다. 또한, 몬트리올협약이 적용되는 운송의 경우, 제 17조에서 정하고 있는 여객의 사망, 부상 또는 기타 신체상해와 관련된 손해배상 청구에 대하여 SDR 113,100 이하의 부분에 대해서 플라이강원은 책임을 배제하거나 제한하지 못합니다. SDR 113,100을 초과하는 부분에 대해서는 (Ⅰ) 플라이강원의 과실, 기타 불법적 작위 또는 부작위에 기인하지 아니하였거나, (Ⅱ) 오직 제 3자의 과실, 기타 불법적인 작위 또는 부작위에 기인하였을 경우 책임을 지지 않습니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">As to any claim arising out of death of or, wounding or other bodily injury to, a passenger within the meaning of the Convention, AAR shall not avail itself of any defense under Article 20 of the Warsaw Convention, or invoke the limitation of liability in Article 22 (1) of the Warsaw Convention as amended at the Hague, 1955 with respect to that portion of such claim which does not exceed 10,000 SDRs. In the case of carriage subject to the Montreal Convention, as to any claim arising under Article 17 of the Convention which does not exceed 113,100 SDRs, the carrier shall not be able to exclude or limit its liability. Above the 113,100 SDRs, the carrier shall not be liable if the carrier proves (Ⅰ) it was not due to the negligence or other wrongful act or omission of the carrier, or (Ⅱ) it was solely due to the negligence or other wrongful act or omission of a third party.</p>
+
+                        <!-- EU 출발 비행편의 탑승불가, 취소 및 지연 -->
+                        <table style="background:#0a3a68 url('../../resources/images/pc/bg_eticket_title.jpg') no-repeat 100% 50%;margin-top:40px;border-spacing:0;border:0;height:50px;width:100%">
+                            <tr>
+                                <td style="padding: 0 20px;color:#fff;font-weight: 500;font-size: 17px;letter-spacing:-0.05em;line-height:1">EU 출발 비행편의 탑승불가, 취소 및 지연 <span style="color: #a5afbd;font-size: 14px;margin-left: 13px">DENIED BOARDING, CANCELLATION AND DELAY IN EU</span></td>
+                            </tr>
+                        </table>
+                        <p style="margin:0;line-height:1.5;font-size:12px;margin-top:15px;">EU 국가에서 출발하는 비행 편에서 발생하는 탑승불가, 취소 및 지연에 대한 지원 및 보상금은 EU 법률 261/2004에 따라 제공됩니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">In case of a denied boarding, flight cancellation or flight delay departing from EU member state, we offer assistance and compensation to the concerned passengers according to the Regulation EC 261/2004.</p>
+
+                        <!-- 초과예약으로 인한 탑승불가 -->
+                        <table style="background:#0a3a68 url('../../resources/images/pc/bg_eticket_title.jpg') no-repeat 100% 50%;margin-top:40px;border-spacing:0;border:0;height:50px;width:100%">
+                            <tr>
+                                <td style="padding: 0 20px;color:#fff;font-weight: 500;font-size: 17px;letter-spacing:-0.05em;line-height:1">초과예약으로 인한 탑승불가 <span style="color: #a5afbd;font-size: 14px;margin-left: 13px">DENIED BOARDING BY OVERBOOKING</span></td>
+                            </tr>
+                        </table>
+                        <p style="margin:0;line-height:1.5;font-size:12px;margin-top:15px;">항공사는 사전 예고 없이 확약된 항공편에 탑승하지 않은 여객으로 인한 영향을 최소화하고, 해당 항공편 탑승을 원하는 여객이 좌석을 이용할 수 있도록 하기 위하여 초과 예약을 접수할 수 있습니다. 항공사는 예약이 확약된 항공편의 좌석을 제공하기 위하여 최선을 다하지만, 좌석 제공이 절대적으로 보장되는 것은 아닙니다. 항공사의 초과 예약으로 인한 좌석 부족으로 예약이 확약된 항공편에 탑승하지 못한 여객에 대한 보상 규정이 일부 국가에서 시행됩니다. 미국 출발 여행을 위한 미국 내 판매된 항공권에 대해서는 미 연방법에서 정하고 있는 규정 및 제한의 적용을 받습니다. 자세한 사항은 항공사에서 확인하실 수 있습니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">In order to minimize the effect of “no shows” and to permit seats to be used by passengers who otherwise would not be able to travel on a chosen flight, carriers may overbook flights. Whilst carriers make every effort to provide seats for which confirmed reservations exist, seat availability is not absolutely guaranteed. In those countries where Denied Boarding Compensation regulations are in force, carriers operate compensation plans for passengers who are denied boarding because of non-availability of seats caused by overbooking. The ticket sold in the United States for transportation origination in the United States, we offer assistance and compensation to the concerned passengers according to the U.S.Federal Regulation. Details of these plans are available at the airlines’ offices.</p>
+
+                        <!-- 정부가 부과하는 세금, 수수료, 각종 비용에 대한 고지 -->
+                        <table style="background:#0a3a68 url('../../resources/images/pc/bg_eticket_title.jpg') no-repeat 100% 50%;margin-top:40px;border-spacing:0;border:0;height:50px;width:100%">
+                            <tr>
+                                <td style="padding: 0 20px;color:#fff;font-weight: 500;font-size: 17px;letter-spacing:-0.05em;line-height:1">정부가 부과하는 세금, 수수료, 각종 비용에 대한 고지 <span style="color: #a5afbd;font-size: 14px;margin-left: 13px">NOTICE OF GOVERNMENT IMPSED TAXED, FEES AND CHARGES</span></td>
+                            </tr>
+                        </table>
+                        <p style="margin:0;line-height:1.5;font-size:12px;margin-top:15px;">이 항공권의 가격에는 각국 정부가 항공운송에 부과하는 세금, 수수료 및 각종 비용이 포함되어 있을 수 있습니다. 항공여행 경비의 상당 부분을 차지할 수 있는 이러한 세금, 수수료 및 각종 비용은 운임에 포함되어 있거나, 이 항공권의 “TAX/FEE/CHARGE(세금 및 제반 요금)”란에 별도로 기재되어 있습니다. 또한 여객에게 아직 부과되지 않은 세금, 수수료 및 각종 비용의 지불이 요구될 수도 있습니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">The price of this ticket may include taxes, fees and charges which are imposed on air transportation by government authorities. These taxes, fees and charges, which may represent a significant portion of the cost of air travel, are either included in the fare, or shown separately in the “TAX/FEE/CHARGE” box(es) of this ticket. You may also be required to pay taxes, fees and charges not already collected.</p>
+
+                        <!-- 예약 등급에 대한 고지 -->
+                        <table style="background:#0a3a68 url('../../resources/images/pc/bg_eticket_title.jpg') no-repeat 100% 50%;margin-top:40px;border-spacing:0;border:0;height:50px;width:100%">
+                            <tr>
+                                <td style="padding: 0 20px;color:#fff;font-weight: 500;font-size: 17px;letter-spacing:-0.05em;line-height:1">예약 등급에 대한 고지 <span style="color: #a5afbd;font-size: 14px;margin-left: 13px">BOOKING CLASS</span></td>
+                            </tr>
+                        </table>
+                        <p style="margin:0;line-height:1.5;font-size:12px;margin-top:15px;">예약 등급은 항공운임에 따라 여러 종류로 구분되어 있으며, 이는 항공권상의 “예약 등급 Booking Class”란에 표기되어 있습니다. 항공권상의 예약 등급과 승객의 예약기록상의 예약등급은 일치하여야 합니다. 상기 예약 등급이 상이한 경우, 해당 승객의 탑승이 거절될 수도 있으며, 정해진 차액을 징수 시에 한해 탑승이 허용될 수 있습니다.</p>
+                        <p style="margin:0;line-height:1.5;font-size:12px;color:#999">There are various booking classes categorize by airfares. The booking class printed on the ticket must be identical with the class indicated by the respective PNR(Passenger Name Record). Passenger holding ticket which fails to meet the above condition may be denied boarding or may board only after paying additional predetermined charge(s).</p>
+                        
+                        <!-- 예약 및 문의 -->
+                        <table style="margin-top:50px;border-spacing:0;border:0;background:#f8fafe;height:50px;width:100%">
+                            <tr><td style="height:15px"></td></tr>
+                            <tr>
+                                <td style="padding:3px 30px;color: #111;font-size: 16px;font-weight: 400;">예약 및 문의 <span style="color:#999;font-size: 14px;margin-left:10px">Reservation</span></td>
+                            </tr>
+                            <tr>
+                                <td style="padding:3px 30px;color: #666;font-size: 14px;">한국 Korea : xxxx-xxxx/+82-2-xxxx-xxxx (해외에서 이용 시 For overseas calls) / flygangwon.com</td>
+                            </tr>
+                            <tr><td style="height:15px"></td></tr>
+                        </table>
+                    </td>
+                    <td style="padding:0">&nbsp;</td>                    
+                </tr>
+                <tr><td colspan="3" style="height:60px"></td></tr>
+            </table>
+        </td>
+    </tr>
+    <!-- //container -->
+    <!-- footer -->
+    <tr>
+        <td style="padding:0">
+            <table style="table-layout:fixed;border-collapse:collapse;border-spacing:0;border:0;background:#f9f9f9;width:100%">
+                <tr><td style="height:30px"></td></tr>
+                <tr>
+                    <td style="font-size:14px;color:#333;padding-left:40px">본 메일은 발신 전용으로 회신되지 않습니다.</td>
+                </tr>
+                <tr><td style="height:10px"></td></tr>
+                <tr>
+                    <td style="font-size: 12px;color:#999;line-height: 20px;padding-left:40px">플라이강원 대표이사 주원석  ㅣ  사업자등록번호 710-81-00367 <br>
+                        본사 : 강원도 양양군 손양면 공항로 201, 1층 ㅣ  서울사무소 : 서울시 강남구 도산대로 456 청담백영빌딩 6층 | TEL : 02-6718-8230</td>
+                </tr>
+                <tr><td style="height:10px"></td></tr>
+                <tr>
+                    <td style="font-size:10px;color: #bbb;padding-left:40px">COPYRIGHT (C) 2019 FLY GANGWON ALL RIGHTS RESERVED.</td>
+                </tr>
+                <tr><td style="height:30px"></td></tr>
+            </table>
+        </td>
+    </tr>
+    <!-- //footer -->
+</table>
+</body>
+</html>

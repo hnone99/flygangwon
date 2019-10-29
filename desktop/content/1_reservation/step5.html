@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>플라이강원</title>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/reset.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/calendar.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/common.css">
+    <script type="text/javascript" src="../../resources/js/pc/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/modernizr-custom.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/calendar.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/swiper.min.js"></script>
+<script>
+    $(document).ready(function(){        
+        //layer
+        var nowStep;
+        $('[data-event=layer-open]').on('click',function(e){
+            e.preventDefault();
+
+            $('.inquiry li').removeClass('on');
+            nowStep = $(this).closest('li');
+            nowStep.addClass('on');
+            $('.layer').hide();
+
+            //출발지 먼저 선택 알럿 확인용
+            if($(this).attr('data-target')=='#lyTo'){
+                $('#alertFrom').show().focus();
+            }
+            else{
+                var target = $(this).attr('data-target');
+                $(target).show();
+                //레이어 margin-top
+                $(target).find('.layer-wrap').css('margin-top',-$(target).find('.layer-wrap').outerHeight() / 2);
+            }
+        });
+        $('[data-event=layer-close]').on('click',function(e){
+            e.preventDefault();
+
+            $('.inquiry li').removeClass('on');
+            $(this).closest('.layer').fadeOut(150);
+        });
+        
+        //출발지 먼저 선택 얼럿 확인 클릭
+        $('#alertFrom .ok').on('click',function(e){
+            e.preventDefault();
+            $('[data-target=#lyFrom]').click();
+        });
+
+        //스케줄 없음 알럿 닫기
+        $('.noSchedule .close').on('click',function(){
+            $('.noSchedule').hide();
+        }); 
+
+        //여정 재검색 탭
+        $('.tabType a').on('click',function(e){
+            e.preventDefault();
+            $(this).parent('li').addClass('on');
+            $(this).parent('li').siblings().removeClass('on');
+            if($(this).parent('li').index() == 2){ //다구간
+                $('.reInquiry').addClass('multi');
+                $('.reInquiry ul.second').show();
+            }else{
+                $('.reInquiry').removeClass('multi');                
+                $('.reInquiry ul.second').hide();
+            }
+        });
+        
+        //신용/체크카드 선택 활성화
+        $('.payMethod a').on('click',function(e){
+            e.preventDefault();
+            $('.paySimpleMethod li').removeClass('on');
+            $(this).parent().siblings().removeClass('on');
+            $(this).parent().addClass('on');
+            
+            $($(this).attr('href')).siblings('.payView').hide();
+            $($(this).attr('href')).show();            
+        });
+        
+        //간편결제 선택 활성화
+        $('.paySimpleMethod a').on('click',function(e){
+            e.preventDefault();
+            $('.payView').hide();
+            $('.payMethod li').removeClass('on');
+            $(this).parent().siblings().removeClass('on');
+            $(this).parent().addClass('on');            
+        });
+            
+        //탑승객별 운임상세 탭
+        $('.tabText a').on('click',function(e){
+            e.preventDefault();
+            var target = $(this).attr('href');
+            $(this).parent('li').siblings().removeClass('on');
+            $(this).parent('li').addClass('on');
+            $(target).siblings('.tabView').hide();
+            $(target).show();
+        });
+    });
+</script>
+</head>
+
+<body>
+<div class="accessibility-nav">
+    <ul>
+        <li class="first"><a href="#gnb">메뉴바로가기</a></li>
+        <li class="last"><a href="#container">본문바로가기</a></li>
+    </ul>
+</div>
+<div id="wrap">
+    <div id="header">
+        <div class="htop">
+            <div class="in">
+                <ul class="category">
+                    <li class="air on"><a href=""><span>항공</span></a></li>
+                    <li class="tour"><a href=""><span>관광</span></a></li>
+                    <li class="shopping"><a href=""><span>쇼핑</span></a></li>
+                </ul>
+                <ul class="menu">
+                    <li class="login"><a href="#">로그인</a></li>
+                    <li class="signup"><a href="#">회원가입</a></li>
+                    <li class="language">
+                        <a href="#">KOREAN</a>
+                        <!-- 190729 수정 -->
+                        <div class="languageMenu">
+                            <ul>
+                                <li><a href="">ENGLISH</a></li>
+                                <li><a href="">ENGLISH</a></li>
+                            </ul>
+                        </div>
+                        <!-- //190729 수정 -->                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="inner">
+            <h1 class="logo"><a href="#"><span class="sr-only">FLY GANGWON</span></a></h1>
+
+            <div id="gnb">
+                <ul class="dep1">
+                    <li class="on"><a href="#">예매</a>
+                        <ul class="dep2">
+                            <li class="on"><a href="#none">항공권 예매</a></li>
+                            <li><a href="#none">운항일정조회</a></li>
+                            <li><a href="#none">운임안내</a>
+                                <ul class="dep3">
+                                    <li><a href="#none">국내선 운임안내</a></li>
+                                    <li><a href="#none">국제선 운임안내</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">체크인</a>
+                        <ul class="dep2">
+                            <li><a href="#none">체크인</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">서비스안내</a>
+                        <ul class="dep2">
+                            <li><a href="#none">항공권 안내</a></li>
+                            <li><a href="#none">공항서비스 안내</a></li>
+                            <li><a href="#none">수하물 안내</a></li>
+                            <li><a href="#none">기내서비스 안내</a></li>
+                            <li><a href="#none">취항지 안내</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이벤트/뉴스</a>
+                        <ul class="dep2">
+                            <li><a href="#none">이벤트</a></li>
+                            <li><a href="#none">뉴스</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">마이페이지</a>
+                        <ul class="dep2">
+                            <li><a href="#none">나의 예약내역</a></li>
+                            <li><a href="#none">나의 정보</a></li>
+                            <li><a href="#none">나의 문의내역</a></li>
+                            <li><a href="#none">나의 쿠폰</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="allmenu">
+                <a href="#"><span class="sr-only">전체메뉴</span><i></i></a>
+            </div>
+            <div class="allmenuWrap">
+                <div class="allmenuContent">
+                    <div class="logoarea"><h1><span class="sr-only">FLY GANGWON</span></h1></div>
+                    <ul class="dep1">
+                        <li class="on"><div><a href="#">예매</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">항공권 예매</a></li>
+                                <li><a href="#none">운항일정 조회</a></li>
+                                <li><a href="#none">운임안내</a>
+                                    <ul class="dep3">
+                                        <li><a href="#none">국내선 운임안내</a></li>
+                                        <li><a href="#none">국제선 운임안내</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">체크인</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">체크인</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">서비스 안내</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">항공권 안내</a></li>
+                                <li><a href="#none">공항서비스 안내</a></li>
+                                <li><a href="#none">수하물 안내</a></li>
+                                <li><a href="#none">기내서비스 안내</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">이벤트/뉴스</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">이벤트</a>
+                                    <ul class="dep3">
+                                        <li><a href="#none">진행중인 이벤트</a></li>
+                                        <li><a href="#none">지난 이벤트</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">뉴스</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">마이페이지</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">나의 예약내역</a></li>
+                                <li><a href="#none">나의 정보</a></li>
+                                <li><a href="#none">나의 문의내역</a></li>
+                                <li><a href="#none">나의 쿠폰</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">유틸리티</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">고객센터</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">자주하는 질문</a></li>
+                                        <li><a href="#non">문의하기</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">회사소개</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">회사 현황</a></li>
+                                        <li><a href="#non">CEO 인사말</a></li>
+                                        <li><a href="#non">사업 비전</a></li>
+                                        <li><a href="#non">CI 소개</a></li>
+                                        <li><a href="#non">보도자료</a></li>
+                                        <li><a href="#non">오시는 길</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">이용약관</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">이용약관</a></li>
+                                        <li><a href="#non">여객운송약관</a></li>
+                                        <li><a href="#non">항공교통이용자 서비스 계획</a></li>
+                                        <li><a href="#non">피해구제 계획</a></li>
+                                        <li><a href="#non">개인정보처리방침</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg"></div>
+    </div>
+    <div id="top">
+        <div class="inner">
+            <div class="topWrap">
+                <div class="plan">
+                    <div>
+                        <span>양양</span>
+                        <strong>YNY</strong>                    
+                    </div>
+                    <div><i class="airplaneWhite"></i></div>
+                    <div>
+                        <span>제주</span>
+                        <strong>CJU</strong>
+                    </div>
+                </div>
+                <div class="date">
+                    <span>5월 7일 (화) ~ 5월 30일 (목) / 성인2, 소아2, 유아1</span>
+                </div>
+                <div class="search">
+                    <a href="javascript:void(0)"><span>수정</span></a>
+                </div>
+                <div class="total">
+                    <a href="javascript:void(0)">
+                        <p>항공운임등 총액</p>
+                        <div><i>KRW</i><strong>1,480,000</strong></div>
+                    </a>
+                </div>
+                <div id="summery">
+                    <div class="flight">
+                        <span class="labelPlan">여정 1</span> FG1451
+                    </div>
+                    <div class="info">
+                        <strong>양양 YNY  -  제주 CJU </strong>
+                        <span>2019.05.07(화) 09:00 ~ 11:20</span>
+                    </div>
+                    <div class="detail">
+                        <dl>
+                            <dt>항공운임 (KRW)</dt><dd>19,000</dd>
+                            <dt>유류할증료 (KRW)</dt><dd>6,000</dd>
+                            <dt>공항시설사용료 (KRW)</dt><dd>5,000</dd>
+                            <dt>구간 총 세금 (KRW)</dt><dd>116,000</dd>
+                        </dl>
+                        <dl>
+                            <dt>항공료 합계</dt><dd><i>KRW</i><strong>223,000</strong></dd>
+                        </dl>
+                    </div>
+                    <div class="flight">
+                        <span class="labelPlan">여정 2</span> FG1451
+                    </div>
+                    <div class="info">
+                        <strong>양양 YNY  -  제주 CJU </strong>
+                        <span>2019.05.07(화) 09:00 ~ 11:20</span>
+                    </div>
+                    <div class="detail">
+                        <dl>
+                            <dt>항공운임 (KRW)</dt><dd>19,000</dd>
+                            <dt>유류할증료 (KRW)</dt><dd>6,000</dd>
+                            <dt>공항시설사용료 (KRW)</dt><dd>5,000</dd>
+                            <dt>구간 총 세금 (KRW)</dt><dd>116,000</dd>
+                        </dl>
+                        <dl>
+                            <dt>항공료 합계</dt><dd><i>KRW</i><strong>223,000</strong></dd>
+                        </dl>
+                    </div>
+                    <div class="sum">
+                        <em>총액</em><i>KRW</i><strong>1,480,000</strong>
+                    </div>
+                    <p>유류할증료 및 제반 운임을 포함한 총액으로 구매시점과  환율에 따라 변동될 수 있습니다.</p>
+                    <div>
+                        <a href="javascript:void(0)" class="btn small gray" data-event="popup-open" data-target="#popPassengers">탑승객별 상세 운임 보기</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 재검색 -->
+            <div class="reInquiryWrap">
+                <div class="tabType">
+                    <ul>
+                        <li class="on"><a href="javascript:void(0)">왕복</a></li>
+                        <li><a href="javascript:void(0)">편도</a></li>
+                        <li><a href="javascript:void(0)">다구간</a></li>
+                    </ul>
+                </div>
+                <div class="close"><a href="javascript:void(0)">검색 닫기</a></div>
+                <div class="reInquiry"> <!-- 다구간일때 multi 클래스 추가 -->
+                    <ul class="type">
+                        <li class="i1">
+                            <a href="javascript:void(0)" class="sel" data-event="layer-open" data-target="#lyFrom"><span class="sr-only">출발지 선택</span></a> 
+                            <div class="fill">
+                                <span>출발지</span>
+                                <strong>서울/인천 <em>ICN</em></strong>
+                            </div>
+                        </li>
+                        <li class="i2">
+                            <a href="javascript:void(0)" class="sel" data-event="layer-open" data-target="#lyTo"><span class="sr-only">도착지 선택</span></a>
+                            <div class="fill">
+                                <span>도착지</span>
+                                <strong>삿포로/신치토세 <em>CTS</em></strong>
+                            </div>
+                        </li>
+                        <li class="i3">
+                            <a href="javascript:void(0)" class="sel" data-event="layer-open" data-target="#lyFromDate"><span class="sr-only">탑승일 선택</span></a>
+                            <div class="fill">
+                                <span>탑승일</span>
+                                <strong>5월 23일 (수) - 6월 7일 (토)</strong>
+                            </div>
+                        </li>
+                        <li class="i4">
+                            <a href="javascript:void(0)" class="sel" data-event="layer-open" data-target="#lyPassenger"><span class="sr-only">탑승객 선택</span></a>
+                            <div class="fill">
+                                <span>탑승객</span>
+                                <strong>성인 2 /소아 2 / 유아 2</strong>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="type second" style="display:none">
+                        <li class="i1">
+                            <a href="javascript:void(0)" class="sel" data-event="layer-open" data-target="#lyFrom"><span class="sr-only">출발지 선택</span></a> 
+                            <div class="fill">
+                                <span>출발지</span>
+                                <strong>서울/인천 <em>ICN</em></strong>
+                            </div>
+                        </li>
+                        <li class="i2">
+                            <a href="javascript:void(0)" class="sel" data-event="layer-open" data-target="#lyTo"><span class="sr-only">도착지 선택</span></a>
+                            <div class="fill">
+                                <span>도착지</span>
+                                <strong>삿포로/신치토세 <em>CTS</em></strong>
+                            </div>
+                        </li>
+                        <li class="i3">
+                            <a href="javascript:void(0)" class="sel" data-event="layer-open" data-target="#lyFromDate"><span class="sr-only">탑승일 선택</span></a>
+                            <div class="fill">
+                                <span>탑승일</span>
+                                <strong>5월 23일 (수) - 6월 7일 (토)</strong>
+                            </div>
+                        </li>
+                        <li class="i4">                            
+                        </li>
+                    </ul>
+                    <div class="button">
+                        <a href="#none" class="btn">예매하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <div id="content">
+            <h2 class="title">결제</h2>
+            <div class="step">
+                <ol>
+                    <li>01. 여정 조회</li>
+                    <li>02. 항공권 선택</li>
+                    <li>03. 탑승자 정보 입력</li>
+                    <li>04. 부가서비스 구매</li>
+                    <li class="on">05. 결제</li>
+                </ol>
+            </div>
+            
+            <div class="subtitleArea">
+                <h3 class="subtitle mt0">신용/체크 카드 및 계좌이체</h3>
+            </div>
+            <div class="whiteBox">
+                <div class="payment">
+                    <div class="row mt0">
+                        <div class="label">결제 수단</div>
+                        <div class="sel">
+                            <div class="payMethod">
+                                <ul>
+                                    <li><a href="#pay1" class="credit">국내발행신용카드</a></li>
+                                    <li><a href="#pay2" class="creditGlobal">해외발행신용카드</a></li>
+                                    <li><a href="#pay3" class="account">실시간계좌이체</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payView" id="pay1">
+                         <div class="row">
+                            <div class="label">결제 정보</div>
+                            <div class="sel">
+                                <select name="" title="카드 선택">
+                                    <option value="">카드 선택</option>
+                                </select>
+                                <select name="" title="할부개월">
+                                    <option value="">일시불</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="align-right mt10">
+                            <a href="javascript:void(0)" class="btn gray small" data-event="popup-open" data-target="#cardInfo">무이자할부 카드 안내</a>
+                        </p>
+                       <div class="referencePay">
+                           <div class="desc">
+                               <p>구매일 및 환율에 따라 차이가 있을 수 있으며, 해외카드는 카드사별 결제수수료로 인해 실제 청구금액과 최종 결제금액이 다소 상이할 수 있습니다.</p>
+                               <p>자세한 사항은 해당 카드사를 통해 확인하시기 바랍니다.</p>
+                               <p>환불 시 결제하신 카드로 자동 환불됩니다.</p>
+                               <p><strong>취소가능기한은 최초결제일로부터 1년입니다.</strong></p>
+                           </div>
+                       </div>
+                    </div>
+                    <div class="payView" id="pay2">
+                        <div class="referencePay">
+                            <div class="desc">
+                                <p>구매일 및 환율에 따라 차이가 있을 수 있으며, 해외카드는 카드사별 결제수수료로 인해 실제 청구금액과 최종 결제금액이 다소 상이할 수 있습니다.</p>
+                                <p>자세한 사항은 해당 카드사를 통해 확인하시기 바랍니다.</p>
+                                <p>환불 시 결제하신 카드로 자동 환불됩니다.</p>
+                                <p><strong>취소가능기한은 최초결제일로부터 1년입니다.</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payView" id="pay3">
+                        <div class="referencePay">
+                            <div class="desc">
+                                <p>매일 23:30~오전 01:30에는 시스템 점검으로 계좌이체 서비스가 잠시 중단 됩니다. <br>(이용 가능시간 : 매일 오전 01:30 ~ 23:30)</p>
+                                <p>공인인증서를 가지고 계신 고객만 서비스 이용이 가능합니다.</p>
+                                <p>전제 여정 취소는 180일 이내 가능하고, 부분 취소는 59일 이내 가능합니다. 가능 기간 이후의 환불은 고객 센터에 문의하시기 바랍니다.(<span class="red">고객센터 1111-0000</span>)</p>
+                                <p>여정 변경으로 인한 차액 지불은 국내 발행 신용카드로만 가능합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subtitleArea">
+                <h3 class="subtitle">간편결제</h3>
+            </div>
+            <div class="whiteBox">
+                <div class="payment">
+                    <div class="row mt0">
+                        <div class="label">결제 수단</div>
+                        <div class="sel">
+                            <div class="paySimpleMethod">
+                                <ul>
+                                    <li><a href="#" class="kakao"><span>KakaoPay</span></a></li>
+                                    <li><a href="#" class="payco"><span>PAYCO</span></a></li>
+                                    <li><a href="#" class="union"><span>UnionPay</span></a></li>
+                                    <li><a href="#" class="ali"><span>ALIPAY</span></a></li>
+                                    <li><a href="#" class="wechat" data-event="popup-open" data-target="#popWechat"><span>WeChatPay</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="referencePay">
+                        <div class="desc">
+                            <p>간편결제는 간편결제 제공회사의 정책상 결제 취소기간 내에만 자동취소 가능하며, 이후 예약취소 및 환불시, 신청사항에 대해 담당자 확인 후 처리됩니다. <br>여정 변경으로 인한 차액 지불은 국내 발행 신용카드로만 가능합니다.</p>
+                            <p>온라인 환불가능 기한 <br>페이코 : 365일 / 카카오페이 : 365일 / 알리페이: 365일 / 위챗페이 : 365일 / 유니온페이: 365일이내</p>
+                            <p>온라인 환불 가능 기한 초과시, 고객 센터에 문의하시기 바랍니다.(<span class="red">고객센터 1111-0000</span>)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="paySum"><em>총 결제금액</em><i>KRW</i><strong>76,000</strong></div>
+            
+            
+            <!-- 191008 추가 시작 -->
+            <h3 class="subtitle mt50">항공위험물(Dangerous Goods)안내</h3>
+            <p class="color6 lh22">국제민간항공기구 부속서18 및 항공법에 따라 폭발성, 독성, 부식성, 인화성 가스 혹은 증기를 방출할 가능성이 있어 사람이나 항공기에 해를 입힐 수 있는 물질 또는 물품을 의미합니다. 또한 위험물은 항공법에서 정한대로 위험물임을 신고하고 포장, 표기 및 그 밖에 엄격한 절차에 따라 운송이 되어야 하며, 위반시 2천만원 이하의 벌금 또는 과태료에 처할 수 있습니다.</p>            
+            <div class="cardBlue col3 dangerous">
+                <div class="card">
+                    <div class="in">
+                        <strong class="blue fz20">폭발물 <span>(Explosives)</span></strong>
+                        <ul>
+                            <li><img src="../../resources/images/pc/info_div3_img1.png" alt="탄약"><br>탄약<span>Ammunition</span></li>
+                            <li><img src="../../resources/images/pc/info_div3_img2.png" alt="폭죽"><br>폭죽<span>Fireworks</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="in">
+                        <strong class="blue fz20">가스류 <span>(Gases)</span></strong>
+                        <ul>
+                            <li><img src="../../resources/images/pc/info_div3_img5.png" alt="폭죽"><br>에어로졸<span>Aerosols</span></li>
+                            <li><img src="../../resources/images/pc/info_div3_img7.png" alt="부탄가스"><br>부탄가스<span>Butane Gas</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="in">
+                        <strong class="blue fz20">인화성 액체 <span>(Flammable Liquids)</span> </strong>
+                        <ul>
+                            <li><img src="../../resources/images/pc/info_div3_img11.png" alt="알콜"><br>알콜<span>Alcohol</span></li>
+                            <li><img src="../../resources/images/pc/info_div3_img14.png" alt="휘발유"><br>휘발유<span>Gasoline</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="in">
+                        <strong class="blue fz20">인화성 고체 <span>(Flammable Solids)</span></strong>
+                        <ul>
+                            <li><img src="../../resources/images/pc/info_div3_img16.png" alt="고체연료"><br>고체연료<span>Solid Fuel</span></li>
+                            <li><img src="../../resources/images/pc/info_div3_img17.png" alt="번개탄"><br>번개탄<span>lgnition Coal</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="in">
+                        <strong class="blue fz20">산화성 물질 <span>(Oxidizing Material)</span></strong>
+                        <ul>
+                            <li><img src="../../resources/images/pc/info_div3_img19.png" alt="표백제"><br>표백제<span>Bleaching Power</span></li>
+                            <li><img src="../../resources/images/pc/info_div3_img20.png" alt="락스"><br>락스<span>Crorox</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="in">
+                        <strong class="blue fz20">독성 및 전염성 물질 <span style="font-size: 0.7em">(Toxic And Infectious Items)</span></strong>
+                        <ul>
+                            <li><img src="../../resources/images/pc/info_div3_img22.png" alt="제초제"><br>제초제<span>Herbcide</span></li>
+                            <li><img src="../../resources/images/pc/info_div3_img23.png" alt="살충제"><br>살충제<span>Pesticide</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="in">
+                        <strong class="blue fz20">방사성 물질 <span>(Radioactive Materials)</span></strong>
+                        <ul>
+                            <li><span style="padding: 10px 0px"><img src="../../resources/images/pc/info_div3_img25.png" alt="방사성 동위원소"></span><br>방사성 동위원소<span>Radioisotope</span></li>
+                            <li><span style="padding: 10px 0px"><img src="../../resources/images/pc/info_div3_img26.png" alt="방사선 투과검사 장비"></span><br>방사선 투과검사 장비<span>Radiographic Test Equipment</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="in">
+                        <strong class="blue fz20">부식성 물질 <span>(Corrosive Materials)</span></strong>
+                        <ul>
+                            <li><span style="padding: 10px 0px"><img src="../../resources/images/pc/info_div3_img27.png" alt="빙초산"></span><br>빙초산<span>Glacial Acetic Acid </span></li>
+                            <li><span style="padding: 10px 0px"><img src="../../resources/images/pc/info_div3_img28.png" alt="습식 배터리"></span><br>습식 배터리<span>Wet Battery</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="in">
+                        <strong class="blue fz20">기타 위험성 물품 및 물질<br> <span style="font-size: 0.75em">(Miscellaneous Dangerous Substance &amp; Articlecle)</span></strong>
+                        <ul>
+                            <li><img src="../../resources/images/pc/info_div3_img31.png" alt="전자기기용 여분의 충전식 리튬이온전지"><br>전자기기용 여분의<br>충전식 리튬이온전지<span style="font-size: 0.75em">Spare Li-ion Batteries for <br>Electronic Devices(휴대만가능) </span></li>
+                            <li><img src="../../resources/images/pc/info_div3_img33.png" alt="전자담배"><br>전자담배<span>Elcetronic Cigarette<br>(휴대만 가능) </span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 191008 추가 끝 -->
+                
+            <h3 class="subtitle mt50">약관 동의</h3>
+            <p class="color6 lh22">항공권 발급 후에는 항공권 운임 규정과 여객 운송 약관에 따라 요청사항이 처리됩니다. <br>규정 및 약관 버튼을 클릭하여 세부내용 확인 후 아래 사항에 동의하셔야 결제를 할 수 있습니다.</p>
+            <div class="bottomAgree mt25">
+                <div>
+                    <input type="checkbox" class="large" id="agree1">
+                    <label for="agree1"><span></span><a href="#">항공권 운임규정</a>, <a href="#">국내 여객운송약관</a>, <a href="#">기내반입 금지물품</a> 등 <a href="#">도움이 필요한 승객</a> (유아 동반 고객, 임산부 고객, 휠체어가 필요한 고객 등) 서비스 안내 내용을 확인하였으며, 이에 동의합니다.</label>
+                </div>
+                <div class="mt10">
+                    <input type="checkbox" class="large" id="agree2">
+                    <label for="agree2"><span></span>사전 허가 받지 않은 <a href="#">위험물</a>은 안전상의 이유로 위탁 또는 기내 반입수하물로 지참할 수 없으며, 이에 동의합니다.</label>
+                </div>
+            </div>
+            
+            <div class="btns bottom">
+                <a href="#none" class="btn large">결제하기</a>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="inner">
+            <div class="logo"><span class="sr-only">FLY GANGWON LOGO</span></div>
+            <!--<div class="menu">
+            <ul>
+            <li><a href="#">홈페이지 이용약관</a></li>
+            <li><a href="#">국내 여객운송약관</a></li>
+            <li><a href="#">항공교통이용자 서비스 계획</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">항공교통이용자 피해구제계획</a></li>
+            </ul>
+            </div>-->
+            <div class="sns">
+                <ul>
+                    <li class="facebook"><a href=""><span class="sr-only">facebook</span></a></li>
+                    <li class="instagram"><a href=""><span class="sr-only">instagram</span></a></li>
+                    <li class="youtube"><a href=""><span class="sr-only">youtube</span></a></li>
+                </ul>
+            </div>
+            <div class="info">
+                <span>플라이강원 주식회사</span>
+                <span>대표이사 : 주원석</span>
+                <span>TEL: 02-6718-8230</span>
+                <span>사업자번호: 710-81-00367</span><br>
+                <span>본사 : 강원도 양양군 손양면 공항로 201, 1층</span>
+                <span>서울사무소 : 서울시 강남구 도산대로 456 청담백영빌딩 6층</span>
+            </div>
+            <div class="copyright">COPYRIGHT ⓒ 2018 FLY GANGWON ALL RIGHTS RESERVED.</div>            
+        </div>
+        <div class="gotop">
+            <a href="#"><span class="sr-only">맨 위로</span></a>
+        </div>
+    </div>
+</div>
+
+<!-- 출발지 선택 -->
+<div class="layer" id="lyFrom">
+    <div class="layer-wrap">
+        <div class="layer-head">
+            <h1>출발지 선택</h1>
+            <a href="#" class="close" data-event="layer-close"><span class="sr-only">레이어 닫기</span></a>
+        </div>
+        <div class="layer-body">
+            <div class="layer-content">
+                <div class="fromList">                                
+                    <div class="in">
+                        <div class="column">
+                            <h2>대한민국</h2>
+                            <ul>
+                                <li><a href="#">서울/인천(ICN)</a></li>
+                                <li class="active"><a href="#">서울/김포 (GMP)</a></li>
+                                <li><a href="#">울산 (USN)</a></li>
+                                <li><a href="#">광주 (KWJ)</a></li>
+                            </ul>
+                        </div>                                    
+                        <!-- 국제선 취항 준비  -->                      
+                        <div class="comingsoon">
+                            <p>국제선 취항 준비중입니다.</p>
+                            <img src="../../resources/images/pc/banner_comingsoon.png" alt="COMING SOON 보다 나은 서비스를 위해 최선을 다하겠습니다.">
+                        </div>
+                    </div>
+                    <div class="latelyFromTo">
+                        <h2>최근 검색 여정</h2>
+                        <ul>
+                            <li><a href="#">서울/김포(GMP) <i class="airplane"></i> 제주(CJU)</a> <button type="button"><span class="sr-only">여정 삭제</span></button></li>
+                            <li><a href="#">서울/김포(GMP) <i class="airplane"></i> 제주(CJU)</a> <button type="button"><span class="sr-only">여정 삭제</span></button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>                      
+        </div>
+    </div>
+</div>
+<!-- 도착지 선택 -->
+<div class="layer" id="lyTo">
+    <div class="layer-wrap">
+        <div class="layer-head">
+            <h1>도착지 선택</h1>
+            <a href="#" class="close" data-event="layer-close"><span class="sr-only">레이어 닫기</span></a>
+        </div>
+        <div class="layer-body">
+            <div class="layer-content">
+                <div class="fromList">                                
+                    <div class="in">
+                        <div class="column">
+                            <h2>대한민국</h2>
+                            <ul>
+                                <li><a href="#">서울/인천(ICN)</a></li>
+                                <li class="active"><a href="#">서울/김포 (GMP)</a></li>
+                                <li><a href="#">울산 (USN)</a></li>
+                                <li><a href="#">광주 (KWJ)</a></li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h2>동북 아시아</h2>
+                            <ul>
+                                <li><a href="">타이페이 (TPE)</a></li>
+                                <li><a href="">가오슝 (KHH)</a></li>
+                                <li><a href="">타이중 (RMQ)</a></li>
+                                <li><a href="">홍콩 (HKG)</a></li>
+                                <li class="disable"><a href="">블라디보스토크(VVO)</a></li>
+                                <li><a href="">도쿄 (NRT)</a></li>
+                                <li><a href="">오키나와(OKA)</a></li>
+                                <li><a href="">나고야 (NGO)</a></li>
+                                <li><a href="">상하이 (SHA)</a></li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h2>동남 아시아</h2>
+                            <ul>
+                                <li><a href="">방콕 (BKK)</a></li>
+                                <li><a href="">호치민 (SGN)</a></li>
+                                <li><a href="">하노이 (HAN)</a></li>
+                                <li><a href="">다낭 (DAD)</a></li>
+                                <li class="disable"><a href="">앙헬레스 (CRK)</a></li>
+                                <li class="disable"><a href="">코타키나발루 (BKI)</a></li>
+                                <li class="disable"><a href="">씨엠립 (REP)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="latelyFromTo">
+                        <h2>최근 검색 여정</h2>
+                        <ul>
+                            <li><a href="#">서울/김포(GMP) <i class="airplane"></i> 제주(CJU)</a> <button type="button"><span class="sr-only">여정 삭제</span></button></li>
+                            <li><a href="#">서울/김포(GMP) <i class="airplane"></i> 제주(CJU)</a> <button type="button"><span class="sr-only">여정 삭제</span></button></li>
+                        </ul>
+                    </div>
+                </div>       
+            </div>                 
+        </div>
+    </div>
+</div>
+<!-- 탑승일 선택 -->
+<div class="layer" id="lyFromDate">
+    <div class="layer-wrap">
+        <div class="layer-head">
+            <h1>탑승일 선택</h1>
+            <a href="#" class="close" data-event="layer-close"><span class="sr-only">레이어 닫기</span></a>
+            <button class="datepickerReset"><span>초기화</span></button>
+        </div>
+        <div class="layer-body">
+            <div class="layer-content">
+                <p class="clickDate">가는날을 선택하세요</p>
+                <div class="weekday">
+                    <ul>
+                        <li class="sunday">일</li>
+                        <li>월</li>
+                        <li>화</li>
+                        <li>수</li>
+                        <li>목</li>
+                        <li>금</li>
+                        <li>토</li>
+                    </ul>
+                </div>
+                <div class="datepickerArea">
+                    <!-- 가는날 td에 클래스 'startDay' -->
+                    <!-- 오는날 td에 클래스 'endDay' -->
+                    <!-- 가는날~오는날 선택 날짜 구간 td에 클래스 'ui-datepicker-day-range' 추가 -->
+                    <!-- 비활성화 날짜 td에 클래스 'ui-datepicker-day-disable' 추가 -->
+                    <div class="load"></div>                                    
+                </div> 
+            </div>            
+        </div>
+        <div class="layer-foot">
+            <div class="desc">
+                <p>가는 날 선택 후 오는 날을 선택해주세요. 당일 일정으로 날짜가 같은 경우 같은 날짜를 두 번 선택해주세요.</p>
+                <p>가는 날 다시 선택시 오는 날도 다시 입력하시기 바랍니다.</p>
+                <p>회색 날짜는 운항 스케줄이 없는 일자입니다.</p>
+            </div>
+            <a href="#" class="btn">선택완료</a>
+        </div>
+        <div class="noSchedule">
+            <div class="in">
+                <p>운항 스케줄이 없습니다</p>
+                <a href="javascript:void(0)" class="close"><span class="sr-only">레이어 닫기</span></a>
+            </div>
+        </div>
+    </div>
+</div>                  
+<!-- 탑승객 수 선택 -->
+<div class="layer" id="lyPassenger">
+    <div class="layer-wrap">
+        <div class="layer-head">
+            <h1>탑승객 수 선택</h1>
+            <p class="txt">국내선/국제선에 따라 소아/유아 기준이 다르니 여정을 먼저 선택해주세요.</p>
+            <a href="#" class="close" data-event="layer-close"><span class="sr-only">레이어 닫기</span></a>                            
+        </div>
+        <div class="layer-body">
+            <div class="layer-content">
+                <div class="passenger">
+                    <div class="in">
+                        <dl>
+                            <dt><em>성인</em> <span>만 12세 이상</span></dt> 
+                            <dd>
+                                <input type="text" class="input" readonly value="0">
+                                <button class="decrease" type="button"><span class="sr-only">성인 한명 줄이기</span></button>
+                                <button class="increase" type="button"><span class="sr-only">성인 한명 늘리기</span></button>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><em>소아</em> <span>만 2세~12세 미만</span></dt> 
+                            <dd>
+                                <input type="text" class="input" readonly value="0">
+                                <button class="decrease" type="button"><span class="sr-only">소아 한명 줄이기</span></button>
+                                <button class="increase" type="button"><span class="sr-only">소아 한명 늘리기</span></button>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><em>유아</em> <span>생후 7일 이상 ~ 만 24개월 미만</span></dt> 
+                            <dd>
+                                <input type="text" class="input" readonly value="0">
+                                <button class="decrease" type="button"><span class="sr-only">유아 한명 줄이기</span></button>
+                                <button class="increase" type="button"><span class="sr-only">유아 한명 늘리기</span></button>
+                            </dd>
+                        </dl>
+                    </div>                                    
+                </div>
+                <div class="calculatorArea">
+                    <a href="javascript:void(0)" class="calculatorBtn"><span>나이계산기</span></a>
+                    <div class="calculator">
+                        <p>출발일 <strong>2019 - 05 - 25 기준</strong>으로 <strong>소아</strong> 입니다.</p>
+                        <div>
+                            <select name="" id="" class="medium">
+                                <option value="">2010년</option>
+                            </select>
+                            <select name="" id="" class="medium">
+                                <option value="">12월</option>
+                            </select>
+                            <select name="" id="" class="medium">
+                                <option value="">31일</option>
+                            </select>
+                            <a href="" class="button">계산하기</a>
+                        </div>
+                    </div>
+                </div>    
+            </div>                      
+        </div>
+        <div class="layer-foot">
+            <div class="desc">
+                <p>탑승 수속 시 생년월일이 확인 가능한 서류를 반드시 지참하여 주시기 바랍니다.</p>
+                <p>유아는 좌석이 제공되지 않습니다. 좌석이 필요한 유아는 소아로 예약하시기 바라며, 소아운임이 적용됩니다.</p>
+                <p>몸을 가누지 못하는 유아는 좌석 점유가 불가할 수 있습니다. <br>이러한 경우 환불은 가능하지 않으며 유아용 카시트 신청을 원하는 고객은 예약센터 (0000-0000)로 출발 3일전까지 신청 바랍니다. <br>(제공 가능 여부는 상황에 따라 다를 수 있습니다)</p>
+            </div>
+            <a href="#" class="btn" id="lastBtn">선택완료</a>
+        </div>
+    </div>
+</div>
+<!-- 팝업 : 탑승객별 상세 운임 -->
+<div class="popup" id="popPassengers">
+    <div class="popup-wrap" style="width:1200px;"> <!-- default : 790 x 760 -->
+        <div class="popup-header">
+            <div class="inner">
+                <h1>탑승객별 상세 운임</h1>
+                <a href="javascript:void(0)" class="close" data-event="popup-close"><span class="sr-only">레이어 팝업 닫기</span></a>
+            </div>
+        </div>
+        <div class="popup-body">
+            <div class="inner">
+                <div class="tabText">
+                    <ul>
+                        <li class="on"><a href="#fare1">항공운임 상세내역</a></li> 
+                        <li><a href="#fare2">부가서비스 구매내역</a></li> 
+                    </ul>
+                </div>
+                <div class="align-right color9">통화 KRW</div>
+                <div class="tabView" id="fare1" style="display:block">
+                    <!-- 국내선 -->
+                    <table class="table table-col mt10">
+                        <caption>항공운임 상세내역</caption>
+                        <colgroup>
+                            <col>
+                            <col style="width:16%">
+                            <col style="width:16%">
+                            <col style="width:16%">
+                            <col style="width:16%">
+                            <col style="width:16%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="align-left">성명</th>
+                                <th scope="col">항공운임</th>
+                                <th scope="col">유류할증료</th>
+                                <th scope="col">기타 세금</th>
+                                <th scope="col">쿠폰할인</th>
+                                <th scope="col">합계</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6">
+                                    <div class="sum mt20 mb20">
+                                        <em>총 결제금액</em>
+                                        <i>KRW</i>
+                                        <strong>1,555,000</strong>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td class="align-left name" scope="row">
+                                    <span>성인 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>539,000</div>
+                                    <div>539,000</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>6,600</div>
+                                    <div>6,600</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>5,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-10,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div><b>109,000</b></div>
+                                    <div><b>-</b></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left name" scope="row">
+                                    <span>성인 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>539,000</div>
+                                    <div>539,000</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>6,600</div>
+                                    <div>6,600</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>5,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-10,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div><b>109,000</b></div>
+                                    <div><b>-</b></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left name" scope="row">
+                                    <span>유아 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div><b>-</b></div>
+                                    <div><b>-</b></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- 국내선 -->
+                    <table class="table table-col mt10">
+                        <caption>항공운임 상세내역</caption>
+                        <colgroup>
+                            <col>
+                            <col style="width:12%">
+                            <col style="width:12%">
+                            <col style="width:12%">
+                            <col style="width:12%">
+                            <col style="width:10%">
+                            <col style="width:10%">
+                            <col style="width:11%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="align-left">성명</th>
+                                <th scope="col">구분</th>
+                                <th scope="col">항공운임</th>
+                                <th scope="col">유류할증료</th>
+                                <th scope="col">공항시설사용료</th>
+                                <th scope="col">신분할인</th>
+                                <th scope="col">쿠폰할인</th>
+                                <th scope="col">합계</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td colspan="8">
+                                    <div class="sum mt20 mb20">
+                                        <em>총 결제금액</em>
+                                        <i>KRW</i>
+                                        <strong>1,555,000</strong>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td class="align-left name" scope="row">
+                                    <span>성인 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>539,000</div>
+                                    <div>539,000</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>6,600</div>
+                                    <div>6,600</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>4,000</div>    
+                                    <div>4,000</div>    
+                                </td>
+                                <td class="align-right noto">
+                                    <div>4,000</div>    
+                                    <div>4,000</div>    
+                                </td>
+                                <td class="align-right noto">
+                                    <div>5,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>5,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div><b>109,000</b></div>
+                                    <div><b>-</b></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left name" scope="row">
+                                    <span>성인 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>539,000</div>
+                                    <div>539,000</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>6,600</div>
+                                    <div>6,600</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>4,000</div>    
+                                    <div>4,000</div>    
+                                </td>
+                                <td class="align-right noto">
+                                    <div>4,000</div>    
+                                    <div>4,000</div>    
+                                </td>
+                                <td class="align-right noto">
+                                    <div>5,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>5,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div><b>109,000</b></div>
+                                    <div><b>-</b></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left name" scope="row">
+                                    <span>유아 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div><b>-</b></div>
+                                    <div><b>-</b></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="desc mt20">
+                        <p>항공운임, 유류할증료 및 공항시설사용료는 운임을 포함한 총액으로 구매 시점에 따라 변동될 수 있습니다.</p>
+                        <p>한국출발 세금(BP)에는 국제 여객항공이용료(인천/김포공항 17,000원), 출국납부금 10,000, 국제 빈곤퇴치기여금 1,000원이 포함되어 있습니다.</p>
+                    </div>
+                </div>
+                <div class="tabView" id="fare2" style="display:none">
+                    <table class="table table-col mt10">
+                        <caption>부가서비스 구매내역</caption>
+                        <colgroup>
+                            <col style="width:280px">
+                            <col>
+                            <col style="width:165px">
+                            <col style="width:165px">
+                            <col style="width:165px">
+                            <col style="width:165px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="align-left">성명</th>
+                                <th scope="col" class="align-left">구분</th>
+                                <th scope="col">수하물</th>
+                                <th scope="col">좌석</th>
+                                <th scope="col">기내식</th>
+                                <th scope="col">합계</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6">
+                                    <div class="sum mt20 mb20">
+                                        <em>총 결제금액</em>
+                                        <i>KRW</i>
+                                        <strong>1,555,000</strong>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td class="align-left name" scope="row">
+                                    <span>성인 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td class="align-left">
+                                    <div>여정 1</div>
+                                    <div>여정 2</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>6,600</div>
+                                    <div>6,600</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>4,000</div>    
+                                    <div>4,000</div>    
+                                </td>
+                                <td class="align-right noto">
+                                    <div>5,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div><b>109,000</b></div>
+                                    <div><b>-</b></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left name" scope="row">
+                                    <span>성인 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td class="align-left">
+                                    <div>여정 1</div>
+                                    <div>여정 2</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>6,600</div>
+                                    <div>6,600</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>4,000</div>    
+                                    <div>4,000</div>    
+                                </td>
+                                <td class="align-right noto">
+                                    <div>5,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div><b>109,000</b></div>
+                                    <div><b>-</b></div>
+                                </td>
+                            </tr>
+                            <tr class="infant">
+                                <td class="align-left name" scope="row">
+                                    <span>유아 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td colspan="4">
+                                    <p class="free">유아는 무료입니다</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="desc mt20">
+                        <p>항공운임, 유류할증료 및 공항시설사용료는 운임을 포함한 총액으로 구매 시점에 따라 변동될 수 있습니다.</p>
+                        <p>한국출발 세금(BP)에는 국제 여객항공이용료(인천/김포공항 17,000원), 출국납부금 10,000, 국제 빈곤퇴치기여금 1,000원이 포함되어 있습니다.</p>
+                    </div>
+                    <div class="btns bottom">
+                        <a href="javascript:void(0)" class="btn blue" data-event="popup-close">확인</a>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+<!-- 팝업 : 무이자할부 카드 안내 -->
+<div class="popup" id="cardInfo">
+    <div class="popup-wrap" style="width:1200px"> <!-- default : 790 x 760 -->
+        <div class="popup-header">
+            <div class="inner">
+                <h1>무이자할부 카드 안내</h1>
+                <a href="javascript:void(0)" class="close" data-event="popup-close"><span class="sr-only">레이어 팝업 닫기</span></a>
+            </div>
+        </div>
+        <div class="popup-body">
+            <div class="inner">
+                <h2 class="tit mb10">2019년 05월 무이자할부 이벤트</h2>
+                <table class="table table-col border">
+                    <colgroup>
+                        <col style="width:13%">
+                        <col style="width:13%">
+                        <col style="width:13%">
+                        <col style="width:13%">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="bdl0">카드사</th>
+                            <th>구분</th>
+                            <th>적용금액</th>
+                            <th>할부개월</th>
+                            <th>조건</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="bdl0">비씨카드</td>
+                            <td>일반</td>
+                            <td>5만원이상</td>
+                            <td>2~5개월</td>
+                            <td>무이자할부(법인/선불/체크/기프트카드 제외)~2019.06.30</td>
+                        </tr>
+                        <tr>
+                            <td class="bdl0">비씨카드</td>
+                            <td>일반</td>
+                            <td>5만원이상</td>
+                            <td>2~5개월</td>
+                            <td>무이자할부(법인/선불/체크/기프트카드 제외)~2019.06.30</td>
+                        </tr>
+                        <tr>
+                            <td class="bdl0">비씨카드</td>
+                            <td>일반</td>
+                            <td>5만원이상</td>
+                            <td>2~5개월</td>
+                            <td>무이자할부(법인/선불/체크/기프트카드 제외)~2019.06.30</td>
+                        </tr>
+                        <tr>
+                            <td class="bdl0">비씨카드</td>
+                            <td>일반</td>
+                            <td>5만원이상</td>
+                            <td>2~5개월</td>
+                            <td>무이자할부(법인/선불/체크/기프트카드 제외)~2019.06.30</td>
+                        </tr>
+                        <tr>
+                            <td class="bdl0">비씨카드</td>
+                            <td>일반</td>
+                            <td>5만원이상</td>
+                            <td>2~5개월</td>
+                            <td>무이자할부(법인/선불/체크/기프트카드 제외)~2019.06.30</td>
+                        </tr>
+                        <tr>
+                            <td class="bdl0">비씨카드</td>
+                            <td>일반</td>
+                            <td>5만원이상</td>
+                            <td>2~5개월</td>
+                            <td>무이자할부(법인/선불/체크/기프트카드 제외)~2019.06.30</td>
+                        </tr>
+                        <tr>
+                            <td class="bdl0">비씨카드</td>
+                            <td>일반</td>
+                            <td>5만원이상</td>
+                            <td>2~5개월</td>
+                            <td>무이자할부(법인/선불/체크/기프트카드 제외)~2019.06.30</td>
+                        </tr>
+                        <tr>
+                            <td class="bdl0">비씨카드</td>
+                            <td>일반</td>
+                            <td>5만원이상</td>
+                            <td>2~5개월</td>
+                            <td>무이자할부(법인/선불/체크/기프트카드 제외)~2019.06.30</td>
+                        </tr>
+                        <tr>
+                            <td class="bdl0">비씨카드</td>
+                            <td>일반</td>
+                            <td>5만원이상</td>
+                            <td>2~5개월</td>
+                            <td>무이자할부(법인/선불/체크/기프트카드 제외)~2019.06.30</td>
+                        </tr>
+                        <tr>
+                            <td class="bdl0">비씨카드</td>
+                            <td>일반</td>
+                            <td>5만원이상</td>
+                            <td>2~5개월</td>
+                            <td>무이자할부(법인/선불/체크/기프트카드 제외)~2019.06.30</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btns bottom">
+                    <a href="javascript:void(0)" class="btn blue" data-event="popup-close">확인</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 팝업 : WeChatPay 결제 안내 -->
+<div class="popup" id="popWechat">
+    <div class="popup-wrap" style="height:400px"> <!-- default : 790 x 760 -->
+        <div class="popup-header">
+            <div class="inner">
+                <h1>위쳇페이 결제 안내</h1>
+                <a href="javascript:void(0)" class="close" data-event="popup-close"><span class="sr-only">레이어 팝업 닫기</span></a>
+            </div>
+        </div>
+        <div class="popup-body">
+            <div class="inner">                
+                <div class="desc large">
+                    <p>한국 국내에서의 위쳇페이 결제는 중국인신분증이 등록된 계정에 한해 결제가 가능합니다.</p>
+                    <p>위챗페이로 결제하기 위해서는 위챗앱이 설치되어 있어야 하고, 본인계정의 카드와 연동이 되어있어야합니다.</p>
+                    <p>당일결제 후 당일환불 요청 시 즉시입금 및 취소처리가 불가할 수 있습니다.</p>
+                    <p>위챗페이로 구매한 항공원은 홈페이지에서 여정 변경이 불가능하므로 환불 후 재구매 하시기 바랍니다.</p>
+                    <p>환불 후 재구매시 마감된 좌석 운임 및 클래스에 대해 본 항공사는 책임을 지지 않습니다.</p>
+                </div>
+                <div class="btns bottom">
+                    <a href="javascript:void(0)" class="btn" data-event="popup-close">확인</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html;charset=euc-kr" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>플라이강원 ADMIN</title>
+<link type="text/css" rel="stylesheet" href="../resources/css/reset.css">
+<link type="text/css" rel="stylesheet" href="../resources/css/common.css">
+<link type="text/css" rel="stylesheet" href="../resources/css/jquery-ui.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../resources/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../resources/js/jquery-ui.js"></script>
+<script type="text/javascript" src="../resources/js/ui.js"></script>
+</head>
+
+<body>
+<div id="wrap">
+    <!-- 상단 시작 -->
+    <div id="header">
+        <div class="headerArea">
+            <div class="inner">
+                <h1><a href=""><span class="sr-only">FLY GANGWON</span></a></h1>
+                <div class="my">
+                    <span><strong>홍길동</strong>님 환영합니다.</span>
+                    <a href="">NEW PW</a>
+                    <a href="">LOG OUT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //상단 끝 -->
+    <div id="container">
+        <!-- left 전체 메뉴 -->
+        <div id="left">
+            <ul class="depth1">
+                <li class="on"><a href="">Menu1</a>
+                    <ul class="depth2">
+                        <li><a href="">2depth</a>
+                            <ul class="depth3">
+                                <li><a href="">3depth</a></li>
+                                <li><a href="">3depthl</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">2depth</a>
+                            <ul class="depth3">
+                                <li><a href="">3depth</a></li>
+                                <li><a href="">3depthl</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">2depth</a>
+                            <ul class="depth3">
+                                <li><a href="">3depth</a></li>
+                                <li><a href="">3depth</a></li>
+                                <li><a href="">3depth</a></li>
+                                <li><a href="">3depth</a></li>
+                                <li><a href="">3depth</a></li>
+                                <li><a href="">3depth</a></li>
+                            </ul>
+                        </li>
+                        <li class="on"><a href="">2depth</a>
+                            <ul class="depth3">
+                                <li><a href="">3depth</a></li>
+                                <li class="on"><a href="">3depth</a></li>
+                                <li><a href="">3depth</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="">Menu2</a>
+                    <ul class="depth2">
+                        <li><a href="">wwwww eeee rrrrr eeee</a></li>
+                        <li><a href="">BBBB bBBB bBB</a></li>
+                        <li><a href="">CCC cCCCCCCCC cCC</a></li>
+                        <li><a href="">DDDDDDD</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Menu3</a>
+                    <ul class="depth2">
+                        <li><a href="">ccccccc</a></li>
+                        <li><a href="">BBBB bBBB bBB</a></li>
+                        <li><a href="">CCC cCCCCCCCC cCC</a></li>
+                        <li><a href="">DDDDDDD</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Menu4</a>
+                    <ul class="depth2">
+                        <li><a href="">aaaa vvvv</a></li>
+                        <li><a href="">BBBB bBBB bBB</a></li>
+                        <li><a href="">CCC cCCCCCCCC cCC</a></li>
+                        <li><a href="">DDDDDDD</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Menu5</a>
+                    <ul class="depth2">
+                        <li><a href="">aaaaaaaaa</a></li>
+                        <li><a href="">BBBB bBBB bBB</a></li>
+                        <li><a href="">CCC cCCCCCCCC cCC</a></li>
+                        <li><a href="">DDDDDDD</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- //left 전체 메뉴 -->
+        <div id="content">
+            <!-- 타이틀 -->
+            <div id="title"><h2>Incoming Invoice</h2></div>
+            <!-- //타이틀 -->
+            <!-- 현재 위치 -->
+            <div id="location">
+                <span class="home">home</span><span>Menu1</span><strong>Incoming Invoice</strong>
+            </div>
+            <!-- //현재 위치 -->  
+            <form id="form1" runat="server">
+
+                <!-- Hidden변수 -->
+                <asp:HiddenField ID="hidMODE"           runat="server" />
+                <asp:HiddenField ID="hidSEQ"            runat="server" />
+                <asp:HiddenField ID="hidAccountMonth"   runat="server" />
+                <asp:HiddenField ID="hidBillingMonth"   runat="server" />
+                <asp:HiddenField ID="hidBillingPeriod"  runat="server" />
+                <asp:HiddenField ID="hidCarrier"        runat="server" />
+                <asp:HiddenField ID="hidInvoiceNo"      runat="server" />
+                <asp:HiddenField ID="hidBillingGross"   runat="server" />
+                <asp:HiddenField ID="hidBillingVAT"     runat="server" />
+                <asp:HiddenField ID="hidBillingISC"     runat="server" />
+                <asp:HiddenField ID="hidBillingISCVAT"  runat="server" />
+                <asp:HiddenField ID="hidBillingTAX"     runat="server" />
+                <asp:HiddenField ID="hidBillingNET"     runat="server" />
+                <asp:HiddenField ID="hidCouponQty"      runat="server" />
+                <asp:HiddenField ID="hidConfirm"        runat="server" />
+                <asp:HiddenField ID="hidCloseFlag"      runat="server" />
+                <asp:HiddenField ID="hidDomFlag"        runat="server" />
+                <!-- Hidden변수 -->
+
+                <div class="card"><!-- 흰색 바탕 -->
+                    <!-- 검색 시작  -->
+                    <table class="tblInquery">
+                        <colgroup>
+                            <col width="11%" />
+                            <col width="7%" />
+                            <col width="10%" />
+                            <col width="7%" />
+                            <col width="10%" />
+                            <col width="5%" />
+                            <col width="7%" />
+                            <col width="5%" />
+                            <col width="8%" />
+                            <col width="10%" />
+                            <col width="10%" />
+                            <col />
+                        </colgroup>
+                        <tr>
+                            <th>Account Month </th>
+                            <td>
+                                <input type="text" ID="txtAccountMonthS" runat="server" MaxLength="7">
+                            </td>
+                            <th>Billing Month </th>
+                            <td>
+                                <input type="text" ID="txtBillMonthS" runat="server" MaxLength="7">
+                            </td>
+                            <th>Billing Period </th>
+                            <td>
+                                <input type="text" ID="txtBillPeriodS" runat="server" MaxLength="1">
+                            </td>  
+                            <th>Carrier </th>
+                            <td>
+                                <input type="text" ID="txtCarrierS" runat="server" MaxLength="3">
+                            </td> 
+                            <th>Confirm </th>
+                            <td>
+                                <select ID="ddlConfirmFlagS" runat="server" class="ddl">
+                                    <option Value="">ALL</option>
+                                    <option Value="G">Good</option>
+                                    <option Value="E">Error</option>
+                                </select>
+                            </td>
+                            <th>Dom/Int Flag </th>
+                            <td>
+                                <select ID="ddlDomFlagS" runat="server" class="ddl">
+                                    <option Value="">ALL</option>
+                                    <option Value="D">Dom</option>
+                                    <option Value="I">Int</option>
+                                </select>
+                            </td> 
+                        </tr>
+                    </table>
+                    <div class="btns" id="tdButton" runat="server">
+                        <asp:LinkButton ID="ibtnInquiry" class="btn blue" runat="server" OnClick="ibtnInquiry_Click" >Inquiry</asp:LinkButton>
+                        <asp:LinkButton ID="ibtnClear" class="btn blue" runat="server" OnClick="ibtnClear_Click" >Clear</asp:LinkButton>
+                        <asp:LinkButton ID="ibtnExcel" class="btn gray" runat="server" OnClick="ibtnExcel_Click" >Excel</asp:LinkButton>
+                    </div>
+                    <!-- 검색 끝 -->
+                </div>
+                <div class="card"><!-- 흰색 바탕 -->
+                    <!-- 입력 테이블 시작  -->
+                    <table class="tblRow">
+                        <tr>
+                            <th>Account Month </th>
+                            <td>
+                                <input type="text" ID="txtAccountMonth" runat="server" MaxLength="7">
+                            </td>
+                            <th>Billing Month </th>
+                            <td>
+                                <input type="text" ID="txtBillMonth" runat="server" MaxLength="7">
+                            </td>
+                            <th>Billing Period </th>
+                            <td>
+                                <input type="text" ID="txtBillPeriod" runat="server" MaxLength="1">
+                            </td>  
+                            <th>Carrier </th>
+                            <td>
+                                <input type="text" ID="txtCarrier" runat="server" MaxLength="3">
+                            </td> 
+                        </tr>
+                        <tr>
+                            <th>Invoice Key</th>
+                            <td>
+                                <input type="text" ID="txtInvoiceNo" runat="server" MaxLength="6">  
+                            </td>
+                            <th>Currency</th>
+                            <td>
+                                <input type="text" ID="txtBillingCY" runat="server" MaxLength="3">
+                            </td>
+                            <th>ROE</th>
+                            <td>
+                                <input type="text" ID="txtCurrencyRate" runat="server" MaxLength="18">
+                            </td>
+                            <th>Gross</th>
+                            <td>
+                                <input type="text" ID="txtBillingGross" runat="server" MaxLength="18">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>ISC Amount</th>
+                            <td>
+                                <input type="text" ID="txtBillingISC" runat="server" MaxLength="18">
+                            </td>
+                            <th>TAX</th>
+                            <td>
+                                <input type="text" ID="txtBillingTAX" runat="server" MaxLength="18">
+                            </td>
+                            <th>NET</th>
+                            <td>
+                                <input type="text" ID="txtBillingNET" runat="server" MaxLength="18">
+                            </td>
+                            <th>Coupon Qty</th>
+                            <td>
+                                <input type="text" ID="txtCouponQty" runat="server" MaxLength="3">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Dom/Int</th>
+                            <td>
+                                <select ID="ddlDomFlag" runat="server" class="ddl">
+                                    <option Value=""></option>
+                                    <option Value="D">Dom</option>
+                                    <option Value="I">Int</option>
+                                </select>
+                            </td>
+                            <th></th>
+                            <td></td>
+                            <th></th>
+                            <td></td>
+                            <th></th>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <div class="btns" id="tdButton1" runat="server">
+                        <asp:LinkButton ID="ibtnInsert" class="btn white" runat="server" OnClick="ibtnInsert_Click" >Insert</asp:LinkButton>
+                        <asp:LinkButton ID="ibtnReplace" class="btn white" runat="server" OnClick="ibtnReplace_Click" >Replace</asp:LinkButton>
+                        <asp:LinkButton ID="ibtnDelete" class="btn white" runat="server" OnClick="ibtnDelete_Click" >Delete</asp:LinkButton>
+                        <asp:LinkButton ID="ibtnConfirm" class="btn white" runat="server" OnClick="ibtnConfirm_Click" >Confirm</asp:LinkButton>
+                        <asp:LinkButton ID="ibtnUndoCNF" class="btn white" runat="server" OnClick="ibtnUndoCNF_Click" >Undo CNF</asp:LinkButton>
+                    </div>
+                    <!-- 입력 테이블 끝 -->
+                </div>
+                <div class="card"><!-- 흰색 바탕 -->
+                    <!-- 조회 결과 -->
+                    <div style="height:330px; overflow-x:auto; overflow-y:auto;"> 
+                        <!-- 화면 로드시 헤더만 보이도록 테이블 넣기--> 
+                        <table id="tbHeader" runat="server" class="tblCol cellFocus" style="width:1600px"> <!-- 테이블 default width : 100% 가로스크롤 필요시 px 지정-->
+                            <tr>
+                                <th >No</th>
+                                <th >Carrier</th>
+                                <th >Account Month</th>		                            
+                                <th >Billing Month</th>
+                                <th >Billing Period</th>
+                                <th >Invoice Key</th>
+                                <th >Link</th>
+                                <th >Currency</th>
+                                <th >Confirm</th>
+                                <th >NET</th>
+                                <th >Audit</th>
+                                <th >Dom/Int</th>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>asdfg</td>
+                                <td>123</td>
+                                <td>123</td>
+                                <td>1234556</td>
+                                <td>123456</td>
+                                <td>1234</td>
+                                <td>aaaaaa</td>
+                                <td>bb bb</td>
+                                <td>ddddd</td>
+                                <td>cccccc</td>
+                                <td>dddddddd</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>asdfg</td>
+                                <td>123</td>
+                                <td>123</td>
+                                <td>1234556</td>
+                                <td>123456</td>
+                                <td>1234</td>
+                                <td>aaaaaa</td>
+                                <td>bb bb</td>
+                                <td>ddddd</td>
+                                <td>cccccc</td>
+                                <td>dddddddd</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>asdfg</td>
+                                <td>123</td>
+                                <td>123</td>
+                                <td>1234556</td>
+                                <td>123456</td>
+                                <td>1234</td>
+                                <td>aaaaaa</td>
+                                <td>bb bb</td>
+                                <td>ddddd</td>
+                                <td>cccccc</td>
+                                <td>dddddddd</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>asdfg</td>
+                                <td>123</td>
+                                <td>123</td>
+                                <td>1234556</td>
+                                <td>123456</td>
+                                <td>1234</td>
+                                <td>aaaaaa</td>
+                                <td>bb bb</td>
+                                <td>ddddd</td>
+                                <td>cccccc</td>
+                                <td>dddddddd</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>asdfg</td>
+                                <td>123</td>
+                                <td>123</td>
+                                <td>1234556</td>
+                                <td>123456</td>
+                                <td>1234</td>
+                                <td>aaaaaa</td>
+                                <td>bb bb</td>
+                                <td>ddddd</td>
+                                <td>cccccc</td>
+                                <td>dddddddd</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>asdfg</td>
+                                <td>123</td>
+                                <td>123</td>
+                                <td>1234556</td>
+                                <td>123456</td>
+                                <td>1234</td>
+                                <td>aaaaaa</td>
+                                <td>bb bb</td>
+                                <td>ddddd</td>
+                                <td>cccccc</td>
+                                <td>dddddddd</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>asdfg</td>
+                                <td>123</td>
+                                <td>123</td>
+                                <td>1234556</td>
+                                <td>123456</td>
+                                <td>1234</td>
+                                <td>aaaaaa</td>
+                                <td>bb bb</td>
+                                <td>ddddd</td>
+                                <td>cccccc</td>
+                                <td>dddddddd</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>asdfg</td>
+                                <td>123</td>
+                                <td>123</td>
+                                <td>1234556</td>
+                                <td>123456</td>
+                                <td>1234</td>
+                                <td>aaaaaa</td>
+                                <td>bb bb</td>
+                                <td>ddddd</td>
+                                <td>cccccc</td>
+                                <td>dddddddd</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>asdfg</td>
+                                <td>123</td>
+                                <td>123</td>
+                                <td>1234556</td>
+                                <td>123456</td>
+                                <td>1234</td>
+                                <td>aaaaaa</td>
+                                <td>bb bb</td>
+                                <td>ddddd</td>
+                                <td>cccccc</td>
+                                <td>dddddddd</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>asdfg</td>
+                                <td>123</td>
+                                <td>123</td>
+                                <td>1234556</td>
+                                <td>123456</td>
+                                <td>1234</td>
+                                <td>aaaaaa</td>
+                                <td>bb bb</td>
+                                <td>ddddd</td>
+                                <td>cccccc</td>
+                                <td>dddddddd</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>asdfg</td>
+                                <td>123</td>
+                                <td>123</td>
+                                <td>1234556</td>
+                                <td>123456</td>
+                                <td>1234</td>
+                                <td>aaaaaa</td>
+                                <td>bb bb</td>
+                                <td>ddddd</td>
+                                <td>cccccc</td>
+                                <td>dddddddd</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>asdfg</td>
+                                <td>123</td>
+                                <td>123</td>
+                                <td>1234556</td>
+                                <td>123456</td>
+                                <td>1234</td>
+                                <td>aaaaaa</td>
+                                <td>bb bb</td>
+                                <td>ddddd</td>
+                                <td>cccccc</td>
+                                <td>dddddddd</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>asdfg</td>
+                                <td>123</td>
+                                <td>123</td>
+                                <td>1234556</td>
+                                <td>123456</td>
+                                <td>1234</td>
+                                <td>aaaaaa</td>
+                                <td>bb bb</td>
+                                <td>ddddd</td>
+                                <td>cccccc</td>
+                                <td>dddddddd</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>asdfg</td>
+                                <td>123</td>
+                                <td>123</td>
+                                <td>1234556</td>
+                                <td>123456</td>
+                                <td>1234</td>
+                                <td>aaaaaa</td>
+                                <td>bb bb</td>
+                                <td>ddddd</td>
+                                <td>cccccc</td>
+                                <td>dddddddd</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>asdfg</td>
+                                <td>123</td>
+                                <td>123</td>
+                                <td>1234556</td>
+                                <td>123456</td>
+                                <td>1234</td>
+                                <td>aaaaaa</td>
+                                <td>bb bb</td>
+                                <td>ddddd</td>
+                                <td>cccccc</td>
+                                <td>dddddddd</td>
+                            </tr>
+                        </table>                                     
+                        <!-- GridView -->
+                        <asp:GridView id="gvList" runat="server" CssClass="tblCol" AutoGenerateColumns="False" OnRowDataBound="gvList_RowDataBound" > 
+                            <HeaderStyle class="header" />
+                            <RowStyle class = "hand" /> 
+                            <Columns>
+
+                                <asp:BoundField DataField="SEQ"                 HeaderText="Seq"                HeaderStyle-class="td05" ItemStyle-class="td07"/>
+                                <asp:BoundField DataField="Carrier"             HeaderText="Carrier"            HeaderStyle-class="td05" ItemStyle-class="td07"/>
+                                <asp:BoundField DataField="AccountMonth"        HeaderText="Account Month"      HeaderStyle-class="td05" ItemStyle-class="td07"/>
+                                <asp:BoundField DataField="BillingMonth"        HeaderText="Billing Month"      HeaderStyle-class="td05" ItemStyle-class="td07"/>
+                                <asp:BoundField DataField="BillingPeriod"       HeaderText="Billing Period"     HeaderStyle-class="td05" ItemStyle-class="td07"/>                                                
+                                <asp:BoundField DataField="InvoiceNo"           HeaderText="Invoice Key"        HeaderStyle-class="td05" ItemStyle-class="td07"/>
+
+                                <asp:TemplateField HeaderText="Link" HeaderStyle-class="td05"  ItemStyle-class="td07" >
+                                    <ItemTemplate>
+                                        <asp:Image ImageUrl="../Common/images/ibtn_bat.gif"  runat="server" ID="ibtnAdd" />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:BoundField DataField="BillingCY"           HeaderText="Currency"       HeaderStyle-class="td05" ItemStyle-class="td07"/>
+                                <asp:BoundField DataField="CurrencyRate"        HeaderStyle-class="css_hidden" ItemStyle-class="css_hidden"/>
+                                <asp:BoundField DataField="BillingGross"        HeaderStyle-class="css_hidden" ItemStyle-class="css_hidden"/>
+                                <asp:BoundField DataField="BillingVAT"          HeaderStyle-class="css_hidden" ItemStyle-class="css_hidden"/>
+                                <asp:BoundField DataField="BillingISC"          HeaderStyle-class="css_hidden" ItemStyle-class="css_hidden"/>
+                                <asp:BoundField DataField="BillingISCVAT"       HeaderStyle-class="css_hidden" ItemStyle-class="css_hidden"/>
+                                <asp:BoundField DataField="BillingTAX"          HeaderStyle-class="css_hidden" ItemStyle-class="css_hidden"/>
+                                <asp:BoundField DataField="BillingNET"          HeaderText="NET"            HeaderStyle-class="td05" ItemStyle-class="td08"/>
+                                <asp:BoundField DataField="CouponQty"           HeaderStyle-class="css_hidden" ItemStyle-class="css_hidden"/>
+
+                                <asp:BoundField DataField="Confirm"             HeaderText="Confirm"        HeaderStyle-class="td05" ItemStyle-class="td07"/>                                          
+                                <asp:BoundField DataField="Audit"               HeaderText="Audit"          HeaderStyle-class="td05" ItemStyle-class="td07"/> 
+                                <asp:BoundField DataField="CloseFlag"           HeaderStyle-class="css_hidden" ItemStyle-class="css_hidden"/>
+                                <asp:BoundField DataField="DomFlag"             HeaderText="Dom/Int"        HeaderStyle-class="td05" ItemStyle-class="td07"/> 
+
+                            </Columns>
+                        </asp:GridView>
+                        <!-- GridView -->
+                    </div>
+                    <!-- 조회 결과 끝 -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

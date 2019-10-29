@@ -1,0 +1,74 @@
+
+<!DOCTYPE html><html lang="ko" class="no-js suit-classic lang-ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="content-language" content="kr" />
+        <meta http-equiv="imagetoolbar" content="no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="title" content="FLY GANGWON site Renewal Proposal " />
+        <meta name="description" content="FLY GANGWON site Renewal Proposal " />
+        <meta name="copyright" content="FLY GANGWON site Renewal Proposal " />
+        <meta property="og:title" content="FLY GANGWON site Renewal Proposal " />
+        <title>FLY GANGWON Proposal</title>
+        <link rel="publisher" href="http://v-w.co.kr" />
+        <link rel="stylesheet" href="../resources/css/style.css" />
+        <script src="../resources/js/jquery-1.11.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#inner > div > a').click(function(){
+                    if($(this).parent().hasClass('last')){
+                        console.log('1');
+                        $(this).parent('div').hide();
+                        $('.first').show();
+                    }
+                    else{
+                        $(this).parent('div').hide();
+                        $(this).parent('div').next('div').show();
+                    }                    
+                });
+
+                $('.home').click(function(){
+                    $('#inner > div').hide();
+                    $('.first').show();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container"><!-- container -->           
+
+            <div id="wrapper" class="nano-content"><!-- wrapper -->
+
+                <div id="innerWrapper"><!-- innerWrapper -->
+
+                    <div id="content"><!-- content -->
+
+                        <div id="inner" class="mobile"><!-- inner -->
+
+                            <div class="first">
+                                <a href="javascript:void(0)"><img src="../resources/images/C/MO_01.jpg" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="javascript:void(0)"><img src="../resources/images/C/MO_02.jpg" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="javascript:void(0)"><img src="../resources/images/C/MO_03.jpg" alt=""></a>
+                            </div>
+                            <div class="last">
+                                <a href="javascript:void(0)"><img src="../resources/images/C/MO_04.jpg" alt=""></a>
+                            </div>
+
+                            <a href="javascript:void(0)" class="home"><span class="sr-only">첫번째 이미지로</span></a>
+
+                        </div><!-- // inner -->
+
+                    </div><!-- // content -->
+
+                </div><!-- // innerWrapper -->
+
+            </div><!-- // wrapper -->
+        </div>
+    </body>
+</html>

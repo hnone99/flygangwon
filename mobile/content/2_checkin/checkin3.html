@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>플라이강원</title>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/reset.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/calendar.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/common.css">
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/modernizr-custom.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/calendar.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/swiper.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/ui.js"></script>
+    <script>
+        $(document).ready(function(){
+        });
+    </script>
+</head>
+
+<body>
+<div id="wrap">
+    <div id="header">
+        <div id="title">
+            <h2><span>체크인</span></h2>
+        </div>
+        <div id="back"><a href="#none"><span class="sr-only">이전 페이지로 이동</span></a></div>
+        <div id="allmenu"><a href="#"><span class="sr-only">전체메뉴</span><i></i></a></div>            
+        <div class="allmenuWrap">
+            <div class="toparea">
+                <div class="language">
+                    <select name="" id="">
+                        <option value="">한국어</option>                        
+                        <option value="">영어</option>                        
+                    </select>
+                </div>
+                <div class="welcome">
+                    <div class="logBtn">
+                        <p>로그인하시면 다양한 정보를 확인하실 수 있습니다.</p>
+                        <!--<p><strong>홍길동님,</strong> 즐거운 여행되세요!</p>-->
+                        <a href="#none" class="btn">로그인</a>
+                        <!--<a href="#none" class="btn">로그아웃</a>-->
+                    </div>
+                </div>
+                <div class="quick">
+                    <ul>
+                        <li class="q1"><a href="#none">예약조회</a></li>
+                        <li class="q2"><a href="#none">체크인</a></li>
+                        <li class="q3"><a href="#none">사전좌석구매</a></li>
+                        <li class="q4"><a href="#none">초과 수하물</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="dep1">
+                <li class="active"><div><a href="#">예매</a></div> <!-- 활성화 active -->
+                    <ul class="dep2">
+                        <li class="active"><a href="#none">항공권 예매</a></li> <!-- 활성화 active -->
+                        <li><a href="#none">운항일정 조회</a></li>
+                        <li><a href="#none">운임안내</a>
+                            <ul class="dep3">
+                                <li><a href="#none">국내선 운임안내</a></li>
+                                <li><a href="#none">국제선 운임안내</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><div><a href="#">체크인</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">체크인</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">서비스 안내</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">항공권 안내</a></li>
+                        <li><a href="#none">공항서비스 안내</a></li>
+                        <li><a href="#none">수하물 안내</a></li>
+                        <li><a href="#none">기내서비스 안내</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">이벤트/뉴스</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">이벤트</a>
+                            <ul class="dep3">
+                                <li><a href="#none">진행중인 이벤트</a></li>
+                                <li><a href="#none">지난 이벤트</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">뉴스</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">마이페이지</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">나의 예약내역</a></li>
+                        <li><a href="#none">나의 정보</a></li>
+                        <li><a href="#none">나의 문의내역</a></li>
+                        <li><a href="#none">나의 쿠폰</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">유틸리티</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">고객센터</a>
+                            <ul class="dep3">
+                                <li><a href="#non">자주하는 질문</a></li>
+                                <li><a href="#non">문의하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">회사소개</a>
+                            <ul class="dep3">
+                                <li><a href="#non">회사 현황</a></li>
+                                <li><a href="#non">CEO 인사말</a></li>
+                                <li><a href="#non">사업 비전</a></li>
+                                <li><a href="#non">CI 소개</a></li>
+                                <li><a href="#non">보도자료</a></li>
+                                <li><a href="#non">오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">이용약관</a>
+                            <ul class="dep3">
+                                <li><a href="#non">이용약관</a></li>
+                                <li><a href="#non">여객운송약관</a></li>
+                                <li><a href="#non">항공교통이용자 서비스 계획</a></li>
+                                <li><a href="#non">피해구제 계획</a></li>
+                                <li><a href="#non">개인정보처리방침</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>        
+    </div>
+    <div id="container">
+        <div id="content">
+            <div class="step">
+                <ol>
+                    <li>1</li>
+                    <li>2</li>
+                    <li class="on">STEP 3. 여권 정보 입력</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ol>
+            </div>
+            <div class="section pb30 mt25">
+                <div class="desc">
+                    <p>원활한 탑승수속 진행을 위해 모든 정보를 입력하셔야 합니다. 아래의 빈칸을 채워 주시고 “다음”을 선택해 주시기 바랍니다.</p>
+                    <p>입력하신 정보는 출/도착지 이민국에 전송되며 해당 정보는 입국심사에 영향을 미칠 수 있으므로 정확한 정보를 입력해 주시기 바랍니다.</p>
+                    <p>입력된 정보의 수정이 필요하신 고객님께서는 공항에서 직원의 안내를 받으시기 바랍니다.</p>
+                </div>
+                <div class="panel-wrap">
+                    <div class="panel-container">
+                        <div class="panel">
+                            <h3>KANG JUNWON / 성인</h3>
+                            <div class="inputArea">
+                                <div class="row">                            
+                                    <div class="col-xs-12">
+                                        <div class="label"><label for="ipBirthday">생년월일</label></div>
+                                        <input type="text" value="05.05.1980" id="ipBirthday" readonly>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="label"><label for="ipCountry1_1">국적</label></div>
+                                        <input type="text" value="" id="ipCountry1_1" placeholder="국적 선택" readonly data-event="popup-open" data-target="#nationalPop">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="label"><label for="ipCountry1_2">발행국가</label></div>
+                                        <input type="text" value="" id="ipCountry1_2" placeholder="발행국가 선택" readonly data-event="popup-open" data-target="#nationalPop">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="label"><label for="ipPassport">여권번호</label></div>
+                                        <input type="number" value="" id="ipPassport" placeholder="예) M12345678">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="label"><label for="ipPassportDate">여권만료일</label></div>
+                                        <input type="text" value="" id="ipPassportDate" placeholder="DD.MM.YY">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-container">
+                        <div class="panel">
+                            <h3>KANG JUNWON / 소아</h3>
+                            <div class="inputArea">
+                                <div class="row">                            
+                                    <div class="col-xs-12">
+                                        <div class="label"><label for="ipBirthday2">생년월일</label></div>
+                                        <input type="text" value="05.05.1980" id="ipBirthday2" readonly>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="label"><label for="ipCountry2_1">국적</label></div>
+                                        <input type="text" value="" id="ipCountry2_1" placeholder="국적 선택" readonly data-event="popup-open" data-target="#nationalPop">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="label"><label for="ipCountry2_2">발행국가</label></div>
+                                        <input type="text" value="" id="ipCountry2_2" placeholder="발행국가 선택" readonly data-event="popup-open" data-target="#nationalPop">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="label"><label for="ipPassport2">여권번호</label></div>
+                                        <input type="number" value="" id="ipPassport2" placeholder="예) M12345678">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="label"><label for="ipPassportDate2">여권만료일</label></div>
+                                        <input type="text" value="" id="ipPassportDate2" placeholder="DD.MM.YY">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reference">
+                    <strong class="subtitle color3">여권정보 수집 동의</strong>
+                    <p class="color6 mt5">항공권 발급 후에는 항공권 운임 규정과 여객 운송 약관에 따라 요청사항이 처리됩니다. <br>규정 및 약관 버튼을 클릭하여 세부내용 확인 후 아래 사항에 동의하셔야 결제를 할 수 있습니다.</p>
+                </div>
+                <div class="bottomAgree">
+                    <input type="checkbox" id="agree">
+                    <label for="agree"><span></span>온라인 체크인을 위하여 여권정보 수집 및 이용에 동의합니다.</label>
+                </div>                
+            </div>
+            <div class="btns bottom">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a href="#none" class="btn block gray">이전</a>
+                    </div>
+                    <div class="col-xs-6">
+                        <a href="#none" class="btn block">다음</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 팝업 : 국가 검색 -->
+<div class="popup popup-full" id="nationalPop"> 
+    <div class="popup-wrapper">
+        <div class="popup-wrap">
+            <div class="popup-header">
+                <div class="inner">
+                    <h1>국가 검색</h1>
+                    <a href="javascript:void(0)" class="close" data-event="popup-close"><span class="sr-only">레이어 팝업 닫기</span></a>
+                </div>
+            </div>
+            <div class="popup-body">
+                <div class="inner">
+                    <div class="popupSearchArea inputArea">
+                        <form action="#">
+                            <fieldset>
+                                <legend>국가 검색</legend>
+                                <label for="inputCountry" class="sr-only">검색어</label>
+                                <div class="group search">
+                                    <input type="text" id="inputCountry" placeholder="국가명 입력">
+                                    <input type="submit" value="검색" class="btn">
+                                </div>                                    
+                                <p class="txt">찾으시려는 국가명을 입력해 주시기 바랍니다.</p>
+                            </fieldset>                    
+                        </form>
+                    </div>
+                    <!-- 데이터 없을때 -->
+                    <!--<p class="dataEmpty">조회하신 데이터가 없습니다.</p>-->
+                    <!-- //데이터 없을때 -->
+                    <div class="zipResultWrap">
+                        <h2 class="tit">국가 검색 결과 <em>3건</em></h2>
+                        <div class="zipResult">
+                            <ul>
+                                <li><a href="#none">아르헨티나 Argentina</a></li>
+                                <li><a href="#none">독일 germany</a></li>
+                                <li><a href="#none">알제리 algeria</a></li>
+                                <li><a href="#none">조지아 georgia</a></li>
+                                <li><a href="#none">사우스조지아 &amp; 사우스샌드위치섬</a></li>
+                                <li><a href="#none">south georgia &amp; the south sandwich islands</a></li>
+                                <li><a href="#none">니제르 neger</a></li>
+                                <li><a href="#none">나이지리아 nigeria</a></li>
+                                <li><a href="#none">조지아 georgia</a></li>
+                                <li><a href="#none">나이지리아 nigeria</a></li>
+                            </ul>
+                        </div>
+                        <div class="btns bottom more">
+                            <a href="#" class="btn more"><span>더보기</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

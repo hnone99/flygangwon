@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>플라이강원</title>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/reset.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/calendar.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/common.css">
+    <script type="text/javascript" src="../../resources/js/pc/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/modernizr-custom.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/calendar.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/swiper.min.js"></script>
+    <script>
+        $(document).ready(function(){            
+            //layer
+            var nowStep;
+            $('[data-event=layer-open]').on('click',function(e){
+                e.preventDefault();
+
+                $('.inquiry li').removeClass('on');
+                nowStep = $(this).closest('li');
+                nowStep.addClass('on');
+                $('.layer').hide();
+
+                //출발지 먼저 선택 알럿 확인용
+                if($(this).attr('data-target')=='#lyTo'){
+                    $('#alertFrom').show().focus();                  
+                }
+                else{
+                    var target = $(this).attr('data-target');
+                    $(target).show();
+                    //레이어 margin-top
+                    $(target).find('.layer-wrap').css('margin-top',-$(target).find('.layer-wrap').outerHeight() / 2);
+                }
+            });
+            $('[data-event=layer-close]').on('click',function(e){
+                e.preventDefault();
+
+                $('.inquiry li').removeClass('on');
+                $(this).closest('.layer').fadeOut(150);
+            });
+            
+            //출발지 먼저 선택 얼럿 확인 클릭
+            $('#alertFrom .ok').on('click',function(e){
+                e.preventDefault();
+                $('[data-target=#lyFrom]').click();
+            });
+            
+            //스케줄 없음 알럿 닫기
+            $('.noSchedule .close').on('click',function(){
+                $('.noSchedule').hide();
+            }); 
+
+            //여정 재검색 탭
+            $('.tabType a').on('click',function(e){
+                e.preventDefault();
+                $(this).parent('li').addClass('on');
+                $(this).parent('li').siblings().removeClass('on');
+                if($(this).parent('li').index() == 2){ //다구간
+                    $('.reInquiry').addClass('multi');
+                    $('.reInquiry ul.second').show();
+                }else{
+                    $('.reInquiry').removeClass('multi');                
+                    $('.reInquiry ul.second').hide();
+                }
+            });
+            
+            //다음버튼 활성화 확인용
+            $('#agree').on('click',function(){
+                if($(this).prop('checked')){
+                    $('#btnNext').removeClass('disable');
+                }else{
+                    $('#btnNext').addClass('disable');  
+                }
+            });
+            
+            //서비스 구매하기 or 선택하기 버튼
+            $('.service .journey li a').on('click',function(e){
+                e.preventDefault();
+                
+                if($(this).hasClass('disable')){
+                    return false;
+                }
+                
+                if($(this).closest('li').hasClass('on')){ // 이미 선택되어있는 경우
+                    $(this).closest('li').removeClass('on');
+                    $(this).text('구매 or 선택 or 20KG');
+                }
+                else{
+                    var idx = $(this).closest('.col').index();
+                    $('#serviceDetail').show();
+                    $('#serviceDetail > .col').eq(idx).siblings().hide();
+                    $('#serviceDetail > .col').eq(idx).show();
+                    $('#serviceList > .col').eq(idx).hide();
+                    $('#serviceList > .col').eq(idx).siblings().show();
+
+                    $('html, body').stop().delay(150).animate({
+                        'scrollTop': $('#serviceDetail').offset().top - 130
+                    }, 300, 'swing');
+                }
+                
+                //좌석 로딩
+                if($(this).closest('.col').hasClass('seat')){
+                    setTimeout(function(){
+                        $('.loading').hide();
+                        $('.loadingArea .serviceSeat').show();
+                    },1500);
+                }
+            });
+            
+            $('.serviceSelect .close, .ssfoot .btn').on('click',function(e){
+                e.preventDefault();
+                $('#serviceDetail').hide();
+                $('#serviceDetail > .col').hide();
+                $('#serviceList > .col').show();
+            });
+            
+            // 부가서비스 선택 내역 있을 경우 취소, 다음단계 버튼 노출
+            $('.service .journey').each(function(){
+                if($(this).find('li.on').size() > 0){
+                    $(this).find('.cancel').addClass('on');
+                    $('#btnSkip').hide();
+                    $('#btnNext').show();
+                }else{
+                    $(this).find('.cancel').removeClass('on');
+                    $('#btnSkip').show();
+                    $('#btnNext').hide();
+                }
+            });
+            
+            //기내식
+            $('.serviceMeal a').on('click',function(e){
+                e.preventDefault();
+                $('.serviceMeal li').removeClass('on');
+                $(this).closest('li').addClass('on');
+            });
+            
+            //좌석 선택
+            $('.seat a').on('click',function(e){
+                e.preventDefault();
+                if(!$(this).hasClass('disable') && !$(this).hasClass('group')){
+                    $('.seat a').removeClass('selected');            
+                    $(this).addClass('selected'); 
+                }
+                if($(this).hasClass('exit')){ //비상구 안내 팝업
+                    popup.open('#popSeat');
+                }
+            });
+            
+            //탑승객별 운임상세 탭
+            $('.tabText a').on('click',function(e){
+                e.preventDefault();
+                var target = $(this).attr('href');
+                $(this).parent('li').siblings().removeClass('on');
+                $(this).parent('li').addClass('on');
+                $(target).siblings('.tabView').hide();
+                $(target).show();
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div class="accessibility-nav">
+    <ul>
+        <li class="first"><a href="#gnb">메뉴바로가기</a></li>
+        <li class="last"><a href="#container">본문바로가기</a></li>
+    </ul>
+</div>
+<div id="wrap">
+    <div id="header">
+        <div class="htop">
+            <div class="in">
+                <ul class="category">
+                    <li class="air on"><a href=""><span>항공</span></a></li>
+                    <li class="tour"><a href=""><span>관광</span></a></li>
+                    <li class="shopping"><a href=""><span>쇼핑</span></a></li>
+                </ul>
+                <ul class="menu">
+                    <li class="login"><a href="#">로그인</a></li>
+                    <li class="signup"><a href="#">회원가입</a></li>
+                    <li class="language">
+                        <a href="#">KOREAN</a>
+                        <!-- 190729 수정 -->
+                        <div class="languageMenu">
+                            <ul>
+                                <li><a href="">ENGLISH</a></li>
+                                <li><a href="">ENGLISH</a></li>
+                            </ul>
+                        </div>
+                        <!-- //190729 수정 -->                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="inner">
+            <h1 class="logo"><a href="#"><span class="sr-only">FLY GANGWON</span></a></h1>
+
+            <div id="gnb">
+                <ul class="dep1">
+                    <li class="on"><a href="#">예매</a>
+                        <ul class="dep2">
+                            <li class="on"><a href="#none">항공권 예매</a></li>
+                            <li><a href="#none">운항일정조회</a></li>
+                            <li><a href="#none">운임안내</a>
+                                <ul class="dep3">
+                                    <li><a href="#none">국내선 운임안내</a></li>
+                                    <li><a href="#none">국제선 운임안내</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">체크인</a>
+                        <ul class="dep2">
+                            <li><a href="#none">체크인</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">서비스안내</a>
+                        <ul class="dep2">
+                            <li><a href="#none">항공권 안내</a></li>
+                            <li><a href="#none">공항서비스 안내</a></li>
+                            <li><a href="#none">수하물 안내</a></li>
+                            <li><a href="#none">기내서비스 안내</a></li>
+                            <li><a href="#none">취항지 안내</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이벤트/뉴스</a>
+                        <ul class="dep2">
+                            <li><a href="#none">이벤트</a></li>
+                            <li><a href="#none">뉴스</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">마이페이지</a>
+                        <ul class="dep2">
+                            <li><a href="#none">나의 예약내역</a></li>
+                            <li><a href="#none">나의 정보</a></li>
+                            <li><a href="#none">나의 문의내역</a></li>
+                            <li><a href="#none">나의 쿠폰</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="allmenu">
+                <a href="#"><span class="sr-only">전체메뉴</span><i></i></a>
+            </div>
+            <div class="allmenuWrap">
+                <div class="allmenuContent">
+                    <div class="logoarea"><h1><span class="sr-only">FLY GANGWON</span></h1></div>
+                    <ul class="dep1">
+                        <li class="on"><div><a href="#">예매</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">항공권 예매</a></li>
+                                <li><a href="#none">운항일정 조회</a></li>
+                                <li><a href="#none">운임안내</a>
+                                    <ul class="dep3">
+                                        <li><a href="#none">국내선 운임안내</a></li>
+                                        <li><a href="#none">국제선 운임안내</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">체크인</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">체크인</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">서비스 안내</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">항공권 안내</a></li>
+                                <li><a href="#none">공항서비스 안내</a></li>
+                                <li><a href="#none">수하물 안내</a></li>
+                                <li><a href="#none">기내서비스 안내</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">이벤트/뉴스</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">이벤트</a>
+                                    <ul class="dep3">
+                                        <li><a href="#none">진행중인 이벤트</a></li>
+                                        <li><a href="#none">지난 이벤트</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">뉴스</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">마이페이지</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">나의 예약내역</a></li>
+                                <li><a href="#none">나의 정보</a></li>
+                                <li><a href="#none">나의 문의내역</a></li>
+                                <li><a href="#none">나의 쿠폰</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">유틸리티</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">고객센터</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">자주하는 질문</a></li>
+                                        <li><a href="#non">문의하기</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">회사소개</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">회사 현황</a></li>
+                                        <li><a href="#non">CEO 인사말</a></li>
+                                        <li><a href="#non">사업 비전</a></li>
+                                        <li><a href="#non">CI 소개</a></li>
+                                        <li><a href="#non">보도자료</a></li>
+                                        <li><a href="#non">오시는 길</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">이용약관</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">이용약관</a></li>
+                                        <li><a href="#non">여객운송약관</a></li>
+                                        <li><a href="#non">항공교통이용자 서비스 계획</a></li>
+                                        <li><a href="#non">피해구제 계획</a></li>
+                                        <li><a href="#non">개인정보처리방침</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg"></div>
+    </div>
+    <div id="top">
+        <div class="inner">
+            <div class="topWrap">
+                <div class="plan">
+                    <div>
+                        <span>양양</span>
+                        <strong>YNY</strong>                    
+                    </div>
+                    <div><i class="airplaneWhite"></i></div>
+                    <div>
+                        <span>제주</span>
+                        <strong>CJU</strong>
+                    </div>
+                </div>
+                <div class="date">
+                    <span>5월 7일 (화) ~ 5월 30일 (목) / 성인2, 소아2, 유아1</span>
+                </div>
+                <div class="search">
+                    <a href="javascript:void(0)"><span>수정</span></a>
+                </div>
+                <div class="total">
+                    <a href="javascript:void(0)">
+                        <p>항공운임등 총액</p>
+                        <div><i>KRW</i><strong>1,480,000</strong></div>
+                    </a>
+                </div>
+                <div id="summery">
+                    <div class="flight">
+                        <span class="labelPlan">여정 1</span> FG1451
+                    </div>
+                    <div class="info">
+                        <strong>양양 YNY  -  제주 CJU </strong>
+                        <span>2019.05.07(화) 09:00 ~ 11:20</span>
+                    </div>
+                    <div class="detail">
+                        <dl>
+                            <dt>항공운임 (KRW)</dt><dd>19,000</dd>
+                            <dt>유류할증료 (KRW)</dt><dd>6,000</dd>
+                            <dt>공항시설사용료 (KRW)</dt><dd>5,000</dd>
+                            <dt>구간 총 세금 (KRW)</dt><dd>116,000</dd>
+                        </dl>
+                        <dl>
+                            <dt>항공료 합계</dt><dd><i>KRW</i><strong>223,000</strong></dd>
+                        </dl>
+                    </div>
+                    <div class="flight">
+                        <span class="labelPlan">여정 2</span> FG1451
+                    </div>
+                    <div class="info">
+                        <strong>양양 YNY  -  제주 CJU </strong>
+                        <span>2019.05.07(화) 09:00 ~ 11:20</span>
+                    </div>
+                    <div class="detail">
+                        <dl>
+                            <dt>항공운임 (KRW)</dt><dd>19,000</dd>
+                            <dt>유류할증료 (KRW)</dt><dd>6,000</dd>
+                            <dt>공항시설사용료 (KRW)</dt><dd>5,000</dd>
+                            <dt>구간 총 세금 (KRW)</dt><dd>116,000</dd>
+                        </dl>
+                        <dl>
+                            <dt>항공료 합계</dt><dd><i>KRW</i><strong>223,000</strong></dd>
+                        </dl>
+                    </div>
+                    <div class="sum">
+                        <em>총액</em><i>KRW</i><strong>1,480,000</strong>
+                    </div>
+                    <p>유류할증료 및 제반 운임을 포함한 총액으로 구매시점과  환율에 따라 변동될 수 있습니다.</p>
+                    <div>
+                        <a href="javascript:void(0)" class="btn small gray" data-event="popup-open" data-target="#popPassengers">탑승객별 상세 운임 보기</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 재검색 -->
+            <div class="reInquiryWrap">
+                <div class="tabType">
+                    <ul>
+                        <li class="on"><a href="javascript:void(0)">왕복</a></li>
+                        <li><a href="javascript:void(0)">편도</a></li>
+                        <li><a href="javascript:void(0)">다구간</a></li>
+                    </ul>
+                </div>
+                <div class="close"><a href="javascript:void(0)">검색 닫기</a></div>
+                <div class="reInquiry"> <!-- 다구간일때 multi 클래스 추가 -->
+                    <ul class="type">
+                        <li class="i1">
+                            <a href="javascript:void(0)" class="sel" data-event="layer-open" data-target="#lyFrom"><span class="sr-only">출발지 선택</span></a> 
+                            <div class="fill">
+                                <span>출발지</span>
+                                <strong>서울/인천 <em>ICN</em></strong>
+                            </div>
+                        </li>
+                        <li class="i2">
+                            <a href="javascript:void(0)" class="sel" data-event="layer-open" data-target="#lyTo"><span class="sr-only">도착지 선택</span></a>
+                            <div class="fill">
+                                <span>도착지</span>
+                                <strong>삿포로/신치토세 <em>CTS</em></strong>
+                            </div>
+                        </li>
+                        <li class="i3">
+                            <a href="javascript:void(0)" class="sel" data-event="layer-open" data-target="#lyFromDate"><span class="sr-only">탑승일 선택</span></a>
+                            <div class="fill">
+                                <span>탑승일</span>
+                                <strong>5월 23일 (수) - 6월 7일 (토)</strong>
+                            </div>
+                        </li>
+                        <li class="i4">
+                            <a href="javascript:void(0)" class="sel" data-event="layer-open" data-target="#lyPassenger"><span class="sr-only">탑승객 선택</span></a>
+                            <div class="fill">
+                                <span>탑승객</span>
+                                <strong>성인 2 /소아 2 / 유아 2</strong>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="type second" style="display:none">
+                        <li class="i1">
+                            <a href="javascript:void(0)" class="sel" data-event="layer-open" data-target="#lyFrom"><span class="sr-only">출발지 선택</span></a> 
+                            <div class="fill">
+                                <span>출발지</span>
+                                <strong>서울/인천 <em>ICN</em></strong>
+                            </div>
+                        </li>
+                        <li class="i2">
+                            <a href="javascript:void(0)" class="sel" data-event="layer-open" data-target="#lyTo"><span class="sr-only">도착지 선택</span></a>
+                            <div class="fill">
+                                <span>도착지</span>
+                                <strong>삿포로/신치토세 <em>CTS</em></strong>
+                            </div>
+                        </li>
+                        <li class="i3">
+                            <a href="javascript:void(0)" class="sel" data-event="layer-open" data-target="#lyFromDate"><span class="sr-only">탑승일 선택</span></a>
+                            <div class="fill">
+                                <span>탑승일</span>
+                                <strong>5월 23일 (수) - 6월 7일 (토)</strong>
+                            </div>
+                        </li>
+                        <li class="i4">                            
+                        </li>
+                    </ul>
+                    <div class="button">
+                        <a href="#none" class="btn">예매하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <div id="content">
+            <h2 class="title">부가서비스 구매</h2>
+            <div class="step">
+                <ol>
+                    <li>01. 여정 조회</li>
+                    <li>02. 항공권 선택</li>
+                    <li>03. 탑승자 정보 입력</li>
+                    <li class="on">04. 부가서비스 구매</li>
+                    <li>05. 결제</li>
+                </ol>
+            </div>
+            
+            <!-- 상단 카드 -->
+            <div class="service" id="serviceDetail">
+                <div class="col baggage active">
+                    <div class="swrap">
+                        <div class="shead">
+                            <h3>수하물</h3>
+                            <p>수하물을 구매하세요.</p>
+                        </div>
+                        <div class="sbody">
+                            <div class="journey">
+                                <h4>여정 1</h4>
+                                <ul>
+                                    <li><strong>KIM / GILDONG1</strong><a href="">20KG(기본)</a></li>
+                                    <li><strong>KIM / GILDONG2</strong><a href="">20KG(기본)</a></li>
+                                    <li class="on"><strong>KIM / GILDONG3</strong><a href="">20KG(기본) <b>+ 추가 10KG</b></a></li> <!-- 선택되었을 때 on -->
+                                </ul>
+                                <div class="cancel"><a href="#none">전체 취소</a></div>
+                            </div>
+                            <div class="journey">
+                                <h4>여정 2</h4>
+                                <ul>
+                                    <li><strong>KIM / GILDONG1</strong><a href="" class="disable">선택불가</a></li> <!-- 선택불가 -->
+                                    <li><strong>KIM / GILDONG2</strong><a href="">구매하기</a></li>
+                                    <li><strong>KIM / GILDONG3</strong><a href="">구매하기</a></li>
+                                </ul>
+                                <div class="cancel"><a href="#none">전체 취소</a></div>
+                            </div>
+                            <div class="price on"><i>KRW</i> <strong>30,000</strong></div> <!-- 선택되었을 때 on -->
+                        </div>
+                    </div>
+                    <div class="serviceSelect">
+                        <div class="sshead">
+                            <div class="info">
+                                <p>여정 1</p>
+                                <div class="plan"><strong>양양 YNY - 제주  CJU</strong> <em>2019.10.25(목) 08:40</em></div>
+                            </div>                            
+                            <a href="#none" class="close"><span class="sr-only">레이어 닫기</span></a>
+                        </div>
+                        <div class="ssbody">
+                            <div class="name">
+                                <p>탑승객: <span>KIM / BENEDICT CUMBERBATCH</span></p>
+                            </div>
+                            <div class="serviceBaggage">
+                                <div class="free">
+                                    <p>무료</p>
+                                    <div class="kg">20 KG</div>
+                                </div>
+                                <div class="add">
+                                    <p>추가 구매</p>
+                                    <div class="kg">
+                                        <input type="number" class="number" value="5"> <!-- 191017 추가 -->
+                                        <span>KG</span>
+                                        <button class="decrease" type="button"><span class="sr-only">성인 한명 줄이기</span></button>
+                                        <button class="increase" type="button"><span class="sr-only">성인 한명 늘리기</span></button>
+                                    </div>
+                                </div>
+                                <div class="total">
+                                    <p>총 수하물</p>
+                                    <div class="kg">20 KG</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ssfoot">
+                            <em>결제금액</em><i>KRW</i><strong>5,000</strong>
+                            <a href="#none" class="btn">선택완료</a>
+                        </div>
+                    </div>
+                </div>                
+                <div class="col seat active">
+                    <div class="swrap">
+                        <div class="shead">
+                            <h3>좌석</h3>
+                            <p>좌석을 선택하세요.</p>
+                        </div>
+                        <div class="sbody">
+                            <div class="journey">
+                                <h4>여정 1</h4>
+                                <ul>
+                                    <li class="on"><strong>KIM / GILDONG1</strong><a href=""><b>3A</b></a></li> <!-- 선택되었을 때 on -->
+                                    <li class="on"><strong>KIM / GILDONG2</strong><a href=""><b>3B</b></a></li>
+                                    <li class="on"><strong>KIM / GILDONG3</strong><a href=""><b>3C</b></a></li>
+                                </ul>
+                                <div class="cancel"><a href="#none">전체 취소</a></div>
+                            </div>
+                            <div class="journey">
+                                <h4>여정 2</h4>
+                                <ul>
+                                    <li><strong>KIM / GILDONG1</strong><a href="">선택하기</a></li>
+                                    <li><strong>KIM / GILDONG2</strong><a href="">선택하기</a></li>
+                                    <li><strong>KIM / GILDONG3</strong><a href="">선택하기</a></li>
+                                </ul>
+                                <div class="cancel"><a href="#none">전체 취소</a></div> <!-- 선택되었을 때 on -->
+                            </div>
+                            <div class="price on"><i>KRW</i> <strong>15,000</strong></div>
+                        </div>
+                    </div>
+                    <div class="serviceSelect">
+                        <div class="sshead">
+                            <div class="info">
+                                <p>여정 1</p>
+                                <div class="plan"><strong>양양 YNY - 제주  CJU</strong> <em>2019.10.25(목) 08:40</em></div>
+                            </div>
+                            <a href="#none" class="close"><span class="sr-only">레이어 닫기</span></a>
+                        </div>
+                        <div class="ssbody">
+                            <div class="name">
+                                <p>탑승객: <span>KIM / BENEDICT CUMBERBATCH</span></p>
+                            </div>
+                            <div class="loadingArea">
+                                <div class="serviceSeat" style="display:none">
+                                    <div class="info">
+                                        <span class="selected">선택좌석</span>
+                                        <span class="group">동승객</span>
+                                        <span class="disable">선택불가</span>
+                                        <span class="classA">KRW 10,000</span>
+                                        <span class="classB">KRW 5,000</span>
+                                        <span class="classC">KRW 3,000</span>
+                                        <span class="classD">KRW 2,000</span>
+                                        <span class="exit">비상구 좌석</span>
+                                    </div>
+                                    <div class="seat" style="">
+                                        <div class="col a">
+                                            <a href="#none" class="classD">1A</a>
+                                            <a href="#none" class="classA">2A</a>
+                                            <a href="#none" class="classA">3A</a>
+                                            <a href="#none" class="classA disable">4A</a>
+                                            <a href="#none" class="classA disable">5A</a>
+                                            <a href="#none" class="classA group">6A</a>
+                                            <a href="#none" class="classA">7A</a>
+                                            <a href="#none" class="classA">8A</a>
+                                            <a href="#none" class="classA">9A</a>
+                                            <a href="#none" class="classA">10A</a>
+                                            <a href="#none" class="classC">11A</a>
+                                            <a href="#none" class="classD">12A</a>
+                                            <a href="#none" class="classB">13A</a>
+                                            <a href="#none" class="exit">14A</a>
+                                            <a href="#none" class="exit">15A</a>
+                                            <a href="#none" class="exit">16A</a>
+                                            <a href="#none" class="classA">17A</a>
+                                            <a href="#none" class="classA">18A</a>
+                                            <a href="#none" class="classA">19A</a>
+                                            <a href="#none" class="classA">20A</a>
+                                            <a href="#none" class="classA">21A</a>
+                                            <a href="#none" class="classA">22A</a>
+                                            <a href="#none" class="classA">23A</a>
+                                            <a href="#none" class="classA">24A</a>
+                                            <a href="#none" class="classA">25A</a>
+                                            <a href="#none" class="classA">26A</a>
+                                            <a href="#none" class="classA">27A</a>
+                                            <a href="#none" class="classA">28A</a>
+                                            <a href="#none" class="classA">29A</a>
+                                            <a href="#none" class="classA">30A</a>
+                                            <a href="#none" class="classA">31A</a>
+                                            <a href="#none" class="classA">32A</a>
+                                        </div>
+                                        <div class="col b">
+                                            <a href="#none" class="classD">1B</a>
+                                            <a href="#none" class="classA">2B</a>
+                                            <a href="#none" class="classA">3B</a>
+                                            <a href="#none" class="classA disable">4B</a>
+                                            <a href="#none" class="classA">5B</a>
+                                            <a href="#none" class="classA">6B</a>
+                                            <a href="#none" class="classA">7B</a>
+                                            <a href="#none" class="classA">8B</a>
+                                            <a href="#none" class="classA">9B</a>
+                                            <a href="#none" class="classA">10B</a>
+                                            <a href="#none" class="classC">11B</a>
+                                            <a href="#none" class="classD">12B</a>
+                                            <a href="#none" class="classB">13B</a>
+                                            <a href="#none" class="exit">14B</a>
+                                            <a href="#none" class="exit">15B</a>
+                                            <a href="#none" class="exit">16B</a>
+                                            <a href="#none" class="classA">17B</a>
+                                            <a href="#none" class="classA">18B</a>
+                                            <a href="#none" class="classA">19B</a>
+                                            <a href="#none" class="classA">20B</a>
+                                            <a href="#none" class="classA">21B</a>
+                                            <a href="#none" class="classA">22B</a>
+                                            <a href="#none" class="classA">23B</a>
+                                            <a href="#none" class="classA">24B</a>
+                                            <a href="#none" class="classA">25B</a>
+                                            <a href="#none" class="classA">26B</a>
+                                            <a href="#none" class="classA">27B</a>
+                                            <a href="#none" class="classA">28B</a>
+                                            <a href="#none" class="classA">29B</a>
+                                            <a href="#none" class="classA">30B</a>
+                                            <a href="#none" class="classA">31B</a>
+                                            <a href="#none" class="classA">32B</a>
+                                        </div>
+                                        <div class="col c">
+                                            <a href="#none" class="classD">1C</a>
+                                            <a href="#none" class="classA">2C</a>
+                                            <a href="#none" class="classA">3C</a>
+                                            <a href="#none" class="classA disable">4C</a>
+                                            <a href="#none" class="classA">5C</a>
+                                            <a href="#none" class="classA">6C</a>
+                                            <a href="#none" class="classA">7C</a>
+                                            <a href="#none" class="classA">8C</a>
+                                            <a href="#none" class="classA">9C</a>
+                                            <a href="#none" class="classA">10C</a>
+                                            <a href="#none" class="classC">11C</a>
+                                            <a href="#none" class="classD">12C</a>
+                                            <a href="#none" class="classB">13C</a>
+                                            <a href="#none" class="exit">14C</a>
+                                            <a href="#none" class="exit">15C</a>
+                                            <a href="#none" class="exit">16C</a>
+                                            <a href="#none" class="classA">17C</a>
+                                            <a href="#none" class="classA">18C</a>
+                                            <a href="#none" class="classA">19C</a>
+                                            <a href="#none" class="classA">20C</a>
+                                            <a href="#none" class="classA">21C</a>
+                                            <a href="#none" class="classA">22C</a>
+                                            <a href="#none" class="classA">23C</a>
+                                            <a href="#none" class="classA">24C</a>
+                                            <a href="#none" class="classA">25C</a>
+                                            <a href="#none" class="classA">26C</a>
+                                            <a href="#none" class="classA">27C</a>
+                                            <a href="#none" class="classA">28C</a>
+                                            <a href="#none" class="classA">29C</a>
+                                            <a href="#none" class="classA">30C</a>
+                                            <a href="#none" class="classA">31C</a>
+                                            <a href="#none" class="classA">32C</a>
+                                        </div>
+                                        <div class="col d">
+                                            <a href="#none" class="classD">1D</a>
+                                            <a href="#none" class="classA">2D</a>
+                                            <a href="#none" class="classA">3D</a>
+                                            <a href="#none" class="classA disable">4D</a>
+                                            <a href="#none" class="classA">5D</a>
+                                            <a href="#none" class="classA">6D</a>
+                                            <a href="#none" class="classA">7D</a>
+                                            <a href="#none" class="classA">8D</a>
+                                            <a href="#none" class="classA">9D</a>
+                                            <a href="#none" class="classA">10D</a>
+                                            <a href="#none" class="classC">11D</a>
+                                            <a href="#none" class="classD">12D</a>
+                                            <a href="#none" class="classB">13D</a>
+                                            <a href="#none" class="exit">14D</a>
+                                            <a href="#none" class="exit">15D</a>
+                                            <a href="#none" class="exit">16D</a>
+                                            <a href="#none" class="classA">17D</a>
+                                            <a href="#none" class="classA">18D</a>
+                                            <a href="#none" class="classA">19D</a>
+                                            <a href="#none" class="classA">20D</a>
+                                            <a href="#none" class="classA">21D</a>
+                                            <a href="#none" class="classA">22D</a>
+                                            <a href="#none" class="classA">23D</a>
+                                            <a href="#none" class="classA">24D</a>
+                                            <a href="#none" class="classA">25D</a>
+                                            <a href="#none" class="classA">26D</a>
+                                            <a href="#none" class="classA">27D</a>
+                                            <a href="#none" class="classA">28D</a>
+                                            <a href="#none" class="classA">29D</a>
+                                            <a href="#none" class="classA">30D</a>
+                                            <a href="#none" class="classA">31D</a>
+                                            <a href="#none" class="classA">32D</a>
+                                        </div>
+                                        <div class="col e">
+                                            <a href="#none" class="classD">1E</a>
+                                            <a href="#none" class="classA">2E</a>
+                                            <a href="#none" class="classA">3E</a>
+                                            <a href="#none" class="classA disable">4E</a>
+                                            <a href="#none" class="classA">5E</a>
+                                            <a href="#none" class="classA">6E</a>
+                                            <a href="#none" class="classA">7E</a>
+                                            <a href="#none" class="classA">8E</a>
+                                            <a href="#none" class="classA">9E</a>
+                                            <a href="#none" class="classA">10E</a>
+                                            <a href="#none" class="classC">11E</a>
+                                            <a href="#none" class="classD">12E</a>
+                                            <a href="#none" class="classB">13E</a>
+                                            <a href="#none" class="exit">14E</a>
+                                            <a href="#none" class="exit">15E</a>
+                                            <a href="#none" class="exit">16E</a>
+                                            <a href="#none" class="classA">17E</a>
+                                            <a href="#none" class="classA">18E</a>
+                                            <a href="#none" class="classA">19E</a>
+                                            <a href="#none" class="classA">20E</a>
+                                            <a href="#none" class="classA">21E</a>
+                                            <a href="#none" class="classA">22E</a>
+                                            <a href="#none" class="classA">23E</a>
+                                            <a href="#none" class="classA">24E</a>
+                                            <a href="#none" class="classA">25E</a>
+                                            <a href="#none" class="classA">26E</a>
+                                            <a href="#none" class="classA">27E</a>
+                                            <a href="#none" class="classA">28E</a>
+                                            <a href="#none" class="classA">29E</a>
+                                            <a href="#none" class="classA">30E</a>
+                                            <a href="#none" class="classA">31E</a>
+                                            <a href="#none" class="classA">32E</a>
+                                        </div>
+                                        <div class="col f">
+                                            <a href="#none" class="classD">1F</a>
+                                            <a href="#none" class="classA">2F</a>
+                                            <a href="#none" class="classA">3F</a>
+                                            <a href="#none" class="classA disable">4F</a>
+                                            <a href="#none" class="classA">5F</a>
+                                            <a href="#none" class="classA">6F</a>
+                                            <a href="#none" class="classA">7F</a>
+                                            <a href="#none" class="classA">8F</a>
+                                            <a href="#none" class="classA">9F</a>
+                                            <a href="#none" class="classA">10F</a>
+                                            <a href="#none" class="classC">11F</a>
+                                            <a href="#none" class="classD">12F</a>
+                                            <a href="#none" class="classB">13F</a>
+                                            <a href="#none" class="exit">14F</a>
+                                            <a href="#none" class="exit">15F</a>
+                                            <a href="#none" class="exit">16F</a>
+                                            <a href="#none" class="classA">17F</a>
+                                            <a href="#none" class="classA">18F</a>
+                                            <a href="#none" class="classA">19F</a>
+                                            <a href="#none" class="classA">20F</a>
+                                            <a href="#none" class="classA">21F</a>
+                                            <a href="#none" class="classA">22F</a>
+                                            <a href="#none" class="classA">23F</a>
+                                            <a href="#none" class="classA">24F</a>
+                                            <a href="#none" class="classA">25F</a>
+                                            <a href="#none" class="classA">26F</a>
+                                            <a href="#none" class="classA">27F</a>
+                                            <a href="#none" class="classA">28F</a>
+                                            <a href="#none" class="classA">29F</a>
+                                            <a href="#none" class="classA">30F</a>
+                                            <a href="#none" class="classA">31F</a>
+                                            <a href="#none" class="classA">32F</a>
+                                        </div>
+                                    </div>
+                                </div> <!-- 로딩 후 block 으로 변경 -->
+                                <div class="loading">
+                                    <div class="icon"><img src="../../resources/images/pc/loading2.gif" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <div class="col meal active">
+                    <div class="swrap">
+                        <div class="shead">
+                            <h3>기내식</h3>
+                            <p>기내식을 구매하세요.</p>
+                        </div>
+                        <div class="sbody">
+                            <div class="journey">
+                                <h4>여정 1</h4>
+                                <ul>
+                                    <li><strong>KIM / GILDONG1</strong><a href="">구매하기</a></li>
+                                    <li><strong>KIM / GILDONG2</strong><a href="">구매하기</a></li>
+                                    <li><strong>KIM / GILDONG3</strong><a href="">구매하기</a></li>
+                                </ul>
+                                <div class="cancel"><a href="#none">전체 취소</a></div>
+                            </div>
+                            <div class="journey">
+                                <h4>여정 2</h4>
+                                <ul>
+                                    <li class="on"><strong>KIM / GILDONG1</strong><a href=""><b>불고기덮밥</b></a></li> <!-- 선택되었을 때 on -->
+                                    <li><strong>KIM / GILDONG2</strong><a href="">구매하기</a></li>
+                                    <li><strong>KIM / GILDONG3</strong><a href="">구매하기</a></li>
+                                </ul>
+                                <div class="cancel"><a href="#none">전체 취소</a></div>
+                            </div>
+                            <div class="price"><i>KRW</i> <strong>0</strong></div>     
+                        </div>
+                    </div>
+                    <div class="serviceSelect">
+                        <div class="sshead">
+                            <div class="info">
+                                <p>여정 1</p>
+                                <div class="plan"><strong>양양 YNY - 제주  CJU</strong> <em>2019.10.25(목) 08:40</em></div>
+                            </div>
+                            <a href="#none" class="close"><span class="sr-only">레이어 닫기</span></a>
+                        </div>
+                        <div class="ssbody">
+                            <div class="name">
+                                <p>탑승객: <span>KIM / BENEDICT CUMBERBATCH</span></p>
+                            </div>
+                            <div class="serviceMeal">
+                                <ul>
+                                    <li> <!-- 선택시 클래스 on 추가 -->
+                                        <a href="javascript:void(0)">                                    
+                                            <div class="thumb"><img src="../../resources/images/pc/@img_meal_218x148.png" alt=""></div>
+                                            <p><span>불고기 덮밥</span><em>KRW 9,000</em></p>
+                                            <div class="check"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">                                    
+                                            <div class="thumb"><img src="../../resources/images/pc/@img_meal_218x148.png" alt=""></div>
+                                            <p><span>오징어 덮밥</span><em>KRW 9,000</em></p>
+                                            <div class="check"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">                                    
+                                            <div class="thumb"><img src="../../resources/images/pc/@img_meal_218x148.png" alt=""></div>
+                                            <p><span>키즈도시락</span><em>KRW 9,000</em></p>
+                                            <div class="check"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">                                    
+                                            <div class="thumb"><img src="../../resources/images/pc/@img_meal_218x148.png" alt=""></div>
+                                            <p><span>오징어 덮밥</span><em>KRW 9,000</em></p>
+                                            <div class="check"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">                                    
+                                            <div class="thumb"><img src="../../resources/images/pc/@img_meal_218x148.png" alt=""></div>
+                                            <p><span>키즈도시락</span><em>KRW 9,000</em></p>
+                                            <div class="check"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">                                    
+                                            <div class="thumb"><img src="../../resources/images/pc/@img_meal_218x148.png" alt=""></div>
+                                            <p><span>오징어 덮밥</span><em>KRW 9,000</em></p>
+                                            <div class="check"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">                                    
+                                            <div class="thumb"><img src="../../resources/images/pc/@img_meal_218x148.png" alt=""></div>
+                                            <p><span>키즈도시락</span><em>KRW 9,000</em></p>
+                                            <div class="check"></div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            
+            <!-- 하단 카드 -->
+            <div class="service" id="serviceList">
+                <div class="col baggage">
+                    <div class="swrap">
+                        <div class="shead">
+                            <h3>수하물</h3>
+                            <p>수하물을 구매하세요.</p>
+                        </div>
+                        <div class="sbody">
+                            <div class="journey">
+                                <h4>여정 1</h4>
+                                <ul>
+                                    <li><strong>KIM / GILDONG1</strong><a href="">20KG(기본)</a></li>
+                                    <li><strong>KIM / GILDONG2</strong><a href="">20KG(기본)</a></li>
+                                    <li class="on"><strong>KIM / GILDONG3</strong><a href="">20KG(기본) <b>+ 추가 10KG</b></a></li> <!-- 선택되었을 때 on -->
+                                </ul>
+                                <div class="cancel"><a href="#none">전체 취소</a></div>
+                            </div>
+                            <div class="journey">
+                                <h4>여정 2</h4>
+                                <ul>
+                                    <li><strong>KIM / GILDONG1</strong><a href="#none" class="disable">선택불가</a></li> <!-- 선택불가 -->
+                                    <li><strong>KIM / GILDONG2</strong><a href="">구매하기</a></li>
+                                    <li><strong>KIM / GILDONG3</strong><a href="">구매하기</a></li>
+                                </ul>
+                                <div class="cancel"><a href="#none">전체 취소</a></div>
+                            </div>
+                            <div class="price on"><i>KRW</i> <strong>30,000</strong></div> <!-- 선택되었을 때 on -->
+                        </div>
+                    </div>
+                </div>                
+                
+                <div class="col seat">
+                    <div class="swrap">
+                        <div class="shead">
+                            <h3>좌석</h3>
+                            <p>좌석을 선택하세요.</p>
+                        </div>
+                        <div class="sbody">
+                            <div class="journey">
+                                <h4>여정 1</h4>
+                                <ul>
+                                    <li class="on"><strong>KIM / GILDONG1</strong><a href=""><b>3A</b></a></li> <!-- 선택되었을 때 on -->
+                                    <li class="on"><strong>KIM / GILDONG2</strong><a href=""><b>3B</b></a></li>
+                                    <li class="on"><strong>KIM / GILDONG3</strong><a href=""><b>3C</b></a></li>
+                                </ul>
+                                <div class="cancel"><a href="#none">전체 취소</a></div>
+                            </div>
+                            <div class="journey">
+                                <h4>여정 2</h4>
+                                <ul>
+                                    <li><strong>KIM / GILDONG1</strong><a href="">선택하기</a></li>
+                                    <li><strong>KIM / GILDONG2</strong><a href="">선택하기</a></li>
+                                    <li><strong>KIM / GILDONG3</strong><a href="">선택하기</a></li>
+                                </ul>
+                                <div class="cancel"><a href="#none">전체 취소</a></div>
+                            </div>
+                            <div class="price on"><i>KRW</i> <strong>15,000</strong></div> <!-- 선택되었을 때 on -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col meal">
+                    <div class="swrap">
+                        <div class="shead">
+                            <h3>기내식</h3>
+                            <p>기내식을 구매하세요.</p>
+                        </div>
+                        <div class="sbody">
+                            <div class="journey">
+                                <h4>여정 1</h4>
+                                <ul>
+                                    <li><strong>KIM / GILDONG1</strong><a href="">구매하기</a></li>
+                                    <li><strong>KIM / GILDONG2</strong><a href="">구매하기</a></li>
+                                    <li><strong>KIM / GILDONG3</strong><a href="">구매하기</a></li>
+                                </ul>
+                                <div class="cancel"><a href="#none">전체 취소</a></div>
+                            </div>
+                            <div class="journey">
+                                <h4>여정 2</h4>
+                                <ul>
+                                    <li class="on"><strong>KIM / GILDONG1</strong><a href=""><b>불고기덮밥</b></a></li>
+                                    <li><strong>KIM / GILDONG2</strong><a href="">구매하기</a></li>
+                                    <li><strong>KIM / GILDONG3</strong><a href="">구매하기</a></li>
+                                </ul>
+                                <div class="cancel"><a href="#none">전체 취소</a></div>
+                            </div>
+                            <div class="price"><i>KRW</i> <strong>0</strong></div>                            
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            
+            <div class="reference">
+                <strong class="subtitle">유의사항</strong>
+                <div class="desc">
+                    <p>항공권 예매 완료 후 별도로 추가 수하물 구매 시 할인율이 달라질 수 있습니다.</p>
+                    <p><b>부가서비스 환불규정</b> <br>
+                        - 사전수하물 구매, 사전 좌석 구매, 최초 출발 시간 기준 24시간 전부터 환불 불가 <br>
+                        - 사전 기내식 주문 : 최초 출발일 기준 3일 전부터 환불 불가
+                    </p>
+                </div>                
+            </div>
+            <div class="bottomAgree">
+                <input type="checkbox" id="agree">
+                <label for="agree"><span></span>상기 내용을 확인하고, 이에 동의합니다.</label>
+            </div>
+
+            <div class="btns bottom">
+                <a href="#" class="btn large border" id="btnSkip">건너뛰기</a>
+                <a href="#" class="btn large disable" id="btnNext">다음</a> 
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="inner">
+            <div class="logo"><span class="sr-only">FLY GANGWON LOGO</span></div>
+            <!--<div class="menu">
+            <ul>
+            <li><a href="#">홈페이지 이용약관</a></li>
+            <li><a href="#">국내 여객운송약관</a></li>
+            <li><a href="#">항공교통이용자 서비스 계획</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">항공교통이용자 피해구제계획</a></li>
+            </ul>
+            </div>-->
+            <div class="sns">
+                <ul>
+                    <li class="facebook"><a href=""><span class="sr-only">facebook</span></a></li>
+                    <li class="instagram"><a href=""><span class="sr-only">instagram</span></a></li>
+                    <li class="youtube"><a href=""><span class="sr-only">youtube</span></a></li>
+                </ul>
+            </div>
+            <div class="info">
+                <span>플라이강원 주식회사</span>
+                <span>대표이사 : 주원석</span>
+                <span>TEL: 02-6718-8230</span>
+                <span>사업자번호: 710-81-00367</span><br>
+                <span>본사 : 강원도 양양군 손양면 공항로 201, 1층</span>
+                <span>서울사무소 : 서울시 강남구 도산대로 456 청담백영빌딩 6층</span>
+            </div>
+            <div class="copyright">COPYRIGHT ⓒ 2018 FLY GANGWON ALL RIGHTS RESERVED.</div>            
+        </div>
+        <div class="gotop">
+            <a href="#"><span class="sr-only">맨 위로</span></a>
+        </div>
+    </div>
+</div>
+
+<!-- 출발지 선택 -->
+<div class="layer" id="lyFrom">
+    <div class="layer-wrap">
+        <div class="layer-head">
+            <h1>출발지 선택</h1>
+            <a href="#" class="close" data-event="layer-close"><span class="sr-only">레이어 닫기</span></a>
+        </div>
+        <div class="layer-body">
+            <div class="layer-content">
+                <div class="fromList">                                
+                    <div class="in">
+                        <div class="column">
+                            <h2>대한민국</h2>
+                            <ul>
+                                <li><a href="#">서울/인천(ICN)</a></li>
+                                <li class="active"><a href="#">서울/김포 (GMP)</a></li>
+                                <li><a href="#">울산 (USN)</a></li>
+                                <li><a href="#">광주 (KWJ)</a></li>
+                            </ul>
+                        </div>                                    
+                        <!-- 국제선 취항 준비  -->                      
+                        <div class="comingsoon">
+                            <p>국제선 취항 준비중입니다.</p>
+                            <img src="../../resources/images/pc/banner_comingsoon.png" alt="COMING SOON 보다 나은 서비스를 위해 최선을 다하겠습니다.">
+                        </div>
+                    </div>
+                    <div class="latelyFromTo">
+                        <h2>최근 검색 여정</h2>
+                        <ul>
+                            <li><a href="#">서울/김포(GMP) <i class="airplane"></i> 제주(CJU)</a> <button type="button"><span class="sr-only">여정 삭제</span></button></li>
+                            <li><a href="#">서울/김포(GMP) <i class="airplane"></i> 제주(CJU)</a> <button type="button"><span class="sr-only">여정 삭제</span></button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>                      
+        </div>
+    </div>
+</div>
+<!-- 도착지 선택 -->
+<div class="layer" id="lyTo">
+    <div class="layer-wrap">
+        <div class="layer-head">
+            <h1>도착지 선택</h1>
+            <a href="#" class="close" data-event="layer-close"><span class="sr-only">레이어 닫기</span></a>
+        </div>
+        <div class="layer-body">
+            <div class="layer-content">
+                <div class="fromList">                                
+                    <div class="in">
+                        <div class="column">
+                            <h2>대한민국</h2>
+                            <ul>
+                                <li><a href="#">서울/인천(ICN)</a></li>
+                                <li class="active"><a href="#">서울/김포 (GMP)</a></li>
+                                <li><a href="#">울산 (USN)</a></li>
+                                <li><a href="#">광주 (KWJ)</a></li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h2>동북 아시아</h2>
+                            <ul>
+                                <li><a href="">타이페이 (TPE)</a></li>
+                                <li><a href="">가오슝 (KHH)</a></li>
+                                <li><a href="">타이중 (RMQ)</a></li>
+                                <li><a href="">홍콩 (HKG)</a></li>
+                                <li class="disable"><a href="">블라디보스토크(VVO)</a></li>
+                                <li><a href="">도쿄 (NRT)</a></li>
+                                <li><a href="">오키나와(OKA)</a></li>
+                                <li><a href="">나고야 (NGO)</a></li>
+                                <li><a href="">상하이 (SHA)</a></li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h2>동남 아시아</h2>
+                            <ul>
+                                <li><a href="">방콕 (BKK)</a></li>
+                                <li><a href="">호치민 (SGN)</a></li>
+                                <li><a href="">하노이 (HAN)</a></li>
+                                <li><a href="">다낭 (DAD)</a></li>
+                                <li class="disable"><a href="">앙헬레스 (CRK)</a></li>
+                                <li class="disable"><a href="">코타키나발루 (BKI)</a></li>
+                                <li class="disable"><a href="">씨엠립 (REP)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="latelyFromTo">
+                        <h2>최근 검색 여정</h2>
+                        <ul>
+                            <li><a href="#">서울/김포(GMP) <i class="airplane"></i> 제주(CJU)</a> <button type="button"><span class="sr-only">여정 삭제</span></button></li>
+                            <li><a href="#">서울/김포(GMP) <i class="airplane"></i> 제주(CJU)</a> <button type="button"><span class="sr-only">여정 삭제</span></button></li>
+                        </ul>
+                    </div>
+                </div>       
+            </div>                 
+        </div>
+    </div>
+</div>
+<!-- 탑승일 선택 -->
+<div class="layer" id="lyFromDate">
+    <div class="layer-wrap">
+        <div class="layer-head">
+            <h1>탑승일 선택</h1>
+            <a href="#" class="close" data-event="layer-close"><span class="sr-only">레이어 닫기</span></a>
+            <button class="datepickerReset"><span>초기화</span></button>
+        </div>
+        <div class="layer-body">
+            <div class="layer-content">
+                <p class="clickDate">가는날을 선택하세요</p>
+                <div class="weekday">
+                    <ul>
+                        <li class="sunday">일</li>
+                        <li>월</li>
+                        <li>화</li>
+                        <li>수</li>
+                        <li>목</li>
+                        <li>금</li>
+                        <li>토</li>
+                    </ul>
+                </div>
+                <div class="datepickerArea">
+                    <!-- 가는날 td에 클래스 'startDay' -->
+                    <!-- 오는날 td에 클래스 'endDay' -->
+                    <!-- 가는날~오는날 선택 날짜 구간 td에 클래스 'ui-datepicker-day-range' 추가 -->
+                    <!-- 비활성화 날짜 td에 클래스 'ui-datepicker-day-disable' 추가 -->
+                    <div class="load"></div>                                    
+                </div> 
+            </div>            
+        </div>
+        <div class="layer-foot">
+            <div class="desc">
+                <p>가는 날 선택 후 오는 날을 선택해주세요. 당일 일정으로 날짜가 같은 경우 같은 날짜를 두 번 선택해주세요.</p>
+                <p>가는 날 다시 선택시 오는 날도 다시 입력하시기 바랍니다.</p>
+                <p>회색 날짜는 운항 스케줄이 없는 일자입니다.</p>
+            </div>
+            <a href="#" class="btn">선택완료</a>
+        </div>
+        <div class="noSchedule">
+            <div class="in">
+                <p>운항 스케줄이 없습니다</p>
+                <a href="javascript:void(0)" class="close"><span class="sr-only">레이어 닫기</span></a>
+            </div>
+        </div>
+    </div>
+</div>                  
+<!-- 탑승객 수 선택 -->
+<div class="layer" id="lyPassenger">
+    <div class="layer-wrap">
+        <div class="layer-head">
+            <h1>탑승객 수 선택</h1>
+            <p class="txt">국내선/국제선에 따라 소아/유아 기준이 다르니 여정을 먼저 선택해주세요.</p>
+            <a href="#" class="close" data-event="layer-close"><span class="sr-only">레이어 닫기</span></a>                            
+        </div>
+        <div class="layer-body">
+            <div class="layer-content">
+                <div class="passenger">
+                    <div class="in">
+                        <dl>
+                            <dt><em>성인</em> <span>만 12세 이상</span></dt> 
+                            <dd>
+                                <input type="text" class="input" readonly value="0">
+                                <button class="decrease" type="button"><span class="sr-only">성인 한명 줄이기</span></button>
+                                <button class="increase" type="button"><span class="sr-only">성인 한명 늘리기</span></button>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><em>소아</em> <span>만 2세~12세 미만</span></dt> 
+                            <dd>
+                                <input type="text" class="input" readonly value="0">
+                                <button class="decrease" type="button"><span class="sr-only">소아 한명 줄이기</span></button>
+                                <button class="increase" type="button"><span class="sr-only">소아 한명 늘리기</span></button>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><em>유아</em> <span>생후 7일 이상 ~ 만 24개월 미만</span></dt> 
+                            <dd>
+                                <input type="text" class="input" readonly value="0">
+                                <button class="decrease" type="button"><span class="sr-only">유아 한명 줄이기</span></button>
+                                <button class="increase" type="button"><span class="sr-only">유아 한명 늘리기</span></button>
+                            </dd>
+                        </dl>
+                    </div>                                    
+                </div>
+                <div class="calculatorArea">
+                    <a href="javascript:void(0)" class="calculatorBtn"><span>나이계산기</span></a>
+                    <div class="calculator">
+                        <p>출발일 <strong>2019 - 05 - 25 기준</strong>으로 <strong>소아</strong> 입니다.</p>
+                        <div>
+                            <select name="" id="" class="medium">
+                                <option value="">2010년</option>
+                            </select>
+                            <select name="" id="" class="medium">
+                                <option value="">12월</option>
+                            </select>
+                            <select name="" id="" class="medium">
+                                <option value="">31일</option>
+                            </select>
+                            <a href="" class="button">계산하기</a>
+                        </div>
+                    </div>
+                </div>    
+            </div>                      
+        </div>
+        <div class="layer-foot">
+            <div class="desc">
+                <p>탑승 수속 시 생년월일이 확인 가능한 서류를 반드시 지참하여 주시기 바랍니다.</p>
+                <p>유아는 좌석이 제공되지 않습니다. 좌석이 필요한 유아는 소아로 예약하시기 바라며, 소아운임이 적용됩니다.</p>
+                <p>몸을 가누지 못하는 유아는 좌석 점유가 불가할 수 있습니다. <br>이러한 경우 환불은 가능하지 않으며 유아용 카시트 신청을 원하는 고객은 예약센터 (0000-0000)로 출발 3일전까지 신청 바랍니다. <br>(제공 가능 여부는 상황에 따라 다를 수 있습니다)</p>
+            </div>
+            <a href="#" class="btn" id="lastBtn">선택완료</a>
+        </div>
+    </div>
+</div>
+<!-- 알럿 : 출발지 먼저 선택 -->
+<div class="alert" id="alertFrom">
+    <div class="alert-wrap">
+        <div class="alert-txt">
+            <p>출발지를 먼저 선택해주세요.</p>
+        </div>
+        <div class="alert-close">
+            <a href="javascript:void(0)" data-event="alert-close"><span class="sr-only">닫기</span></a>
+        </div>
+        <div class="alert-button"> <!-- 버튼 한개일 경우 two 클래스 삭제 -->
+            <button type="button" class="ok" data-event="alert-close">확인</button>
+        </div>
+    </div>
+</div>
+<!-- 팝업 : 탑승객별 상세 운임 -->
+<div class="popup" id="popPassengers">
+    <div class="popup-wrap" style="width:1200px;"> <!-- default : 790 x 760 -->
+        <div class="popup-header">
+            <div class="inner">
+                <h1>탑승객별 상세 운임</h1>
+                <a href="javascript:void(0)" class="close" data-event="popup-close"><span class="sr-only">레이어 팝업 닫기</span></a>
+            </div>
+        </div>
+        <div class="popup-body">
+            <div class="inner">
+                <div class="tabText">
+                    <ul>
+                        <li class="on"><a href="#fare1">항공운임 상세내역</a></li> 
+                        <li><a href="#fare2">부가서비스 구매내역</a></li> 
+                    </ul>
+                </div>
+                <div class="align-right color9">통화 KRW</div>
+                <div class="tabView" id="fare1" style="display:block">
+                    <!-- 국내선 -->
+                    <table class="table table-col mt10">
+                        <caption>항공운임 상세내역</caption>
+                        <colgroup>
+                            <col>
+                            <col style="width:16%">
+                            <col style="width:16%">
+                            <col style="width:16%">
+                            <col style="width:16%">
+                            <col style="width:16%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="align-left">성명</th>
+                                <th scope="col">항공운임</th>
+                                <th scope="col">유류할증료</th>
+                                <th scope="col">기타 세금</th>
+                                <th scope="col">쿠폰할인</th>
+                                <th scope="col">합계</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6">
+                                    <div class="sum mt20 mb20">
+                                        <em>총 결제금액</em>
+                                        <i>KRW</i>
+                                        <strong>1,555,000</strong>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td class="align-left name" scope="row">
+                                    <span>성인 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>539,000</div>
+                                    <div>539,000</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>6,600</div>
+                                    <div>6,600</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>5,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-10,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div><b>109,000</b></div>
+                                    <div><b>-</b></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left name" scope="row">
+                                    <span>성인 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>539,000</div>
+                                    <div>539,000</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>6,600</div>
+                                    <div>6,600</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>5,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-10,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div><b>109,000</b></div>
+                                    <div><b>-</b></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left name" scope="row">
+                                    <span>유아 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div><b>-</b></div>
+                                    <div><b>-</b></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- 국내선 -->
+                    <table class="table table-col mt10">
+                        <caption>항공운임 상세내역</caption>
+                        <colgroup>
+                            <col>
+                            <col style="width:12%">
+                            <col style="width:12%">
+                            <col style="width:12%">
+                            <col style="width:12%">
+                            <col style="width:10%">
+                            <col style="width:10%">
+                            <col style="width:11%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="align-left">성명</th>
+                                <th scope="col">구분</th>
+                                <th scope="col">항공운임</th>
+                                <th scope="col">유류할증료</th>
+                                <th scope="col">공항시설사용료</th>
+                                <th scope="col">신분할인</th>
+                                <th scope="col">쿠폰할인</th>
+                                <th scope="col">합계</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td colspan="8">
+                                    <div class="sum mt20 mb20">
+                                        <em>총 결제금액</em>
+                                        <i>KRW</i>
+                                        <strong>1,555,000</strong>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td class="align-left name" scope="row">
+                                    <span>성인 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>539,000</div>
+                                    <div>539,000</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>6,600</div>
+                                    <div>6,600</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>4,000</div>    
+                                    <div>4,000</div>    
+                                </td>
+                                <td class="align-right noto">
+                                    <div>4,000</div>    
+                                    <div>4,000</div>    
+                                </td>
+                                <td class="align-right noto">
+                                    <div>5,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>5,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div><b>109,000</b></div>
+                                    <div><b>-</b></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left name" scope="row">
+                                    <span>성인 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>539,000</div>
+                                    <div>539,000</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>6,600</div>
+                                    <div>6,600</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>4,000</div>    
+                                    <div>4,000</div>    
+                                </td>
+                                <td class="align-right noto">
+                                    <div>4,000</div>    
+                                    <div>4,000</div>    
+                                </td>
+                                <td class="align-right noto">
+                                    <div>5,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>5,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div><b>109,000</b></div>
+                                    <div><b>-</b></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left name" scope="row">
+                                    <span>유아 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>-</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div><b>-</b></div>
+                                    <div><b>-</b></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="desc mt20">
+                        <p>항공운임, 유류할증료 및 공항시설사용료는 운임을 포함한 총액으로 구매 시점에 따라 변동될 수 있습니다.</p>
+                        <p>한국출발 세금(BP)에는 국제 여객항공이용료(인천/김포공항 17,000원), 출국납부금 10,000, 국제 빈곤퇴치기여금 1,000원이 포함되어 있습니다.</p>
+                    </div>
+                </div>
+                <div class="tabView" id="fare2" style="display:none">
+                    <table class="table table-col mt10">
+                        <caption>부가서비스 구매내역</caption>
+                        <colgroup>
+                            <col style="width:280px">
+                            <col>
+                            <col style="width:165px">
+                            <col style="width:165px">
+                            <col style="width:165px">
+                            <col style="width:165px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="align-left">성명</th>
+                                <th scope="col" class="align-left">구분</th>
+                                <th scope="col">수하물</th>
+                                <th scope="col">좌석</th>
+                                <th scope="col">기내식</th>
+                                <th scope="col">합계</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6">
+                                    <div class="sum mt20 mb20">
+                                        <em>총 결제금액</em>
+                                        <i>KRW</i>
+                                        <strong>1,555,000</strong>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td class="align-left name" scope="row">
+                                    <span>성인 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td class="align-left">
+                                    <div>여정 1</div>
+                                    <div>여정 2</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>6,600</div>
+                                    <div>6,600</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>4,000</div>    
+                                    <div>4,000</div>    
+                                </td>
+                                <td class="align-right noto">
+                                    <div>5,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div><b>109,000</b></div>
+                                    <div><b>-</b></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left name" scope="row">
+                                    <span>성인 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td class="align-left">
+                                    <div>여정 1</div>
+                                    <div>여정 2</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>6,600</div>
+                                    <div>6,600</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div>4,000</div>    
+                                    <div>4,000</div>    
+                                </td>
+                                <td class="align-right noto">
+                                    <div>5,000</div>
+                                    <div>-</div>
+                                </td>
+                                <td class="align-right noto">
+                                    <div><b>109,000</b></div>
+                                    <div><b>-</b></div>
+                                </td>
+                            </tr>
+                            <tr class="infant">
+                                <td class="align-left name" scope="row">
+                                    <span>유아 MS</span>
+                                    <strong>KIM YOONSUN</strong>
+                                </td>
+                                <td colspan="4">
+                                    <p class="free">유아는 무료입니다</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="desc mt20">
+                        <p>항공운임, 유류할증료 및 공항시설사용료는 운임을 포함한 총액으로 구매 시점에 따라 변동될 수 있습니다.</p>
+                        <p>한국출발 세금(BP)에는 국제 여객항공이용료(인천/김포공항 17,000원), 출국납부금 10,000, 국제 빈곤퇴치기여금 1,000원이 포함되어 있습니다.</p>
+                    </div>
+                    <div class="btns bottom">
+                        <a href="javascript:void(0)" class="btn blue" data-event="popup-close">확인</a>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+<!-- 팝업 : 비상구 좌석 안내 -->
+<div class="popup" id="popSeat">
+    <div class="popup-wrap" style="height:750px"> <!-- default : 790 x 760 -->
+        <div class="popup-header">
+            <div class="inner">
+                <h1>비상구 좌석에 대한 안내</h1>
+                <a href="javascript:void(0)" class="close" data-event="popup-close"><span class="sr-only">레이어 팝업 닫기</span></a>
+            </div>
+        </div>
+        <div class="popup-body">
+            <div class="inner">
+                <h3 class="stit mt0">국토교통부 고시에 의거 비상구 좌석에 착석한 승객들이 비상시에 개방, 승무원의 지시에 따라 임무 수행 등 <br>승무원을 돕도록 되어 있어 아래에 규 정된 승객에게는 비상구 좌석 배정을 제한하고 있습니다.</h3>
+                <div class="line"></div>
+                <p class="txt" style="line-height:26px">
+                    1. 활동성,체력 또는 양팔이나 두 손 및 양다리의민첩서이 승무원의 지시를 수행하기에 충분치 않은 승객 <br>
+                    2. <span class="red">만 15세 미만</span>이거나 동반자의 도움 없이 승무원의 지시를 수행하기에 불충분한 승객 <br>
+                    3. 글 또는 그림으로 제공된 비상탈출에 관한 지시를 읽고 이해하지 못하거나 승무원의 구두지시를이해하지못하는승객 <br>
+                    4. 콘텍트 렌즈나 안경을 제외한 다른 시력보조장비 없이는 승무원의 지시를 수행할 수 없는 승객 <br>
+                    5. 일반적인 보청기를 제외한 다른 청력보조장비 없이는 승무원의 탈출지시를듣고 이해할 수 없는 승객 <br>
+                    6. 다른승객들에게 정보를 적절하게 전달할 수 있는 능력이 부족한 승객 <br>
+                    7. 승객의 상태나 책임(<span class="red">유소아 동반승객, 임산부 승객, 노약자 등</span>)이 비상시 승무원의 지시를 수행하는데 방해가 되거나 수행할 경우 해를 입게되는승객
+                </p>
+                <div class="line"></div>
+                <div class="stit red">상기 규정된 승객에게는비상구 좌석 배정을제한 하고 있사오니, 제한 사항 확인 후 구매를 부탁드립니다. </div>
+                <p class="txt">비상구 좌석 구매 후 출발지 공항에서 비상구 착석 불가능한 승객이라고 판단될경우 현장에서 임의로 취소될 수 있으며, <br>비상구 구매승객에 한하여 웹 체크인 및 모바일 체크인이 불가능합니다.</p>
+                
+                <div class="agreeInPop">
+                    <input type="checkbox" id="agreeExit">
+                    <label for="agreeExit"><span></span>위 내용을 확인/동의하였으며, 예매를 진행하겠습니다.</label>
+                </div>     
+                <div class="btns bottom">
+                    <a href="#" class="btn blue" data-event="popup-close">동의</a>
+                    <a href="#" class="btn gray" data-event="popup-close">취소</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

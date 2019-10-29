@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>플라이강원</title>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/reset.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/calendar.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/common.css">
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/modernizr-custom.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/calendar.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/swiper.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/ui.js"></script>
+<script>
+    $(document).ready(function(){            
+        /* 확인용 */
+        $('#receiptListPop .btn').on('click',function(){
+            $('#receiptListPop').hide();
+            $('#receiptPop').show();                            
+        });
+        popup.open('#schedulePop');
+        /* //확인용 */
+    });
+</script>
+</head>
+
+<body>
+<div id="wrap">
+    <div id="header">
+        <div id="title">
+            <h2 class="has-subMenu"><span>나의 예약내역</span></h2>
+            <div class="subMenu">
+                <ul>
+                    <li><a href="">나의 정보</a></li>
+                    <li><a href="">나의 문의내역</a></li>
+                    <li><a href="">나의 쿠폰</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="back"><a href="#none"><span class="sr-only">이전 페이지로 이동</span></a></div>
+        <div id="allmenu"><a href="#"><span class="sr-only">전체메뉴</span><i></i></a></div>            
+        <div class="allmenuWrap">
+            <div class="toparea">
+                <div class="language">
+                    <select name="" id="">
+                        <option value="">한국어</option>                        
+                        <option value="">영어</option>                        
+                    </select>
+                </div>
+                <div class="welcome">
+                    <div class="logBtn">
+                        <p>로그인하시면 다양한 정보를 확인하실 수 있습니다.</p>
+                        <!--<p><strong>홍길동님,</strong> 즐거운 여행되세요!</p>-->
+                        <a href="#none" class="btn">로그인</a>
+                        <!--<a href="#none" class="btn">로그아웃</a>-->
+                    </div>
+                </div>
+                <div class="quick">
+                    <ul>
+                        <li class="q1"><a href="#none">예약조회</a></li>
+                        <li class="q2"><a href="#none">체크인</a></li>
+                        <li class="q3"><a href="#none">사전좌석구매</a></li>
+                        <li class="q4"><a href="#none">초과 수하물</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="dep1">
+                <li class="active"><div><a href="#">예매</a></div> <!-- 활성화 active -->
+                    <ul class="dep2">
+                        <li class="active"><a href="#none">항공권 예매</a></li> <!-- 활성화 active -->
+                        <li><a href="#none">운항일정 조회</a></li>
+                        <li><a href="#none">운임안내</a>
+                            <ul class="dep3">
+                                <li><a href="#none">국내선 운임안내</a></li>
+                                <li><a href="#none">국제선 운임안내</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><div><a href="#">체크인</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">체크인</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">서비스 안내</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">항공권 안내</a></li>
+                        <li><a href="#none">공항서비스 안내</a></li>
+                        <li><a href="#none">수하물 안내</a></li>
+                        <li><a href="#none">기내서비스 안내</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">이벤트/뉴스</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">이벤트</a>
+                            <ul class="dep3">
+                                <li><a href="#none">진행중인 이벤트</a></li>
+                                <li><a href="#none">지난 이벤트</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">뉴스</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">마이페이지</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">나의 예약내역</a></li>
+                        <li><a href="#none">나의 정보</a></li>
+                        <li><a href="#none">나의 문의내역</a></li>
+                        <li><a href="#none">나의 쿠폰</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">유틸리티</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">고객센터</a>
+                            <ul class="dep3">
+                                <li><a href="#non">자주하는 질문</a></li>
+                                <li><a href="#non">문의하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">회사소개</a>
+                            <ul class="dep3">
+                                <li><a href="#non">회사 현황</a></li>
+                                <li><a href="#non">CEO 인사말</a></li>
+                                <li><a href="#non">사업 비전</a></li>
+                                <li><a href="#non">CI 소개</a></li>
+                                <li><a href="#non">보도자료</a></li>
+                                <li><a href="#non">오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">이용약관</a>
+                            <ul class="dep3">
+                                <li><a href="#non">이용약관</a></li>
+                                <li><a href="#non">여객운송약관</a></li>
+                                <li><a href="#non">항공교통이용자 서비스 계획</a></li>
+                                <li><a href="#non">피해구제 계획</a></li>
+                                <li><a href="#non">개인정보처리방침</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>        
+    </div>
+    <div id="container">
+        <div id="content">
+            <div class="section pt20">
+                <div class="sort">
+                    <select name="" id="" class="medium">
+                        <option value="" selected>출발일 순</option>
+                        <option value="">예약상태</option>
+                    </select>
+                </div>
+                
+                <!-- 데이터 없을때 -->
+                <!--<p class="dataEmpty">예약정보가 없습니다.</p>-->
+                <!-- //데이터 없을때 -->
+                
+                <div class="panel-wrap">
+                    <div class="panel-container">
+                        <div class="panel has-full-btn">
+                            <div class="blue fz13 noto">4206915(Y08HR)</div>
+                            <div class="boldStyle">김포(GMP)<i class="airplane"></i>블라디보스토크(VVO)</div>
+                            <table class="table table-list">
+                                <colgroup>
+                                    <col style="width:60px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>출발일시</th>
+                                        <td>2018.10.25(목) 08:40</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="button">
+                                <a href="view.html" class="btn"><span>예약 <i></i></span></a>
+                            </div>
+                        </div>
+                        <div class="panel has-full-btn">
+                            <div class="blue fz13 noto">4206915(Y08HR)</div>
+                            <div class="boldStyle">김포(GMP)<i class="airplane"></i>블라디보스토크(VVO)</div>
+                            <div class="boldStyle">블라디보스토크(VVO)<i class="airplane"></i>김포(GMP)</div>
+                            <table class="table table-list">
+                                <colgroup>
+                                    <col style="width:60px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>출발일시</th>
+                                        <td>2018.10.25(목) 08:40</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="button">
+                                <a href="view.html" class="btn"><span>예약 <i></i></span></a>
+                            </div>
+                        </div>
+                        <div class="panel has-full-btn disable"> <!-- 취소된 여정 : disable -->
+                            <div class="blue fz13 noto">4206915(Y08HR)</div>
+                            <div class="boldStyle">김포(GMP)<i class="airplane"></i>블라디보스토크(VVO)</div>
+                            <table class="table table-list">
+                                <colgroup>
+                                    <col style="width:60px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>출발일시</th>
+                                        <td>2018.10.25(목) 08:40</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="button">
+                                <a href="javascript:void(0)" class="btn disable"><span>취소</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btns">
+                    <a href="#" class="btn more"><span>더보기</span></a>
+                </div>
+                <div class="reference">
+                    <strong class="subtitle">유의사항</strong>
+                    <div class="desc">
+                        <p>홈페이지 로그인 후 예약 조회 및 변경, 취소 등이 가능합니다.</p>
+                        <p>예약 조회 후 부가서비스 구매가 가능합니다.</p>
+                        <p>국제선의 경우 탑승객의 영문 성함을 정확히 입력하여야 확인 가능합니다. 예) HONGGILDONG 또는 HONG/GILDONG</p>
+                        <p>여정 변경 및 환불 시 운임 규정에 따른 변경 수수료 및 환불 위약금/환불 수수료가 징수됩니다.</p>
+                        <p>예약 조회 시 장애가 발생하는 경우 고객센터(1855-0026)으로 문의하여 주시기 바랍니다.</p>
+                        <p>온라인예약 후, 콜센터를 통해 예약변경 또는 취소를 하신 경우 조회되는 내용과 다를 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 팝업 : 스케줄 변경 안내 -->
+<div class="popup popup-full" id="schedulePop">
+    <div class="popup-wrapper">
+        <div class="popup-wrap">
+            <div class="popup-header">
+                <div class="inner">
+                    <h1>스케줄 변경 안내</h1>
+                    <a href="javascript:void(0)" class="close" data-event="popup-close"><span class="sr-only">레이어 팝업 닫기</span></a>
+                </div>
+            </div>
+            <div class="popup-body">
+                <div class="inner">
+                    <p class="bookedMsg withoutIco">여정이 변경되었습니다. <span>이용에 불편을 드려 대단히 죄송합니다. <br>항공편 변경 및 취소/환불에 대한 문의는 플라이강원 <br>고객센터 (1855-0026)로 문의하여 주시기 바랍니다.</span></p>
+                    <div class="panel-wrap bgc">
+                        <div class="panel-container">
+                            <div class="panel">
+                                <div class="fz13">최초예약</div>
+                                <table class="table table-list">
+                                    <colgroup>
+                                        <col style="width:90px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>편명</th>
+                                            <td class="noto">FG1451</td>
+                                        </tr>
+                                        <tr>
+                                            <th>여정</th>
+                                            <td>김포(GMP)<i class="airplane"></i>블라디보스토크(VVO)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>출발일시</th>
+                                            <td>2018.10.25(목) 08:40</td>
+                                        </tr>
+                                        <tr>
+                                            <th>도착일시</th>
+                                            <td>2018.10.25(목) 08:40</td>
+                                        </tr>
+                                        <tr>
+                                            <th>좌석수</th>
+                                            <td class="noto">4</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="panel border">
+                                <div class="fz13 blue"><b>변경예약</b></div>
+                                <table class="table table-list">
+                                    <colgroup>
+                                        <col style="width:90px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>편명</th>
+                                            <td class="noto"><b>FG1451</b></td>
+                                        </tr>
+                                        <tr>
+                                            <th>여정</th>
+                                            <td>김포(GMP)<i class="airplane"></i>블라디보스토크(VVO)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>출발일시</th>
+                                            <td><b>2018.10.25(목) 08:40</b></td>
+                                        </tr>
+                                        <tr>
+                                            <th>도착일시</th>
+                                            <td><b>2018.10.25(목) 08:40</b></td>
+                                        </tr>
+                                        <tr>
+                                            <th>좌석수</th>
+                                            <td class="noto">4</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="panel-container">
+                            <div class="panel">
+                                <div class="fz13">최초예약</div>
+                                <table class="table table-list">
+                                    <colgroup>
+                                        <col style="width:90px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>편명</th>
+                                            <td class="noto">FG1451</td>
+                                        </tr>
+                                        <tr>
+                                            <th>여정</th>
+                                            <td>김포(GMP)<i class="airplane"></i>블라디보스토크(VVO)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>출발일시</th>
+                                            <td>2018.10.25(목) 08:40</td>
+                                        </tr>
+                                        <tr>
+                                            <th>도착일시</th>
+                                            <td>2018.10.25(목) 08:40</td>
+                                        </tr>
+                                        <tr>
+                                            <th>좌석수</th>
+                                            <td class="noto">4</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="panel border">
+                                <div class="fz13 blue"><b>변경예약</b></div>
+                                <table class="table table-list">
+                                    <colgroup>
+                                        <col style="width:90px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>편명</th>
+                                            <td class="noto"><b>FG1451</b></td>
+                                        </tr>
+                                        <tr>
+                                            <th>여정</th>
+                                            <td>김포(GMP)<i class="airplane"></i>블라디보스토크(VVO)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>출발일시</th>
+                                            <td><b>2018.10.25(목) 08:40</b></td>
+                                        </tr>
+                                        <tr>
+                                            <th>도착일시</th>
+                                            <td><b>2018.10.25(목) 08:40</b></td>
+                                        </tr>
+                                        <tr>
+                                            <th>좌석수</th>
+                                            <td class="noto">4</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="agree">
+                        <input type="checkbox" class="small" id="agree">
+                        <label for="agree"><span></span>변경된 여정을 확인하였으며, 이에 동의합니다.
+                        </label>
+                    </div>
+                    <div class="btns bottom">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a href="javascript:void(0)" class="btn block" data-event="popup-close">확인</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

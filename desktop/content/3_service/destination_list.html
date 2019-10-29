@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>플라이강원</title>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/reset.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/calendar.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/common.css">
+    <script type="text/javascript" src="../../resources/js/pc/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/modernizr-custom.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/calendar.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/swiper.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //탭
+            $('.tabWide a').on('click',function(e){
+                e.preventDefault();
+                var target = $(this).attr('href');
+
+                $(this).parent('li').siblings().removeClass('on');
+                $(this).parent('li').addClass('on');
+
+                $(target).siblings('.tabView').hide();
+                $(target).show();
+            });
+        });
+    </script>
+</head>
+
+<body class="bgWhite">
+<div class="accessibility-nav">
+    <ul>
+        <li class="first"><a href="#gnb">메뉴바로가기</a></li>
+        <li class="last"><a href="#container">본문바로가기</a></li>
+    </ul>
+</div>
+<div id="wrap">
+    <div id="header">
+        <div class="htop">
+            <div class="in">
+                <ul class="category">
+                    <li class="air on"><a href=""><span>항공</span></a></li>
+                    <li class="tour"><a href=""><span>관광</span></a></li>
+                    <li class="shopping"><a href=""><span>쇼핑</span></a></li>
+                </ul>
+                <ul class="menu">
+                    <li class="login"><a href="#">로그인</a></li>
+                    <li class="signup"><a href="#">회원가입</a></li>
+                    <li class="language">
+                        <a href="#">KOREAN</a>
+                        <!-- 190729 수정 -->
+                        <div class="languageMenu">
+                            <ul>
+                                <li><a href="">ENGLISH</a></li>
+                                <li><a href="">ENGLISH</a></li>
+                            </ul>
+                        </div>
+                        <!-- //190729 수정 -->                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="inner">
+            <h1 class="logo"><a href="#"><span class="sr-only">FLY GANGWON</span></a></h1>
+            
+            <div id="gnb">
+                <ul class="dep1">
+                    <li class="on"><a href="#">예매</a>
+                        <ul class="dep2">
+                            <li class="on"><a href="#none">항공권 예매</a></li>
+                            <li><a href="#none">운항일정조회</a></li>
+                            <li><a href="#none">운임안내</a>
+                                <ul class="dep3">
+                                    <li><a href="#none">국내선 운임안내</a></li>
+                                    <li><a href="#none">국제선 운임안내</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">체크인</a>
+                        <ul class="dep2">
+                            <li><a href="#none">체크인</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">서비스안내</a>
+                        <ul class="dep2">
+                            <li><a href="#none">항공권 안내</a></li>
+                            <li><a href="#none">공항서비스 안내</a></li>
+                            <li><a href="#none">수하물 안내</a></li>
+                            <li><a href="#none">기내서비스 안내</a></li>
+                            <li><a href="#none">취항지 안내</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이벤트/뉴스</a>
+                        <ul class="dep2">
+                            <li><a href="#none">이벤트</a></li>
+                            <li><a href="#none">뉴스</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">마이페이지</a>
+                        <ul class="dep2">
+                            <li><a href="#none">나의 예약내역</a></li>
+                            <li><a href="#none">나의 정보</a></li>
+                            <li><a href="#none">나의 문의내역</a></li>
+                            <li><a href="#none">나의 쿠폰</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="allmenu">
+                <a href="#"><span class="sr-only">전체메뉴</span><i></i></a>
+            </div>
+            <div class="allmenuWrap">
+                <div class="allmenuContent">
+                    <div class="logoarea"><h1><span class="sr-only">FLY GANGWON</span></h1></div>
+                    <ul class="dep1">
+                        <li class="on"><div><a href="#">예매</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">항공권 예매</a></li>
+                                <li><a href="#none">운항일정 조회</a></li>
+                                <li><a href="#none">운임안내</a>
+                                    <ul class="dep3">
+                                        <li><a href="#none">국내선 운임안내</a></li>
+                                        <li><a href="#none">국제선 운임안내</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">체크인</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">체크인</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">서비스 안내</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">항공권 안내</a></li>
+                                <li><a href="#none">공항서비스 안내</a></li>
+                                <li><a href="#none">수하물 안내</a></li>
+                                <li><a href="#none">기내서비스 안내</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">이벤트/뉴스</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">이벤트</a>
+                                    <ul class="dep3">
+                                        <li><a href="#none">진행중인 이벤트</a></li>
+                                        <li><a href="#none">지난 이벤트</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">뉴스</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">마이페이지</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">나의 예약내역</a></li>
+                                <li><a href="#none">나의 정보</a></li>
+                                <li><a href="#none">나의 문의내역</a></li>
+                                <li><a href="#none">나의 쿠폰</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">유틸리티</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">고객센터</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">자주하는 질문</a></li>
+                                        <li><a href="#non">문의하기</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">회사소개</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">회사 현황</a></li>
+                                        <li><a href="#non">CEO 인사말</a></li>
+                                        <li><a href="#non">사업 비전</a></li>
+                                        <li><a href="#non">CI 소개</a></li>
+                                        <li><a href="#non">보도자료</a></li>
+                                        <li><a href="#non">오시는 길</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">이용약관</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">이용약관</a></li>
+                                        <li><a href="#non">여객운송약관</a></li>
+                                        <li><a href="#non">항공교통이용자 서비스 계획</a></li>
+                                        <li><a href="#non">피해구제 계획</a></li>
+                                        <li><a href="#non">개인정보처리방침</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg"></div>
+    </div>
+    <div id="location">
+        <div class="inner">
+            <div class="dep1"><a href="#">서비스안내</a></div>
+            <div class="dep2"><a href="#">취항지 안내</a></div>
+        </div>
+    </div>
+    <div id="container">
+        <div id="content">
+            <h2 class="title">취항지 안내</h2>            
+            <div class="tabWide mb80">
+                <ul>
+                    <li class="on"><a href="#domestic">국내선</a></li>
+                    <li><a href="#oversea">국제선</a></li>
+                </ul>
+            </div>
+            <div class="tabView" id="domestic">
+                <div class="boardSch">
+                    <form action="#">
+                        <fieldset>
+                            <legend>뉴스 게시물 검색</legend>
+                            <div class="set">
+                                <select name="" id="">
+                                    <option value="">제목</option>
+                                    <option value="">내용</option>
+                                </select>
+                                <input type="text" class="input-text" placeholder="검색어 입력">
+                            </div>
+                            <input type="submit" value="검색" class="button">
+                        </fieldset>                    
+                    </form>
+                </div>
+                <div class="board-list">
+                    <table>
+                        <caption>뉴스 리스트</caption>
+                        <colgroup>
+                            <col>
+                            <col style="width:16%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>제목</th>
+                                <th>등록일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 데이터 없을때 -->
+                            <tr>
+                                <td colspan="2">
+                                    <p class="dataEmpty">조회하신 데이터가 없습니다.</p>
+                                </td>
+                            </tr>
+                            <!-- //데이터 없을때 -->
+                            <tr class="point">
+                                <td class="align-left pl40"><a href="destination_view.html">플라이강원 신규 항공운송 면허 발급</a> <i class="primary"><span class="sr-only">주요</span></i> <i class="new">NEW</i></td>
+                                <td class="noto">2019.03.05</td>
+                            </tr>
+                            <tr class="point">
+                                <td class="align-left pl40"><a href="destination_view.html">플라이강원 신규 항공운송 면허 발급</a> <i class="primary"><span class="sr-only">주요</span></i> <i class="new">NEW</i></td>
+                                <td class="noto">2019.03.05</td>
+                            </tr>
+                            <tr>
+                                <td class="align-left pl40"><a href="destination_view.html">플라이강원 신규 항공운송 면허 발급</a> <i class="new">NEW</i></td>
+                                <td class="noto">2019.03.05</td>
+                            </tr> 
+                            <tr>
+                                <td class="align-left pl40"><a href="destination_view.html">플라이강원 신규 항공운송 면허 발급</a> <i class="new">NEW</i></td>
+                                <td class="noto">2019.03.05</td>
+                            </tr> 
+                            <tr>
+                                <td class="align-left pl40"><a href="destination_view.html">플라이강원 신규 항공운송 면허 발급</a> <i class="new">NEW</i></td>
+                                <td class="noto">2019.03.05</td>
+                            </tr> 
+                            <tr>
+                                <td class="align-left pl40"><a href="destination_view.html">플라이강원 신규 항공운송 면허 발급</a> <i class="new">NEW</i></td>
+                                <td class="noto">2019.03.05</td>
+                            </tr> 
+                            <tr>
+                                <td class="align-left pl40"><a href="destination_view.html">플라이강원 신규 항공운송 면허 발급</a> <i class="new">NEW</i></td>
+                                <td class="noto">2019.03.05</td>
+                            </tr> 
+                            <tr>
+                                <td class="align-left pl40"><a href="destination_view.html">플라이강원 신규 항공운송 면허 발급</a> <i class="new">NEW</i></td>
+                                <td class="noto">2019.03.05</td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+                <div class="paging">
+                    <a href="#none" class="first"><span>처음</span></a>
+                    <a href="#none" class="prev"><span>이전</span></a>
+                    <strong>1</strong>
+                    <a href="#none">2</a>
+                    <a href="#none">3</a>
+                    <a href="#none">4</a>
+                    <a href="#none">5</a>
+                    <a href="#none" class="next"><span>다음</span></a>
+                    <a href="#none" class="last"><span>끝</span></a>
+                </div>
+            </div>
+            <div class="tabView" id="oversea" style="display:none">
+                <div class="boardSch">
+                    <form action="#">
+                        <fieldset>
+                            <legend>뉴스 게시물 검색</legend>
+                            <div class="set">
+                                <select name="" id="">
+                                    <option value="">제목</option>
+                                    <option value="">내용</option>
+                                </select>
+                                <input type="text" class="input-text" placeholder="검색어 입력">
+                            </div>
+                            <input type="submit" value="검색" class="button">
+                        </fieldset>                    
+                    </form>
+                </div>
+                <div class="board-list">
+                    <table>
+                        <caption>뉴스 리스트</caption>
+                        <colgroup>
+                            <col>
+                            <col style="width:16%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>제목</th>
+                                <th>등록일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 데이터 없을때 -->
+                            <tr>
+                                <td colspan="2">
+                                    <p class="dataEmpty">조회하신 데이터가 없습니다.</p>
+                                </td>
+                            </tr>
+                            <!-- //데이터 없을때 -->
+                            <tr class="point">
+                                <td class="align-left pl40"><a href="destination_view.html">플라이강원 신규 항공운송 면허 발급</a> <i class="primary"><span class="sr-only">주요</span></i> <i class="new">NEW</i></td>
+                                <td class="noto">2019.03.05</td>
+                            </tr>
+                            <tr class="point">
+                                <td class="align-left pl40"><a href="destination_view.html">플라이강원 신규 항공운송 면허 발급</a> <i class="primary"><span class="sr-only">주요</span></i> <i class="new">NEW</i></td>
+                                <td class="noto">2019.03.05</td>
+                            </tr>
+                            <tr>
+                                <td class="align-left pl40"><a href="destination_view.html">플라이강원 신규 항공운송 면허 발급</a> <i class="new">NEW</i></td>
+                                <td class="noto">2019.03.05</td>
+                            </tr> 
+                            <tr>
+                                <td class="align-left pl40"><a href="destination_view.html">플라이강원 신규 항공운송 면허 발급</a> <i class="new">NEW</i></td>
+                                <td class="noto">2019.03.05</td>
+                            </tr> 
+                            <tr>
+                                <td class="align-left pl40"><a href="destination_view.html">플라이강원 신규 항공운송 면허 발급</a> <i class="new">NEW</i></td>
+                                <td class="noto">2019.03.05</td>
+                            </tr> 
+                            <tr>
+                                <td class="align-left pl40"><a href="destination_view.html">플라이강원 신규 항공운송 면허 발급</a> <i class="new">NEW</i></td>
+                                <td class="noto">2019.03.05</td>
+                            </tr> 
+                            <tr>
+                                <td class="align-left pl40"><a href="destination_view.html">플라이강원 신규 항공운송 면허 발급</a> <i class="new">NEW</i></td>
+                                <td class="noto">2019.03.05</td>
+                            </tr> 
+                            <tr>
+                                <td class="align-left pl40"><a href="destination_view.html">플라이강원 신규 항공운송 면허 발급</a> <i class="new">NEW</i></td>
+                                <td class="noto">2019.03.05</td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+                <div class="paging">
+                    <a href="#none" class="first"><span>처음</span></a>
+                    <a href="#none" class="prev"><span>이전</span></a>
+                    <strong>1</strong>
+                    <a href="#none">2</a>
+                    <a href="#none">3</a>
+                    <a href="#none">4</a>
+                    <a href="#none">5</a>
+                    <a href="#none" class="next"><span>다음</span></a>
+                    <a href="#none" class="last"><span>끝</span></a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div id="footer">
+        <div class="inner">
+            <div class="logo"><span class="sr-only">FLY GANGWON LOGO</span></div>
+            <!--<div class="menu">
+                <ul>
+                    <li><a href="#">홈페이지 이용약관</a></li>
+                    <li><a href="#">국내 여객운송약관</a></li>
+                    <li><a href="#">항공교통이용자 서비스 계획</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">항공교통이용자 피해구제계획</a></li>
+                </ul>
+            </div>-->
+            <div class="sns">
+                <ul>
+                    <li class="facebook"><a href=""><span class="sr-only">facebook</span></a></li>
+                    <li class="instagram"><a href=""><span class="sr-only">instagram</span></a></li>
+                    <li class="youtube"><a href=""><span class="sr-only">youtube</span></a></li>
+                </ul>
+            </div>
+            <div class="info">
+                <span>플라이강원 주식회사</span>
+                <span>대표이사 : 주원석</span>
+                <span>TEL: 02-6718-8230</span>
+                <span>사업자번호: 710-81-00367</span><br>
+                <span>본사 : 강원도 양양군 손양면 공항로 201, 1층</span>
+                <span>서울사무소 : 서울시 강남구 도산대로 456 청담백영빌딩 6층</span>
+            </div>
+            <div class="copyright">COPYRIGHT ⓒ 2018 FLY GANGWON ALL RIGHTS RESERVED.</div>            
+        </div>
+        <div class="gotop">
+            <a href="#"><span class="sr-only">맨 위로</span></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

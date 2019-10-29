@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+/* datepicker 멀티 css */
+.datepickerArea .ui-datepicker-multi {position:relative; width:100% !important;padding: 0 5px;}
+
+.datepickerArea .ui-datepicker-prev,
+.datepickerArea .ui-datepicker-next{display: none;}
+
+.datepickerArea .ui-datepicker-title {margin: 30px 0 20px; font-size:27px; font-weight:700; text-align:center;letter-spacing: 0;font-family: 'Noto';text-align: left;line-height: 1;padding-left: 4%;}
+.datepickerArea .ui-datepicker-year{font-size: 14px;font-weight: 400;}
+.datepickerArea .ui-datepicker-month:after{content: '.';}
+
+.weekday{display: none;}
+.datepickerArea .ui-datepicker-group-first .ui-datepicker-title{margin-top: 10px;}
+.datepickerArea .ui-datepicker-calendar{table-layout: auto}
+.datepickerArea .ui-datepicker-calendar thead th {width:60px; height:40px; padding:0;font-size:14px;font-weight:400;text-align: center;background:#fff;border:none;letter-spacing: 0;}
+.datepickerArea .ui-datepicker-calendar thead th.ui-datepicker-week-end:first-child {color:#e54734;}
+.datepickerArea .ui-datepicker-calendar tbody td {padding:0;font-size:16px;font-weight:700; text-align:center; border:none;letter-spacing: 0;}
+.datepickerArea .ui-datepicker-calendar tbody td a {position:relative; display:block;padding: 0.7em 0;font-family: 'Noto';}
+
+.datepickerArea .ui-datepicker-calendar tbody td.ui-datepicker-week-end:first-child a{color: #e54734}
+.datepickerArea .ui-datepicker-calendar tbody td.holiday a{color: #e54734 !important;}
+
+.datepickerArea .ui-datepicker-calendar tbody td.ui-datepicker-today,
+.datepickerArea .ui-datepicker-calendar tbody td.ui-datepicker-today a{color: #2896eb;}
+.datepickerArea .ui-datepicker-calendar tbody td.ui-datepicker-today span {position:relative; display:block;}
+.datepickerArea .ui-datepicker-calendar tbody td.ui-datepicker-today a:before,
+.datepickerArea .ui-datepicker-calendar tbody td.ui-datepicker-today span:before {display:block; content:""; position:absolute; left:0; top:0; width:100%; height:100%;box-sizing: border-box;}
+.datepickerArea .ui-datepicker-calendar tbody td.ui-datepicker-today .txt_today {display:block; position:absolute; left:0; bottom:0; width:100%; height:15px; text-align:center; color:#222; font-size:11px; line-height:1;}
+.datepickerArea .ui-datepicker-calendar tbody td.ui-datepicker-today .ui-state-active .txt_today {color:#fff;}
+.datepickerArea .ui-datepicker-calendar tbody td.ui-state-disabled,
+.datepickerArea .ui-datepicker-calendar tbody td.ui-state-disabled a{color:#bbb !important;background-color: #fff;}
+.datepickerArea .ui-datepicker-calendar tbody td.ui-state-disabled span{position:relative; display:block;padding: 0.7em 0;}
+
+/*가는 날: start , 오는 날: end*/
+.datepickerArea .ui-datepicker-calendar tbody td.startDay a {background-color:#2896eb; color:#fff;}
+/*.datepickerArea .ui-datepicker-calendar tbody td.startDay a:before {content: '가는 날';display: block;width: 100%;line-height: 14px;height: 14px;font-size: 10px;color: #fff;background-color: rgba(229,154,45,0.8);text-align: center;position: absolute;left:0;top:-14px;z-index: 1;border-color: rgba(229,154,45,0.9);bottom:auto;right:auto}*/
+.datepickerArea .ui-datepicker-calendar tbody td.endDay a {background-color:#2896eb; color:#fff;}
+/*.datepickerArea .ui-datepicker-calendar tbody td.endDay a:before {content: '오는 날';display: block;width: 100%;line-height: 14px;height: 14px;font-size: 10px;color: #fff;background-color: rgba(229,154,45,0.8);text-align: center;position: absolute;left:0;bottom:-14px;z-index: 1;border-color: rgba(229,154,45,0.9);top:auto;right:auto}*/
+/*.datepickerArea .ui-datepicker-calendar tbody td.startDay.endDay a:after{content: '가는 날';display: block;width: 100%;line-height: 14px;height: 14px;font-size: 10px;color: #fff;background-color: rgba(229,154,45,0.8);text-align: center;position: absolute;left:0;top:-14px;z-index: 1;border-color: rgba(229,154,45,0.9);bottom:auto;right:auto}*/
+
+/*가는 날 ~ 오는 날 기간*/
+.datepickerArea .dp-highlight .ui-state-default {background-color:#e7f5ff;}
+.datepickerArea .ui-datepicker-calendar tbody td.ui-datepicker-day-range,
+.datepickerArea .ui-datepicker-calendar tbody td.ui-datepicker-day-range a {background-color:#e7f5ff;}

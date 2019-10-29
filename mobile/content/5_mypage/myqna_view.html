@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>플라이강원</title>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/reset.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/calendar.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/common.css">
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/modernizr-custom.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/calendar.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/swiper.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.toggleBox').on('click',function(e){
+                e.preventDefault();
+                $(this).toggleClass('active'); 
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div id="wrap">
+    <div id="header">
+        <div id="title">
+            <h2 class="has-subMenu"><span>나의 문의내역</span></h2>
+            <div class="subMenu">
+                <ul>
+                    <li><a href="">나의 예약내역</a></li>
+                    <li><a href="">나의 정보</a></li>
+                    <li><a href="">나의 쿠폰</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="back"><a href="#none"><span class="sr-only">이전 페이지로 이동</span></a></div>
+        <div id="allmenu"><a href="#"><span class="sr-only">전체메뉴</span><i></i></a></div>            
+        <div class="allmenuWrap">
+            <div class="toparea">
+                <div class="language">
+                    <select name="" id="">
+                        <option value="">한국어</option>                        
+                        <option value="">영어</option>                        
+                    </select>
+                </div>
+                <div class="welcome">
+                    <div class="logBtn">
+                        <p>로그인하시면 다양한 정보를 확인하실 수 있습니다.</p>
+                        <!--<p><strong>홍길동님,</strong> 즐거운 여행되세요!</p>-->
+                        <a href="#none" class="btn">로그인</a>
+                        <!--<a href="#none" class="btn">로그아웃</a>-->
+                    </div>
+                </div>
+                <div class="quick">
+                    <ul>
+                        <li class="q1"><a href="#none">예약조회</a></li>
+                        <li class="q2"><a href="#none">체크인</a></li>
+                        <li class="q3"><a href="#none">사전좌석구매</a></li>
+                        <li class="q4"><a href="#none">초과 수하물</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="dep1">
+                <li class="active"><div><a href="#">예매</a></div> <!-- 활성화 active -->
+                    <ul class="dep2">
+                        <li class="active"><a href="#none">항공권 예매</a></li> <!-- 활성화 active -->
+                        <li><a href="#none">운항일정 조회</a></li>
+                        <li><a href="#none">운임안내</a>
+                            <ul class="dep3">
+                                <li><a href="#none">국내선 운임안내</a></li>
+                                <li><a href="#none">국제선 운임안내</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><div><a href="#">체크인</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">체크인</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">서비스 안내</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">항공권 안내</a></li>
+                        <li><a href="#none">공항서비스 안내</a></li>
+                        <li><a href="#none">수하물 안내</a></li>
+                        <li><a href="#none">기내서비스 안내</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">이벤트/뉴스</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">이벤트</a>
+                            <ul class="dep3">
+                                <li><a href="#none">진행중인 이벤트</a></li>
+                                <li><a href="#none">지난 이벤트</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">뉴스</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">마이페이지</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">나의 예약내역</a></li>
+                        <li><a href="#none">나의 정보</a></li>
+                        <li><a href="#none">나의 문의내역</a></li>
+                        <li><a href="#none">나의 쿠폰</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">유틸리티</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">고객센터</a>
+                            <ul class="dep3">
+                                <li><a href="#non">자주하는 질문</a></li>
+                                <li><a href="#non">문의하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">회사소개</a>
+                            <ul class="dep3">
+                                <li><a href="#non">회사 현황</a></li>
+                                <li><a href="#non">CEO 인사말</a></li>
+                                <li><a href="#non">사업 비전</a></li>
+                                <li><a href="#non">CI 소개</a></li>
+                                <li><a href="#non">보도자료</a></li>
+                                <li><a href="#non">오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">이용약관</a>
+                            <ul class="dep3">
+                                <li><a href="#non">이용약관</a></li>
+                                <li><a href="#non">여객운송약관</a></li>
+                                <li><a href="#non">항공교통이용자 서비스 계획</a></li>
+                                <li><a href="#non">피해구제 계획</a></li>
+                                <li><a href="#non">개인정보처리방침</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>        
+    </div>
+    <div id="container">
+        <div id="content">
+            <div class="board-view">
+                <div class="board-view-head">
+                    <div class="tit">부분 예약취소 하고 싶은데 전체 취소하고 다시 예약해야 하나요?</div>
+                    <div class="date"><span>문의일</span> 2019.12.12</div>
+                </div>
+                <div class="board-view-body">
+                    <div class="view">
+                        안녕하십니까 당사의 국제항공운송사업 면허 발급 관련하여 안내드립니다.  <br>
+                        금일 2019년 03월 05일자로 국토교통부로부터 국제항공운송사업 면허를 발급 받았음을 알려드립니다. <br>
+                        지난 3년간 멋진 항공사를 만들고자 했던 저희의 도전과 노력이 좌절될 때마다 변치 않고 보내주신 애정 어린 충고와 관심이 저희를 버티게 하는 큰 힘이 되었으며, 덕분에 좋은 결과를 얻을 수 있었다고 생각합니다. <br><br><br>
+
+                        면허 취득으로 첫 걸음을 시작한 만큼 AOC(운항 증명), 상품 개발 등 남은 과정을 착실히 준비하여 안전하고 내실 있는 항공사를 만드는 일에 최선을 다 하겠습니다. <br>
+                        그 동안 보내 주신 지지와 협조에 다시 한번 감사 드리고, 앞으로도 플라이강원에 대한 많은 관심과 성원 부탁드립니다.  <br><br>
+
+                        감사합니다.
+                    </div>
+                    <div class="file mt15"><a href="">flightbook.jpg</a></div>
+                </div>
+                <div class="qna-view">
+                    <div class="cont">
+                        <div class="badge"><span>답변완료</span> <i>2019.01.01</i></div>
+                        <div class="view">
+                            안녕하세요 고객님. <br>
+                            플라이강원을 이용해 주셔서 감사합니다. <br>
+                            해당 항공권은 왕복 프로모션 상품이므로 부분 취소가 불가능합니다. 스케쥴을 변경 하실 경우 전체 취소 후 다시 예약 진행 부탁드립니다. 
+                            감사합니다.
+                        </div>
+                    </div>
+                    <div class="list">
+                        <a href="javascript:;" class="toggleBox">
+                            <div class="date">답변2. <i>2019.05.10</i></div>
+                            <div class="txt">안녕하세요 고객님. <br>
+                                해당 항공권은 왕복 프로모션 상품이므로 부분 취소가 불가능합니다. 해당 항공권은 왕복 프로모션 상품이므로 부분 취소가 불가능합니다. 해당 항공권은 왕복 프로모션 상품이므로 부분 취소가 불가능합니다. 해당 항공권은 왕복 프로모션 상품이므로 부분 취소가 불가능합니다. 해당 항공권은 왕복 프로모션 상품이므로 부분 취소가 불가능합니다. 해당 항공권은 왕복 프로모션 상품이므로 부분 취소가 불가능합니다. 
+                            </div>
+                        </a>
+                        <a href="javascript:;" class="toggleBox">
+                            <div class="date">답변1. <i>2019.05.10</i></div>
+                            <div class="txt">안녕하세요 고객님. <br>
+                                해당 항공권은 왕복 프로모션 상품이므로 부분 취소가 불가능합니다. 해당 항공권은 왕복 프로모션 상품이므로 부분 취소가 불가능합니다. 해당 항공권은 왕복 프로모션 상품이므로 부분 취소가 불가능합니다. 해당 항공권은 왕복 프로모션 상품이므로 부분 취소가 불가능합니다. 해당 항공권은 왕복 프로모션 상품이므로 부분 취소가 불가능합니다. 해당 항공권은 왕복 프로모션 상품이므로 부분 취소가 불가능합니다. 
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="btns bottom">
+                <a href="#" class="btn large">목록</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

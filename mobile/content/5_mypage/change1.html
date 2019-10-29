@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>플라이강원</title>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/reset.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/calendar.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/common.css">
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/modernizr-custom.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/calendar.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/swiper.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            //운임 선택
+            var fareSwiper;
+            var fareHtml = '<div class="fareTermsWrap"><div class="fareTerms"><strong>포함내역</strong><p class="weightFree">무료 위탁 수하물 없음</p> <!-- 무료수하물 없을때 weightFree 추가 / 있을때 weightFree 삭제 --><dl><dt>예약 변경 수수료 :</dt><dd><div>구매다음날 ~ 출발당일 <em>20,000원</em></div></dd><dt>취소 수수료(구간당)</dt><dd><div>~ 출발 91일전 <em>없음</em></div><div>출발 90일 전 ~ 61일 전 <em>20,000원</em></div><div>출발 60일 전 ~ 31일 전 <em>40,000원</em></div><div>출발 30일 전 ~ 출발당일 <em>60,000원</em></div></dd><dt>예약부도 위약금: 출발시간 이후 : </dt><dd>12,000원</dd></dl></div><!--<div class="fareTerms"> <strong>포함내역</strong><p>무료 위탁 수하물 15kg</p><dl><dt>예약 변경 수수료</dt><dd><div>구매다음날 ~ 출발당일 <em>20,000원</em></div></dd><dt>취소 수수료(구간당)</dt><dd><div>~ 출발91일전 <em>없음</em></div><div>출발 90일 전 ~ 61일 전 <em>20,000원</em></div><div>출발 60일 전 ~ 31일 전 <em>40,000원</em></div><div>출발 30일 전 ~ 출발당일 <em>60,000원</em></div></dd><dt>예약부도 위약금: 출발시간 이후 12,000원 </dt></dl></div><div class="fareTerms"><strong>포함내역</strong><p>무료 위탁 수하물 20kg</p><dl><dt>예약 변경 수수료</dt><dd><div>구매다음날 ~ 출발당일 <em>없음</em></div></dd><dt>취소 수수료(구간당)</dt><dd><div>~ 출발91일전 <em>없음</em></div><div>출발 90일 전 ~ 61일 전 <em>20,000원</em></div><div>출발 60일 전 ~ 31일 전 <em>40,000원</em></div><div>출발 30일 전 ~ 출발당일 <em>60,000원</em></div></dd><dt>예약부도 위약금: 출발시간 이후 12,000원 </dt></dl></div>--></div>';
+
+            $('.price > a').on('click',function(e){
+                e.preventDefault();
+                var idx = $(this).attr('data-idx');            
+                var $targetCard = $(this).closest('.priceArea').next('.fareTermsWrap');  
+
+                if($(this).attr('data-status') == 'soldout'){ //마감
+                    return false;   
+                }else{
+                    //요금제 노출
+                    $('.fareTermsWrap').remove();
+                    $(this).closest('.priceArea').after(fareHtml);
+
+                    //클릭한 요금 활성화
+                    $(this).closest('.scheduleCard').find('.price').removeClass('active');
+                    $(this).parent('.price').addClass('active');
+
+                    //클릭한 여정 card로 스크롤 이동
+                    $('html, body').stop().delay(150).animate({
+                        'scrollTop': $(this).closest('.card').offset().top - 60
+                    }, 400, 'swing');
+                }
+            });
+
+            //swiper
+            if($('.summeryWrap .in').size() > 1){ //슬라이드 2개 이상일때 swiper 실행
+                var summerySwiper = new Swiper('#summery .swiper-container', {
+                    autoHeight: true,
+                    slidesPerView: 1.1,
+                    spaceBetween: 10,
+                    loop: false,
+                    pagination: {
+                        el: $('#summery .swiper-pagination')
+                    },
+                });
+                //항공운임 총액 보기 버튼시 swiper 재시작
+                $('.total a').on('click',function(){
+                    summerySwiper.destroy(true, true);
+                    summerySwiper = new Swiper('#summery .swiper-container', {
+                        autoHeight: true,
+                        slidesPerView: 1.05,
+                        spaceBetween: 10,
+                        loop: false,
+                        pagination: {
+                            el: $('#summery .swiper-pagination')
+                        },
+                    });
+                });
+            }
+            
+            //스케줄 없음 알럿 닫기
+            $('.noSchedule .close').on('click',function(){
+                $('.noSchedule').hide();
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div id="wrap">
+    <div id="header">
+        <div id="title">
+            <h2 class="has-subMenu"><span>항공권 선택</span></h2>
+            <div class="subMenu">
+                <ul>
+                    <li><a href="#none">운항일정 조회</a></li>
+                    <li><a href="#none">운임안내</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="back"><a href="#none"><span class="sr-only">이전 페이지로 이동</span></a></div>
+        <div id="allmenu"><a href="#"><span class="sr-only">전체메뉴</span><i></i></a></div>            
+        <div class="allmenuWrap">
+            <div class="toparea">
+                <div class="language">
+                    <select name="" id="">
+                        <option value="">한국어</option>                        
+                        <option value="">영어</option>                        
+                    </select>
+                </div>
+                <div class="welcome">
+                    <div class="logBtn">
+                        <p>로그인하시면 다양한 정보를 확인하실 수 있습니다.</p>
+                        <!--<p><strong>홍길동님,</strong> 즐거운 여행되세요!</p>-->
+                        <a href="#none" class="btn">로그인</a>
+                        <!--<a href="#none" class="btn">로그아웃</a>-->
+                    </div>
+                </div>
+                <div class="quick">
+                    <ul>
+                        <li class="q1"><a href="#none">예약조회</a></li>
+                        <li class="q2"><a href="#none">체크인</a></li>
+                        <li class="q3"><a href="#none">사전좌석구매</a></li>
+                        <li class="q4"><a href="#none">초과 수하물</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="dep1">
+                <li class="active"><div><a href="#">예매</a></div> <!-- 활성화 active -->
+                    <ul class="dep2">
+                        <li class="active"><a href="#none">항공권 예매</a></li> <!-- 활성화 active -->
+                        <li><a href="#none">운항일정 조회</a></li>
+                        <li><a href="#none">운임안내</a>
+                            <ul class="dep3">
+                                <li><a href="#none">국내선 운임안내</a></li>
+                                <li><a href="#none">국제선 운임안내</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><div><a href="#">체크인</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">체크인</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">서비스 안내</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">항공권 안내</a></li>
+                        <li><a href="#none">공항서비스 안내</a></li>
+                        <li><a href="#none">수하물 안내</a></li>
+                        <li><a href="#none">기내서비스 안내</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">이벤트/뉴스</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">이벤트</a>
+                            <ul class="dep3">
+                                <li><a href="#none">진행중인 이벤트</a></li>
+                                <li><a href="#none">지난 이벤트</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">뉴스</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">마이페이지</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">나의 예약내역</a></li>
+                        <li><a href="#none">나의 정보</a></li>
+                        <li><a href="#none">나의 문의내역</a></li>
+                        <li><a href="#none">나의 쿠폰</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">유틸리티</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">고객센터</a>
+                            <ul class="dep3">
+                                <li><a href="#non">자주하는 질문</a></li>
+                                <li><a href="#non">문의하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">회사소개</a>
+                            <ul class="dep3">
+                                <li><a href="#non">회사 현황</a></li>
+                                <li><a href="#non">CEO 인사말</a></li>
+                                <li><a href="#non">사업 비전</a></li>
+                                <li><a href="#non">CI 소개</a></li>
+                                <li><a href="#non">보도자료</a></li>
+                                <li><a href="#non">오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">이용약관</a>
+                            <ul class="dep3">
+                                <li><a href="#non">이용약관</a></li>
+                                <li><a href="#non">여객운송약관</a></li>
+                                <li><a href="#non">항공교통이용자 서비스 계획</a></li>
+                                <li><a href="#non">피해구제 계획</a></li>
+                                <li><a href="#non">개인정보처리방침</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>        
+    </div>    
+    <div id="container">
+        <div id="content">
+            <div id="top">
+                <div class="dim"></div>
+                <div class="inner">
+                    <div class="topWrap">
+                        <div class="dateReselect">
+                            <a href="javascript:;" data-event="popup-open" data-target="#lyFromDate"> 
+                                <strong>탑승일자 변경</strong>
+                                <em>5월 07일 (화) - 5월 30일 (목)</em>
+                            </a>
+                            <div class="search">
+                                <a href="javascript:;"><span class="sr-only">검색</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="journeyWrap">
+                <h3 class="journey"><span class="labelPlan">여정 1</span><i>통화 KRW</i></h3>
+                <div class="departArrive">
+                    <strong>서울/인천 ICN</strong>
+                    <i class="airplane"></i>
+                    <strong>오사카/간사이  KIX </strong>
+                </div>
+            </div>
+
+            <div class="schedule">
+                <ul class="timetable">
+                    <li>
+                        <a href="#">
+                            <span>2018.09.30(금)</span>
+                            <em>56,000</em>
+                        </a>
+                    </li>
+                    <li class="focus">
+                        <a href="#">
+                            <span>2018.09.30(금)</span>
+                            <em>마감</em>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>2018.09.30(금)</span>
+                            <em>-</em>
+                        </a>
+                    </li>
+                </ul>
+                <div class="pager">
+                    <a href="#" class="prev"><span class="sr-only">하루 전</span></a>
+                    <a href="#" class="next"><span class="sr-only">하루 후</span></a>
+                </div>
+            </div>
+            <div class="loadingArea">
+                <div class="scheduleCard" style="display:block"> <!-- 로딩 후 block 으로 변경 -->
+                    <div class="card">
+                        <div class="flight">FG1207</div>
+                        <div class="time">
+                            <div class="departure"><strong>09 : 00</strong></div>
+                            <div class="duration"><span>26시간 20분</span></div>
+                            <div class="arrive"><strong>11 : 20</strong></div>
+                        </div>
+                        <span class="day">+ 1day</span>
+                        <div class="priceArea">
+                            <div class="price">
+                                <a href="javascrip:;" data-event="alert-open" data-target="#alertLogin">
+                                    <strong>특가</strong>
+                                    <b>70,000</b>
+                                </a>
+                                <em>1석</em>
+                            </div>
+                            <div class="price">
+                                <a href="javascript:;">
+                                    <strong>할인</strong>
+                                    <b>120,000</b>
+                                </a>
+                                <em>5석</em>
+                            </div>
+                            <div class="price">
+                                <a href="javascript:;">
+                                    <strong>정상</strong>
+                                    <b>260,000</b>
+                                </a>
+                                <em>9석</em>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="flight">FG1207</div>
+                        <div class="time">
+                            <div class="departure"><strong>09 : 00</strong></div>
+                            <div class="duration"><span>2시간 20분</span></div>
+                            <div class="arrive"><strong>11 : 20</strong></div>
+                        </div>
+                        <div class="priceArea">
+                            <div class="price">
+                                <a href="javascrip:;" data-status="soldout">
+                                    <i>마감</i>
+                                </a>
+                            </div>
+                            <div class="price">
+                                <a href="javascript:;">
+                                    <strong>할인</strong>
+                                    <b>120,000</b>
+                                </a>
+                                <em>5석</em>
+                            </div>
+                            <div class="price">
+                                <a href="javascript:;">
+                                    <strong>정상</strong>
+                                    <b>260,000</b>
+                                </a>
+                                <em>9석</em>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+                <!--<div class="loading">
+                <div class="icon">
+                <img src="../../resources/images/mobile/loading2.gif" alt="">
+                <i>plase wait a moment...</i>
+                <p>항공권 정보를 조회중입니다.</p>
+                </div>
+                </div>-->
+            </div>
+            <!-- 확인용 script-->
+            <script>
+                $(document).ready(function(){
+                    /*setTimeout(function(){
+                $('.loading').hide();
+                $('.loadingArea .scheduleCard').show();
+            },3000);     */               
+                });
+            </script>
+
+            <div class="journeyWrap">
+                <h3 class="journey"><span class="labelPlan">여정 2</span><i>통화 KRW</i></h3>
+                <div class="departArrive">
+                    <strong>오사카/간사이  KIX </strong>
+                    <i class="airplane"></i>
+                    <strong>서울/인천 ICN</strong>
+                </div>
+            </div>
+            <div class="schedule">
+                <ul class="timetable">
+                    <li>
+                        <a href="#">
+                            <span>2018.09.30(금)</span>
+                            <em>-</em>
+                        </a>
+                    </li>
+                    <li class="focus">
+                        <a href="#">
+                            <span>2018.09.30(금)</span>
+                            <em>256,000</em>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>2018.09.30(금)</span>
+                            <em>56,000</em>
+                        </a>
+                    </li>
+                </ul>
+                <div class="pager">
+                    <a href="#" class="prev"><span class="sr-only">하루 전</span></a>
+                    <a href="#" class="next"><span class="sr-only">하루 후</span></a>
+                </div>
+            </div>
+            <div class="scheduleCard" style="display:block">
+                <div class="card">
+                    <div class="flight">FG1207</div>
+                    <div class="time">
+                        <div class="departure"><strong>09 : 00</strong></div>
+                        <div class="duration"><span>2시간 20분</span></div>
+                        <div class="arrive"><strong>11 : 20</strong></div>
+                    </div>
+                    <div class="priceArea">
+                        <div class="price">
+                            <a href="javascrip:;">
+                                <strong>특가</strong>
+                                <b>70,000</b>
+                            </a>
+                            <em>1석</em>
+                        </div>
+                        <div class="price">
+                            <a href="javascript:;">
+                                <strong>할인</strong>
+                                <b>120,000</b>
+                            </a>
+                            <em>5석</em>
+                        </div>
+                        <div class="price">
+                            <a href="javascript:;">
+                                <strong>정상</strong>
+                                <b>260,000</b>
+                            </a>
+                            <em>9석</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 유의사항 국제선 -->
+            <div class="reference">
+                <strong class="subtitle">유의사항</strong>
+                <div class="desc">
+                    <p><span class="blue">+1은 다음날 도착</span>을, <span class="blue">+2는 2일 뒤 도착</span>을 의미합니다.</p>
+                    <p>예약과 동시에 구매하셔야 하며 유류할증료와 해외공항시설사용료는 발권 일에 따라 변경될 수 있습니다.</p>
+                    <p>예상 결제금액은 여정 별 운임 선택 후 우측에 자세히 표시됩니다.</p>
+                    <p>항공권 구입 시에는 예약과 동시 구매하셔야 하며, 미 구매된 예약은 자동 취소됩니다.</p>
+                    <p>복수 목적지 여정의 예약을 원하실 경우 [다구간 여정]을 선택하여 주시기 바랍니다.</p>
+                    <p>다구간 항공권의 경우 최저 운임만 표출됩니다.</p>
+                    <p>국제선 소아/유아의 나이 구분은 최초 출발일 기준이며, 국내선 소아의 나이 구분은 최초 출발일 기준, 유아는 탑승일 기준입니다. 탑승수속 시 나이를 확인할 수 있는 서류를 반드시 지참하시기 바랍니다.</p>
+                    <p>운임은 출발지 국가의 통화로 책정되며, 결제 시에는 해당 환율이 적용됩니다.(일부 국가 제외)</p>
+                    <p>출·도착 시각은 현지 시각 기준이며 항공기 스케줄은 정부인가 조건으로, 예고 없이 변경될 수 있습니다. [항공권 운임규정]을 확인하시기 바랍니다.</p>
+                    <p>정규운임을 선택하셔야 개인할인 적용이 가능하며, 모든 할인은 이중으로 적용되지 않으니 큰 할인율을 선택하십시오.</p>
+                    <p><b>아래애 해당하는 병역의무자가 출국을 하고자 할 경우, 반드시 병무청의 국외여행허가를 받아야 합니다.</b> <br>
+                        1. 25세 이상인 병역 준비역(병역판정검사 대상, 현역병 입영대상) 또는 보충역으로서 소집되지 아니한 사람 <br>
+                        2. 승선근무예비역 또는 보충역으로 복무중인 사람 <br>
+                        ※ 자세한 내용은 병무청 홈페이지(http://www.mma.go.kr/)에서 확인 가능합니다. <br>
+                        ※ 해외에서 간편결제 이용시 결제사 정책으로 인하여 결제가 불가할 수 있습니다. (일부 간편결제에 한함)</p>
+                </div>
+            </div>
+            <!-- 유의사항 국내선 -->
+            <div class="reference">
+                <strong class="subtitle">유의사항</strong>
+                <div class="desc">
+                    <p><strong>출·도착 시각은 현지 시각 기준이며 항공기 스케줄은 정부인가 조건으로, 예고 없이 변경될 수  있습니다.</strong></p>
+                    <p>예상 결제금액은 여정 별 운임 선택 후 우측에 자세히 표시됩니다.</p>
+                    <p>운임은 출발지 국가의 통화로 책정되며, 결제 시에는 해당 환율이 적용됩니다.(일부국가 제외)</p>
+                    <p>항공권 구입 시에는 예약과 동시 구매하셔야 하며, 유류할증료와 공항이용료는 탑승일과 관계 없이 발권일 기준으로 적용됩니다.</p>
+                    <p>소아의 나이 구분은 최초 출발일 기준, 유아는 탑승일 기준입니다. 탑승 수속 시 나이를 확인할 수 있는 서류를 반드시 지참하시기 바랍니다.</p>
+                    <p>[항공권 운임규정]을 확인하시기 바랍니다.</p>
+                    <p><b>아래애 해당하는 병역의무자가 출국을 하고자 할 경우, 반드시 병무청의 국외여행허가를 받아야 합니다.</b> <br>
+                        1. 25세 이상인 병역 준비역(병역판정검사 대상, 현역병 입영대상) 또는 보충역으로서 소집되지 아니한 사람 <br>
+                        2. 승선근무예비역 또는 보충역으로 복무중인 사람 <br>
+                        ※ 자세한 내용은 병무청 홈페이지(http://www.mma.go.kr/)에서 확인 가능합니다. <br>
+                        ※ 해외에서 간편결제 이용시 결제사 정책으로 인하여 결제가 불가할 수 있습니다. (일부 간편결제에 한함)</p>
+                </div>
+            </div>
+
+            <div class="btns bottom">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <a href="javascript:void(0)" class="btn block">다음</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+<!-- 탑승일 선택 -->
+<div class="popup popup-full" id="lyFromDate">
+    <div class="popup-wrapper">
+        <div class="popup-wrap">
+            <div class="popup-header">
+                <div class="inner">
+                    <h1>일정 선택</h1>
+                    <a href="javascript:void(0)" class="close" data-event="popup-close"><span class="sr-only">레이어 팝업 닫기</span></a>
+                </div>
+            </div>
+            <div class="popup-body has-bottom-floating">
+                <div class="inner pt55">
+                    <div class="periodArea">
+                        <div class="start">
+                            <p>출발일</p>
+                            <em>2019.05.23(목)</em>
+                        </div>
+                        <!-- 편도일때 히든 -->
+                        <div class="end">
+                            <p>도착일</p>
+                            <em>-</em>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <p>출발일 선택 후 도착일을 선택해주세요. 당일 일정으로 날짜가 같은 경우 같은 날짜를 두 번 선택해주세요.</p>
+                        <p>출발일 다시 선택 시 도착일도 다시 입력하시기 바랍니다.</p>
+                    </div>
+                    <div class="weekday">
+                        <ul>
+                            <li class="sunday">일</li>
+                            <li>월</li>
+                            <li>화</li>
+                            <li>수</li>
+                            <li>목</li>
+                            <li>금</li>
+                            <li>토</li>
+                        </ul>
+                    </div>
+                    <div class="datepickerArea">
+                        <!-- 가는날 td에 클래스 'startDay' -->
+                        <!-- 오는날 td에 클래스 'endDay' -->
+                        <!-- 가는날~오는날 선택 날짜 구간 td에 클래스 'ui-datepicker-day-range' 추가 -->
+                        <!-- 비활성화 날짜 td에 클래스 'ui-datepicker-day-disable' 추가 -->
+                        <div class="load"></div>
+                    </div> 
+                </div>
+                <div class="btns bottom floating">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a href="javascript:;" class="btn block" data-event="popup-close">확인</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="noSchedule">
+                    <div class="in">
+                        <p>운항 스케줄이 없습니다</p>
+                        <a href="javascript:void(0)" class="close"><span class="sr-only">레이어 닫기</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+</body>
+</html>

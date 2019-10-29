@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>플라이강원</title>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/reset.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/calendar.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/common.css">
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/modernizr-custom.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/calendar.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/swiper.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            //탭
+            $('.tabWide a, .tabText a').on('click',function(e){
+                e.preventDefault();
+                var target = $(this).attr('href');
+
+                $(this).parent('li').siblings().removeClass('on');
+                $(this).parent('li').addClass('on');
+
+                $(target).siblings('.tabView').hide();
+                $(target).show();
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+<div id="wrap">
+    <div id="header">
+        <div id="title">
+            <h2 class="has-subMenu"><span>수하물 안내</span></h2>
+            <div class="subMenu">
+                <ul>
+                    <li><a href="">항공권 안내</a></li>
+                    <li><a href="">공항서비스 안내</a></li>
+                    <li><a href="">수하물 안내</a></li>
+					<li><a href="">기내서비스 안내</a></li>
+					<li><a href="">취항지 안내</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="back"><a href="#none"><span class="sr-only">이전 페이지로 이동</span></a></div>
+        <div id="allmenu"><a href="#"><span class="sr-only">전체메뉴</span><i></i></a></div>            
+        <div class="allmenuWrap">
+            <div class="toparea">
+                <div class="language">
+                    <select name="" id="">
+                        <option value="">한국어</option>                        
+                        <option value="">영어</option>                        
+                    </select>
+                </div>
+                <div class="welcome">
+                    <div class="logBtn">
+                        <p>로그인하시면 다양한 정보를 확인하실 수 있습니다.</p>
+                        <!--<p><strong>홍길동님,</strong> 즐거운 여행되세요!</p>-->
+                        <a href="#none" class="btn">로그인</a>
+                        <!--<a href="#none" class="btn">로그아웃</a>-->
+                    </div>
+                </div>
+                <div class="quick">
+                    <ul>
+                        <li class="q1"><a href="#none">예약조회</a></li>
+                        <li class="q2"><a href="#none">체크인</a></li>
+                        <li class="q3"><a href="#none">사전좌석구매</a></li>
+                        <li class="q4"><a href="#none">초과 수하물</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="dep1">
+                <li class="active"><div><a href="#">예매</a></div> <!-- 활성화 active -->
+                    <ul class="dep2">
+                        <li class="active"><a href="#none">항공권 예매</a></li> <!-- 활성화 active -->
+                        <li><a href="#none">운항일정 조회</a></li>
+                        <li><a href="#none">운임안내</a>
+                            <ul class="dep3">
+                                <li><a href="#none">국내선 운임안내</a></li>
+                                <li><a href="#none">국제선 운임안내</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><div><a href="#">체크인</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">체크인</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">서비스 안내</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">항공권 안내</a></li>
+                        <li><a href="#none">공항서비스 안내</a></li>
+                        <li><a href="#none">수하물 안내</a></li>
+                        <li><a href="#none">기내서비스 안내</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">이벤트/뉴스</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">이벤트</a>
+                            <ul class="dep3">
+                                <li><a href="#none">진행중인 이벤트</a></li>
+                                <li><a href="#none">지난 이벤트</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">뉴스</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">마이페이지</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">나의 예약내역</a></li>
+                        <li><a href="#none">나의 정보</a></li>
+                        <li><a href="#none">나의 문의내역</a></li>
+                        <li><a href="#none">나의 쿠폰</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">유틸리티</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">고객센터</a>
+                            <ul class="dep3">
+                                <li><a href="#non">자주하는 질문</a></li>
+                                <li><a href="#non">문의하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">회사소개</a>
+                            <ul class="dep3">
+                                <li><a href="#non">회사 현황</a></li>
+                                <li><a href="#non">CEO 인사말</a></li>
+                                <li><a href="#non">사업 비전</a></li>
+                                <li><a href="#non">CI 소개</a></li>
+                                <li><a href="#non">보도자료</a></li>
+                                <li><a href="#non">오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">이용약관</a>
+                            <ul class="dep3">
+                                <li><a href="#non">이용약관</a></li>
+                                <li><a href="#non">여객운송약관</a></li>
+                                <li><a href="#non">항공교통이용자 서비스 계획</a></li>
+                                <li><a href="#non">피해구제 계획</a></li>
+                                <li><a href="#non">개인정보처리방침</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>        
+    </div>
+    <div id="container">
+        <div id="content">
+            <div class="tabWide text-small"> <!-- 190919 수정 -->
+                <ul>
+                    <li class="on"><a href="#baggage1">수하물</a></li>
+                    <li><a href="#baggage2">운송제한물품</a></li>
+                    <li><a href="#baggage3">수하물분실배상</a></li>
+                    <li><a href="#baggage4">유실물분실</a></li>
+                </ul>
+            </div>
+            
+            <div class="tabView" id="baggage1">
+				<div class="linkAnchor mt-15">
+					<ul class="overflow-x-scroll">
+						<li><a href="#anchor1">기내반입 수하물 안내</a></li>
+						<li><a href="#anchor2">무료 위탁 수하물 안내</a></li>
+						<li><a href="#anchor3">초과 수하물</a></li>
+						<li><a href="#anchor4">특수 수하물 안내</a></li>
+					</ul>
+				</div>
+				<div id="anchor1" class="subBox">
+					<h3 class="subtitle">기내반입 수하물 안내</h3>
+					<h4 class="mt30 fz16">기내 휴대 가능 수하물</h4>
+					<p class="mt5 fz14 color6">기내 선반이나 좌석 밑에 수용 가능한 3면의 총합이 115cm (1면 당 최대 허용 길이 : 가로 55cm, 세로 40cm, 높이 20cm)이하이고, 무게가 10kg 이하인 1개의 휴대품에 한하여 여객이 전적으로 보관하고 책임진다는 조건하에 무료로 운송될 수 있습니다.</p>
+					<h4 class="mt30 fz16">기내 휴대 불가능 수하물</h4>
+					<p class="mt5 fz14 color6">무기화될 수 있는 물건 : 화기, 무기류 모조품, 폭발물, 단도 등 날이 선 물건, 자전거 체인, 곤봉 등 평상시 지니지 않는 공격적인 물건</p>
+					<h4 class="mt30 fz16">탑승 게이트 위탁 수하물 처리 수수료</h4>
+					<p class="mt5 fz14 color6">기내 휴대 가능 수하물 1개 이외의 수하물은 반드시 위탁 처리하여야 하며, 탑승 게이트에서 위탁 시 아래의 수수료가 추가 부과됩니다. (무게/개수 초과 요금 별도 부과)</p>
+					<table class="table table-row mt10">
+						<caption>위탁 수하물 요금</caption>
+						<colgroup>
+							<col style="width:35%"><col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th rowspan="2">요금 <br>(개수 당, 출발지 현지통화 기준)</th>
+								<td>20,000 KRW</td>
+							</tr>
+							<tr>
+								<td>20 USD<br><span class="fz13 color9">* 1USD/EUR=100JPY=7CNY=30TWD=32THB</span></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="desc small">
+						<p>- 국제선에 한하여 적용됩니다. (국내선 제외)</p>
+						<p>- 승객 편의를 위한 휠체어 및 유모차는 부과 대상에서 제외 됩니다.</p>
+						<p>- 면세품은 기내로 휴대하는 물품에 포함시킬 수 있을 경우 반입 가능합니다.</p>
+						<p>- 수하물 파손 및 안전 사고 방지를 위하여 탑승 게이트에서 위탁하는 수하물 한 개의 무게는 추가 금액 지불 시 최대 23kg 까지 가능하며, 초과 시에는 분리하여 포장해주셔야 합니다.</p>
+					</div>
+				</div>
+				<div id="anchor2" class="subBox">
+					<h3 class="subtitle">무료 위탁 수하물 안내</h3>
+					<div class="desc large">
+						<p>위탁 수하물이란 승객이 출발지 공항에서 항공사에 탁송 의뢰하여 목적지 공항에서 수취하는 수하물을 말합니다.</p>
+						<p>안전한 수하물 위탁을 위해 가방(짐)은 항공사에서 안내하는 지정된 크기와 무게를 지켜서 준비하여 주시기 바랍니다.</p>
+						<p>위탁 수하물 1개의 크기가 203cm(가로 X 세로 X 높이의 합)를 초과할 경우 위탁 수하물로써의 운송이 거절될 수 있습니다.</p>
+						<p>위탁 수하물 1개의 무게는 추가 금액 지불 시 최대 32kg까지 가능하며, 초과 시에는 분리하여 포장해 주셔야 합니다.</p>
+						<p>타인의 짐을 본인의 짐으로 위탁하는 것은 항공기 보안 및 안전상의 문제로 금지되어 있습니다.</p>
+					</div>
+					<h4 class="mt30 fz16">무료 수하물</h4>
+					<h5 class="mt20 fz13">국내선 항공권 운임</h5>
+					<table class="table table-row border mt10">
+						<caption>국내선 항공권 운임 무료 수하물</caption>
+						<colgroup>
+							<col style="width:35%"><col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>위탁수하물(성인/소아)</th>
+								<td>3면의 합이 203cm이내<br>무게가 20kg이하</td>
+							</tr>
+							<tr>
+								<th>유아</th>
+								<td>위탁수하물없음<br>접는유모차, 유아용카시트 중 1개</td>
+							</tr>
+							<tr>
+								<th>비고</th>
+								<td>정상, 할인, 특가운임 동일</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="desc small"><p>- 휠체어 (전동 휠체어 포함)는 추가 허용합니다.</p></div>
+					<h5 class="mt20 fz13">국제선 항공권 운임</h5>
+					<table class="table table-row border mt10">
+						<caption>국제선 항공권 운임 무료 수하물</caption>
+						<colgroup>
+							<col style="width:35%"><col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>위탁수하물(성인/소아)</th>
+								<td>3면의 합이 203cm이내<br>무게가 20kg 이하</td>
+							</tr>
+							<tr>
+								<th>유아</th>
+								<td>위탁수히물 10kg<br>접는유모차, 유아용카시트 중 1개</td>
+							</tr>
+							<tr>
+								<th>비고</th>
+								<td>정상, 할인, 특가운임 동일</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="desc small"><p>- 휠체어 (전동 휠체어 포함)는 추가 허용합니다.</p></div>
+				</div>
+				<div id="anchor3" class="subBox">
+					<h3 class="subtitle">초과 수하물</h3>
+					<p class="fz14 color6">무료 수하물 허용량을 초과할 경우 아래와 같은 요금으로 초과 수하물 요금이 부과됩니다. </p>
+					<p class="fz14 color6 mt5">- 국내선 무게 초과 요금: 2,000 원/kg</p>
+					<div class="mt5 fz12 align-right color9">단위: KRW / 1인당</div>
+					<table class="table table-row border mt5">
+						<caption>초과 수하물 안내</caption>
+						<colgroup>
+							<col style="width:35%"><col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>노선</th>
+								<td>YNY/CJU (양양-제주)<br>GMP-CJU (김포-제주)</td>
+							</tr>
+							<tr>
+								<th rowspan="4">추가 무게</th>
+								<td>1KG</td>
+							</tr>
+							<tr>
+								<td>5KG</td>
+							</tr>
+							<tr>
+								<td>10KG</td>
+							</tr>
+							<tr>
+								<td>20KG</td>
+							</tr>
+							<tr>
+								<th>온라인 구매</th>
+								<td>사전예약 불가능</td>
+							</tr>
+							<tr>
+								<th rowspan="4">오프라인 구매<br>(승객센터, 공항)</th>
+								<td>2,000</td>
+							</tr>
+							<tr>
+								<td>10,000</td>
+							</tr>
+							<tr>
+								<td>20,000</td>
+							</tr>
+							<tr>
+								<td>40,000</td>
+							</tr>
+						</tbody>
+					</table>
+					<h4 class="mt30 fz16">위탁운송이 불가능한 수하물</h4>
+					<div class="desc large mt10">
+						<p class="ndot">폭발물, 압축가스, 인화성 물질, 부식성 물질, 자극성 물질, 자기성 물질, 방사성 물질, 기타 항공기 및 개인 또는 타인의 재산에 위험을 초래할 수 있는 물질은 수하물로 운송할 수 없습니다.</p>
+						<p class="ndot">성냥과 라이터는 승객 본인이 직접 보관하여야 합니다.</p>
+					</div>
+				</div>
+				<div id="anchor4" class="subBox">
+					<h3 class="subtitle">특수 수하물 안내</h3>
+					<p class="fz13 color6">특수 수하물 접수를 위한 크기와 무게 제한은 아래와 같습니다.</p>
+					<div class="desc large bdt">
+						<p>크기: 수하물 삼면의 합 (가로X세로X높이의 합)이 277CM 이하/무게:32KG이하 (포장재 포함)</p>
+						<p>특수 수하물은 모양과 크기가 일반 수하물과 달라 운송 도중 내용물이 휘거나 파손될 가능성이 높으니 전용하드케이스 또는 내부 완충제가 포함된 BOX에 견고히 포장되어 있어야만 접수가 가능합니다.</p>
+						<p>공항 탑승수속 카운터에서 특수 수하물 위탁 시, 특수 수하물 확인서를 작성해 주셔야 합니다.</p>
+						<p>견고히 포장되지 않은 특수 수하물은 파손 시 보상이 불가 하오니 유의하여 주시기 바랍니다.</p>
+						<p>포장이 미흡한 특수수하물은 운송이 거절될 수 있으며, 현장에서 포장재 보완을 별도로 요청 받을 수 있습니다.</p>
+						<p>특수수하물은 항공기 탑재허용범위를 초과하는 경우 운송이 거절 될 수 있습니다.</p>
+					</div>
+					<h4 class="mt30 fz16">스포츠 용품</h4>
+					<p class="mt5 fz14 color6">스포츠 용품의 경우 위탁 수하물 무료 허용량과 상관없이 별도의 운임이 부과 됩니다.</p>
+					<table class="table table-row mt15">
+						<caption>스포츠 용품 수하물 안내</caption>
+						<colgroup>
+							<col style="width:35%"><col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th rowspan="2">스포츠용품 요금 <br>(개수 당, 출발지 현지통화 기준)</th>
+								<td>10,000 KRW</td>
+							</tr>
+							<tr>
+								<td>10 USD<br><span class="fz13 color9">* 1USD/EUR=100JPY=7CNY=30TWD=32THB</span></td>
+							</tr>
+							<tr>
+								<th>적용품목</th>
+								<td>자전거, Surfboard, Windsurfing, 스키, 스노보드</td>
+							</tr>
+							<tr>
+								<th>예시</th>
+								<td>
+									스포츠 용품은 일반 수하물 요금징수와 별도로 위탁 수하물 무료 허용량을 초과할 경우, 초과수하물 요금을 납부하여야 합니다. <br>
+									예시 : 국내선 이용 승객이 10kg 일반 수하물 1개와 15kg 스키장비(특수수하물) 1개를 위탁한 경우
+									<div class="desc small">
+										<p>- 특수수하물 요금 : 10,000원</p>
+										<p>- 무게초과 : 10,000원 (국내선 무료 위탁 수하물 허용량 5kg 초과)</p>
+										<p>- 총 운임 : 20,000원 (특수 수하물 요금 10,000원 + 무게초과 요금 10,000원)</p>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<h4 class="mt30 fz16">악기</h4>
+					<div class="desc large mt10">
+						<p>악기(기타, 바이올린, 관악기 등)를 위탁수하물로 부치시는 경우 운송 중 발생할 수 있는 파손에 대비하여 하드케이스 및 내부 완충제로 견고히 포장을 해주셔야만 접수가 가능합니다.</p>
+						<p>견고히 포장되지 않은 특수 수하물은 파손시 보상이 불가하오니 유의하여 주시기 바랍니다.</p>
+						<p>포장이 미흡한 특수수하물은 운송이 거절될 수 있으며, 현장에서 포장재 보완을 별도로 요청할 수 있습니다.</p>
+						<p>대형악기의 기내반입을 원하시는 분은 반드시 사전에 예약 및 별도의 항공권을 구입하시기 바랍니다.</p>
+						<p>문의 : 플라이강원 고객센터 <a href="tel:1855-0026">1855-0026</a></p>
+					</div>
+				</div>
+            </div>
+            
+            <div class="tabView" id="baggage2" style="display:none">
+                <div class="tabText mt60">
+                    <ul>
+                        <li class="on"><a href="#notCarry">항공기 반입금지</a></li> 
+                        <li><a href="#lithium">리튬배터리 운송</a></li> 
+                    </ul>
+                </div>
+                
+                <div class="tabView" id="notCarry">
+					<div class="subBox pt15">
+						<h3 class="subtitle">항공기 반입금지 물품 안내 </h3>
+						<p class="fz14 color6">「항공 안전 및 보안에 관한 법률」제44조에 따라 금지 물품을 항공기로 반입하는 경우, 2년 이상 5년 이하의 징역에 처해지게 되오니 유의해 주시기 바랍니다.</p>
+						<p class="fz14 color6 mt10">동 기준은 대한민국 공항에서 적용되는 기준이며, 목적지가 외국일 경우에는 해당국의 추가 금지 물품이 있는지 항공사 또는 여행사로 확인하시기 바랍니다.</p>
+
+						<div class="linkAnchor mt20">
+							<ul class="overflow-x-scroll">
+								<li><a href="#anchor5">폭발성, 인화성, 유독성 물질 기내반입위탁수하물</a></li>
+								<li><a href="#anchor6">무기로 사용될 수 있는 물품 기내반입위탁수하물</a></li>
+								<li><a href="#anchor7">일반생활용품 및 의료용품 기내반입위탁수하물</a></li>
+								<li><a href="#anchor8">국제선 객실내 액체류 반입 기준</a></li>
+							</ul>
+						</div>
+
+						<div id="anchor5">
+							<h4 class="mt30 fz14 color6">폭발성, 인화성, 유독성 물질 기내반입위탁수하물</h4>
+							<div class="wRoundBox">
+								<img src="../../resources/images/mobile/ico_service_baggage1.png" alt="">
+								<div class="set">
+									<strong>폭발물류</strong>
+									<p>수류탄, 다이너마이트, 화약류, 연막탄, 조명탄, 폭죽, 지뢰, 뇌관, 신관, 도화선, 발파캡 등 폭발 장치</p>
+								</div>
+							</div>
+							<div class="wRoundBox">
+								<img src="../../resources/images/mobile/ico_service_baggage2.png" alt="">
+								<div class="set">
+									<strong>방사성, 전염성, 독성 물질</strong>
+									<p>염소, 표백제, 산화제, 수은, 하수구 청소재제, 독극물, 의료용, 상업용 방사성 동위원소, 전염성, 생물학적 위험 물질 등</p>
+								</div>
+							</div>
+							<div class="wRoundBox">
+								<img src="../../resources/images/mobile/ico_service_baggage3.png" alt="">
+								<div class="set">
+									<strong>인화성 물질</strong>
+									<p>성냥, 라이터, 부탄가스 등 인화성 가스, 휘발유, 페인트 등 인화성 액체, 70% 이상의 알코올성 음료 등 단, 소형 안전성냥 및 휴대용 라이터는 각 1개에 한해 객실 반입 가능</p>
+								</div>
+							</div>
+							<div class="wRoundBox">
+								<img src="../../resources/images/mobile/ico_service_baggage4.png" alt="">
+								<div class="set">
+									<strong>기타 위험 물질</strong>
+									<p>소화기, 드라이아이스, 최루가스 등 드라이아이스는 1인당 2.5kg에 한해 이산화탄소 배출이 용이하도록 안전하게 포장된 경우 항공사 승인 하에 반입 가능</p>
+								</div>
+							</div>
+						</div>
+						<div id="anchor6">
+							<h4 class="mt30 fz14 color6">무기로 사용될 수 있는 물품 기내반입위탁수하물</h4>
+							<div class="wRoundBox">
+								<div class="set">
+									<img src="../../resources/images/mobile/ico_service_baggage5.png" alt="">
+									<strong>창, 도검류</strong>
+									<p>과도, 커터 칼, 접이식 칼, 면도칼, 작살, 표창, 다트 등</p>
+								</div>
+							</div>
+							<div class="wRoundBox">
+								<img src="../../resources/images/mobile/ico_service_baggage6.png" alt="">
+								<div class="set">
+									<strong>스포츠용품류</strong>
+									<p>야구 배트, 하키 스틱, 골프채, 당구 큐, 빙상용 스케이트, 아령, 볼링공, 활, 화살, 양궁 등 테니스 라켓 등 라켓류, 인라인스케이트, 스케이트보드, 등산용 스틱, 야구공 등 공기가 주입되지 않은 공류는 객실 반입 가능</p>
+								</div>
+							</div>
+							<div class="wRoundBox">
+								<img src="../../resources/images/mobile/ico_service_baggage7.png" alt="">
+								<div class="set">
+									<strong>총기류</strong>
+									<p>모든 총기 및 총기 부품, 총알, 전자충격기, 장난감 총 등 총기류는 항공사에 소지 허가서 등을 확인 시키고 총알과 분리 후 위탁 가능</p>
+								</div>
+							</div>
+							<div class="wRoundBox">
+								<img src="../../resources/images/mobile/ico_service_baggage8.png" alt="">
+								<div class="set">
+									<strong>무술호신용품</strong>
+									<p>쌍절곤, 공격용 격투 무기, 경찰봉, 수갑, 호신용 스프레이 등 호신용 스프레이는 1인당 1개(100㎖ 이하)만 위탁가능</p>
+								</div>
+							</div>
+							<div class="wRoundBox">
+								<img src="../../resources/images/mobile/ico_service_baggage9.png" alt="">
+								<div class="set">
+									<strong>공구류</strong>
+									<p>도끼, 망치, 못 총, 톱, 송곳, 드릴/ 날길이 6㎝를 초과하는 가위, 스크루드라이버, 드릴 심류/ 총 길이 10㎝를 초과하는 렌치, 스패너, 펜치류/ 가축몰이 봉 등</p>
+								</div>
+							</div>
+						</div>
+						<div id="anchor7">
+							<h4 class="mt30 fz14 color6">일반생활용품 및 의료용품 기내반입위탁수하물</h4>
+							<div class="wRoundBox">
+								<img src="../../resources/images/mobile/ico_service_baggage10.png" alt="">
+								<div class="set">
+									<strong>생활도구류</strong>
+									<p>수저, 포크, 손톱깎이, 긴 우산, 감자칼, 병따개, 와인따개, 족집게, 손톱 정리 가위, 바늘류, 제도용 컴파스 등</p>
+								</div>
+							</div>
+							<div class="wRoundBox">
+								<img src="../../resources/images/mobile/ico_service_baggage11.png" alt="">
+								<div class="set">
+									<strong>액체류 위생/용품</strong>
+									<p>의약품류, 화장품, 염색약, 퍼머약, 목욕용품, 치약, 콘택트렌즈 용품, 소염제, 의료용 소독 알코올, 내복약, 외용연고 등 단, 국제선 객실 반입시 100㎖ 이하만 가능, 위탁수하물인 경우 개별용기 500㎖ 이하로 1인당 2Kg (2ℓ)까지 반입 가능</p>
+								</div>
+							</div>
+							<div class="wRoundBox">
+								<img src="../../resources/images/mobile/ico_service_baggage12.png" alt="">
+								<div class="set">
+									<strong>의료장비 및 보행 보조도구</strong>
+									<p>주삿바늘, 체온계, 자동제세동기 등 휴대용 전자 의료장비, 인공심박기 등 인체 이식 장치, 지팡이, 목발, 휠체어, 유모차 등 수은체온계는 보호 케이스에 안전하게 보관된 경우 객실 반입 가능하며 전동휠체어는 배터리 위험성 등으로 위탁만 가능(건식 가능, 습식 불가), 일반휠체어의 경우 기내반입 사이즈에 한해 반입 가능</p>
+								</div>
+							</div>
+							<div class="wRoundBox">
+								<img src="../../resources/images/mobile/ico_service_baggage13.png" alt="">
+								<div class="set">
+									<strong>구조용품</strong>
+									<p>소형 산소통(5kg 이하), 구명조끼에 포함된 실린더 1쌍 (여분 실린더 1쌍도 가능), 눈사태용 구조 배낭 (1인당 1개) 단, 안전기준에 맞게 포장되고, 해당 항공사 승인 필요</p>
+								</div>
+							</div>
+							<div class="wRoundBox">
+								<img src="../../resources/images/mobile/ico_service_baggage14.png" alt="">
+								<div class="set">
+									<strong>건전지 및 개인용 휴대 전자장비</strong>
+									<p>휴대용 건전지, 시계, 계산기, 카메라, 캠코더, 휴대폰, 노트북, MP3 등</p>
+								</div>
+							</div>
+						</div>
+						<div id="anchor8">
+							<h4 class="mt30 fz14 color6">국제선 객실내 액체류 반입 기준</h4>
+							<p class="mt5 fz13 color6">국제선 항공기를 이용하려는 승객은 아래와 같이 액체, 분무, 겔류 용품의 객실 내 반입이 엄격히 금지되므로 소지하신 물품이 허용 기준에 적합한지 미리 확인하시기 바랍니다.</p>
+							<div class="wRoundBox center">
+								<img src="../../resources/images/mobile/img_carryon_pack1.png" alt="">
+								<strong>1L 이하</strong>
+							</div>
+							<div class="wRoundBox center">
+								<img src="../../resources/images/mobile/img_carryon_pack2.png" alt="">
+								<strong>1L 초과</strong>
+							</div>
+							<div class="desc fz14 mt10">
+								<p>물, 음료, 식품, 화장품 등 액체, 분무(스프레이), 겔류(젤 또는 크림)로 된 물품은 100㎖ 이하의 개별용기에 담아, 1인당 1ℓ 투명 비닐 지퍼백 1개에 한해 반입이 가능</p>
+								<p>유아식 및 의약품 등은 항공 여정에 필요한 용량에 한하여 반입 허용, 단, 의약품 등은 처방전 등 증빙서류를 검색요원에게 제시</p>
+							</div>
+							<h4 class="mt30 fz16 fw500 blue">면세품 구입물품의 경우</h4>
+							<p class="fz14 mt10 blue">공항 면세점 구입물품 또는 시내 면세점에서 구입 후 공항 면세점에서 전달받은 주류, 화장품 등의 액체류는 아래 조건을 모두 준수하는 경우 반입 가능</p>
+							<div class="desc fz14 bdt">
+								<p>면세점에서 제공하는 투명 봉인 봉투 또는 국제표준 방식으로 제조된 훼손 탐지 가능 봉투(STEB : Security Tamper Evident Bag)로 포장</p>
+								<p>면세품 구입당시 교부받은 영수증이 훼손탐지기능봉투 안에 동봉 또는 부착된 경우에 한하여 용량에 관계없이 반입가능</p>
+								<p>기내에서 판매하는 액체류 면세품 중 비행여정의 단계(환승/통과포함)에서 보안검색 대상이 될 수 있는 액체류는 훼손탐지가능봉투로 포장</p>
+								<p>최종 목적지행 항공기 탑승 전까지 미개봉 상태 유지</p>
+								<p>해외공항 환승/통과시, 보안규정이 상이하여 휴대한 액체류 물품에 대하여 포기/압수 절차를 따라야 할 경우가 발생할 수 있으니 항공기 기내 물품을 구매하는 환승/통과 승객의 경우에는 사전에 객실승무원에게 알려 주시기 바랍니다.</p>
+							</div>
+						</div>
+					</div>
+                </div>
+                <div class="tabView" id="lithium" style="display:none">
+					<div class="linkAnchor mt20">
+						<ul class="overflow-x-scroll">
+							<li><a href="#anchor9">배터리 장착 전자제품</a></li>
+							<li><a href="#anchor10">보조배터리</a></li>
+							<li><a href="#anchor11">스마트가방</a></li>
+							<li><a href="#anchor12">리튬 배터리 전동휠체어 (의료목적) 운송 규정</a></li>
+						</ul>
+					</div>
+					
+					<div id="anchor9" class="subBox">
+						<h3 class="subtitle">배터리 장착 전자제품</h3>
+						<p class="red">용량표시 : 리튬이온 WH, 리튬메탈 G</p>
+						<table class="table table-row border mt15">
+							<caption>배터리 장착 전자제품</caption>
+							<colgroup>
+								<col style="width:25%"><col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>용량</th>
+									<td>100wh, 2g 이하</td>
+								</tr>
+								<tr>
+									<th>휴대</th>
+									<td>O</td>
+								</tr>
+								<tr>
+									<th>위탁</th>
+									<td>△  배터리 전원 차단시 가능</td>
+								</tr>
+								<tr>
+									<th>기타사항</th>
+									<td>1인 15개까지 허용</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table table-row border mt15">
+							<caption>배터리 장착 전자제품</caption>
+							<colgroup>
+								<col style="width:25%"><col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>용량</th>
+									<td>100wh 초과 160wh 이하, 2g 초과 8g이하</td>
+								</tr>
+								<tr>
+									<th>휴대</th>
+									<td>O</td>
+								</tr>
+								<tr>
+									<th>위탁</th>
+									<td>△  배터리 전원 차단시 가능</td>
+								</tr>
+								<tr>
+									<th>기타사항</th>
+									<td>-</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table table-row border mt15">
+							<caption>배터리 장착 전자제품</caption>
+							<colgroup>
+								<col style="width:25%"><col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>용량</th>
+									<td>160wh, 8g 초과</td>
+								</tr>
+								<tr>
+									<th>휴대</th>
+									<td>X</td>
+								</tr>
+								<tr>
+									<th>위탁</th>
+									<td>X</td>
+								</tr>
+								<tr>
+									<th>기타사항</th>
+									<td>-</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div id="anchor10" class="subBox">
+						<h3 class="subtitle">보조배터리</h3>
+						<p class="fz13 red">용량표시 : 리튬이온 WH, 리튬메탈 G</p>
+						<table class="table table-row border mt15">
+							<caption>보조배터리</caption>
+							<colgroup>
+								<col style="width:25%"><col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>용량</th>
+									<td>100wh, 2g 이하</td>
+								</tr>
+								<tr>
+									<th>휴대</th>
+									<td>O</td>
+								</tr>
+								<tr>
+									<th>위탁</th>
+									<td>X</td>
+								</tr>
+								<tr>
+									<th>기타사항</th>
+									<td>1인 15개까지 허용</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table table-row border mt15">
+							<caption>보조배터리</caption>
+							<colgroup>
+								<col style="width:25%"><col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>용량</th>
+									<td>100wh 초과 160wh 이하, 2g 초과 8g이하</td>
+								</tr>
+								<tr>
+									<th>휴대</th>
+									<td>O</td>
+								</tr>
+								<tr>
+									<th>위탁</th>
+									<td>X</td>
+								</tr>
+								<tr>
+									<th>기타사항</th>
+									<td>1인 15개까지 허용</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table table-row border mt15">
+							<caption>보조배터리</caption>
+							<colgroup>
+								<col style="width:25%"><col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>용량</th>
+									<td>160wh, 8g 초과</td>
+								</tr>
+								<tr>
+									<th>휴대</th>
+									<td>X</td>
+								</tr>
+								<tr>
+									<th>위탁</th>
+									<td>X</td>
+								</tr>
+								<tr>
+									<th>기타사항</th>
+									<td>-</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div id="anchor11" class="subBox">
+						<h3 class="subtitle">스마트가방</h3>
+						<p class="red">용량표시 : 리튬이온 WH, 리튬메탈 G</p>
+						<table class="table table-row border mt15">
+							<caption>스마트가방</caption>
+							<colgroup>
+								<col style="width:25%"><col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>용량</th>
+									<td>160wh 또는 8g 이하 배터리가 가방에서 분리된 경우</td>
+								</tr>
+								<tr>
+									<th>휴대</th>
+									<td>O</td>
+								</tr>
+								<tr>
+									<th>위탁</th>
+									<td>△  배터리 전원 차단시 가능</td>
+								</tr>
+								<tr>
+									<th>기타사항</th>
+									<td>배터리는 휴대로만 가능</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table table-row border mt15">
+							<caption>스마트가방</caption>
+							<colgroup>
+								<col style="width:25%"><col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>용량</th>
+									<td>160wh 또는 8g 이하 배터리가 가방에서 분리 안된 경우</td>
+								</tr>
+								<tr>
+									<th>휴대</th>
+									<td>O</td>
+								</tr>
+								<tr>
+									<th>위탁</th>
+									<td>X</td>
+								</tr>
+								<tr>
+									<th>기타사항</th>
+									<td>-</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table table-row border mt15">
+							<caption>스마트가방</caption>
+							<colgroup>
+								<col style="width:25%"><col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>용량</th>
+									<td>160wh 또는 8g 초과하는 배터리가 장착된 가방</td>
+								</tr>
+								<tr>
+									<th>휴대</th>
+									<td>X</td>
+								</tr>
+								<tr>
+									<th>위탁</th>
+									<td>X</td>
+								</tr>
+								<tr>
+									<th>기타사항</th>
+									<td>-</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div id="anchor12" class="subBox">
+						<h3 class="subtitle">리튬 배터리 전동휠체어 (의료목적) 운송 규정</h3>
+						<table class="table table-row border mt15">
+							<caption>리튬 배터리 전동휠체어 (의료목적) 운송 규정</caption>
+							<colgroup>
+								<col style="width:25%"><col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>용량</th>
+									<td>건식 배터리 / 습식 배터리</td>
+								</tr>
+								<tr>
+									<th>휴대</th>
+									<td>제한 없음</td>
+								</tr>
+								<tr>
+									<th>기타사항</th>
+									<td>배터리 분리 가능 여부 확인 필요 <br>분리 가능할 경우 분리하여 위탁 운송, 분리 불가능할 경우 단락 방지 후 위탁 운송</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table table-row border mt15">
+							<caption>리튬 배터리 전동휠체어 (의료목적) 운송 규정</caption>
+							<colgroup>
+								<col style="width:25%"><col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>용량</th>
+									<td>리튬 배터리</td>
+								</tr>
+								<tr>
+									<th>휴대</th>
+									<td>
+										1개 구동 시 300Wh 미만<br>
+										2개 구동 시 개당 160Wh 미만
+										<p class="mt5">여분 배터리 허용량</p>
+										<p class="fz12 color9">- 300Wh 미만 1개 가능<br>- 160Wh 미만 2개 가능</p>
+                                    </td>
+								</tr>
+								<tr>
+									<th>기타사항</th>
+									<td>
+										배터리 분리 가능 여부 확인 필요
+										<p class="mt5">배터리 분리 가능 시 : 배터리 분리 후, 배터리 기내 휴대/휠체어 본체 위탁 운송</p>
+										<p class="mt5">배터리 분리 불가능 시 : 단락 방지 후 휠체어 고정하여 위탁 운송</p></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+                </div>
+            </div>
+            <div class="tabView" id="baggage3" style="display:none">
+                <h3 class="subtitle">수하물 분실 및 수하물 보상</h3>
+                <h4 class="mt40 fz16 fw500">1) 수하물 분실</h4>
+                <p class="fz16 color6 mt10">승객님께서 분실하신 물품 중 습득물은 일정 기간(30일) 보관 후 플라이강원 규정에 따라 폐기처리 됩니다. (단, 부패성 물품은 수시 폐기합니다.) <br>플라이강원 기내에서 분실하신 물품 이외에 공항에서 분실하신 물품은 출/도착지 유실물 관련 기관에 문의하시기 바랍니다.</p>
+                <div class="desc large mt15">
+                    <p>인천공항 유실물 센터 : 032-741-3110, 3114</p>
+                    <p>플라이강원 수하물 문의처 : 000-0000-0000</p>
+                    <p>인천공항 경찰대 : 032-740-0112</p>
+                    <p>인천공항 세관 : 032-722-4422</p>
+                </div>
+                <h4 class="mt40 fz16 fw500">2) 수하물 보상 책임</h4>
+                <p class="fz16 color6 mt10">수하물에 손상이 있거나 내용품이 분실되신 경우에는 수하물을 인도받으신 날로부터 7일 내에, 수하물이 지연 또는 분실된 경우에는 항공사에 수하물을 위탁하신 날로부터 21일 내에 해당 항공사에 서면으로 신고하셔야 합니다.</p>
+                <div class="desc large mt15">
+                    <p>플라이강원 수하물 문의처 : 000-0000-0000</p>
+                    <p>단, 사전에 고가품임을 신고하고 종가요금을 지불한 경우 신고가격으로 보상하고 초과 수하물 요금을 지불하였을 경우에는 지불한 중량을 기준으로 보상하는 것을 원칙으로 하고 있습니다.</p>
+                </div>
+                <h4 class="mt40 fz16 fw500">3) 보상에서 제외, 약관에 의한 제한된 보상</h4>
+                <p class="fz16 color6 mt10">다음의 경우에는 이용 구간에 따라 보상에서 제외 되거나, 운송약관 또는 몬트리올협약에 의한 제한된 보상이 실시됩니다.</p>
+                <div class="desc large mt15">
+                    <p>회사가 손해 방지를 위하여 필요한 제반 조치를 취하였거나 또는 불가항력적인 사유로 인하여 조치를 취할 수 없었음이 입증될 경우</p>
+                    <p>승객에 의한 사고 또는 과실로 손해가 발생한 경우</p>
+                    <p>너무 무겁거나 가방 용량에 비해 무리하게 내용품을 넣은 경우의 수하물 파손 (수하물 파손에 동반한 내용품 파손 및 분실 포함)</p>
+                    <p>보안검색 과정에서 발생한 잠금 장치 파손이나 X-ray 통과로 인한 필름 손상</p>
+                    <p>정상적으로 수하물을 취급하는 과정에서 발생한 경미한 긁힘, 마모, 눌림, 흠집, 얼룩 등</p>
+                    <p>액체류(화장품,술, 꿀 등)의 파손 및 이로 인한 내용물의 오염 및 파손</p>
+                    <p>아래와 같이 위탁 수하물로의 운송이 금지되는 물품으로 반드시 기내 반입 휴대 수하물로 운송되어져야 할 물품 <br>
+                        <span class="fz13 color9">- 파손되기 쉬운 물품이거나 부패하기 쉬운 물품, 악기류, 등 <br>
+                            - 건강과 관련된 의약품<br>
+                            - 노트북 컴퓨터, 휴대폰, 카메라, 캠코더, MP3플레이어 등 고가의 개인 전자제품 또는 데이터<br>
+                            - 현금, 보석이나 귀금속, 유가증권, 계약서, 논문과 같은 서류, 여권, 신분증, 열쇠, 견본(샘플), 골동품 등 가치를 따지기 어려운 귀중한 물건</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

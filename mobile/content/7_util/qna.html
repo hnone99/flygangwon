@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>플라이강원</title>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/reset.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/calendar.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/common.css">
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/modernizr-custom.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/calendar.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/swiper.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.inputFile').change(function(){
+                var i = $(this).val();
+                $('.uploadText').val(i);
+            });
+            /*$('.uploadWrap .uploadText').on('click',function(){
+                $(this).siblings().find('.inputFile').click();
+            });*/
+        });
+    </script>
+</head>
+
+<body>
+<div id="wrap">
+    <div id="header">
+        <div id="title">
+            <h2><span>문의하기</span></h2>
+        </div>
+        <div id="back"><a href="#none"><span class="sr-only">이전 페이지로 이동</span></a></div>
+        <div id="allmenu"><a href="#"><span class="sr-only">전체메뉴</span><i></i></a></div>            
+        <div class="allmenuWrap">
+            <div class="toparea">
+                <div class="language">
+                    <select name="" id="">
+                        <option value="">한국어</option>                        
+                        <option value="">영어</option>                        
+                    </select>
+                </div>
+                <div class="welcome">
+                    <div class="logBtn">
+                        <p>로그인하시면 다양한 정보를 확인하실 수 있습니다.</p>
+                        <!--<p><strong>홍길동님,</strong> 즐거운 여행되세요!</p>-->
+                        <a href="#none" class="btn">로그인</a>
+                        <!--<a href="#none" class="btn">로그아웃</a>-->
+                    </div>
+                </div>
+                <div class="quick">
+                    <ul>
+                        <li class="q1"><a href="#none">예약조회</a></li>
+                        <li class="q2"><a href="#none">체크인</a></li>
+                        <li class="q3"><a href="#none">사전좌석구매</a></li>
+                        <li class="q4"><a href="#none">초과 수하물</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="dep1">
+                <li class="active"><div><a href="#">예매</a></div> <!-- 활성화 active -->
+                    <ul class="dep2">
+                        <li class="active"><a href="#none">항공권 예매</a></li> <!-- 활성화 active -->
+                        <li><a href="#none">운항일정 조회</a></li>
+                        <li><a href="#none">운임안내</a>
+                            <ul class="dep3">
+                                <li><a href="#none">국내선 운임안내</a></li>
+                                <li><a href="#none">국제선 운임안내</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><div><a href="#">체크인</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">체크인</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">서비스 안내</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">항공권 안내</a></li>
+                        <li><a href="#none">공항서비스 안내</a></li>
+                        <li><a href="#none">수하물 안내</a></li>
+                        <li><a href="#none">기내서비스 안내</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">이벤트/뉴스</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">이벤트</a>
+                            <ul class="dep3">
+                                <li><a href="#none">진행중인 이벤트</a></li>
+                                <li><a href="#none">지난 이벤트</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">뉴스</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">마이페이지</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">나의 예약내역</a></li>
+                        <li><a href="#none">나의 정보</a></li>
+                        <li><a href="#none">나의 문의내역</a></li>
+                        <li><a href="#none">나의 쿠폰</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">유틸리티</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">고객센터</a>
+                            <ul class="dep3">
+                                <li><a href="#non">자주하는 질문</a></li>
+                                <li><a href="#non">문의하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">회사소개</a>
+                            <ul class="dep3">
+                                <li><a href="#non">회사 현황</a></li>
+                                <li><a href="#non">CEO 인사말</a></li>
+                                <li><a href="#non">사업 비전</a></li>
+                                <li><a href="#non">CI 소개</a></li>
+                                <li><a href="#non">보도자료</a></li>
+                                <li><a href="#non">오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">이용약관</a>
+                            <ul class="dep3">
+                                <li><a href="#non">이용약관</a></li>
+                                <li><a href="#non">여객운송약관</a></li>
+                                <li><a href="#non">항공교통이용자 서비스 계획</a></li>
+                                <li><a href="#non">피해구제 계획</a></li>
+                                <li><a href="#non">개인정보처리방침</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>        
+    </div>
+    <div id="container">
+        <div id="content">            
+            <div class="desc large bgNone pt0 pb0">
+                <p>작성하신 글은 ‘<a href="#" class="underline">마이페이지 &gt; 나의 문의내역</a>’에서 확인하실 수 있습니다. </p>
+                <p>접수 순으로 처리되므로 문의가 많을 경우 답변이 지연될 수 있으니 양해 부탁드립니다.</p>
+                <p>개인정보보호를 위해 여권정보 등 개인정보는 기입하지 마십시오.</p>
+            </div>
+            <div class="hr"></div>
+            <div class="mt80">
+                <div class="subtitleArea">
+                    <h3 class="subtitle mt0">개인정보</h3>               
+                    <p class="left red"><strong class="red">*</strong> 표시는 필수 항목입니다.</p>
+                </div>
+                <div class="inputArea">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="label"><label for="ipName">이름</label> <strong>*</strong></div>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <input type="text" class="uppercase" placeholder="성" id="ipName" value="홍" disabled>
+                                </div>
+                                <div class="col-xs-8">
+                                    <input type="text" class="uppercase" placeholder="이름" value="길동" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">                       
+                        <div class="col-xs-12">
+                            <div class="label"><label for="ipTel">연락처</label></div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <select name="" id="ipTel">
+                                        <option value="">+82 (대한민국)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <input type="tel" title="연락처 앞자리">
+                                </div>
+                                <div class="col-xs-4">
+                                    <input type="tel" title="연락처 중간자리">
+                                </div>
+                                <div class="col-xs-4">
+                                    <input type="tel" title="연락처 끝자리">
+                                </div>
+                            </div>
+                            <p class="txt">* 연락처는 항공권 예약시 예매자 정보로 사용되며, 본인 인증 수단으로 사용됩니다.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="label"><label for="ipId">이메일</label> <strong>*</strong></div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="withAt">
+                                        <input type="email" id="ipId">
+                                        <span class="at">@</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="emailDomain emailInputWrapper" style="display:none">
+                                        <input type="email" title="이메일 도메인 입력">
+                                        <button class="emailRefrash"><span class="sr-only">이메일 도메인 선택</span></button>
+                                    </div>
+                                    <select name="" id="" title="이메일 도메인 선택" class="emailDomain emailDomainSelect">
+                                        <option value="">선택</option>
+                                        <option value="직접입력">직접입력</option>
+                                        <option value="">gmail.com</option>
+                                    </select>  
+                                </div>
+                            </div>
+                        </div>                    
+                    </div>
+                </div>
+                <div class="hr"></div>
+                <div class="subtitleArea">
+                    <h3 class="subtitle">문의정보</h3>               
+                </div>
+                <div class="inputArea">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="label"><label for="ipCate">유형 및 분야</label> <strong>*</strong></div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <select name="" id="ipCate">
+                                        <option value="">유형 선택</option>
+                                        <option value="">홈페이지 서비스</option>
+                                        <option value="">예약서비스</option>
+                                        <option value="">발권서비스</option>
+                                        <option value="">공항서비스</option>
+                                        <option value="">기내서비스</option>
+                                        <option value="">기타</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6">
+                                    <select name="" id="ipType">
+                                        <option value="">분야 선택</option>
+                                        <option value="">문의</option>
+                                        <option value="">칭찬</option>
+                                        <option value="">불만</option>
+                                        <option value="">제안</option>
+                                        <option value="">기타</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="label"><label for="ipSubject">제목</label> <strong>*</strong></div>
+                            <input type="text" id="ipSubject" placeholder="제목을 입력해 주세요.">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="label"><label for="ipContents">내용</label> <strong>*</strong></div>
+                            <textarea name="" id="ipContents" class="textareaCont" placeholder="항공권 관련 문의시 고객님의 예약번호 또는 티켓번호를 기재해주시면 빠른 답변에 도움이 됩니다." style="height:100px"></textarea>
+                            <p class="align-right color9 fz12 mt5 noto">0/8,000byte</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="label"><label for="ipFile">파일첨부</label> <strong>*</strong></div>
+                            <div class="uploadWrap">
+                                <input type="text" class="uploadText" readonly="readonly" placeholder="파일을 첨부해주세요">
+                                <div class="upload">
+                                    <button type="button" title="파일찾기" id="ipFile"><span>파일찾기</span></button>
+                                    <input type="file" class="inputFile" title="파일찾기">
+                                </div>
+                            </div>
+                            <p class="color9 mt5 fz12">* jpg, pdf, doc, hwp 파일 형태로 첨부하여 주시기 바랍니다. 파일은 최대 10MB까지 첨부 가능합니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="btns bottom">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <a href="#none" class="btn block gray">취소</a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a href="#none" class="btn block">등록</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+</body>
+</html>

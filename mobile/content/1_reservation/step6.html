@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>플라이강원</title>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/reset.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/calendar.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/common.css">
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/modernizr-custom.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/calendar.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/swiper.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+        });
+    </script>
+</head>
+
+<body>
+<div id="wrap">
+    <div id="header">
+        <div id="title">
+            <h2 class="has-subMenu"><span>항공권 예매</span></h2>
+            <div class="subMenu">
+                <ul>
+                    <li><a href="#none">운항일정 조회</a></li>
+                    <li><a href="#none">운임안내</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="back"><a href="#none"><span class="sr-only">이전 페이지로 이동</span></a></div>
+        <div id="allmenu"><a href="#"><span class="sr-only">전체메뉴</span><i></i></a></div>            
+        <div class="allmenuWrap">
+            <div class="toparea">
+                <div class="language">
+                    <select name="" id="">
+                        <option value="">한국어</option>                        
+                        <option value="">영어</option>                        
+                    </select>
+                </div>
+                <div class="welcome">
+                    <div class="logBtn">
+                        <p>로그인하시면 다양한 정보를 확인하실 수 있습니다.</p>
+                        <!--<p><strong>홍길동님,</strong> 즐거운 여행되세요!</p>-->
+                        <a href="#none" class="btn">로그인</a>
+                        <!--<a href="#none" class="btn">로그아웃</a>-->
+                    </div>
+                </div>
+                <div class="quick">
+                    <ul>
+                        <li class="q1"><a href="#none">예약조회</a></li>
+                        <li class="q2"><a href="#none">체크인</a></li>
+                        <li class="q3"><a href="#none">사전좌석구매</a></li>
+                        <li class="q4"><a href="#none">초과 수하물</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="dep1">
+                <li class="active"><div><a href="#">예매</a></div> <!-- 활성화 active -->
+                    <ul class="dep2">
+                        <li class="active"><a href="#none">항공권 예매</a></li> <!-- 활성화 active -->
+                        <li><a href="#none">운항일정 조회</a></li>
+                        <li><a href="#none">운임안내</a>
+                            <ul class="dep3">
+                                <li><a href="#none">국내선 운임안내</a></li>
+                                <li><a href="#none">국제선 운임안내</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><div><a href="#">체크인</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">체크인</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">서비스 안내</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">항공권 안내</a></li>
+                        <li><a href="#none">공항서비스 안내</a></li>
+                        <li><a href="#none">수하물 안내</a></li>
+                        <li><a href="#none">기내서비스 안내</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">이벤트/뉴스</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">이벤트</a>
+                            <ul class="dep3">
+                                <li><a href="#none">진행중인 이벤트</a></li>
+                                <li><a href="#none">지난 이벤트</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">뉴스</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">마이페이지</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">나의 예약내역</a></li>
+                        <li><a href="#none">나의 정보</a></li>
+                        <li><a href="#none">나의 문의내역</a></li>
+                        <li><a href="#none">나의 쿠폰</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">유틸리티</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">고객센터</a>
+                            <ul class="dep3">
+                                <li><a href="#non">자주하는 질문</a></li>
+                                <li><a href="#non">문의하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">회사소개</a>
+                            <ul class="dep3">
+                                <li><a href="#non">회사 현황</a></li>
+                                <li><a href="#non">CEO 인사말</a></li>
+                                <li><a href="#non">사업 비전</a></li>
+                                <li><a href="#non">CI 소개</a></li>
+                                <li><a href="#non">보도자료</a></li>
+                                <li><a href="#non">오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">이용약관</a>
+                            <ul class="dep3">
+                                <li><a href="#non">이용약관</a></li>
+                                <li><a href="#non">여객운송약관</a></li>
+                                <li><a href="#non">항공교통이용자 서비스 계획</a></li>
+                                <li><a href="#non">피해구제 계획</a></li>
+                                <li><a href="#non">개인정보처리방침</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>        
+    </div>
+    <div id="container">
+        <div id="content">            
+            <p class="bookedMsg">항공권 예매가 완료되었습니다.</p>
+            <div class="myBookingMsg card">
+                <div class="cell">
+                    <div class="info"><span>예약번호</span><strong>452006915 (Y08HR)</strong></div>
+                    <div class="info"><span>예약일</span><strong>2018.10.25 (목)</strong></div>
+                </div>
+            </div>
+            <div class="bookedArea">
+                <div class="subtitleArea mt0">
+                    <h3 class="subtitle">여정 정보</h3>
+                </div>
+                <div class="panel-wrap">
+                    <div class="panel-container">
+                        <div class="panel">
+                            <table class="table table-list">
+                                <colgroup>
+                                    <col style="width:70px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <div class="myBookingInfo">
+                                                <div class="flight">
+                                                    <span class="labelPlan">여정 1</span>
+                                                    <b>FG1451</b>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td>
+                                            <div class="myBookingInfo">
+                                                <div class="plan">
+                                                    <em>2019.10.25(목) 08:40 ~ 14:50</em>
+                                                    <strong>양양 YNY <i class="airplane"></i> 제주  CJU</strong>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="pt15">
+                                            <div class="myBookingInfo">
+                                                <div class="flight">
+                                                    <span class="labelPlan">여정 2</span>
+                                                    <b>FG1451</b>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td class="pt15">
+                                            <div class="myBookingInfo">
+                                                <div class="plan">
+                                                    <em>2019.10.25(목) 08:40 ~ 14:50</em>
+                                                    <strong>김포(GMP)<i class="airplane"></i>블라디보스토크(VVO)</strong>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="pt15">좌석수</th>
+                                        <td class="pt15"><strong>4석</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subtitleArea">
+                    <h3 class="subtitle">예매자 정보</h3>
+                </div>
+                <div class="panel-wrap">
+                    <div class="panel-container">
+                        <div class="panel">
+                            <table class="table table-list">
+                                <colgroup>
+                                    <col style="width:90px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>예매자</th>
+                                        <td>홍길동</td>
+                                    </tr>
+                                    <tr>
+                                        <th>연락처</th>
+                                        <td>+82(대한민국) 010-8989-0000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>이메일</th>
+                                        <td class="noto">shangeri@v-w.co.kr</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>  
+                
+                <div class="subtitleArea">
+                    <h3 class="subtitle">결제 내역</h3>
+                    <p class="right">통화 : KRW</p>
+                </div>
+                <div class="panel-wrap">
+                    <div class="panel-container">
+                        <div class="panel">
+                            <table class="table table-list">
+                                <colgroup>
+                                    <col style="width:90px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>결제수단</th>
+                                        <td class="align-right">신용카드</td>
+                                    </tr>
+                                    <tr>
+                                        <th>카드번호</th>
+                                        <td class="align-right">****-****-****-1234</td>
+                                    </tr>
+                                    <tr>
+                                        <th>할부개월</th>
+                                        <td class="align-right">일시불</td>
+                                    </tr>
+                                    <tr>
+                                        <th>승인번호</th>
+                                        <td class="align-right">1234567789</td>
+                                    </tr>
+                                    <tr>
+                                        <th>결제금액</th>
+                                        <td class="align-right">3,867,000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>결제일</th>
+                                        <td class="align-right">2018.10.20 (목) 09:43</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reference">
+                    <strong class="subtitle">유의사항</strong>
+                    <div class="desc">
+                        <p>예약발권 확인서와 함께 제공된 법적 고지문을 반드시 참고하여 주시기 바랍니다.</p>
+                        <p>항공권의 변경 및 취소 시에는 위약금이 부과되며, 최초 구입처로 문의하십시오.</p>
+                        <p>예약발권확인서에 성명과 신분증의 성명은 반드시 일치해야 합니다.</p>
+                        <div>[국내선기준] </div>
+                        <p>탑승수속은 해당항공편 출발시각 20분전에 마감되오니 원활한 탑승수속을 위해 출발시각 40분전까지 공항에 도착하여 수속하여주시기 바랍니다.</p>
+                        <div>[국제선기준]</div>
+                        <p>탑승수속은 해당항공편 출발시각 20분전에 마감되오니 원활한 탑승수속을 위해 출발시각 40분전까지 공항에 도착하여 수속하여주시기 바랍니다.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="btns bottom">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a href="" class="btn block border">메인으로 이동</a>
+                    </div>
+                    <div class="col-xs-6">
+                        <a href="" class="btn block">예약 조회</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

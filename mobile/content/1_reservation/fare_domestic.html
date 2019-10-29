@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>플라이강원</title>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/reset.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/calendar.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/mobile/common.css">
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/modernizr-custom.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/calendar.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/swiper.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/mobile/ui.js"></script>
+    <script>
+        $(document).ready(function(){            
+            //탭
+            $('.tabWide a, .tabText a').on('click',function(e){
+                e.preventDefault();
+                var target = $(this).attr('href');
+
+                $(this).parent('li').siblings().removeClass('on');
+                $(this).parent('li').addClass('on');
+
+                $(target).siblings('.tabView').hide();
+                $(target).show();
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+<div id="wrap">
+    <div id="header">
+        <div id="title">
+            <h2 class="has-subMenu"><span>국내선 운임안내</span></h2>
+            <div class="subMenu">
+                <ul>
+                    <li><a href="#none">항공권 예매</a></li>
+                    <li><a href="#none">운항일정 조회</a></li>
+                    <li><a href="#none">운임안내</a>
+                        <ul>
+                            <li><a href="">- 국내선 운임안내</a></li>
+                            <li><a href="">- 국제선 운임안내</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="close"><a href="javascript:;"><span class="sr-only">레이어 닫기</span></a></div>
+            </div>
+        </div>
+        <div id="back"><a href="#none"><span class="sr-only">이전 페이지로 이동</span></a></div>
+        <div id="allmenu"><a href="#"><span class="sr-only">전체메뉴</span><i></i></a></div>            
+        <div class="allmenuWrap">
+            <div class="toparea">
+                <div class="language">
+                    <select name="" id="">
+                        <option value="">한국어</option>                        
+                        <option value="">영어</option>                        
+                    </select>
+                </div>
+                <div class="welcome">
+                    <div class="logBtn">
+                        <p>로그인하시면 다양한 정보를 확인하실 수 있습니다.</p>
+                        <!--<p><strong>홍길동님,</strong> 즐거운 여행되세요!</p>-->
+                        <a href="#none" class="btn">로그인</a>
+                        <!--<a href="#none" class="btn">로그아웃</a>-->
+                    </div>
+                </div>
+                <div class="quick">
+                    <ul>
+                        <li class="q1"><a href="#none">예약조회</a></li>
+                        <li class="q2"><a href="#none">체크인</a></li>
+                        <li class="q3"><a href="#none">사전좌석구매</a></li>
+                        <li class="q4"><a href="#none">초과 수하물</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="dep1">
+                <li class="active"><div><a href="#">예매</a></div> <!-- 활성화 active -->
+                    <ul class="dep2">
+                        <li class="active"><a href="#none">항공권 예매</a></li> <!-- 활성화 active -->
+                        <li><a href="#none">운항일정 조회</a></li>
+                        <li><a href="#none">운임안내</a>
+                            <ul class="dep3">
+                                <li><a href="#none">국내선 운임안내</a></li>
+                                <li><a href="#none">국제선 운임안내</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><div><a href="#">체크인</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">체크인</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">서비스 안내</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">항공권 안내</a></li>
+                        <li><a href="#none">공항서비스 안내</a></li>
+                        <li><a href="#none">수하물 안내</a></li>
+                        <li><a href="#none">기내서비스 안내</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">이벤트/뉴스</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">이벤트</a>
+                            <ul class="dep3">
+                                <li><a href="#none">진행중인 이벤트</a></li>
+                                <li><a href="#none">지난 이벤트</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">뉴스</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">마이페이지</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">나의 예약내역</a></li>
+                        <li><a href="#none">나의 정보</a></li>
+                        <li><a href="#none">나의 문의내역</a></li>
+                        <li><a href="#none">나의 쿠폰</a></li>
+                    </ul>
+                </li>
+                <li><div><a href="#">유틸리티</a></div>
+                    <ul class="dep2">
+                        <li><a href="#none">고객센터</a>
+                            <ul class="dep3">
+                                <li><a href="#non">자주하는 질문</a></li>
+                                <li><a href="#non">문의하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">회사소개</a>
+                            <ul class="dep3">
+                                <li><a href="#non">회사 현황</a></li>
+                                <li><a href="#non">CEO 인사말</a></li>
+                                <li><a href="#non">사업 비전</a></li>
+                                <li><a href="#non">CI 소개</a></li>
+                                <li><a href="#non">보도자료</a></li>
+                                <li><a href="#non">오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none">이용약관</a>
+                            <ul class="dep3">
+                                <li><a href="#non">이용약관</a></li>
+                                <li><a href="#non">여객운송약관</a></li>
+                                <li><a href="#non">항공교통이용자 서비스 계획</a></li>
+                                <li><a href="#non">피해구제 계획</a></li>
+                                <li><a href="#non">개인정보처리방침</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>        
+    </div>
+    <div id="container">
+        <div id="content">
+            <div class="tabWide">
+                <ul>
+                    <li class="on"><a href="#tab1">항공운임</a></li>
+                    <li><a href="#tab2">개인할인</a></li>
+                    <li><a href="#tab3">수수료 및 위약금</a></li>
+                </ul>
+            </div>
+            <div class="tabView" id="tab1" style="display:block">
+                <div class="subtitleArea">
+                    <h3 class="subtitle">운임별 서비스 안내</h3>
+                </div>
+                <table class="table table-col border small">
+                    <caption class="caption">운임별 서비스 안내</caption>
+                    <colgroup>
+                        <col style="width:33%">
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="bdl0"></th>
+                            <th scope="col">특가운임</th>
+                            <th scope="col">할인운임</th>
+                            <th scope="col">정상운임</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="bdl0">기내 수하물</td>
+                            <td class="noto">10kg</td>
+                            <td class="noto">10kg</td>
+                            <td class="noto">10kg</td>
+                        </tr>
+                        <tr>
+                            <td class="bdl0">위탁 수하물</td>
+                            <td class="noto">미제공</td>
+                            <td class="noto">15kg</td>
+                            <td class="noto">15kg</td>
+                        </tr>
+                        <tr>
+                            <td class="bdl0">사전좌석 구매</td>
+                            <td class="noto">불가</td>
+                            <td class="noto">불가</td>
+                            <td class="noto">가능</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="subtitleArea">
+                    <h3 class="subtitle">노선별 운임안내</h3>
+                    <p class="right">통화 : KRW</p>
+                </div>
+                <table class="table table-col border small">
+                    <caption class="caption">노선별 운임안내</caption>
+                    <colgroup>
+                        <col style="width:21%">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="bdl0">노선</th>
+                            <th scope="col">구분</th>
+                            <th scope="col">운임</th>
+                            <th scope="col">유류할증료</th>
+                            <th scope="col">공항이용료</th>
+                            <th scope="col">총액운임</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3" class="align-left bdl0">양양-제주</td>
+                            <td class="align-left">비수기</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="align-left">성수기</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="align-left">극성수기</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3" class="align-left bdl0">제주-양양</td>
+                            <td class="align-left">비수기</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="align-left">성수기</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="align-left">극성수기</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3" class="align-left bdl0">김포-제주</td>
+                            <td class="align-left">비수기</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="align-left">성수기</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="align-left">극성수기</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3" class="align-left bdl0">제주-김포</td>
+                            <td class="align-left">비수기</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="align-left">성수기</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="align-left">극성수기</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="subtitleArea">
+                    <h3 class="subtitle">성수기 안내</h3>
+                    <p class="right">통화 : KRW</p>
+                </div>
+                <table class="table table-col border small">
+                    <caption class="caption">성수기 안내</caption>
+                    <colgroup>
+                        <col style="width:25%">
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="bdl0">구분</th>
+                            <th scope="col">2019</th>
+                            <th scope="col">2020</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="align-left bdl0">연시</td>
+                            <td class="noto">2019.01.01</td>
+                            <td class="noto">2020.01.01</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">설날</td>
+                            <td class="noto">2019.02.02 ~ 2019.02.07</td>
+                            <td class="noto">2020.01.23 ~ 2020.01.28</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">3.1절</td>
+                            <td class="noto">2019.02.23 ~ 2019.03.02</td>
+                            <td class="noto">2020.02.22 ~ 2020.02.29</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">어린이날</td>
+                            <td class="noto">2019.05.04 ~ 2019.05.07</td>
+                            <td class="noto" rowspan="2">2020.04.30 ~ 2020.05.05</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">석가탄신일</td>
+                            <td class="noto">-</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">현충일</td>
+                            <td class="noto">2019.06.06 ~ 2019.06.08</td>
+                            <td class="noto">-</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">하계휴가</td>
+                            <td class="noto">2019.07.27 ~ 2019.08.24</td>
+                            <td class="noto">2020.07.25 ~ 2020.08.22</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">추석</td>
+                            <td class="noto">2019.09.11 ~ 2019.09.16</td>
+                            <td class="noto" rowspan="2">2020.09.29 ~ 2020.10.05</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">개천절</td>
+                            <td class="noto">2019.10.03 ~ 2019.10.09</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">성탄절</td>
+                            <td class="noto">-</td>
+                            <td class="noto">2020.12.25 ~ 2020.12.27</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">연말</td>
+                            <td class="noto">2019.12.31</td>
+                            <td class="noto">2020.12.31</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btns bottom">
+                    <a href="#none" class="btn large">항공권 예약 바로가기</a>
+                </div>
+                <div class="reference">
+                    <strong class="subtitle">유의사항</strong>
+                    <div class="desc">
+                        <p>상기 운임은 성인 1인 편도 기준입니다.</p>
+                        <p>자세한 사항은 항공권 예매 페이지를 참고 하시기 바랍니다.</p>
+                        <p>유류할증료는 1개월 간격으로 사전 고지되며 탑승일과 관계없이 발권일 기준으로 적용됩니다.</p>
+                        <p>구매 후 탑승시점에 유류할증료가 인상되어도 차액을 징수하지 않으며 인하되어도 환급되지 않습니다.</p>
+                        <p>항공권 환불 시 탑승자 본인이 아닌 제3자가 접수하는 경우, 개인정보 보호법에 따라 탑승객/환불 신청인의 신분증과 환불 신청 위임장이 증빙서류로 필요합니다.</p>
+                    </div>
+                </div>  
+            </div>
+            <div class="tabView" id="tab2" style="display:none">
+                <div class="subtitleArea">
+                    <h3 class="subtitle">개인신분할인 안내</h3>
+                </div>
+                <table class="table table-col border small">
+                    <caption class="caption">개인신분할인 안내</caption>
+                    <colgroup>
+                        <col>
+                        <col style="width:12%">
+                        <col style="width:12%">
+                        <col style="width:27%">
+                        <col style="width:29%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="bdl0">할인대상</th>
+                            <th scope="col">운임 할인율</th>
+                            <th scope="col">공항세 할인율</th>
+                            <th scope="col">적용대상</th>
+                            <th scope="col">증빙서류</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="align-left bdl0">장애인 (성인)</td>
+                            <td class="noto">50%</td>
+                            <td class="noto">50%</td>
+                            <td class="align-left" rowspan="2">복지카드 소지자 <br>(등급 상관없음)</td>
+                            <td class="align-left" rowspan="2">시/군/구청 발행 복지카드(보건복지부장관명의)<br>단, 장애인 카드는 증빙으로 불가</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">장애인 (소아)<br>※ 할인율은 성인운임 기준 </td>
+                            <td class="noto">75%</td>
+                            <td class="noto">50%</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">장애인 동반자</td>
+                            <td class="noto">50%</td>
+                            <td class="noto">50%</td>
+                            <td class="align-left">장애등급 1~3급 승객의 <br>동반보호자 1인</td>
+                            <td class="align-left">신분증</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">국가유공상이자(1~3급) 및 <br>동반1인</td>
+                            <td class="noto">30%</td>
+                            <td class="noto">50%</td>
+                            <td class="align-left">국가유공상이자(1~3급) 및 동반1인</td>
+                            <td class="align-left">국가 보훈처 발행 신분증</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">5.18 민주유공자</td>
+                            <td class="noto">30%</td>
+                            <td class="noto">50%</td>
+                            <td class="align-left">5.18 민주유공자</td>
+                            <td class="align-left">국가 보훈처 발행 신분증</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">고엽제 후유의증환자<br>(장애등급의 판정을 받은 자)</td>
+                            <td class="noto">50%</td>
+                            <td class="noto">50%</td>
+                            <td class="align-left">고엽제 후유의증환자<br>(장애등급의 판정을 받은 자)</td>
+                            <td class="align-left">고엽제법 적용대상 확인증</td>
+                        </tr>
+                        <tr>                        
+                            <td class="align-left bdl0">국가유공자 본인 및<br>국가유공자 유족</td>
+                            <td class="noto">30%</td>
+                            <td class="noto">-</td>
+                            <td class="align-left">국가유공자 본인 및 국가유공자 유족</td>
+                            <td class="align-left">국가보훈처 발행 유족증 (유족원증 증빙불가, <br>유족의 경우 소지수권 유족 1인)</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">독립유공자 및 유족</td>
+                            <td class="noto">30%</td>
+                            <td class="noto">-</td>
+                            <td class="align-left">독립유공자 및 유족</td>
+                            <td class="align-left">독립유공자증 / 독립유공자 유족증</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">5.18 민주유공자 유족</td>
+                            <td class="noto">30%</td>
+                            <td class="noto">-</td>
+                            <td class="align-left">5.18 민주유공자 유족</td>
+                            <td class="align-left">국가보훈처 발행 유족증 (유족원증 증빙불가, <br>유족의 경우 소지수권 유족 1인)</td>
+                        </tr> 
+                        <tr>                        
+                            <td class="align-left bdl0">군인</td>
+                            <td class="noto">30%</td>
+                            <td class="noto">-</td>
+                            <td class="align-left">단기하사 이하 의무 복무사병<br>(휴가여행에 한함)</td>
+                            <td class="align-left">휴가증/외박증/외출증/전역증<br>(전역증은 전역 당일에 한함)<br>일일 복무 상황부 (공익요원)<br>입영통지서 (입영일 3일이내)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="reference">
+                    <strong class="subtitle">유의사항</strong>
+                    <div class="desc">
+                        <p>모든 할인은 이중으로 적용되지 않습니다.</p>
+                        <p>탑승이 완료된 후에는 소급 환불이 불가능 합니다.</p>
+                        <p>개인 신분 할인은 정규운임 선택시에만 적용됩니다.</p>
+                        <p>할인 대상 고객님께서는 항공권 구입시 해당 할인적용 운임을 선택하시고, 탑승수속 시 할인증빙서류를 반드시 소지하여 주시기 바랍니다.</p>
+                    </div>
+                </div>  
+            </div>
+            <div class="tabView" id="tab3" style="display:none">
+                <div class="subtitleArea">
+                    <h3 class="subtitle">변경/취소 수수료 및 위약금</h3>
+                    <p class="right">통화 : KRW</p>
+                </div>
+                <table class="table table-col border small">
+                    <caption class="caption">변경/취소 수수료 및 위약금</caption>
+                    <colgroup>
+                        <col>
+                        <col style="width:22%">
+                        <col style="width:18%">
+                        <col style="width:15%">
+                        <col style="width:15%">
+                        <col style="width:15%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="bdl0">구분</th>
+                            <th scope="col">적용시점</th>
+                            <th scope="col">이벤트운임</th>
+                            <th scope="col">특가운임</th>
+                            <th scope="col">할인운임</th>
+                            <th scope="col">정규운임</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="4" class="align-left bdl0">취소 <br>수수료</td>                     
+                            <td class="align-left">출발 90일 ~ <br>61일전</td>
+                            <td rowspan="5">환불 불가</td>
+                            <td rowspan="3" colspan="2" class="align-right noto">2,000</td>
+                            <td class="align-righ notot">-</td>                                      
+                        </tr>
+                        <tr>
+                            <td class="align-left">출발 60일 ~ <br>31일전</td>
+                            <td class="align-right noto">-</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left">출발 30일 ~ <br>출발시간 전</td>
+                            <td class="align-right noto">-</td>
+                        </tr>
+                        <tr>
+                            <td class="align-left">출발이후</td>
+                            <td colspan="2" class="align-right noto">5,000</td>
+                            <td class="align-right noto">-</td> 
+                        </tr>
+                        <tr>
+                            <td class="align-left bdl0">예약부도 <br>위약금</td>
+                            <td class="align-left">출발 90일 ~ <br>61일전</td>
+                            <td colspan="2" class="align-right noto">12,000</td>
+                            <td class="align-right noto">8,000</td> 
+                        </tr>                  
+                    </tbody>
+                </table>
+                <div class="reference">
+                    <strong class="subtitle">유의사항</strong>
+                    <div class="desc">
+                        <p>환불 위약금은 승객 1인 별로 편도 구간 당 부과됩니다.</p>
+                        <p>환불 위약금은 항공권 운임 결제 시 통화와 동일한 통화로 결제됩니다.</p>
+                        <p>인터넷 예매의 경우, 출발예정시각 20분전까지만 환불 신청이 가능하며, 출발예정시각 20분 이후에는 플라이강원 고객센터 (1522-8700)나 각 공항지점에서만 환불 신청이 가능합니다.</p>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

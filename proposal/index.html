@@ -1,0 +1,53 @@
+
+<!DOCTYPE html><html lang="ko" class="no-js suit-classic lang-ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="content-language" content="kr" />
+        <meta http-equiv="imagetoolbar" content="no" />
+        <meta name="viewport" content="width=1280, user-scalable=no" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="title" content="FLY GANGWON site Renewal Proposal " />
+        <meta name="description" content="FLY GANGWON site Renewal Proposal " />
+        <meta name="copyright" content="FLY GANGWON site Renewal Proposal " />
+        <meta property="og:title" content="FLY GANGWON site Renewal Proposal " />
+        <title>FLY GANGWON Proposal</title>
+        <link rel="publisher" href="http://v-w.co.kr" />
+        <link rel="stylesheet" href="resources/css/style.css" />
+        <script src="resources/js/jquery-1.11.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#inner > div > a').click(function(){
+                    if($(this).parent().hasClass('last')){
+                        console.log('1');
+                        $(this).parent('div').hide();
+                        $('.first').show();
+                    }
+                    else{
+                        $(this).parent('div').hide();
+                        $(this).parent('div').next('div').show();
+                    }                    
+                });
+
+                $('.home').click(function(){
+                    $('#inner > div').hide();
+                    $('.first').show();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="main">
+            <div class="logo"><a href="http://www.v-w.co.kr" target="_blank"><img src="resources/images/logo.png" alt="VW"></a></div>
+            <div class="old"><a href="/proposal_old/">OLD</a></div>
+            <div class="buttons">
+                <a target="_blank" href="a/index.html">A</a>
+                <a target="_blank" href="a/index_m.html">A-M</a>
+                <a target="_blank" href="b/index.html">B</a>
+                <a target="_blank" href="b/index_m.html">B-M</a>
+                <a target="_blank" href="c/index.html">C</a>
+                <a target="_blank" href="c/index_m.html">C-M</a>
+            </div>
+        </div>
+    </body>
+</html>

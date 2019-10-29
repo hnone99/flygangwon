@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>플라이강원</title>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/reset.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/calendar.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/common.css">
+    <script type="text/javascript" src="../../resources/js/pc/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/modernizr-custom.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/calendar.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/swiper.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        });
+    </script>
+</head>
+
+<body class="bgWhite">
+<div class="accessibility-nav">
+    <ul>
+        <li class="first"><a href="#gnb">메뉴바로가기</a></li>
+        <li class="last"><a href="#container">본문바로가기</a></li>
+    </ul>
+</div>
+<div id="wrap">
+    <div id="header">
+        <div class="htop">
+            <div class="in">
+                <ul class="category">
+                    <li class="air on"><a href=""><span>항공</span></a></li>
+                    <li class="tour"><a href=""><span>관광</span></a></li>
+                    <li class="shopping"><a href=""><span>쇼핑</span></a></li>
+                </ul>
+                <ul class="menu">
+                    <li class="login"><a href="#">로그인</a></li>
+                    <li class="signup"><a href="#">회원가입</a></li>
+                    <li class="language">
+                        <a href="#">KOREAN</a>
+                        <!-- 190729 수정 -->
+                        <div class="languageMenu">
+                            <ul>
+                                <li><a href="">ENGLISH</a></li>
+                                <li><a href="">ENGLISH</a></li>
+                            </ul>
+                        </div>
+                        <!-- //190729 수정 -->                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="inner">
+            <h1 class="logo"><a href="#"><span class="sr-only">FLY GANGWON</span></a></h1>
+            
+            <div id="gnb">
+                <ul class="dep1">
+                    <li class="on"><a href="#">예매</a>
+                        <ul class="dep2">
+                            <li class="on"><a href="#none">항공권 예매</a></li>
+                            <li><a href="#none">운항일정조회</a></li>
+                            <li><a href="#none">운임안내</a>
+                                <ul class="dep3">
+                                    <li><a href="#none">국내선 운임안내</a></li>
+                                    <li><a href="#none">국제선 운임안내</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">체크인</a>
+                        <ul class="dep2">
+                            <li><a href="#none">체크인</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">서비스안내</a>
+                        <ul class="dep2">
+                            <li><a href="#none">항공권 안내</a></li>
+                            <li><a href="#none">공항서비스 안내</a></li>
+                            <li><a href="#none">수하물 안내</a></li>
+                            <li><a href="#none">기내서비스 안내</a></li>
+                            <li><a href="#none">취항지 안내</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이벤트/뉴스</a>
+                        <ul class="dep2">
+                            <li><a href="#none">이벤트</a></li>
+                            <li><a href="#none">뉴스</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">마이페이지</a>
+                        <ul class="dep2">
+                            <li><a href="#none">나의 예약내역</a></li>
+                            <li><a href="#none">나의 정보</a></li>
+                            <li><a href="#none">나의 문의내역</a></li>
+                            <li><a href="#none">나의 쿠폰</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="allmenu">
+                <a href="#"><span class="sr-only">전체메뉴</span><i></i></a>
+            </div>
+            <div class="allmenuWrap">
+                <div class="allmenuContent">
+                    <div class="logoarea"><h1><span class="sr-only">FLY GANGWON</span></h1></div>
+                    <ul class="dep1">
+                        <li class="on"><div><a href="#">예매</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">항공권 예매</a></li>
+                                <li><a href="#none">운항일정 조회</a></li>
+                                <li><a href="#none">운임안내</a>
+                                    <ul class="dep3">
+                                        <li><a href="#none">국내선 운임안내</a></li>
+                                        <li><a href="#none">국제선 운임안내</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">체크인</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">체크인</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">서비스 안내</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">항공권 안내</a></li>
+                                <li><a href="#none">공항서비스 안내</a></li>
+                                <li><a href="#none">수하물 안내</a></li>
+                                <li><a href="#none">기내서비스 안내</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">이벤트/뉴스</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">이벤트</a>
+                                    <ul class="dep3">
+                                        <li><a href="#none">진행중인 이벤트</a></li>
+                                        <li><a href="#none">지난 이벤트</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">뉴스</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">마이페이지</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">나의 예약내역</a></li>
+                                <li><a href="#none">나의 정보</a></li>
+                                <li><a href="#none">나의 문의내역</a></li>
+                                <li><a href="#none">나의 쿠폰</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">유틸리티</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">고객센터</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">자주하는 질문</a></li>
+                                        <li><a href="#non">문의하기</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">회사소개</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">회사 현황</a></li>
+                                        <li><a href="#non">CEO 인사말</a></li>
+                                        <li><a href="#non">사업 비전</a></li>
+                                        <li><a href="#non">CI 소개</a></li>
+                                        <li><a href="#non">보도자료</a></li>
+                                        <li><a href="#non">오시는 길</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">이용약관</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">이용약관</a></li>
+                                        <li><a href="#non">여객운송약관</a></li>
+                                        <li><a href="#non">항공교통이용자 서비스 계획</a></li>
+                                        <li><a href="#non">피해구제 계획</a></li>
+                                        <li><a href="#non">개인정보처리방침</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg"></div>
+    </div>
+    <div id="location">
+        <div class="inner">
+            <div class="dep1"><a href="#">이용약관</a></div>
+            <div class="dep2"><a href="#">개인정보처리방침</a></div>
+        </div>
+    </div>
+    <div id="container">
+        <div id="content">
+            <h2 class="title">개인정보처리방침</h2>
+
+            <div class="terms">
+                <p>플라이강원㈜(이하 '당사' 또는 ‘플라이강원’이라 함)는 귀하의 개인정보보호를 매우 중요시하며, "개인정보보호법" 및 "정보통신망 이용촉진 및 정보보호 등에 관한 법률" 등 관련 법령, 규정을 준수하고 있습니다. 당사는 개인정보처리방침을 통하여 귀하께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려 드립니다. <br>
+                당사의 개인정보처리방침은 법령 및 고시 등의 변경 또는 회사의 약관 및 내부 정책에 따라 변경될 수 있으며 이를 개정하는 경우 변경사항에 대하여 홈페이지(www.flygangwon.com)에 게시합니다. <br>
+                당사의 서비스를 이용하시는 고객은 개인정보의 수집, 이용, 제공, 위탁, 국외이전 등과 관련한 아래 사항에 대하여 원하지 않는 경우 동의를 거부할 수 있습니다. 다만, 동의를 거부하는 경우 서비스의 전부 또는 일부를 이용할 수 없음을 알려드립니다. <br>
+                당사는 고객 개인정보의 수집목적이 달성될 때까지 고객의 개인정보를 보유합니다. 고객 개인정보는 수집목적 달성 후 관련 법령∙규정 등에 따라 보유하여야 할 경우가 아닌 경우 파기 됩니다.</p>
+                
+                <br>
+
+                <p>본 개인정보 처리방침의 순서는 다음과 같습니다.</p><br>
+
+                <p class="idx">
+                    <span><a class="underline" href="#t1">제1조. 개인정보 처리 항목 및 처리 목적</a><br></span>
+                    <span><a class="underline" href="#t2">제2조. 개인정보의 수집 방법</a><br></span>
+                    <span><a class="underline" href="#t3">제3조. 개인정보 처리에 대한 동의 및 방법</a><br></span>
+                    <span><a class="underline" href="#t4">제4조. 개인정보의 처리 및 보유기간</a><br></span>
+                    <span><a class="underline" href="#t5">제5조. 개인정보 자동수집 장치의 설치, 운영 및 그 거부에 관한 사항</a><br></span>
+                    <span><a class="underline" href="#t6">제6조. 개인정보의 제3자 대한 제공 및 공유</a><br></span>
+                    <span><a class="underline" href="#t7">제7조. 개인정보처리의 위탁</a><br></span>
+                    <span><a class="underline" href="#t8">제8조 개인정보의 국외 이전</a><br></span>
+                    <span><a class="underline" href="#t9">제9조. 정보주체의 권리∙의무 및 그 행사방법</a><br></span>
+                    <span><a class="underline" href="#t10">제10조. 개인정보의 파기절차 및 방법</a><br></span>
+                    <span><a class="underline" href="#t11">제11조. 개인정보 안전성 확보조치</a><br></span>
+                    <span><a class="underline" href="#t12">제12조. 개인정보보호책임자 및 고충사항 처리부서</a><br></span>
+                    <span><a class="underline" href="#t13">제13조. 개인정보 처리방침의 변경에 따른 공지의무</a></span>
+                </p><br>
+
+                <p id="t1"><strong>제1조. 개인정보의 처리 항목 및 처리 목적</strong></p>
+                <p>이용자의 동의가 있거나 법령의 규정에 의한 경우를 제외하고는 본조에서 고지한 범위를 넘어 이용자의 개인정보를 처리하지 않습니다.</p>
+                <p class="mt20">가. 회원 관리</p>
+                <div class="tableTermsWrap">
+                    <table class="table table-col border left">
+                        <caption>회원 관리</caption>
+                        <colgroup>
+                            <col style="width:17%">
+                            <col style="width:17%">
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="bdl0">구분</th>
+                                <th>필수/선택</th>
+                                <th>처리 항목</th>
+                                <th>처리 목적</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2" class="bdl0">회원가입시</td>
+                                <td>필수</td>
+                                <td>아이디(ID), 비밀번호, 성명(한글 및 영어), 생년월일, 성별, 연락처, 이메일</td>
+                                <td>본인확인, 개인식별, 불량회원의 부정 이용 및 비인가 사용 방지, 가입의사 확인, 가입 및 가입횟수 제한, 분쟁 조정을 위한 기록보존, 불만처리 등 민원처리, 고지사항 전달</td>
+                            </tr>
+                            <tr>
+                                <td>선택</td> <!-- 191023 클래스 삭제 -->
+                                <td>성명, 주소, 연락처, 이벤트 수신 여부</td>
+                                <td>마케팅 및 광고에 활용(마케팅 및 광고에 활용하는 경우는 별도의 동의를 받고 있으며, 동의를 거부하더라도 서비스의 이용에 제한이 없습니다)</td>
+                            </tr>
+                            <tr>
+                                <td class="bdl0">만14세 미만</td>
+                                <td>필수</td>
+                                <td>법정대리인의 정보(성명, 연락처 등)</td>
+                                <td>미성년자에 대한 회원가입 처리를 위한 법률 준수</td>
+                            </tr>
+                            <tr>
+                                <td class="bdl0">비회원</td>
+                                <td>필수</td>
+                                <td>성명, 이메일, 연락처</td>
+                                <td>비회원의 항공권 예약 및 서비스 관련 질의 답변</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>나. 항공권 예매</p>
+                <div class="tableTermsWrap">
+                    <table class="table table-col border left">
+                        <caption>항공권 예매</caption>
+                        <colgroup>
+                            <col style="width:17%">
+                            <col style="width:17%">
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="bdl0">구분</th>
+                                <th>필수/선택</th>
+                                <th>처리 항목</th>
+                                <th>처리 목적</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2" class="bdl0">항공권 예매</td>
+                                <td>필수</td>
+                                <td>성명, 성별, 휴대전화번호, 이메일, 생년월일(유소아 대상), 여정정보(편명, 출발시간)(편명, 탑승시간, 운임)</td>
+                                <td>본인확인, 개인식별, 불량회원의 부정 이용 및 비인가 사용 방지, 가입의사 확인, 가입 및 가입횟수 제한, 분쟁 조정을 위한 기록보존, 불만처리 등 민원처리, 고지사항 전달</td>
+                            </tr>
+                            <tr>
+                                <td>선택</td> <!-- 191023 클래스 삭제 -->
+                                <td>이벤트 정보 수신 여부, 할인정보 등</td>
+                                <td>이벤트 및 마케팅 등을 위한 목적으로 활용</td>
+                            </tr>
+                            <tr>
+                                <td class="bdl0">대금 결제</td>
+                                <td>필수</td>
+                                <td>카드번호,카드 인증정보,계좌번호 등</td>
+                                <td>항공권 구매를 위한 결제 및 유료 서비스 대금 결제 처리 목적</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>다. 항공운송 서비스 제공</p>
+                <div class="tableTermsWrap">
+                    <table class="table table-col border left">
+                        <caption>항공운송 서비스 제공</caption>
+                        <colgroup>
+                            <col style="width:17%">
+                            <col style="width:17%">
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="bdl0">구분</th>
+                                <th>필수/선택</th>
+                                <th>처리 항목</th>
+                                <th>처리 목적</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="bdl0">국제선 이용</td>
+                                <td>필수</td>
+                                <td>여권번호,국적 등</td>
+                                <td>국제선 항공운송 서비스 제공을 위한 목적</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>라. 기타</p>
+                <div class="tableTermsWrap">
+                    <table class="table table-col border left">
+                        <caption>기타</caption>
+                        <colgroup>
+                            <col style="width:17%">
+                            <col style="width:17%">
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="bdl0">구분</th>
+                                <th>필수/선택</th>
+                                <th>처리 항목</th>
+                                <th>처리 목적</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="bdl0">설문조사 및 이벤트 참가</td>
+                                <td>선택</td>
+                                <td>아이디, 성명, 주소, 연락처(휴대전화번호, 이메일)</td>
+                                <td>고객 서비스 개선 등을 위한 설문조사 및 이베트 참가 시 경품 지급 등의 목적으로 활용</td>
+                            </tr>
+                            <tr>
+                                <td class="bdl0">자동생성 정보</td>
+                                <td>필수</td>
+                                <td>서비스 이용기록, 접속 로그, 접속 IP 정보, 결제기록, 서비스 이용기록, 접속로그 등</td>
+                                <td>서비스 이용 과정이나 정보처리 과정에서 생성되는 정보로서, 고객님의 안정적인 서비스 이용을 위한 관리 및 민원 등 대응을 위한 정보 활용</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p id="t2"><strong>제2조. 개인정보의 수집 방법</strong></p>
+                <p>당사는 아래와 같은 방법으로 개인정보를 수집하고 있습니다.</p>
+                <p>· 홈페이지 회원가입 시</p>
+                <p>· 회원, 비회원의 항공원 예약 및 결제 시</p>
+                <p>· 서비스 이용 과정이나 정보처리 과정에서 생성</p>
+                <p>· 기타 설문조사 및 이벤트 참가 시</p>
+                
+                <p id="t3"><strong>제3조. 개인정보 처리에 대한 동의 및 방법</strong></p>
+                <p>당사는 귀하의 개인정보를 수집•이용•제공하고자 하는 경우, 개인정보 처리 동의서 등을 통하여 온라인, 유선 등의 방법으로 귀하의 개인정보에 대한 동의(만 14세 미만 아동의 경우 법정대리인 동의)를 받고 있습니다.</p>
+                
+                <p id="t4"><strong>제4조. 개인정보 처리 및 보유 기간</strong></p>
+                <div class="tableTermsWrap">
+                    <table class="table table-col border left">
+                        <caption>개인정보 처리 및 보유 기간</caption>
+                        <colgroup>
+                            <col>
+                            <col style="width:48%">
+                            <col style="width:22%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="bdl0">해당 개인정보</th>
+                                <th>보존사유</th>
+                                <th>보존기간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="bdl0">계약 또는 청약철회 등에 관한 기록</td>
+                                <td>전자상거래 등에서의 소비자 보호에 관한 법률 제 6조 및 동법 시행령 제 6조</td>
+                                <td>5년</td>
+                            </tr>
+                            <tr>
+                                <td class="bdl0">대금결제 및 재화 등의 공급에 관한 기록</td>
+                                <td>전자상거래 등에서의 소비자 보호에 관한 법률 제 6조 및 동법 시행령 제 6조</td>
+                                <td>5년</td>
+                            </tr>
+                            <tr>
+                                <td class="bdl0">소비자의 불만 또는 분쟁 처리 기록</td>
+                                <td>전자상거래 등에서의 소비자 보호에 관한 법률 제 6조 및 동법 시행령 제 6조</td>
+                                <td>3년</td>
+                            </tr>
+                            <tr>
+                                <td class="bdl0">홈페이지 접속에 관한 기록</td>
+                                <td>통신비밀보호법 제15조의 2 및 동법 시행령 제 41조</td>
+                                <td>3개월 이상</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>            
+                
+                <p id="t5"><strong>제5조. 개인정보 자동수집 장치의 설치, 운영 및 그 거부에 관한 사항</strong></p>
+                <p>당사는 고객의 정보를 저장하고 수시로 찾아내기 위하여 ‘쿠키(cookie)’ 를 사용합니다. 쿠키는 웹사이트를 운영하는데 이용되는 서버가 고객의 브라우저에 보내는 작은 데이터로서 고객의 컴퓨터 하드디스크에 저장됩니다. 고객이 웹사이트에 접속을 하면 회사 컴퓨터는 고객 컴퓨터 브라우저에 있는 쿠키 내용을 읽고, 고객의 추가정보를 고객의 컴퓨터에서 찾아 접속을 통한 추가정보 입력 없이 고객의 방문을 알 수 있고 서비스를 제공할 수 있습니다. 고객의 브라우저가 쿠키를 받아들일 때 고객 자신에게 알리도록 브라우저를 설정할 수도 있습니다. 쿠키에 저장된 고객과 관련된 정보는 브라우저를 종료하거나 로그오프를 하면 사라집니다.</p>
+                <p>쿠키는 귀하의 컴퓨터는 식별하지만 귀하를 개인적으로 식별하지는 않습니다.</p>
+                <p>고객은 쿠키 설치에 대한 선택권을 가지고 있습니다. 따라서, 웹 브라우저에서 옵션을 설정함으로써 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 거치거나, 아니면 모든 쿠키의 저장을 거부할 수도 있습니다.</p>
+                <p>가. 쿠키 설정 거부 방법</p>
+                <p>쿠키 설정을 거부하는 방법으로는 고객님이사용하는 웹 브라우저의 옵션을 선택함으로써 모든 쿠키를 허용하거나 쿠키를 저장할 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다.</p>
+                <p>나. 쿠키 설치 허용 여부를 지정하는 방법(Internet Explorer의 경우)</p>
+                <p>· [도구] 메뉴에서 [인터넷 옵션]을 선택합니다.</p>
+                <p>· [개인정보 탭]을 클릭합니다.</p>
+                <p>· [개인정보처리 수준]을 설정하시면 됩니다. 다만, 쿠키 설치를 거부하였을 경우 서비스 제공에 어려움이 있을 수 있습니다.</p>
+                
+                <p id="t6"><strong>제6조. 개인정보의 제3자 대한 제공 및 공유</strong></p>
+                <p>당사는 "개인정보 동의서" 등을 통해 제휴서비스 제공에 대한 동의를 한 고객에 한하여 아래의 제휴업체에 개인정보 일부를 제공하고 있습니다. 또한, 아래의 제휴업체에 제공되는 내용이 변경되거나, 이 외의 업체에 개인정보를 제공하게 될 경우, 고객으로부터 별도의 동의를 받습니다.</p>
+                <p>추가적으로 당사는 관련 법령 준수 등을 위해 아래에 해당하는 경우, 예외적으로 개인정보를 제공합니다.</p>
+                <p>· 관련 통계법 등 통계작성, 학술연구 또는 시장조사를 위하여 필요한 경우로서 특정 개인을 알아볼 수 없는 형태로 가공하여 제공하는 경우</p>
+                <p>· 형사소송법 등 법률에 특별한 규정이 있는 경우</p>
+                <p>· 정부기관(준정부기관 포함)이나 법원의 명령에 의하여 개인정보를 제공하는 경우</p>
+                <p>'법률에 특별한 규정이 있는 경우'로 행정목적이나 수사목적으로 행정관청 또는 수사기관이 요구해 온 경우라 하더라도 무조건 고객의 개인정보를 제공하지 않으며, 법률에 규정된 바에 따라 영장 또는 기관장의 직인이 날인된 서면에 의한 경우 등 적법한 절차에 따라 제공합니다.</p>
+                
+                <p id="t7"><strong>제7조. 개인정보 처리의 위탁</strong></p>
+                <p>당사는 법규의 준수나 계약사항의 이행, 서비스의 향상이나 원활한 업무처리 등을 위하여 개인정보 처리업무를 외부 전문업체에 일부 위탁하고 있으며, 위탁계약 체결 시 위탁업무 수행목적 외 개인정보 처리금지, 기술적∙관리적 보호조치, 재위탁 제한, 수탁자에 대한 관리∙감독, 손해배상 등 책임에 관한 사항을 계약서 등 문서에 명시하고, 수탁자가 개인정보를 안전하게 처리하는지를 감독하고 있습니다.</p>
+                <div class="tableTermsWrap">
+                    <table class="table table-col border left">
+                        <caption>개인정보 처리의 위탁</caption>
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="bdl0">수탁자</th>
+                                <th>정보 제공 목적</th>
+                                <th>이용 및 보유기간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="bdl0">인포빕</td>
+                                <td>카카오톡 알림톡 발송 및 SMS / LMS / MMS 발송</td>
+                                <td rowspan="4">개인정보 수집의 활용 및 이용목적 달성시까지</td>
+                            </tr>
+                            <tr>
+                                <td class="bdl0">㈜케이알파트너스</td>
+                                <td>항공권 구매에 대한 대금결제 업무</td>
+                            </tr>
+                            <tr>
+                                <td class="bdl0">KICC</td>
+                                <td>항공권 구매에 대한 대금결제 업무</td>
+                            </tr>
+                            <tr>
+                                <td class="bdl0">나이스평가정보주식회사</td>
+                                <td>실명인증 및 본인확인</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p id="t8"><strong>제8조. 개인정보의 국외이전</strong></p>
+                <p>당사에서는 당사의 항공권 예약/발권 및 운송 시스템을 운영하기 위해 항공여행시스템 제공 업체인 SITA사에 해당 업무를 위탁하고 있습니다. 이에 아래와 같은 내용으로 이용자의 개인정보가 국외로 이전하게 됩니다. 이용자는 개인정보 국외이전에 대하여 동의를 거부하실 권리가 있습니다. 단, 개인정보 국외이전에 대해 동의를 거부하시는 경우에는 항공권 예약/발권 및 운송 서비스 이용에 어려움이 발생할 수 있음을 알려 드립니다.</p>
+                <div class="tableTermsWrap">
+                    <table class="table table-col border left">
+                        <caption>개인정보 처리의 위탁</caption>
+                        <colgroup>
+                            <col style="width:10%">
+                            <col style="width:12%">
+                            <col style="width:15%">
+                            <col style="width:13%">
+                            <col>
+                            <col style="width:14%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="bdl0">이전대상</th>
+                                <th>이용목적</th>
+                                <th>이전 일시 및 방법</th>
+                                <th>국외 이전의 유형</th>
+                                <th>제공항목</th>
+                                <th>정보관리책임자</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="bdl0">SITA</td>
+                                <td>플라이강원 예약시스템 운영 및 예약기록 유지</td>
+                                <td>회원가입 및 항공권 예약시 공용 네트워크 이용 전송 <br>(보안 프로토콜 처리)</td>
+                                <td>개인정보처리 위탁 및 보관</td>
+                                <td>회원번호, 아이디, 패스워드, DI(중복가입확인정보), 연락처(휴대전화번호,e-mail), 이름, 성별, 생년월일, 카드정보(번호, 유효기간), 은행 계좌정보, 거래 인증번호, 거래번호, 여권정보(번호, 만료일, 발급처, 국적), 이벤트 정보 수신 여부</td>
+                                <td>이메일 주소 : <br>servicedesk@sita.aero</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                
+                <p id="t9"><strong>제9조. 정보주체의 권리•의무 및 그 행사방법</strong></p>
+                <p>가. 이용자는 언제든지 당사가 수집ㆍ보관 중인 개인정보의 열람을 요구하거나 개인정보에 오류가 있는 경우 그 정정을 요구할 수 있으며, 개인정보의 수집, 이용, 제공 등에 대한 동의를 철회할 수 있습니다. 다만, 만 14세 미만의 아동의 경우, 법정대리인이 아동의 개인정보에 대해서 상기에 명시된 권리를 행사할 수 있습니다.</p>
+                <p>나. 법정대리인이 개인정보에 대한 권리를 행사하기 위해서는 개인정보보호법 시행규칙 ‘별지 제11호 서식’에 따른 위임장을 서면 또는 팩스로 제출하여야 합니다.</p>
+                <p>다. 이용자는 언제든지 ‘회원탈퇴’등을 통해 개인정보의 수집 및 이용 동의를 철회할 수 있습니다.</p>
+                <p>라. 이용자 및 법정 대리인은 언제든지 당사가 처리하고 있는 개인정보에 대하여 처리의 정지를 요구 할 수 있습니다. 다만 아래의 경우에 해당하는 경우 처리정지 요구를 거절할 수 있습니다.</p>
+                <p>· 법률에 특별한 규정이 있거나 법령상 의무를 준수하기 위하여 불가피한 경우</p>
+                <p>· 다른 사람의 생명•신체를 해할 우려가 있거나 다른 사람의 재산과 그 밖의 이익을 부당하게 침해할 우려가 있는 경우</p>
+                <p>· 개인정보를 처리하지 아니하면 정보주체와 약정한 서비스를 제공하지 못하는 등 계약의 이행이 곤란한 경우로서 정보주체가 그 계약의 해지 의사를 명확하게 밝히지 아니한 경우</p>
+                <p>&lt; 개인정보 조회, 수정 및 철회 방법 &gt;</p>
+                <p>당사 인터넷 홈페이지(www.flygangwon.com)에 로그인 후 ‘회원정보변경’을 클릭하여 정보조회가 가능하며, 해당 페이지의 ‘회원정보변경’, ‘회원탈퇴’ 버튼을 클릭하여 정보의 수정 및 철회(가입해지)가 가능합니다. 또한, 서면ㆍ전화ㆍ이메일ㆍ고객의 말씀(Q&amp;A)를 통해서도 개인정보의 열람ㆍ정정 또는 동의 철회를 요청할 수 있습니다.</p>
+                
+                <p id="t10"><strong>제10조. 개인정보의 파기절차 및 방법</strong></p>
+                <p>가. 당사는 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보가 불필요하게 되었을 때에는 지체없이 해당 개인정보를 파기합니다.</p>
+                <p>나. 개인정보는 안전한 처리를 위하여 아래와 같은 방법으로 파기합니다.</p>
+                <p>· 서면, 출력물 등 종이문서 : 파쇄 또는 소각의 방법으로 파기</p>
+                <p>· 전자적 파일 형태의 전자문서 : 복구 및 재생할 수 없도록 파기</p>
+                
+                <p id="t11"><strong>제11조. 개인정보 안전성 확보조치</strong></p>
+                <p>당사는 귀하의 개인정보가 분실∙도난∙유출∙변조 또는 훼손되지 아니하도록 안전성 확보를 위해 다음과 같은 대책을 적용하고 있습니다.</p>
+                <p>가. 개인정보보호를 위한 기술적 대책</p>
+                <p>· 개인정보처리시스템 등의 접근권한 관리를 위한 접근통제 방안을 수립하여 적용하고 있습니다.</p>
+                <p>· 파일 및 전송데이터를 암호화 하고 있으며, 중요한 데이터는 별도의 보안기능을 통해 보관하고 있습니다.</p>
+                <p>· 개인정보의 도난∙분실에 대응하기 위해 정보유출 방지 대책을 수립하여 적용하고 있습니다.</p>
+                <p>· 암호화 알고리즘을 이용하여 네트워크상의 개인정보를 안전하게 전송•사용하고 있습니다.</p>
+                <p>· 백신프로그램을 이용하여 컴퓨터 바이러스에 의한 피해 발생을 방지하기 위해 조치를 취하고 있습니다.</p>
+                <p>나. 개인정보보호를 위한 물리적 대책</p>
+                <p>· 전산실, 자료보관실 등에 대한 출입 및 접근 통제 절차를 마련하고 있습니다.</p>
+                <p>· 정보유출을 방지하기 위해 외부인 출입통제를 위한 CCTV 등 출입통제시스템을 설치하고 있으며, 보안업체의 경비시스템을 운영하고 있습니다.</p>
+                <p>다. 개인정보보호를 위한 관리적 대책</p>
+                <p>· 개인정보의 안전한 처리를 위한 개인정보보호지침을 수립하여 이행하고 있습니다.</p>
+                <p>· 개인정보처리자에 대한 개인정보보호 서약서 작성 및 교육을 실시하고 있습니다.</p>
+                <p>· 개인정보 처리 현황 및 수탁사 점검을 정기적으로 실시하고 있습니다.</p>
+                
+                <p id="t12"><strong>제12조. 개인정보보호책임자 및 고충사항 처리부서</strong></p>
+                <p>당사는 고객의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 관련 부서 및 개인정보보호책임자를 지정하고 있습니다.</p>
+                <p>가. 개인정보보호책임자</p>
+                <p>· 소속 : 정보서비스팀</p>
+                <p>· 성명 : 전용규 팀장</p>
+                <p>· 이메일: ykjeon@flygangwon.com</p>
+                <p>나. 개인정보 고충처리 부서</p>
+                <p>· ㈜플라이강원 정보서비스팀</p>
+                <p>· 연락처 : 02-6718-8218</p>
+                <p>기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에 문의하시기 바랍니다.</p>
+                <p>· 개인정보 침해신고센터 (국번없이) 118 (http://privacy.kisa.or.kr)</p>
+                <p>· 개인정보 분쟁조정위원회 1833-6972 (http://www.kopico.go.kr)</p>
+                <p>· 대검찰청 사이버수사과 (국번없이) 02-3480-2000 (http://spo.go.kr)</p>
+                <p>· 경찰청 사이버안전국 (국번없이) 182 (http://cyber.go.kr)</p>
+                
+                <p id="t13"><strong>제13조. 개인정보 처리방침의 변경에 따른 공지의무</strong></p>
+                <p>본 개인정보 처리방침은 2019년 6월 1일에 제정되었으며 법령•정책 또는 보안기술의 변경에 따라 내용의 추가•삭제 및 수정이 있을 시에는 변경되는 개인정보 처리방침을 시행하기 전에 변경 이유 및 내용 등을 당사 홈페이지에 공지하도록 하겠습니다.</p>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="inner">
+            <div class="logo"><span class="sr-only">FLY GANGWON LOGO</span></div>
+            <!--<div class="menu">
+                <ul>
+                    <li><a href="#">홈페이지 이용약관</a></li>
+                    <li><a href="#">국내 여객운송약관</a></li>
+                    <li><a href="#">항공교통이용자 서비스 계획</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">항공교통이용자 피해구제계획</a></li>
+                </ul>
+            </div>-->
+            <div class="sns">
+                <ul>
+                    <li class="facebook"><a href=""><span class="sr-only">facebook</span></a></li>
+                    <li class="instagram"><a href=""><span class="sr-only">instagram</span></a></li>
+                    <li class="youtube"><a href=""><span class="sr-only">youtube</span></a></li>
+                </ul>
+            </div>
+            <div class="info">
+                <span>플라이강원 주식회사</span>
+                <span>대표이사 : 주원석</span>
+                <span>TEL: 02-6718-8230</span>
+                <span>사업자번호: 710-81-00367</span><br>
+                <span>본사 : 강원도 양양군 손양면 공항로 201, 1층</span>
+                <span>서울사무소 : 서울시 강남구 도산대로 456 청담백영빌딩 6층</span>
+            </div>
+            <div class="copyright">COPYRIGHT ⓒ 2018 FLY GANGWON ALL RIGHTS RESERVED.</div>            
+        </div>
+        <div class="gotop">
+            <a href="#"><span class="sr-only">맨 위로</span></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

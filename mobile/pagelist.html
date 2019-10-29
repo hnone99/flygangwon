@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>플라이강원 MOBILE PAGELIST</title>
+    <style type="text/css">
+        body{padding:20px;position:relative;}
+        *{margin:0;padding:0;font-size:12px;color:#222;line-height:1.5em;font-family:NanumGothic;}
+        h1{margin-bottom:20px;font-size:20px;text-align: center;}
+        table{width:1000px;border-collapse:collapse;margin: 0 auto;}
+        table th,
+        table td{border:1px solid #ccc;padding:3px 10px;}
+        table th{background:#222;color:#fff;padding:10px;font-size:13px;}
+        table td a{color:#1044d0;text-decoration:none;}
+        table td a:hover{text-decoration:underline;}
+        ul.float{position:absolute;right:20px;top:20px;}
+        ul.float li{list-style:none;border:1px solid #ccc;padding:2px 5px;display:inline-block;}
+        .end{background:#ffffcc;}
+        .ing{background:#f6b1a6;}
+        .list{text-align:center;padding:0 0 20px;}
+        .list a{text-decoration:none;margin:0 10px;}
+        .list a:hover{text-decoration:underline;}
+        p{width:1000px;margin: 0 auto;text-align: right;margin-bottom: 10px;}
+        p a{font-size: 16px;font-weight: 700;color: #00a74d;text-decoration: none;}
+        p a:hover{text-decoration: underline;}
+    </style>
+</head>
+
+
+<body>
+    <h1>플라이강원 MOBILE PAGELIST</h1>
+    <p><a href="../desktop/pagelist.html" target="_blank">[데스크탑 PAGELIST 가기]</a></p>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th width="150">1 depth</th>
+                <th width="110">2 depth</th>
+                <th width="110">3 depth</th>
+                <th></th>
+                <th>pageLink</th>
+                <th>팝업</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0 main</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/0_main/main.html">main.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>loading</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/0_main/loading1.html">loading1.html</a><br>
+                    <a target="_blank" href="content/0_main/loading2.html">loading2.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>error</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/0_main/error.html">error.html</a></td>
+                <td></td>
+            </tr>  
+            <tr>
+                <td>1 예매</td>
+                <td>항공권 예매</td>
+                <td>여정 조회</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/1_reservation/step1.html">step1.html</a></td>
+                <td>출발지선택/도착지선택/탑승일선택/탑승객선택/ <br>지역,국가안내/출발지먼저선택alert</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>항공권 선택</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/1_reservation/step2.html">step2.html</a></td>
+                <td>비회원예약동의/로딩영역</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>탑승정보 입력</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/1_reservation/step3.html">step3.html</a></td>
+                <td>개인신분할인안내/항공권운임규정/탑승객별운임상세</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>부가서비스 구매</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/1_reservation/step4.html">step4.html</a></td>
+                <td>수하물구매,좌석선택,기내식선택,비상구좌석안내</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>결제</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/1_reservation/step5.html">step5.html</a></td>
+                <td>무이자할부카드안내/WeChatPay안내</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>완료</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/1_reservation/step6.html">step6.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>운항일정 조회</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/1_reservation/schedule.html">schedule.html</a></td>
+                <td>출발지선택/도착지선택/탑승일선택/</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>운임안내</td>
+                <td>국내선 운임안내</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/1_reservation/fare_domestic.html">fare_domestic.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>국제선 운임안내</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/1_reservation/fare_international.html">fare_international.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2 체크인</td>
+                <td>체크인</td>
+                <td>로그인</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/2_checkin/login.html">login.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>체크인 목록 조회</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/2_checkin/checkin1.html">checkin1.html</a></td>
+                <td>체크인취소alert</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>탑승객 선택</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/2_checkin/checkin2.html">checkin2.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>여권 정보 입력</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/2_checkin/checkin3.html">checkin3.html</a></td>
+                <td>국가선택</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>좌석 선택</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/2_checkin/checkin4.html">checkin4.html</a></td>
+                <td>기내반입금지/비상구좌석안내/로딩영역</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>탑승권 발급</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/2_checkin/checkin5.html">checkin5.html</a></td>
+                <td>탑승권미발급안내/이메일&amp;SMS</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>탑승권 재발급</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/2_checkin/reissue.html">reissue.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>모바일탑승권</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/2_checkin/mticket.html">mticket.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>체크인 취소</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/2_checkin/cancel.html">cancel.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>체크인 취소 완료</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/2_checkin/cancel_ok.html">cancel_ok.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>좌석 변경 완료</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/2_checkin/seat_ok.html">seat_ok.html</a></td>
+                <td></td>
+            </tr>            
+            <tr>
+                <td>3 서비스 안내</td>
+                <td>항공권 안내</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/3_service/ticket.html">ticket.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>공항서비스 안내</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/3_service/airport.html">airport.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>수하물 안내</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/3_service/baggage.html">baggage.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>취항지 안내</td>
+                <td>list</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/3_service/destination_list.html">destination_list.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>view</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/3_service/destination_view.html">destination_view.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4 이벤트/뉴스</td>
+                <td>이벤트</td>
+                <td>list</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/4_board/event_list.html">event_list.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>view</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/4_board/event_view.html">event_view.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>뉴스</td>
+                <td>list</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/4_board/news_list.html">news_list.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>view</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/4_board/news_view.html">news_view.html</a></td>
+                <td></td>
+            </tr>  
+            <tr>
+                <td>5 마이페이지</td>
+                <td>나의 예약조회</td>
+                <td>list</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/5_mypage/list.html">list.html</a></td>
+                <td>스케줄변경안내</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>view</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/5_mypage/view.html">view.html</a></td>
+                <td>E-티켓발송/여권정보입력/<br>영수증/환불확인증/구매확인증/<br>예약변경안내/예약변경탑승객선택/로딩layer<br>예약취소안내/예약취소탑승객선택<br>항공권운임규정</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>항공권 선택</td>
+                <td></td>
+                <td><a target="_blank" href="content/5_mypage/change1.html">change1.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>예약변경 정보 확인</td>
+                <td></td>
+                <td><a target="_blank" href="content/5_mypage/change2.html">change2.html</a></td>
+                <td>항공권운임규정</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>예약변경 결제</td>
+                <td></td>
+                <td><a target="_blank" href="content/5_mypage/change3.html">change3.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>예약변경 완료</td>
+                <td></td>
+                <td><a target="_blank" href="content/5_mypage/change4.html">change4.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>예약취소 정보 확인</td>
+                <td></td>
+                <td><a target="_blank" href="content/5_mypage/cancel1.html">cancel1.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>예약취소 완료</td>
+                <td></td>
+                <td><a target="_blank" href="content/5_mypage/cancel2.html">cancel2.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>부가서비스 구매</td>
+                <td></td>
+                <td><a target="_blank" href="content/5_mypage/service1.html">service1.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>부가서비스 구매 결제</td>
+                <td></td>
+                <td><a target="_blank" href="content/5_mypage/service2.html">service2.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>부가서비스 구매 완료</td>
+                <td></td>
+                <td><a target="_blank" href="content/5_mypage/service3.html">service3.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>나의 정보</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/5_mypage/myinfo.html">myinfo.html</a></td>
+                <td>비밀번호변경/우편번호찾기/국가,지역찾기/ <br>회원탈퇴</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>나의 문의내역</td>
+                <td>list</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/5_mypage/myqna_list.html">myqna_list.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>view</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/5_mypage/myqna_view.html">myqna_view.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>나의 쿠폰</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/5_mypage/mycoupon.html">mycoupon.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>6 회원가입</td>
+                <td>로그인</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/6_join/login.html">login.html</a></td>
+                <td>임시비밀번호변경/6개월비밀번호변경</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>아이디 찾기</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/6_join/id.html">id.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>아이디 찾기 결과</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/6_join/id_result.html">id_result.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>비밀번호 찾기</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/6_join/password.html">password.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>비밀번호 찾기 결과</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/6_join/password_result.html">password_result.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>회원가입</td>
+                <td>회원 유형</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/6_join/join0.html">join0.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>약관동의</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/6_join/join1.html">join1.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>본인인증</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/6_join/join2.html">join2.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>회원정보 입력</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/6_join/join3.html">join3.html</a></td>
+                <td>아이디중복확인/우편번호검색(f)/국가검색(f)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>가입완료</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/6_join/join4.html">join4.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>7 유틸</td>
+                <td>자주하는 질문</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/7_util/faq.html">faq.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Q&amp;A</td>
+                <td>등록 양식</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/7_util/qna.html">qna.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>등록 확인</td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/7_util/qna_ok.html">qna_ok.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>사이트 이용약관</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/7_util/terms_homepage.html">terms_homepage.html</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>개인정보처리방침</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a target="_blank" href="content/7_util/terms_privacy.html">terms_privacy.html</a></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

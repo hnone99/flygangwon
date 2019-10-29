@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>플라이강원</title>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/reset.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/calendar.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/common.css">
+    <script type="text/javascript" src="../../resources/js/pc/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/modernizr-custom.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/calendar.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/swiper.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //기내반입 금지 팝업 노출
+            popup.open('#popNoCarry');
+            
+            //좌석 로딩            
+            setTimeout(function(){
+                $('.loading').hide();
+                $('.loadingArea .serviceSeat').show();
+            },3000);
+            
+            //좌석 선택 내역 있을 경우 전체취소 노출
+            $('.service .journey').each(function(){
+                if($(this).find('li.on').size() > 0){
+                    $(this).find('.cancel').addClass('on');
+                }else{
+                    $(this).find('.cancel').removeClass('on');
+                }
+            });
+            //좌석 선택
+            $('.seat a').on('click',function(e){
+                e.preventDefault();
+                if(!$(this).hasClass('disable') && !$(this).hasClass('group')){
+                    $('.seat a').removeClass('selected');            
+                    $(this).addClass('selected'); 
+                }
+                if($(this).hasClass('exit')){ //비상구 안내 팝업
+                    popup.open('#popSeat');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div class="accessibility-nav">
+    <ul>
+        <li class="first"><a href="#gnb">메뉴바로가기</a></li>
+        <li class="last"><a href="#container">본문바로가기</a></li>
+    </ul>
+</div>
+<div id="wrap">
+    <div id="header">
+        <div class="htop">
+            <div class="in">
+                <ul class="category">
+                    <li class="air on"><a href=""><span>항공</span></a></li>
+                    <li class="tour"><a href=""><span>관광</span></a></li>
+                    <li class="shopping"><a href=""><span>쇼핑</span></a></li>
+                </ul>
+                <ul class="menu">
+                    <li class="login"><a href="#">로그인</a></li>
+                    <li class="signup"><a href="#">회원가입</a></li>
+                    <li class="language">
+                        <a href="#">KOREAN</a>
+                        <!-- 190729 수정 -->
+                        <div class="languageMenu">
+                            <ul>
+                                <li><a href="">ENGLISH</a></li>
+                                <li><a href="">ENGLISH</a></li>
+                            </ul>
+                        </div>
+                        <!-- //190729 수정 -->                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="inner">
+            <h1 class="logo"><a href="#"><span class="sr-only">FLY GANGWON</span></a></h1>
+            
+            <div id="gnb">
+                <ul class="dep1">
+                    <li class="on"><a href="#">예매</a>
+                        <ul class="dep2">
+                            <li class="on"><a href="#none">항공권 예매</a></li>
+                            <li><a href="#none">운항일정조회</a></li>
+                            <li><a href="#none">운임안내</a>
+                                <ul class="dep3">
+                                    <li><a href="#none">국내선 운임안내</a></li>
+                                    <li><a href="#none">국제선 운임안내</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">체크인</a>
+                        <ul class="dep2">
+                            <li><a href="#none">체크인</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">서비스안내</a>
+                        <ul class="dep2">
+                            <li><a href="#none">항공권 안내</a></li>
+                            <li><a href="#none">공항서비스 안내</a></li>
+                            <li><a href="#none">수하물 안내</a></li>
+                            <li><a href="#none">기내서비스 안내</a></li>
+                            <li><a href="#none">취항지 안내</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이벤트/뉴스</a>
+                        <ul class="dep2">
+                            <li><a href="#none">이벤트</a></li>
+                            <li><a href="#none">뉴스</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">마이페이지</a>
+                        <ul class="dep2">
+                            <li><a href="#none">나의 예약내역</a></li>
+                            <li><a href="#none">나의 정보</a></li>
+                            <li><a href="#none">나의 문의내역</a></li>
+                            <li><a href="#none">나의 쿠폰</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="allmenu">
+                <a href="#"><span class="sr-only">전체메뉴</span><i></i></a>
+            </div>
+            <div class="allmenuWrap">
+                <div class="allmenuContent">
+                    <div class="logoarea"><h1><span class="sr-only">FLY GANGWON</span></h1></div>
+                    <ul class="dep1">
+                        <li class="on"><div><a href="#">예매</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">항공권 예매</a></li>
+                                <li><a href="#none">운항일정 조회</a></li>
+                                <li><a href="#none">운임안내</a>
+                                    <ul class="dep3">
+                                        <li><a href="#none">국내선 운임안내</a></li>
+                                        <li><a href="#none">국제선 운임안내</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">체크인</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">체크인</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">서비스 안내</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">항공권 안내</a></li>
+                                <li><a href="#none">공항서비스 안내</a></li>
+                                <li><a href="#none">수하물 안내</a></li>
+                                <li><a href="#none">기내서비스 안내</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">이벤트/뉴스</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">이벤트</a>
+                                    <ul class="dep3">
+                                        <li><a href="#none">진행중인 이벤트</a></li>
+                                        <li><a href="#none">지난 이벤트</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">뉴스</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">마이페이지</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">나의 예약내역</a></li>
+                                <li><a href="#none">나의 정보</a></li>
+                                <li><a href="#none">나의 문의내역</a></li>
+                                <li><a href="#none">나의 쿠폰</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">유틸리티</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">고객센터</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">자주하는 질문</a></li>
+                                        <li><a href="#non">문의하기</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">회사소개</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">회사 현황</a></li>
+                                        <li><a href="#non">CEO 인사말</a></li>
+                                        <li><a href="#non">사업 비전</a></li>
+                                        <li><a href="#non">CI 소개</a></li>
+                                        <li><a href="#non">보도자료</a></li>
+                                        <li><a href="#non">오시는 길</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">이용약관</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">이용약관</a></li>
+                                        <li><a href="#non">여객운송약관</a></li>
+                                        <li><a href="#non">항공교통이용자 서비스 계획</a></li>
+                                        <li><a href="#non">피해구제 계획</a></li>
+                                        <li><a href="#non">개인정보처리방침</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg"></div>
+    </div>
+    <div id="location">
+        <div class="inner">
+            <div class="dep1"><a href="#">체크인</a></div>
+            <div class="dep2"><a href="#">체크인</a></div>
+        </div>
+    </div>
+    <div id="container">
+        <div id="content">
+            <h2 class="title">체크인</h2>
+            <div class="step">
+                <ol>
+                    <li>01. 체크인 목록 조회</li>
+                    <li>02. 탑승객 선택</li>
+                    <li>03. 여권 정보 입력</li>
+                    <li class="on">04. 좌석 선택</li>
+                    <li>05. 탑승권 발급</li>
+                </ol>
+            </div>
+            <div class="service" style="display:block">           
+                <div class="col seat active">
+                    <div class="swrap">
+                        <div class="shead">
+                            <h3>좌석</h3>
+                            <p>좌석을 선택하세요.</p>
+                        </div>
+                        <div class="sbody">
+                            <div class="journey">
+                                <h4></h4>
+                                <ul>
+                                    <li class="on"><strong>KIM / GILDONG1</strong><a href=""><b>3A</b></a></li> <!-- 선택되었을 때 on -->
+                                    <li class="on"><strong>KIM / GILDONG2</strong><a href=""><b>3B</b></a></li>
+                                    <li><strong>KIM / GILDONG3</strong><a href="">선택하기</a></li>
+                                </ul>
+                                <div class="cancel"><a href="#none">전체 취소</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="serviceSelect">
+                        <div class="sshead">
+                            <div class="info">
+                                <p>여정</p>
+                                <div class="plan"><strong>양양 YNY - 제주  CJU</strong> <em>2019.10.25(목) 08:40</em></div>
+                            </div>
+                        </div>
+                        <div class="ssbody">
+                            <div class="name">
+                                <p>탑승객: <span>KIM / BENEDICT CUMBERBATCH</span></p>
+                            </div>
+                            <div class="loadingArea">
+                                <div class="serviceSeat" style="display:none">
+                                    <div class="info">
+                                        <span class="selected">선택좌석</span>
+                                        <span class="group">동승객</span>
+                                        <span class="disable">선택불가</span>
+                                    </div>
+                                    <div class="seat" style="">
+                                        <div class="col a">
+                                            <a href="#none" class="classD">1A</a>
+                                            <a href="#none" class="classA">2A</a>
+                                            <a href="#none" class="classA">3A</a>
+                                            <a href="#none" class="classA disable">4A</a>
+                                            <a href="#none" class="classA disable">5A</a>
+                                            <a href="#none" class="classA group">6A</a>
+                                            <a href="#none" class="classA">7A</a>
+                                            <a href="#none" class="classA">8A</a>
+                                            <a href="#none" class="classA">9A</a>
+                                            <a href="#none" class="classA">10A</a>
+                                            <a href="#none" class="classC">11A</a>
+                                            <a href="#none" class="classD">12A</a>
+                                            <a href="#none" class="classB">13A</a>
+                                            <a href="#none" class="exit">14A</a>
+                                            <a href="#none" class="exit">15A</a>
+                                            <a href="#none" class="exit">16A</a>
+                                            <a href="#none" class="classA">17A</a>
+                                            <a href="#none" class="classA">18A</a>
+                                            <a href="#none" class="classA">19A</a>
+                                            <a href="#none" class="classA">20A</a>
+                                            <a href="#none" class="classA">21A</a>
+                                            <a href="#none" class="classA">22A</a>
+                                            <a href="#none" class="classA">23A</a>
+                                            <a href="#none" class="classA">24A</a>
+                                            <a href="#none" class="classA">25A</a>
+                                            <a href="#none" class="classA">26A</a>
+                                            <a href="#none" class="classA">27A</a>
+                                            <a href="#none" class="classA">28A</a>
+                                            <a href="#none" class="classA">29A</a>
+                                            <a href="#none" class="classA">30A</a>
+                                            <a href="#none" class="classA">31A</a>
+                                            <a href="#none" class="classA">32A</a>
+                                        </div>
+                                        <div class="col b">
+                                            <a href="#none" class="classD">1B</a>
+                                            <a href="#none" class="classA">2B</a>
+                                            <a href="#none" class="classA">3B</a>
+                                            <a href="#none" class="classA disable">4B</a>
+                                            <a href="#none" class="classA">5B</a>
+                                            <a href="#none" class="classA">6B</a>
+                                            <a href="#none" class="classA">7B</a>
+                                            <a href="#none" class="classA">8B</a>
+                                            <a href="#none" class="classA">9B</a>
+                                            <a href="#none" class="classA">10B</a>
+                                            <a href="#none" class="classC">11B</a>
+                                            <a href="#none" class="classD">12B</a>
+                                            <a href="#none" class="classB">13B</a>
+                                            <a href="#none" class="exit">14B</a>
+                                            <a href="#none" class="exit">15B</a>
+                                            <a href="#none" class="exit">16B</a>
+                                            <a href="#none" class="classA">17B</a>
+                                            <a href="#none" class="classA">18B</a>
+                                            <a href="#none" class="classA">19B</a>
+                                            <a href="#none" class="classA">20B</a>
+                                            <a href="#none" class="classA">21B</a>
+                                            <a href="#none" class="classA">22B</a>
+                                            <a href="#none" class="classA">23B</a>
+                                            <a href="#none" class="classA">24B</a>
+                                            <a href="#none" class="classA">25B</a>
+                                            <a href="#none" class="classA">26B</a>
+                                            <a href="#none" class="classA">27B</a>
+                                            <a href="#none" class="classA">28B</a>
+                                            <a href="#none" class="classA">29B</a>
+                                            <a href="#none" class="classA">30B</a>
+                                            <a href="#none" class="classA">31B</a>
+                                            <a href="#none" class="classA">32B</a>
+                                        </div>
+                                        <div class="col c">
+                                            <a href="#none" class="classD">1C</a>
+                                            <a href="#none" class="classA">2C</a>
+                                            <a href="#none" class="classA">3C</a>
+                                            <a href="#none" class="classA disable">4C</a>
+                                            <a href="#none" class="classA">5C</a>
+                                            <a href="#none" class="classA">6C</a>
+                                            <a href="#none" class="classA">7C</a>
+                                            <a href="#none" class="classA">8C</a>
+                                            <a href="#none" class="classA">9C</a>
+                                            <a href="#none" class="classA">10C</a>
+                                            <a href="#none" class="classC">11C</a>
+                                            <a href="#none" class="classD">12C</a>
+                                            <a href="#none" class="classB">13C</a>
+                                            <a href="#none" class="exit">14C</a>
+                                            <a href="#none" class="exit">15C</a>
+                                            <a href="#none" class="exit">16C</a>
+                                            <a href="#none" class="classA">17C</a>
+                                            <a href="#none" class="classA">18C</a>
+                                            <a href="#none" class="classA">19C</a>
+                                            <a href="#none" class="classA">20C</a>
+                                            <a href="#none" class="classA">21C</a>
+                                            <a href="#none" class="classA">22C</a>
+                                            <a href="#none" class="classA">23C</a>
+                                            <a href="#none" class="classA">24C</a>
+                                            <a href="#none" class="classA">25C</a>
+                                            <a href="#none" class="classA">26C</a>
+                                            <a href="#none" class="classA">27C</a>
+                                            <a href="#none" class="classA">28C</a>
+                                            <a href="#none" class="classA">29C</a>
+                                            <a href="#none" class="classA">30C</a>
+                                            <a href="#none" class="classA">31C</a>
+                                            <a href="#none" class="classA">32C</a>
+                                        </div>
+                                        <div class="col d">
+                                            <a href="#none" class="classD">1D</a>
+                                            <a href="#none" class="classA">2D</a>
+                                            <a href="#none" class="classA">3D</a>
+                                            <a href="#none" class="classA disable">4D</a>
+                                            <a href="#none" class="classA">5D</a>
+                                            <a href="#none" class="classA">6D</a>
+                                            <a href="#none" class="classA">7D</a>
+                                            <a href="#none" class="classA">8D</a>
+                                            <a href="#none" class="classA">9D</a>
+                                            <a href="#none" class="classA">10D</a>
+                                            <a href="#none" class="classC">11D</a>
+                                            <a href="#none" class="classD">12D</a>
+                                            <a href="#none" class="classB">13D</a>
+                                            <a href="#none" class="exit">14D</a>
+                                            <a href="#none" class="exit">15D</a>
+                                            <a href="#none" class="exit">16D</a>
+                                            <a href="#none" class="classA">17D</a>
+                                            <a href="#none" class="classA">18D</a>
+                                            <a href="#none" class="classA">19D</a>
+                                            <a href="#none" class="classA">20D</a>
+                                            <a href="#none" class="classA">21D</a>
+                                            <a href="#none" class="classA">22D</a>
+                                            <a href="#none" class="classA">23D</a>
+                                            <a href="#none" class="classA">24D</a>
+                                            <a href="#none" class="classA">25D</a>
+                                            <a href="#none" class="classA">26D</a>
+                                            <a href="#none" class="classA">27D</a>
+                                            <a href="#none" class="classA">28D</a>
+                                            <a href="#none" class="classA">29D</a>
+                                            <a href="#none" class="classA">30D</a>
+                                            <a href="#none" class="classA">31D</a>
+                                            <a href="#none" class="classA">32D</a>
+                                        </div>
+                                        <div class="col e">
+                                            <a href="#none" class="classD">1E</a>
+                                            <a href="#none" class="classA">2E</a>
+                                            <a href="#none" class="classA">3E</a>
+                                            <a href="#none" class="classA disable">4E</a>
+                                            <a href="#none" class="classA">5E</a>
+                                            <a href="#none" class="classA">6E</a>
+                                            <a href="#none" class="classA">7E</a>
+                                            <a href="#none" class="classA">8E</a>
+                                            <a href="#none" class="classA">9E</a>
+                                            <a href="#none" class="classA">10E</a>
+                                            <a href="#none" class="classC">11E</a>
+                                            <a href="#none" class="classD">12E</a>
+                                            <a href="#none" class="classB">13E</a>
+                                            <a href="#none" class="exit">14E</a>
+                                            <a href="#none" class="exit">15E</a>
+                                            <a href="#none" class="exit">16E</a>
+                                            <a href="#none" class="classA">17E</a>
+                                            <a href="#none" class="classA">18E</a>
+                                            <a href="#none" class="classA">19E</a>
+                                            <a href="#none" class="classA">20E</a>
+                                            <a href="#none" class="classA">21E</a>
+                                            <a href="#none" class="classA">22E</a>
+                                            <a href="#none" class="classA">23E</a>
+                                            <a href="#none" class="classA">24E</a>
+                                            <a href="#none" class="classA">25E</a>
+                                            <a href="#none" class="classA">26E</a>
+                                            <a href="#none" class="classA">27E</a>
+                                            <a href="#none" class="classA">28E</a>
+                                            <a href="#none" class="classA">29E</a>
+                                            <a href="#none" class="classA">30E</a>
+                                            <a href="#none" class="classA">31E</a>
+                                            <a href="#none" class="classA">32E</a>
+                                        </div>
+                                        <div class="col f">
+                                            <a href="#none" class="classD">1F</a>
+                                            <a href="#none" class="classA">2F</a>
+                                            <a href="#none" class="classA">3F</a>
+                                            <a href="#none" class="classA disable">4F</a>
+                                            <a href="#none" class="classA">5F</a>
+                                            <a href="#none" class="classA">6F</a>
+                                            <a href="#none" class="classA">7F</a>
+                                            <a href="#none" class="classA">8F</a>
+                                            <a href="#none" class="classA">9F</a>
+                                            <a href="#none" class="classA">10F</a>
+                                            <a href="#none" class="classC">11F</a>
+                                            <a href="#none" class="classD">12F</a>
+                                            <a href="#none" class="classB">13F</a>
+                                            <a href="#none" class="exit">14F</a>
+                                            <a href="#none" class="exit">15F</a>
+                                            <a href="#none" class="exit">16F</a>
+                                            <a href="#none" class="classA">17F</a>
+                                            <a href="#none" class="classA">18F</a>
+                                            <a href="#none" class="classA">19F</a>
+                                            <a href="#none" class="classA">20F</a>
+                                            <a href="#none" class="classA">21F</a>
+                                            <a href="#none" class="classA">22F</a>
+                                            <a href="#none" class="classA">23F</a>
+                                            <a href="#none" class="classA">24F</a>
+                                            <a href="#none" class="classA">25F</a>
+                                            <a href="#none" class="classA">26F</a>
+                                            <a href="#none" class="classA">27F</a>
+                                            <a href="#none" class="classA">28F</a>
+                                            <a href="#none" class="classA">29F</a>
+                                            <a href="#none" class="classA">30F</a>
+                                            <a href="#none" class="classA">31F</a>
+                                            <a href="#none" class="classA">32F</a>
+                                        </div>
+                                    </div>
+                                </div> <!-- 로딩 후 block 으로 변경 -->
+                                <div class="loading">
+                                    <div class="icon"><img src="../../resources/images/pc/loading2.gif" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+            <div class="btns bottom">
+                <a href="#none" class="btn large gray">이전</a>
+                <a href="#none" class="btn large">다음</a>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="inner">
+            <div class="logo"><span class="sr-only">FLY GANGWON LOGO</span></div>
+            <!--<div class="menu">
+                <ul>
+                    <li><a href="#">홈페이지 이용약관</a></li>
+                    <li><a href="#">국내 여객운송약관</a></li>
+                    <li><a href="#">항공교통이용자 서비스 계획</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">항공교통이용자 피해구제계획</a></li>
+                </ul>
+            </div>-->
+            <div class="sns">
+                <ul>
+                    <li class="facebook"><a href=""><span class="sr-only">facebook</span></a></li>
+                    <li class="instagram"><a href=""><span class="sr-only">instagram</span></a></li>
+                    <li class="youtube"><a href=""><span class="sr-only">youtube</span></a></li>
+                </ul>
+            </div>
+            <div class="info">
+                <span>플라이강원 주식회사</span>
+                <span>대표이사 : 주원석</span>
+                <span>TEL: 02-6718-8230</span>
+                <span>사업자번호: 710-81-00367</span><br>
+                <span>본사 : 강원도 양양군 손양면 공항로 201, 1층</span>
+                <span>서울사무소 : 서울시 강남구 도산대로 456 청담백영빌딩 6층</span>
+            </div>
+            <div class="copyright">COPYRIGHT ⓒ 2018 FLY GANGWON ALL RIGHTS RESERVED.</div>            
+        </div>
+        <div class="gotop">
+            <a href="#"><span class="sr-only">맨 위로</span></a>
+        </div>
+    </div>
+</div>
+
+<!-- 팝업 : 비상구 좌석 안내 -->
+<div class="popup" id="popSeat">
+    <div class="popup-wrap" style="height:750px"> <!-- default : 790 x 760 -->
+        <div class="popup-header">
+            <div class="inner">
+                <h1>비상구 좌석에 대한 안내</h1>
+                <a href="javascript:void(0)" class="close" data-event="popup-close"><span class="sr-only">레이어 팝업 닫기</span></a>
+            </div>
+        </div>
+        <div class="popup-body">
+            <div class="inner">
+                <h3 class="stit mt0">국토교통부 고시에 의거 비상구 좌석에 착석한 승객들이 비상시에 개방, 승무원의 지시에 따라 임무 수행 등 <br>승무원을 돕도록 되어 있어 아래에 규 정된 승객에게는 비상구 좌석 배정을 제한하고 있습니다.</h3>
+                <div class="line"></div>
+                <p class="txt" style="line-height:26px">
+                    1. 활동성,체력 또는 양팔이나 두 손 및 양다리의민첩서이 승무원의 지시를 수행하기에 충분치 않은 승객 <br>
+                    2. <span class="red">만 15세 미만</span>이거나 동반자의 도움 없이 승무원의 지시를 수행하기에 불충분한 승객 <br>
+                    3. 글 또는 그림으로 제공된 비상탈출에 관한 지시를 읽고 이해하지 못하거나 승무원의 구두지시를이해하지못하는승객 <br>
+                    4. 콘텍트 렌즈나 안경을 제외한 다른 시력보조장비 없이는 승무원의 지시를 수행할 수 없는 승객 <br>
+                    5. 일반적인 보청기를 제외한 다른 청력보조장비 없이는 승무원의 탈출지시를듣고 이해할 수 없는 승객 <br>
+                    6. 다른승객들에게 정보를 적절하게 전달할 수 있는 능력이 부족한 승객 <br>
+                    7. 승객의 상태나 책임(<span class="red">유소아 동반승객, 임산부 승객, 노약자 등</span>)이 비상시 승무원의 지시를 수행하는데 방해가 되거나 수행할 경우 해를 입게되는승객
+                </p>
+                <div class="line"></div>
+                <div class="stit red">상기 규정된 승객에게는비상구 좌석 배정을제한 하고 있사오니, 제한 사항 확인 후 구매를 부탁드립니다. </div>
+                <p class="txt">비상구 좌석 구매 후 출발지 공항에서 비상구 착석 불가능한 승객이라고 판단될경우 현장에서 임의로 취소될 수 있으며, <br>비상구 구매승객에 한하여 웹 체크인 및 모바일 체크인이 불가능합니다.</p>
+
+                <div class="agreeInPop">
+                    <input type="checkbox" id="agreeExit">
+                    <label for="agreeExit"><span></span>위 내용을 확인/동의하였으며, 예매를 진행하겠습니다.</label>
+                </div>     
+                <div class="btns bottom">
+                    <a href="#" class="btn gray" data-event="popup-close">취소</a>
+                    <a href="#" class="btn" data-event="popup-close">동의</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 팝업 : 기내반입 금지 -->
+<div class="popup" id="popNoCarry">
+    <div class="popup-wrap" style="height:750px"> <!-- default : 790 x 760 -->
+        <div class="popup-header">
+            <div class="inner">
+                <h1>기내반입 금지</h1>
+                <a href="javascript:void(0)" class="close" data-event="popup-close"><span class="sr-only">레이어 팝업 닫기</span></a>
+            </div>
+        </div>
+        <div class="popup-body">
+            <div class="inner">
+                <h3 class="stit mt0">위험물 안내</h3>
+                <p class="fz16">다음의 물품들은 위험물로 간주되어있으며, 기내반입이 금지되어 있습니다.</p>
+                <div class="nocarry">
+                    <ul>
+                        <li><img src="../../resources/images/pc/img_nocarry1.png" alt=""><div>폭발물</div></li>
+                        <li><img src="../../resources/images/pc/img_nocarry2.png" alt=""><div>인화성 액체</div></li>
+                        <li><img src="../../resources/images/pc/img_nocarry3.png" alt=""><div>인화성 고체</div></li>
+                        <li><img src="../../resources/images/pc/img_nocarry4.png" alt=""><div>인화성 가스</div></li>
+                        <li><img src="../../resources/images/pc/img_nocarry5.png" alt=""><div>방사성 의약품</div></li>
+                        <li><img src="../../resources/images/pc/img_nocarry6.png" alt=""><div>독극물</div></li>
+                        <li><img src="../../resources/images/pc/img_nocarry7.png" alt=""><div>부식성 물질</div></li>
+                        <li><img src="../../resources/images/pc/img_nocarry8.png" alt=""><div>산화제</div></li>
+                    </ul>
+                </div>
+                <div class="agreeInPop">
+                    <input type="checkbox" id="agreeNocarry">
+                    <label for="agreeNocarry"><span></span>기내수하물 또는 위탁수하물 운송 시 금지된 위험 물품에 대한 규정을 이해하였으며 동의합니다.</label>
+                </div>     
+                <div class="btns bottom">
+                    <a href="#" class="btn gray" data-event="popup-close">취소</a>
+                    <a href="#" class="btn" data-event="popup-close">다음</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

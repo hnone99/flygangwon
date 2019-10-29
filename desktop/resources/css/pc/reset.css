@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+@font-face {font-family: 'NotoSans';font-weight: 400;src: url(../../fonts/pc/NotoSansCJKkr-Regular.eot);src: url(../../fonts/pc/NotoSansCJKkr-Regular.eot?#iefix) format('embedded-opentype'), url(../../fonts/pc/NotoSansCJKkr-Regular.woff) format('woff'), url(../../fonts/pc/NotoSansCJKkr-Regular.ttf) format('truetype');}@font-face {font-family: 'NotoSans';font-weight: 500;src: url(../../fonts/pc/NotoSansCJKkr-Medium.eot);src: url(../../fonts/pc/NotoSansCJKkr-Medium.eot?#iefix) format('embedded-opentype'), url(../../fonts/pc/NotoSansCJKkr-Medium.woff) format('woff'), url(../../fonts/pc/NotoSansCJKkr-Medium.ttf) format('truetype');}@font-face {font-family: 'NotoSans';font-weight: 700;src: url(../../fonts/pc/NotoSansCJKkr-Bold.eot);src: url(../../fonts/pc/NotoSansCJKkr-Bold.eot?#iefix) format('embedded-opentype'), url(../../fonts/pc/NotoSansCJKkr-Bold.woff) format('woff'), url(../../fonts/pc/NotoSansCJKkr-Bold.ttf) format('truetype');}@font-face {font-family: 'NotoSans';font-weight: 800;src: url(../../fonts/pc/NotoSansCJKkr-Black.eot);src: url(../../fonts/pc/NotoSansCJKkr-Black.eot?#iefix) format('embedded-opentype'), url(../../fonts/pc/NotoSansCJKkr-Black.woff) format('woff'), url(../../fonts/pc/NotoSansCJKkr-Black.ttf) format('truetype');}@font-face {font-family: 'Noto';font-weight: 400;src: url(../../fonts/pc/NotoSans-Regular.eot);src: url(../../fonts/pc/NotoSans-Regular.eot?#iefix) format('embedded-opentype'), url(../../fonts/pc/NotoSans-Regular.woff) format('woff'), url(../../fonts/pc/NotoSans-Regular.ttf) format('truetype');}@font-face {font-family: 'Noto';font-weight: 700;src: url(../../fonts/pc/NotoSans-Bold.eot);src: url(../../fonts/pc/NotoSans-Bold.eot?#iefix) format('embedded-opentype'), url(../../fonts/pc/NotoSans-Bold.woff) format('woff'), url(../../fonts/pc/NotoSans-Bold.ttf) format('truetype');}@font-face {font-family: 'Noto';font-weight: 400;font-style: italic;src: url(../../fonts/pc/NotoSans-Italic.eot);src: url(../../fonts/pc/NotoSans-Italic.eot?#iefix) format('embedded-opentype'), url(../../fonts/pc/NotoSans-Italic.woff) format('woff'), url(../../fonts/pc/NotoSans-Italic.ttf) format('truetype');}@font-face {font-family: 'Noto';font-weight: 700;font-style: italic;src: url(../../fonts/pc/NotoSans-BoldItalic.eot);src: url(../../fonts/pc/NotoSans-BoldItalic.eot?#iefix) format('embedded-opentype'), url(../../fonts/pc/NotoSans-BoldItalic.woff) format('woff'), url(../../fonts/pc/NotoSans-BoldItalic.ttf) format('truetype');}@font-face {font-family: 'NanumSquare';font-weight: 400;font-style: normal;src: url(../../fonts/pc/NanumSquareR.eot);src: url(../../fonts/pc/NotoSans-NanumSquareR.eot?#iefix) format('embedded-opentype'), url(../../fonts/pc/NanumSquareR.woff) format('woff'), url(../../fonts/pc/NanumSquareR.ttf) format('truetype');}
+/* defult */
+*,
+*:before,
+*:after{box-sizing: border-box;}
+html {-webkit-text-size-adjust: none;}
+body,textarea,select,table,button {margin:0;padding:0;}
+body,textarea,select,table,button,input{font-family:'NotoSans','NanumGothic',NanumGothic,'나눔고딕',dotum,'돋움',sans-serif;font-size:14px;color:#333;font-weight: 400;line-height: 1.4;letter-spacing: -0.055em;}
+img {border:0;vertical-align:middle;}
+ul,ol {margin:0;padding:0;list-style:none;}
+dl,dl dt,dl dd,form,td,p {margin:0;padding:0;}
+li,li img,dt img,dd img,td img,p img {vertical-align:top;margin:0;padding:0;}
+fieldset {margin:0;padding:0;border:0;}
+legend {position:absolute;visibility:hidden;overflow:hidden;height:0;line-height:0;width:0;margin:0;padding:0;font:0/0 Arial;}
+caption {visibility:hidden;overflow:hidden;height:0;line-height: 0;width:0;margin:0;padding:0;font:0/0 Arial;}
+hr {display:none;}
+h1,h2,h3,h4,h5,h6{margin: 0;}
+a {text-decoration:none;color:#333;}
+a:hover {text-decoration:underline;color:#123b68;}
+table {table-layout:fixed;border-spacing: 0;border-collapse: collapse;width: 100%;}
+td{word-break: break-word;word-break: break-all;}
+input {overflow:visible;vertical-align:middle;}
+button{border: 0;cursor: pointer;background:transparent;}
+button,input[type=submit],input[type=text],input[type=button],input[type=tel],input[type=number],input[type=email],input[type=password]{-moz-appearance: none;-webkit-appearance: none;border-radius: 0;white-space:normal;background:none;line-height:1;}
+select,label {padding:0;margin:0;vertical-align:middle;}
+label{display: inline-block;}
+em,address,i {font-style:normal;}
+textarea {vertical-align:top;margin:0;padding:0;}
+object,param {padding:0;margin:0;line-height:0;}
+header,footer,section,article,aside,nav,hgroup,details,menu,figure,figcaption {display:block;}
+
+.sr-only{position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
+
+.accessibility-nav {z-index:2;position:relative;width:100%}
+.accessibility-nav a {display:block;overflow:hidden;height:0;text-align:center}
+.accessibility-nav a:hover, .accessibility-nav a:focus, .accessibility-nav a:active {background:#318de7;padding:.5em;height:auto;color:#fff}
+
+.noto{font-family: 'Noto';letter-spacing: 0;}
+
+textarea{-webkit-appearance:none;-moz-appearance:none;border: 1px solid #eee;}
+textarea.textareaCont{background-color: #fafafa;font-size: 16px;color: #333;line-height: 1.6;width: 100%;padding: 15px 25px;font-weight: 500;letter-spacing: 0;}
+textarea::placeholder {color: #aaa;}
+
+select{border-radius:0;border:1px solid #eee;background-color:#fafafa;-webkit-appearance:none;-moz-appearance:none;box-sizing: border-box;height: 50px;padding: 0 45px 0 25px;min-width:90px;width: 100%;font-weight: 500;font-size: 16px;color: #333;letter-spacing: 0;}
+:root select{background:#fafafa url('../../images/pc/select.gif') no-repeat 100% 50%;}
+select::-ms-expand{position:absolute;overflow:hidden;visibility:hidden;top:0;left:0;width:0 !important;height:0 !important;font-size:0 !important;line-height:0 !important;}
+/*select:hover{border-color: #e54734;}*/
+select option:checked, 
+select option:hover{}
+select:disabled {}
+select:disabled:hover{}
+select.medium{height: 40px;line-height: 38px;font-size: 14px;background-image: url('../../images/pc/select_medium.gif');padding: 0 38px 0 20px;color: #666;font-weight: 400;}
+
+input[type="checkbox"] {opacity: 0;position: absolute;left: -9999px;}
+input[type="checkbox"] + label {font-size: 16px;color: #666;cursor:pointer;position: relative;padding: 2px 0 1px 35px;line-height: 22px;}
+input[type="checkbox"] + label span {display:inline-block; width:25px;height:25px;vertical-align:middle;background:url('../../images/pc/checkbox.png') 0 0 no-repeat;cursor:pointer;position: absolute;left:0;top:0}
+input[type="checkbox"] + label span:before{display: none;}
+input[type="checkbox"] + label em{color: #e54734;}
+input[type="checkbox"]:focus + label span:before{content: '';display: block;position: absolute;left:0;top:0;bottom: 0;right: 0;border: 2px solid #2e4b87;border-radius: 2px}
+input[type="checkbox"]:checked + label{color: #000;}
+input[type="checkbox"]:checked + label span {background-position: 0 100%;}
+input[type="checkbox"]:checked + label span:before{display: none;}
+input[type="checkbox"]:disabled{}
+input[type="checkbox"]:disabled + label span{background-position: 100% 0;cursor: default}
+input[type="checkbox"].small + label{padding: 0 0 0 30px;}
+input[type="checkbox"].small + label span{width: 20px;height: 20px;background-image: url('../../images/pc/checkbox_small.png');top: 1px;}
+
+input[type="checkbox"].withoutLabel + label{padding-left: 25px;width: 25px;height: 25px;}
+
+input[type="radio"] {opacity: 0;position: absolute;left: -9999px;}
+input[type="radio"] + label {font-size: 16px;cursor:pointer;padding-left: 26px;position: relative;margin-right: 30px;}
+input[type="radio"] + label span {display:inline-block; width:20px;height:20px;vertical-align:middle;background:url('../../images/pc/radio.png') 0 0 no-repeat;cursor:pointer;position: absolute;left:0;top:0}
+input[type="radio"] + label em{color: #e54734;}
+input[type="radio"]:checked + label{color: #000;}
+input[type="radio"]:checked + label span {background-position: 0 100%;}
+input[type="radio"]:disabled + label{}
+
+input[type="radio"].withoutLabel + label{padding-left: 20px;width: 20px;height: 20px;}
+
+/*input[type="password"]{font-family: tahoma}*/
+
+input::-ms-clear{position:absolute;overflow:hidden;top:0;left:0;width:0 !important;height:0 !important;font-size:0 !important;line-height:0 !important;}
+input::placeholder {color:#aaa;}
+input:-ms-input-placeholder{color:#aaa;}
+input::-webkit-input-placeholder{color:#aaa;}
+input::-moz-placeholder{color:#aaa;}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="email"],
+input[type="number"]{border: 1px solid #eee;width: 100%;height: 50px;line-height: 50px;padding: 0 25px;font-size: 16px;font-weight: 500;color: #333;background-color: #fafafa;letter-spacing: 0;}
+input[type="text"]:disabled,
+input[type="password"]:disabled,
+input[type="tel"]:disabled,
+input[type="email"]:disabled,
+input[type="number"]:disabled{background-color: #eee;color: #888;}
+/*input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="tel"]:hover,
+input[type="email"]:hover,
+input[type="number"]:hover{border-color: #e54734;}*/
+input[type="submit"]{cursor: pointer}
+
+input[type="text"].withCalendar,
+input[type="password"].withCalendar,
+input[type="tel"].withCalendar,
+input[type="email"].withCalendar,
+input[type="number"].withCalendar{background: #fafafa url('../../images/pc/ico_calendar.png') 100% 50% no-repeat;}

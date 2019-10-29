@@ -1,0 +1,660 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>플라이강원</title>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/reset.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/calendar.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/pc/common.css">
+    <script type="text/javascript" src="../../resources/js/pc/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/modernizr-custom.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/ui.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/calendar.js"></script>
+    <script type="text/javascript" src="../../resources/js/pc/swiper.min.js"></script>
+<script>
+    $(document).ready(function(){
+        //layer
+        var nowStep;
+        $('[data-event=layer-open]').on('click',function(e){
+            e.preventDefault();
+
+            $('.inquiry li').removeClass('on');
+            nowStep = $(this).closest('li');
+            nowStep.addClass('on');
+            $('.selectArea .layer').hide();
+
+            //출발지 먼저 선택 알럿 확인용
+            if($(this).attr('data-target')=='#lyTo'){
+                $('#alertFrom').show();
+            }
+            else{
+                var target = $(this).attr('data-target');
+                $(target).show();
+                //레이어 margin-top
+                $(target).find('.layer-wrap').css('margin-top',-$(target).find('.layer-wrap').outerHeight() / 2);
+            }
+        });
+        $('[data-event=layer-close]').on('click',function(e){
+            e.preventDefault();
+
+            $('.inquiry li').removeClass('on');
+            $(this).closest('.layer').fadeOut(150);
+        });
+
+        //출발지 먼저 선택 얼럿 확인 클릭
+        $('#alertFrom .ok').on('click',function(e){
+            e.preventDefault();
+            $('[data-target=#lyFrom]').click();
+        }); 
+
+        //스케줄 없음 알럿 닫기
+        $('.noSchedule .close').on('click',function(){
+            $('.noSchedule').hide();
+        });
+    });
+</script>
+</head>
+
+<body class="bgWhite">
+<div class="accessibility-nav">
+    <ul>
+        <li class="first"><a href="#gnb">메뉴바로가기</a></li>
+        <li class="last"><a href="#container">본문바로가기</a></li>
+    </ul>
+</div>
+<div id="wrap">
+    <div id="header">
+        <div class="htop">
+            <div class="in">
+                <ul class="category">
+                    <li class="air on"><a href=""><span>항공</span></a></li>
+                    <li class="tour"><a href=""><span>관광</span></a></li>
+                    <li class="shopping"><a href=""><span>쇼핑</span></a></li>
+                </ul>
+                <ul class="menu">
+                    <li class="login"><a href="#">로그인</a></li>
+                    <li class="signup"><a href="#">회원가입</a></li>
+                    <li class="language">
+                        <a href="#">KOREAN</a>
+                        <!-- 190729 수정 -->
+                        <div class="languageMenu">
+                            <ul>
+                                <li><a href="">ENGLISH</a></li>
+                                <li><a href="">ENGLISH</a></li>
+                            </ul>
+                        </div>
+                        <!-- //190729 수정 -->                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="inner">
+            <h1 class="logo"><a href="#"><span class="sr-only">FLY GANGWON</span></a></h1>
+            
+            <div id="gnb">
+                <ul class="dep1">
+                    <li class="on"><a href="#">예매</a>
+                        <ul class="dep2">
+                            <li class="on"><a href="#none">항공권 예매</a></li>
+                            <li><a href="#none">운항일정조회</a></li>
+                            <li><a href="#none">운임안내</a>
+                                <ul class="dep3">
+                                    <li><a href="#none">국내선 운임안내</a></li>
+                                    <li><a href="#none">국제선 운임안내</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">체크인</a>
+                        <ul class="dep2">
+                            <li><a href="#none">체크인</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">서비스안내</a>
+                        <ul class="dep2">
+                            <li><a href="#none">항공권 안내</a></li>
+                            <li><a href="#none">공항서비스 안내</a></li>
+                            <li><a href="#none">수하물 안내</a></li>
+                            <li><a href="#none">기내서비스 안내</a></li>
+                            <li><a href="#none">취항지 안내</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이벤트/뉴스</a>
+                        <ul class="dep2">
+                            <li><a href="#none">이벤트</a></li>
+                            <li><a href="#none">뉴스</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">마이페이지</a>
+                        <ul class="dep2">
+                            <li><a href="#none">나의 예약내역</a></li>
+                            <li><a href="#none">나의 정보</a></li>
+                            <li><a href="#none">나의 문의내역</a></li>
+                            <li><a href="#none">나의 쿠폰</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="allmenu">
+                <a href="#"><span class="sr-only">전체메뉴</span><i></i></a>
+            </div>
+            <div class="allmenuWrap">
+                <div class="allmenuContent">
+                    <div class="logoarea"><h1><span class="sr-only">FLY GANGWON</span></h1></div>
+                    <ul class="dep1">
+                        <li class="on"><div><a href="#">예매</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">항공권 예매</a></li>
+                                <li><a href="#none">운항일정 조회</a></li>
+                                <li><a href="#none">운임안내</a>
+                                    <ul class="dep3">
+                                        <li><a href="#none">국내선 운임안내</a></li>
+                                        <li><a href="#none">국제선 운임안내</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">체크인</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">체크인</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">서비스 안내</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">항공권 안내</a></li>
+                                <li><a href="#none">공항서비스 안내</a></li>
+                                <li><a href="#none">수하물 안내</a></li>
+                                <li><a href="#none">기내서비스 안내</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">이벤트/뉴스</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">이벤트</a>
+                                    <ul class="dep3">
+                                        <li><a href="#none">진행중인 이벤트</a></li>
+                                        <li><a href="#none">지난 이벤트</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">뉴스</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">마이페이지</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">나의 예약내역</a></li>
+                                <li><a href="#none">나의 정보</a></li>
+                                <li><a href="#none">나의 문의내역</a></li>
+                                <li><a href="#none">나의 쿠폰</a></li>
+                            </ul>
+                        </li>
+                        <li><div><a href="#">유틸리티</a></div>
+                            <ul class="dep2">
+                                <li><a href="#none">고객센터</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">자주하는 질문</a></li>
+                                        <li><a href="#non">문의하기</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">회사소개</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">회사 현황</a></li>
+                                        <li><a href="#non">CEO 인사말</a></li>
+                                        <li><a href="#non">사업 비전</a></li>
+                                        <li><a href="#non">CI 소개</a></li>
+                                        <li><a href="#non">보도자료</a></li>
+                                        <li><a href="#non">오시는 길</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none">이용약관</a>
+                                    <ul class="dep3">
+                                        <li><a href="#non">이용약관</a></li>
+                                        <li><a href="#non">여객운송약관</a></li>
+                                        <li><a href="#non">항공교통이용자 서비스 계획</a></li>
+                                        <li><a href="#non">피해구제 계획</a></li>
+                                        <li><a href="#non">개인정보처리방침</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg"></div>
+    </div>
+    <div id="location">
+        <div class="inner">
+            <div class="dep1">
+                <a href="#">예매</a>
+            </div>
+            <div class="dep2">
+                <a href="#">운항일정 조회</a>
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <div id="content">
+            <h2 class="title">운항일정 조회</h2>
+            
+            <div class="flightSchedule">
+                <table class="table table-row heightFix">
+                    <caption>운할일정 조회 폼</caption>
+                    <colgroup>
+                        <col style="width:300px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>검색조건</th>
+                            <td>
+                                <input type="radio" name="rdo1" id="ipWeek">
+                                <label for="ipWeek">주간<span></span></label>
+                                <input type="radio" name="rdo1" id="ipDay">
+                                <label for="ipDay">선택일<span></span></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>여정선택</th>
+                            <td>
+                                <input type="radio" name="rdo2" id="ipRound">
+                                <label for="ipRound">왕복<span></span></label>
+                                <input type="radio" name="rdo2" id="ipOneway">
+                                <label for="ipOneway">편도<span></span></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>출/도착지</th>
+                            <td>
+                                <input type="text" style="width:49%" placeholder="출발지 선택" data-event="layer-open" data-target="#lyFrom">
+                                <input type="text" style="width:49%;margin-left:3px" placeholder="도착지 선택" data-event="layer-open" data-target="#lyTo">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>출/도착일</th>
+                            <td>
+                                <input type="text" style="width:49%" placeholder="날짜 선택" data-event="layer-open" data-target="#lyFromDate">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="desc mt20">
+                    <p>항공스케줄은 기상상황 및 정부인가 상황에 따라 예고 없이 변경될 수 있습니다.</p>
+                    <p>스케줄 조회는 항공편 결항 및 지연 등의 정보가 반영되지 않으므로, 정확한 스케줄은 항공권 예약 시 확인하시기 바랍니다.</p>
+                    <p>출발, 도착은 현지 시간 기준입니다.</p>
+                    <p>+1 표시는 다음날 도착입니다.</p>
+                    <p>출발 또는 도착 도시를 선택하시면, 해당 스케줄의 확인이 가능합니다.</p>
+                </div>
+                
+                <div class="btns mt20">
+                    <a href="" class="btn large">확인</a>
+                </div>
+                
+                <!-- 데이터 없을때 -->
+                <p class="dataEmpty">조회하신 데이터가 없습니다.</p>
+                <!-- //데이터 없을때 -->
+                
+                <h3 class="subtitle">서울/인천(ICN) <i class="airplane"></i> 홍콩(HKG)</h3>
+                <table class="table table-col border">
+                    <colgroup>
+                        <col style="width:10%">
+                        <col style="width:10%">
+                        <col style="width:10%">
+                        <col style="width:10%">
+                        <col style="width:12%">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2" class="bdl0">편명</th>
+                            <th rowspan="2">기종</th>
+                            <th rowspan="2">출발시간</th>
+                            <th rowspan="2">도착시간</th>
+                            <th rowspan="2">운항시간</th>
+                            <th colspan="7">운항요일</th>
+                        </tr>
+                        <tr>
+                            <th class="p0">일06.09</th>
+                            <th class="p0">월06.10</th>
+                            <th class="p0">화06.11</th>
+                            <th class="p0">수06.12</th>
+                            <th class="p0">목06.13</th>
+                            <th class="p0">금06.14</th>
+                            <th class="p0">토06.15</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="noto bdl0">RS501</td>
+                            <td class="noto">321</td>
+                            <td class="noto">20:10</td>
+                            <td class="noto">20:50</td>
+                            <td>03시간 40분</td>
+                            <td><i class="airplane m0"></i></td>
+                            <td><i class="airplane m0"></i></td>
+                            <td><i class="airplane m0"></i></td>
+                            <td><i class="airplane m0"></i></td>
+                            <td><i class="airplane m0"></i></td>
+                            <td><i class="airplane m0"></i></td>
+                            <td><i class="airplane m0"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-col border">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="bdl0">편명</th>
+                            <th>기종</th>
+                            <th>출발일</th>
+                            <th>출발시간</th>
+                            <th>도착시간</th>
+                            <th>운항시간</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="noto bdl0">RS501</td>
+                            <td class="noto">321</td>
+                            <td class="noto">2019.06.11</td>
+                            <td class="noto">20:10</td>
+                            <td class="noto">20:50</td>
+                            <td>03시간 40분</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 class="subtitle">홍콩(HKG) <i class="airplane"></i> 서울/인천(ICN)</h3>
+                <table class="table table-col border">
+                    <colgroup>
+                        <col style="width:10%">
+                        <col style="width:10%">
+                        <col style="width:10%">
+                        <col style="width:10%">
+                        <col style="width:12%">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2" class="bdl0">편명</th>
+                            <th rowspan="2">기종</th>
+                            <th rowspan="2">출발시간</th>
+                            <th rowspan="2">도착시간</th>
+                            <th rowspan="2">운항시간</th>
+                            <th colspan="7">운항요일</th>
+                        </tr>
+                        <tr>
+                            <th class="p0">일06.09</th>
+                            <th class="p0">월06.10</th>
+                            <th class="p0">화06.11</th>
+                            <th class="p0">수06.12</th>
+                            <th class="p0">목06.13</th>
+                            <th class="p0">금06.14</th>
+                            <th class="p0">토06.15</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="noto bdl0">RS501</td>
+                            <td class="noto">321</td>
+                            <td class="noto">20:10</td>
+                            <td class="noto">20:50</td>
+                            <td>03시간 40분</td>
+                            <td><i class="airplane m0"></i></td>
+                            <td><i class="airplane m0"></i></td>
+                            <td><i class="airplane m0"></i></td>
+                            <td><i class="airplane m0"></i></td>
+                            <td><i class="airplane m0"></i></td>
+                            <td><i class="airplane m0"></i></td>
+                            <td><i class="airplane m0"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-col border">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="bdl0">편명</th>
+                            <th>기종</th>
+                            <th>출발일</th>
+                            <th>출발시간</th>
+                            <th>도착시간</th>
+                            <th>운항시간</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="noto bdl0">RS501</td>
+                            <td class="noto">321</td>
+                            <td class="noto">2019.06.13</td>
+                            <td class="noto">20:10</td>
+                            <td class="noto">20:50</td>
+                            <td>03시간 40분</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="inner">
+            <div class="logo"><span class="sr-only">FLY GANGWON LOGO</span></div>
+            <!--<div class="menu">
+<ul>
+<li><a href="#">홈페이지 이용약관</a></li>
+<li><a href="#">국내 여객운송약관</a></li>
+<li><a href="#">항공교통이용자 서비스 계획</a></li>
+<li><a href="#">개인정보처리방침</a></li>
+<li><a href="#">항공교통이용자 피해구제계획</a></li>
+</ul>
+</div>-->
+            <div class="sns">
+                <ul>
+                    <li class="facebook"><a href=""><span class="sr-only">facebook</span></a></li>
+                    <li class="instagram"><a href=""><span class="sr-only">instagram</span></a></li>
+                    <li class="youtube"><a href=""><span class="sr-only">youtube</span></a></li>
+                </ul>
+            </div>
+            <div class="info">
+                <span>플라이강원 주식회사</span>
+                <span>대표이사 : 주원석</span>
+                <span>TEL: 02-6718-8230</span>
+                <span>사업자번호: 710-81-00367</span><br>
+                <span>본사 : 강원도 양양군 손양면 공항로 201, 1층</span>
+                <span>서울사무소 : 서울시 강남구 도산대로 456 청담백영빌딩 6층</span>
+            </div>
+            <div class="copyright">COPYRIGHT ⓒ 2018 FLY GANGWON ALL RIGHTS RESERVED.</div>            
+        </div>
+        <div class="gotop">
+            <a href="#"><span class="sr-only">맨 위로</span></a>
+        </div>
+    </div>
+</div>
+
+<!-- 출발지 선택 -->
+<div class="layer" id="lyFrom">
+    <div class="layer-wrap">
+        <div class="layer-head">
+            <h1>출발지 선택</h1>
+            <a href="#" class="close" data-event="layer-close"><span class="sr-only">레이어 닫기</span></a>
+        </div>
+        <div class="layer-body">
+            <div class="layer-content">
+                <div class="fromList">                                
+                    <div class="in">
+                        <div class="column">
+                            <h2>대한민국</h2>
+                            <ul>
+                                <li><a href="#">서울/인천(ICN)</a></li>
+                                <li class="active"><a href="#">서울/김포 (GMP)</a></li>
+                                <li><a href="#">울산 (USN)</a></li>
+                                <li><a href="#">광주 (KWJ)</a></li>
+                            </ul>
+                        </div>                                    
+                        <!-- 국제선 취항 준비  -->                      
+                        <div class="comingsoon">
+                            <p>국제선 취항 준비중입니다.</p>
+                            <img src="../../resources/images/pc/banner_comingsoon.png" alt="COMING SOON 보다 나은 서비스를 위해 최선을 다하겠습니다.">
+                        </div>
+                    </div>
+                    <div class="latelyFromTo">
+                        <h2>최근 검색 여정</h2>
+                        <ul>
+                            <li><a href="#">서울/김포(GMP) <i class="airplane"></i> 제주(CJU)</a> <button type="button"><span class="sr-only">여정 삭제</span></button></li>
+                            <li><a href="#">서울/김포(GMP) <i class="airplane"></i> 제주(CJU)</a> <button type="button"><span class="sr-only">여정 삭제</span></button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>                      
+        </div>
+    </div>
+</div>
+<!-- 도착지 선택 -->
+<div class="layer" id="lyTo">
+    <div class="layer-wrap">
+        <div class="layer-head">
+            <h1>도착지 선택</h1>
+            <a href="#" class="close" data-event="layer-close"><span class="sr-only">레이어 닫기</span></a>
+        </div>
+        <div class="layer-body">
+            <div class="layer-content">
+                <div class="fromList">                                
+                    <div class="in">
+                        <div class="column">
+                            <h2>대한민국</h2>
+                            <ul>
+                                <li><a href="#">서울/인천(ICN)</a></li>
+                                <li class="active"><a href="#">서울/김포 (GMP)</a></li>
+                                <li><a href="#">울산 (USN)</a></li>
+                                <li><a href="#">광주 (KWJ)</a></li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h2>동북 아시아</h2>
+                            <ul>
+                                <li><a href="">타이페이 (TPE)</a></li>
+                                <li><a href="">가오슝 (KHH)</a></li>
+                                <li><a href="">타이중 (RMQ)</a></li>
+                                <li><a href="">홍콩 (HKG)</a></li>
+                                <li class="disable"><a href="">블라디보스토크(VVO)</a></li>
+                                <li><a href="">도쿄 (NRT)</a></li>
+                                <li><a href="">오키나와(OKA)</a></li>
+                                <li><a href="">나고야 (NGO)</a></li>
+                                <li><a href="">상하이 (SHA)</a></li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h2>동남 아시아</h2>
+                            <ul>
+                                <li><a href="">방콕 (BKK)</a></li>
+                                <li><a href="">호치민 (SGN)</a></li>
+                                <li><a href="">하노이 (HAN)</a></li>
+                                <li><a href="">다낭 (DAD)</a></li>
+                                <li class="disable"><a href="">앙헬레스 (CRK)</a></li>
+                                <li class="disable"><a href="">코타키나발루 (BKI)</a></li>
+                                <li class="disable"><a href="">씨엠립 (REP)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="latelyFromTo">
+                        <h2>최근 검색 여정</h2>
+                        <ul>
+                            <li><a href="#">서울/김포(GMP) <i class="airplane"></i> 제주(CJU)</a> <button type="button"><span class="sr-only">여정 삭제</span></button></li>
+                            <li><a href="#">서울/김포(GMP) <i class="airplane"></i> 제주(CJU)</a> <button type="button"><span class="sr-only">여정 삭제</span></button></li>
+                        </ul>
+                    </div>
+                </div>       
+            </div>                 
+        </div>
+    </div>
+</div>
+<!-- 탑승일 선택 -->
+<div class="layer" id="lyFromDate">
+    <div class="layer-wrap">
+        <div class="layer-head">
+            <h1>탑승일 선택</h1>
+            <a href="#" class="close" data-event="layer-close"><span class="sr-only">레이어 닫기</span></a>
+            <button class="datepickerReset"><span>초기화</span></button>
+        </div>
+        <div class="layer-body">
+            <div class="layer-content">
+                <div class="weekday">
+                    <ul>
+                        <li class="sunday">일</li>
+                        <li>월</li>
+                        <li>화</li>
+                        <li>수</li>
+                        <li>목</li>
+                        <li>금</li>
+                        <li>토</li>
+                    </ul>
+                </div>
+                <div class="datepickerArea">                           
+                    <!-- 가는날~오는날 선택 날짜 구간 td에 클래스 'ui-datepicker-day-range' 추가 -->
+                    <!-- 비활성화 날짜 td에 클래스 'ui-datepicker-day-disable' 추가 -->
+                    <div class="load"></div>                                    
+                </div> 
+            </div>
+            <div class="noSchedule">
+                <p>운항 스케줄이 없습니다</p>
+                <a href="javascript:void(0)" class="close"><span class="sr-only">레이어 닫기</span></a>
+            </div>
+        </div>
+        <div class="layer-foot">
+            <div class="desc">
+                <p>가는 날 선택 후 오는 날을 선택해주세요. 당일 일정으로 날짜가 같은 경우 같은 날짜를 두 번 선택해주세요.</p>
+                <p>가는 날 다시 선택시 오는 날도 다시 입력하시기 바랍니다.</p>
+                <p>회색 날짜는 운항 스케줄이 없는 일자입니다.</p>
+            </div>
+            <a href="#" class="btn blue">선택완료</a>
+        </div>
+    </div>
+</div>
+<!-- 알럿 : 출발지 먼저 선택 -->
+<div class="alert" id="alertFrom">
+    <div class="alert-wrap">
+        <div class="alert-txt">
+            <p>출발지를 먼저 선택해주세요.</p>
+        </div>
+        <div class="alert-close">
+            <a href="javascript:void(0)" data-event="alert-close"><span class="sr-only">닫기</span></a>
+        </div>
+        <div class="alert-button"> <!-- 버튼 한개일 경우 two 클래스 삭제 -->
+            <button type="button" class="ok" data-event="alert-close">확인</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
