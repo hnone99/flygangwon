@@ -292,12 +292,13 @@ h1.logo a{display: block;width: 235px;height: 40px;background: url('../../images
 .tabText li.on a{font-weight: 700;color: #2e4b87;}
 
 .tabMybooking{margin: 45px 0 0 0;}
-.tabMybooking ul{display: table;width: 100%;border-collapse: collapse}
-.tabMybooking li{display: table-cell;max-width:0;text-align: center;}
-.tabMybooking li a{display: block;color: #999;font-size: 15px;line-height: 50px;text-align: center;text-decoration: none;border-bottom: 2px solid #eee;}
+.tabMybooking ul{display: table;width: 100%;border-collapse: collapse;height: 50px;}
+.tabMybooking li{display: table-cell;max-width:0;text-align: center;vertical-align: middle;border-bottom: 2px solid #eee;}
+.tabMybooking li a{height: 100%;color: #999;font-size: 15px;text-align: center;text-decoration: none;}
 .tabMybooking li a:hover,
-.tabMybooking li a:focus{border-color: #2896eb;color: #2896eb;}
-.tabMybooking li.on a{}
+.tabMybooking li a:focus{color: #2896eb;}
+.tabMybooking li:hover{border-color: #2896eb;}
+.tabMybooking li:hover a{color: #2896eb;}
 
 .reservationWrap{min-height:600px;position: relative;}
 .inquiry{position: relative;margin-bottom: 10px;}
@@ -602,7 +603,8 @@ div.txt + .desc{margin-top: 30px;}
 #summery .detail dl dt{float: left;width: 70%;color: #999;font-size: 13px;}
 #summery .detail dl dd{float: right;width: 30%;color: #999;font-size: 13px;font-weight: 500;text-align: right;font-family: 'Noto';letter-spacing: 0;}
 #summery .detail dl + dl{padding-top: 12px;margin-top: 12px;border-top: 1px dashed #ccc;}
-#summery .detail dl + dl dt{color: #666;font-weight: 700;font-size: 14px;}
+#summery .detail dl + dl dt{color: #666;font-weight: 700;font-size: 14px;width: 55%;}
+#summery .detail dl + dl dd{width: 45%;}
 #summery .detail dl + dl dd i{font-size: 14px;color: #666;margin-right: 5px;font-family: 'Noto';letter-spacing: 0;}
 #summery .detail dl + dl dd strong{font-size: 16px;color: #666;font-family: 'Noto';letter-spacing: 0;}
 #summery .sum{position: relative;border-top: 0;padding-top: 25px;}
@@ -818,7 +820,7 @@ div.txt + .desc{margin-top: 30px;}
 .passengers .card{background-color: #fff;box-shadow: 0 15px 30px rgba(0,0,0,0.05);border-left: 6px solid #2e4b87;border-radius: 4px;position: relative;z-index: 1;background: #fff url('../../images/pc/bg_card_shadow.png') 340px 0 repeat-y;padding: 40px 40px 40px 380px;}
 .passengers .card:after{content:'';display:block;clear:both}
 .passengers .card + .card{margin-top: 20px;}
-.passengers .person{position: absolute;left:44px;top:40px}
+.passengers .person{position: absolute;left:44px;top:40px;width: 250px;}
 .passengers .person span{display: block;font-size: 12px;color: #bbb;font-weight: 700;font-family: 'Noto';letter-spacing: 0;margin-bottom: 2px;}
 .passengers .person b{display: block;color: #111;font-size: 24px;margin-bottom: 15px;}
 .passengers .person em{display: block;color: #333;font-size: 18px;font-family: 'Noto';letter-spacing: 0;font-weight: 700;width: 185px;}
@@ -1095,19 +1097,6 @@ tfoot .sum i{font-size: 20px;font-weight: 700;margin-right: 5px;}
 .paySum strong{color:#e54734;font-size: 28px;font-weight: 700;font-family: 'Noto';letter-spacing: 0;}
 
 .line{width: 100%;height: 1px;background-color: #ddd;overflow: hidden;margin: 20px 0;}
-
-.cardBlue.dangerous{margin-top: 25px;margin-bottom: -20px;}
-.cardBlue.dangerous ul{display: table;width: 100%;table-layout: fixed;}
-.cardBlue.dangerous ul li{display: table-cell;vertical-align: top;font-size: 15px;font-weight: 700;}
-.cardBlue.dangerous ul li img{margin-bottom: 15px;}
-.cardBlue.dangerous ul li span{display: block;font-weight: 400;color: #555;margin-top: 4px;line-height: 1.2;font-size: 12px;}
-.cardBlue.dangerous .card{margin-bottom: 20px;}
-.cardBlue.dangerous .card .in{background-color: #fff;vertical-align: top;}
-.cardBlue.dangerous .card .in strong{margin-bottom: 25px;line-height: 1.2;}
-.cardBlue.dangerous .card .in strong span{font-size: 17px;}
-.cardBlue.dangerous .card:nth-child(7) .in,
-.cardBlue.dangerous .card:nth-child(8) .in,
-.cardBlue.dangerous .card:nth-child(9) .in{height: 325px;}
 
 .cardList{border-bottom: 1px solid #ddd;margin-bottom: 30px;}
 .cardList .groupWrap{;margin: 0 -22px;}
@@ -1882,7 +1871,7 @@ i.primary{display: inline-block;width: 18px;height: 18px;background: url('../../
 .specialSlider .text p{font-size: 20px;font-weight: 500;color: #000;}
 .specialSlider .text strong{color: #2d8dd1;font-size: 24px;font-weight: 700;font-family: 'NanumSquare';}
 .specialSlider .text strong i{font-size: 16px;font-weight: 400;}
-.specialSlider .text .oneway{display: block;width: 50px;height: 50px;text-align: center;border: 1px solid #ddd;color: #000;font-size: 13px;background: url('../../images/pc/ico_plane_black.png') 50% 8px no-repeat;border-radius: 2px;padding-top: 26px;position: absolute;right:30px;top:50%;margin-top: -25px;}
+.specialSlider .text .oneway{display: block;width: 50px;height: 50px;text-align: center;border: 1px solid #ddd;color: #000;font-size: 13px;background: url('../../images/pc/ico_plane_black.png') 50% 8px no-repeat;border-radius: 2px;padding-top: 26px;position: absolute;right:30px;bottom:35px}
 .specialSlider .swiper-container{padding: 0 0 40px;}
 .specialSlider .swiper-slide{width: 378px;}
 .specialSlider .swiper-button-prev{width: 50px;height: 50px;border-radius: 50px;background: #e1e1e1 url('../../images/pc/arrow_main_prev.png') 50% 50% no-repeat;left:-94px;top:59%}
@@ -1893,10 +1882,10 @@ i.primary{display: inline-block;width: 18px;height: 18px;background: url('../../
 
 .tourist{margin-bottom: 240px;position: relative;}
 .tourist .mTitle{text-align: left;position: absolute;left:0;top:20px}
-.tourist .explanation{position: absolute;left:0;top:190px}
+.tourist .explanation{position: absolute;left:0;top:190px;width:450px}
 .tourist .explanation h3{font-size: 24px;color: #000;font-weight: 400;margin-bottom: 2px;}
 .tourist .explanation strong{font-size: 18px;color: #000;font-weight: 400;margin-bottom: 15px;display: block;}
-.tourist .explanation p{font-size: 14px;color: #000;line-height: 24px;letter-spacing: -0.015em;}
+.tourist .explanation p{font-size: 14px;color: #000;line-height: 24px;letter-spacing: -0.015em;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3; -webkit-box-orient: vertical;height: 72px;}
 .tourSlider{padding-left: 506px;}
 .tourSlider .swiper-slide a{display: block;border-radius: 6px;overflow: hidden;}
 .tourSlider .swiper-button-prev{width: 50px;height: 50px;border-radius: 50px;background: #e1e1e1 url('../../images/pc/arrow_main_prev.png') 50% 50% no-repeat;left:-94px;}
@@ -1962,18 +1951,27 @@ i.primary{display: inline-block;width: 18px;height: 18px;background: url('../../
 .eDesc{color: #666;font-size: 13px;line-height: 22px;}
 .eDesc.eng{color: #999;font-family: 'Noto';letter-spacing: 0;}
 
-.cardBlue{margin: 0 -10px;}
-.cardBlue:after{content:'';display:block;clear:both}
-.cardBlue .card{float: left;width: 50%;padding:0 10px;display: table;}
-.cardBlue .card .in{border:1px solid #eee;border-top: 3px solid #2896eb;box-shadow: 0 2px 3px rgba(0,0,0,0.05);text-align: center;height:165px;padding: 30px 20px;border-radius: 3px;display: table-cell;vertical-align: middle;}
+.cardBlue{margin: 0 -10px; display: flex;flex-wrap: wrap;justify-content: center;}
+.cardBlue .card{padding:0 10px;flex: 1;}
+.cardBlue .card .in{border:1px solid #eee;border-top: 3px solid #2896eb;box-shadow: 0 2px 3px rgba(0,0,0,0.05);text-align: center;padding: 30px 20px;border-radius: 3px;width: 100%;height: 100%;}
 .cardBlue .card .in strong{font-weight: 500;font-size: 16px;display: block;margin-bottom: 10px;}
 .cardBlue .card .in p{color: #666;font-size: 16px;line-height: 26px;}
 .cardBlue .card .in .contact{font-family: 'Noto';font-size: 30px;font-weight: 700;line-height: 1;margin-bottom: 10px;}
-.cardBlue.col3 .card{width: 33.3333%;}
-.cardBlue.col4 .card{width: 25%;}
+.cardBlue.col3 .card{flex: 1 1 30%;}
+.cardBlue.col4 .card{flex: 0 0 25%;}
 
-.checkinStep ol:after{content:'';display:block;clear:both}
-.checkinStep ol li{float: left;width: 208px;border: 1px solid #eee;border-radius: 3px;box-shadow: 0 2px 3px rgba(0,0,0,0.05);text-align: center;height: 245px;padding-top: 170px;position: relative;}
+.cardBlue.dangerous{margin-top: 25px;margin-bottom: -20px;}
+.cardBlue.dangerous ul{display: table;width: 100%;table-layout: fixed;}
+.cardBlue.dangerous ul li{display: table-cell;vertical-align: top;font-size: 15px;font-weight: 700;}
+.cardBlue.dangerous ul li img{margin-bottom: 15px;}
+.cardBlue.dangerous ul li span{display: block;font-weight: 400;color: #555;margin-top: 4px;line-height: 1.2;font-size: 12px;}
+.cardBlue.dangerous .card{margin-bottom: 20px;}
+.cardBlue.dangerous .card .in{background-color: #fff;vertical-align: top;}
+.cardBlue.dangerous .card .in strong{margin-bottom: 25px;line-height: 1.2;}
+.cardBlue.dangerous .card .in strong span{font-size: 17px;}
+
+.checkinStep ol{display: flex;flex-wrap: wrap;justify-content: center;}
+.checkinStep ol li{flex: 1;width: 208px;border: 1px solid #eee;border-radius: 3px;box-shadow: 0 2px 3px rgba(0,0,0,0.05);text-align: center;padding-top: 170px;position: relative;padding-bottom: 20px;min-height:245px}
 .checkinStep ol li + li{margin-left: 40px;}
 .checkinStep ol li + li:before{content: '';display: block;width: 14px;height: 14px;background: url('../../images/pc/bg_service_airport_arrow.png') 0 0 no-repeat;position: absolute;left:-28px;top:50%;margin-top: -7px;}
 .checkinStep ol li i{font-weight: 700;display: block;font-family: 'Noto';letter-spacing: 0;font-size: 14px;color: #2896eb;margin-bottom: 5px;}

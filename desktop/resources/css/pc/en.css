@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+.sort select.medium{width: auto;}
+
+.calculator select{width: auto;}
+.calculator .button{letter-spacing: -0.02em;}
+
+.ticketWrap .ticket ul.type li{width: 22%;}
+.ticketWrap .ticket ul.type li.i4{width: 28%;}
+.ticketWrap .ticket ul.type li .fill{padding: 5px 22px 0 ;}
+.ticketWrap .ticket ul.type li .fill strong{white-space: nowrap;text-overflow: ellipsis;overflow: hidden;padding-right: 10px;}
+
+.specialSlider .text{padding-right: 95px;}
+.specialSlider .text .oneway{width: 62px;}
+
+.btnInTable .btn.small{min-width:110px;padding: 0 10px;}
+
+.table-col-card tbody td{padding: 20px 20px;word-break: keep-all;font-size: 15px;}
+
+.inputArea .txt{white-space: nowrap}
+
+.memberType p{font-size: 19px;}
+.memberType .btn{min-width: 140px;}
+
+.vision ul li h3{font-size: 18px;padding-left: 10px;padding-right: 10px;padding-top: 108px;line-height: 1.2;}

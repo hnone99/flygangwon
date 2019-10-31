@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+#footer .menu > ul > li:first-child{text-align: left;}
+#footer .menu li > a{line-height: 1.2;padding: 8px 10px;}
+
+.table-list th{font-size: 13px;line-height: 1.15;padding: 4px 0;}
+.table-list td{font-size: 13px;padding-left: 15px;}
