@@ -68,11 +68,22 @@ $(document).ready(function(){
         $('body').toggleClass('in');
     });
     $(document).on('click','.allmenuWrap .dep1 > li > div > a',function(e){
-        //190923 수정(HOME 추가)
-        if(!$(this).closest('li').hasClass('home')){
+        //191105 메뉴 펼침 방식 수정 및 스크롤 이동
+        var _target = $(this).closest('li');
+        if(!_target.hasClass('home')){
             e.preventDefault();
-            $(this).closest('li').toggleClass('active');
-        }            
+            if(_target.hasClass('active')){
+                _target.removeClass('active')
+            }
+            else{
+                _target.siblings().removeClass('active')
+                var _scrollTop = parseInt(_target.offset().top) - parseInt($('.allmenuWrap .toparea').outerHeight())
+                _target.addClass('active');
+                $('.allmenuWrap').stop().delay(100).animate({
+                    'scrollTop': _scrollTop
+                }, 150, 'swing');
+            }
+        }
     });
 
     //예매 top

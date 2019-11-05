@@ -218,7 +218,7 @@
             <p class="dataEmpty">예약정보가 없습니다.</p>
             <!-- //데이터 없을때 -->
             
-            <table class="table table-col-card">
+            <table class="table table-col-card" id="myReservListTable"> <!-- 191105 영문 col 너비 변경 위해 id 부여 -->
                 <caption>나의 예약 리스트</caption>
                 <colgroup>
                     <col style="width:220px">
@@ -230,12 +230,12 @@
                 </colgroup>
                 <thead>
                     <tr>
-                        <th>예약정보</th>
-                        <th>여정</th>
-                        <th>출발일시</th>
-                        <th>좌석수</th>
-                        <th>상태</th>
-                        <th>조회</th>
+                        <th>Bookng information</th>
+                        <th>Trip</th>
+                        <th>The time and date of the departure</th>
+                        <th>occupied seat</th>
+                        <th>Status</th>
+                        <th>View</th>
                     </tr>                    
                 </thead>
                 <tbody>
@@ -253,7 +253,7 @@
                         <td>Ticketing complete</td>
                         <td>
                             <div class="btnInTable"><a href="javascript:;" class="btn blue small disable">See details</a></div> <!-- 취소된 여정에 disable 추가 -->
-                            <div class="btnInTable"><a href="#" class="btn grayBorder small" data-event="popup-open" data-target="#purchasePop">Confirmation</a></div>
+                            <div class="btnInTable"><a href="#" class="btn grayBorder small" data-event="popup-open" data-target="#purchasePop">Confirmation of purchase</a></div>
                             <div class="btnInTable"><a href="#" class="btn grayBorder small" data-event="popup-open" data-target="#receiptListPop">Receipt</a></div>
                         </td>
                     </tr>

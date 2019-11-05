@@ -1,7 +1,23 @@
 @charset "utf-8";
 
-#footer .menu > ul > li:first-child{text-align: left;}
 #footer .menu li > a{line-height: 1.2;padding: 8px 10px;}
+#footer .menu > ul > li{text-align: left;}
+#footer .menu > ul > li:nth-child(2) a{padding-left: 17px;}
+@media(min-width:385px){
+    #footer .menu li > a{padding: 8px 17px;}
+    #footer .menu > ul > li:nth-child(2) a{padding-left: 25px;}
+}
 
 .table-list th{font-size: 13px;line-height: 1.15;padding: 4px 0;}
 .table-list td{font-size: 13px;padding-left: 15px;}
+
+.mainInquiry .quick ul li.my{text-align: left;}
+.mainInquiry .quick ul li.my a{background-size: auto 13px;margin-left: 10px;}
+.mainInquiry .quick ul li.check a{background-size: auto 11px}
+.mainInquiry .quick ul li.seat{text-align: left;}
+.mainInquiry .quick ul li.seat a{background-size: auto 12px}
+
+.panel .boldStyle + .boldStyle{margin-top: -4px;}
+.panel.has-full-btn{padding-right: 15px;}
+.panel.has-full-btn .button{position: static;width: auto;margin:5px -15px -15px;}
+.panel.has-full-btn .button a{padding: 10px 0;font-size: 14px;letter-spacing: -0.02em;border-radius: 0 0 2px 2px}

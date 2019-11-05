@@ -1,5 +1,8 @@
 @charset "utf-8";
 
+.mainSlider .swiper-slide strong{letter-spacing: 0;font-family: 'Noto';word-spacing: 0.1em}
+.mainSlider .swiper-slide p{letter-spacing: 0;font-family: 'Noto';word-spacing: 0.05em}
+
 .sort select.medium{width: auto;}
 
 .calculator select{width: auto;}
@@ -13,8 +16,6 @@
 .specialSlider .text{padding-right: 95px;}
 .specialSlider .text .oneway{width: 62px;}
 
-.btnInTable .btn.small{min-width:110px;padding: 0 10px;}
-
 .table-col-card tbody td{padding: 20px 20px;word-break: keep-all;font-size: 15px;}
 
 .inputArea .txt{white-space: nowrap}
@@ -23,3 +24,7 @@
 .memberType .btn{min-width: 140px;}
 
 .vision ul li h3{font-size: 18px;padding-left: 10px;padding-right: 10px;padding-top: 108px;line-height: 1.2;}
+
+#myReservListTable col:nth-child(1){width: 180px !important;}
+#myReservListTable col:nth-child(6){width: 200px !important;}
+#myReservListTable .btnInTable .btn.small{min-width:160px;padding: 0 5px;}

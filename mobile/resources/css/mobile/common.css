@@ -1042,7 +1042,7 @@ tfoot .sum strong{font-size: 15px;font-weight: 700;color: #333;}
 .panel.disable .btn.disable{background-color: #adb5c6 !important;font-weight: 400;}
 .panel.has-full-btn{padding-right: 70px;}
 .panel.has-full-btn .button{position: absolute;right: 0;top: 0;width: 65px;height: 100%;}
-.panel.has-full-btn .button a{display: table;min-width:inherit;width: 100%;height: 100%;padding: 0;border-radius: 0 4px 4px 0;font-size: 15px;}
+.panel.has-full-btn .button a{display: table;min-width:inherit;width: 100%;height: 100%;padding: 0;border-radius: 0 4px 4px 0;font-size: 15px;line-height: 1.3;}
 .panel.has-full-btn .button a span{display: table-cell;vertical-align: middle;}
 
 .panel-set .panel-container{border-radius: 4px;border: 1px solid #eee;overflow: hidden;}
@@ -1325,7 +1325,7 @@ tfoot .sum strong{font-size: 15px;font-weight: 700;color: #333;}
 .board-view-head .share{position: absolute;right:0;bottom:10px;}
 .board-view-body{padding: 10px 0;}
 .board-view-body .view{font-size: 15px;color: #666;}
-.board-view-body .view img{max-width: 100%}
+.board-view-body .view img{max-width: 100%;width: auto !important;height: auto !important;}
 .board-view-foot{border-top: 1px solid #000;border-bottom: 1px solid #000;margin-top: -1px;}
 .board-view-foot .prev,
 .board-view-foot .next{padding: 22px 0;line-height: 1.4;position: relative;padding-left: 155px;font-size: 16px;}
