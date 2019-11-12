@@ -20,6 +20,23 @@
     <script type="text/javascript" src="../../resources/js/pc/swiper.min.js"></script>
     <script>
         $(document).ready(function(){
+            //191106 관광 탭 활성화 
+            $(document).on('click','.htop .category a',function(e){
+                var _target = $(this).parent('li')
+                if(!_target.is('.shopping')){
+                    e.preventDefault();                    
+                    _target.siblings().removeClass('on');
+                    _target.addClass('on');
+                    
+                    if(_target.is('.tour')){ //관광
+                        $('html').addClass('showTour');
+                    }
+                    else{
+                        $('html').removeClass('showTour');
+                    }
+                }
+            });
+            
             //탑 배너 닫기
             $('.noticeTop .close').on('click',function(e){
                 e.preventDefault();
@@ -82,7 +99,11 @@
             //슬라이더
             var mainSwiper = new Swiper('.mainSlider .swiper-container', {
                 autoHeight: true,
-                loop: false,
+                autoplay: {
+                    delay : 4000
+                },
+                // 191106 한방향으로 이동하도록 loop 추가
+                loop: true,
                 pagination: {
                     el: $('.mainSlider .swiper-pagination'),
                     clickable: true,
@@ -670,6 +691,13 @@
         </div>
         <div class="gotop">
             <a href="#"><span class="sr-only">맨 위로</span></a>
+        </div>
+    </div>
+    <!-- 191106 추가 -->
+    <div id="tour">
+        <div class="wrap">
+            <!-- 관광영역 활성화 될때, body 스크롤바 없애고 iframe 안에서만 스크롤 생기도록 변경 -->
+            <iframe src="https://www.daum.net/" frameborder="0" style="width:100%;height:calc(100vh - 30px)"></iframe>
         </div>
     </div>
 </div>

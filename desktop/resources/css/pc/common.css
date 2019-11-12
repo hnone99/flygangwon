@@ -81,10 +81,16 @@ html{width: 100%;height: 100%;}
 body{min-width:1280px;width: 100%;height: 100%;background-color: #f8fafe;}
 body.bgWhite{background-color: #fff;}
 
+#tour{display: none;}
+.showTour body{overflow: hidden;}
+.showTour #header{height: auto;}
+.showTour #header .inner,
+.showTour #container,
+.showTour #footer{display: none;}
+.showTour #tour{display: block;}
+
 .inner{width: 1200px;margin: 0 auto;position: relative;}
 .inner:after{content:'';display:block;clear:both}
-
-#wrap{}
 
 .noticeTop{background-color: #3d629a;height: 65px;position: relative;z-index: 102;}
 .noticeTop .inner{display: table;}
