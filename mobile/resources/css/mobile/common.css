@@ -216,8 +216,6 @@ h1.logo a{display: block;width: 235px;height: 40px;background: url('../../images
 .allmenuWrap .active .dep2{display: block;}
 .in .allmenuWrap{display: block;}
 
-#container{}
-
 #content{padding: 0 15px;}
 #content.p0 {padding-bottom:30px !important;}
 #content.p0 .tabWide {margin-left:0;margin-right:0;}
@@ -231,6 +229,7 @@ h1.logo a{display: block;width: 235px;height: 40px;background: url('../../images
 #footer .menu li{display: table-cell;vertical-align: middle;text-align: center;position: relative;background-color: #fafafa;}
 #footer .menu li + li{border-left: 1px solid #e0e0e0;}
 #footer .menu li > a{display: block;color: #555;letter-spacing: -0.05em;font-size: 11px;padding: 10px 10px;}
+#footer .menu li > a strong{color: #d93636;font-weight: 400;}
 #footer .logo{display: inline-block;width: 137px;height: 26px;background: url('../../images/mobile/logo_white.png') 50% 50% no-repeat;background-size: 100% auto;margin-top: 26px;}
 #footer .info{color: #fff;letter-spacing: 0;padding-top: 20px;font-size: 10px;line-height: 1.6;}
 #footer .copyright{color: #fff;font-family: 'Noto';letter-spacing: 0;padding-top: 8px;font-size: 10px;}
@@ -595,7 +594,6 @@ div.txt + .desc{margin-top: 30px;}
 .bottomAgree input[type="checkbox"] + label{color: #333;}
 .bottomAgree input[type="checkbox"] + label a{color: #2896eb;text-decoration: underline;}
 
-.step{}
 .step ol{text-align: center;}
 .step li{display: inline-block;padding-left: 3px;color: #bbb;font-size: 14px;}
 .step li.on{color: #111;font-weight: 700;}
@@ -1061,10 +1059,8 @@ tfoot .sum strong{font-size: 15px;font-weight: 700;color: #333;}
 .journeyDiv{border-top: 1px solid #eee;padding-top: 10px;color: #666;margin-bottom: 5px;margin-top: 5px;}
 .journeyDiv2{padding-top: 10px;color: #666;margin-bottom: 5px;margin-top: 5px;}
 
-.planInTable{}
 .planInTable + .planInTable{margin-top: 8px;}
 .planInTable span{font-size: 13px;color: #999;font-weight: 500;margin-right: 20px;}
-.planInTable strong{}
 .planInTable em{font-size: 14px;margin-left: 30px;}
 
 .rulesIntableWrap{margin: -25px -15px 0;padding: 0;background-color: #f8fafe;}
@@ -1291,7 +1287,6 @@ tfoot .sum strong{font-size: 15px;font-weight: 700;color: #333;}
 .findResult.pw strong{font-size: 15px;}
 .desc.bgNone  + .btns.bottom{padding-top: 5px;}
 
-.eventList{}
 .eventList ul:after{content:'';display:block;clear:both}
 .eventList li{margin-bottom: 0;padding-right: 15px;padding-left:15px; border-bottom:1px solid #eee;}
 .eventList li a{display:table;min-height: 100px;}
@@ -1359,8 +1354,6 @@ tfoot .sum strong{font-size: 15px;font-weight: 700;color: #333;}
 .replyWrap .write .input textarea{width: 100%;height: 100%;border: 0;font-size: 14px;}
 .replyWrap .write .input .button{background-color: #35a9df;color: #fff;text-align: center;font-size:14px;width:70px;height:35px;line-height:35px;position: absolute;right: 0;top:auto;bottom:0;}
 .replyWrap .size{font-size: 13px;font-family: 'Noto';letter-spacing: 0;color: #999;padding-left:15px;line-height:33px;border: 1px solid #ddd;border-top:none;}
-.replyWrap .reply{}
-.replyWrap .reply ul{}
 .replyWrap .reply li{padding: 20px 0 20px 0;position: relative;}
 .replyWrap .reply li + li{border-top: 1px solid #ddd;}
 .replyWrap .reply .writer{margin-bottom: 15px;}
@@ -2107,7 +2100,6 @@ box-shadow: 0 4px 4px rgba(15, 17, 22, 0.09);}
 .eDesc{color: #666;font-size: 13px;line-height: 22px;}
 .eDesc.eng{color: #999;font-family: 'Noto';letter-spacing: 0;}
 
-.cardBlue{}
 .cardBlue:after{content:'';display:block;clear:both}
 .cardBlue .card{float:none;width:100%;display: table;}
 .cardBlue .card .in{height:auto;border:1px solid #eee;border: 1px solid #eee;text-align: left;padding:20px 18px;border-radius: 3px;display: table-cell;vertical-align: middle;}

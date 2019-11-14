@@ -244,8 +244,7 @@ h1.logo a{display: block;width: 235px;height: 40px;background: url('../../images
 #footer .menu li{float: left;}
 #footer .menu li + li:before{content: '';display: inline-block;width: 1px;height: 12px;background-color: #888;margin: 0 11px 0 10px;vertical-align: text-bottom;}
 #footer .menu a{color: #fff;letter-spacing: -0.05em;}
-/*#footer .contact{position: absolute;right: 0;top: 0;font-size: 18px;text-align: right;}
-#footer .contact strong{display: block;font-size: 24px;}*/
+#footer .menu a strong{color: #fdc84e;font-weight: 400;}
 #footer .sns{position: absolute;right: 40px;top: 70px;}
 #footer .sns ul:after{content:'';display:block;clear:both}
 #footer .sns li{float: left;margin-left: 12px;}
@@ -739,7 +738,6 @@ div.txt + .desc{margin-top: 30px;}
 .emailInputWrapper input[type=email]{padding-right: 60px;}
 .emailInputWrapper button{width: 21px;height: 22px;background: url('../../images/pc/ico_refrash.png') 50% 50% no-repeat;position: absolute;right:30px;top:50%;margin-top: -11px;}
 
-.inputArea{}
 .inputArea .row{margin: 0 -10px;}
 .inputArea .row:after{content:'';display:block;clear:both}
 .inputArea .row .col{float: left;width: 50%;padding: 0 10px;}
@@ -800,7 +798,6 @@ div.txt + .desc{margin-top: 30px;}
 .inputArea .group.date .dateWrap input[type=text]{width: 33.3%;border: 0;height: 48px;line-height: 48px;vertical-align: top;float: left;}
 .inputArea .group.date .dateWrap:before{content: '';display: block;width: 1px;height: 20px;background-color: #ddd;position: absolute;left:33.3%;top:50%;margin-top: -10px;}
 .inputArea .group.date .dateWrap:after{content: '';display: block;width: 1px;height: 20px;background-color: #ddd;position: absolute;left:66.6%;top:50%;margin-top: -10px;}
-.myinfo{}
 .myinfo .inputArea{border-top: 2px solid #333;padding-top: 20px;}
 .myinfo .inputArea .ipId{width: 405px;float: left;margin-right: 10px;}
 .myinfo .inputArea .ipId + .btn{float: left;width: 130px;min-width: inherit;}
@@ -821,7 +818,6 @@ div.txt + .desc{margin-top: 30px;}
 .choice input[type=radio]:checked + label{background: #2e4b87;color: #fff;border-color: #2e4b87;}
 .choice.num3 input[type=radio] + label{width: 33.3333%;}
 
-.passengers{}
 .passengers.purchaser .subtitleArea .subtitle{color: #b6002e;}
 .passengers .card{background-color: #fff;box-shadow: 0 15px 30px rgba(0,0,0,0.05);border-left: 6px solid #2e4b87;border-radius: 4px;position: relative;z-index: 1;background: #fff url('../../images/pc/bg_card_shadow.png') 340px 0 repeat-y;padding: 40px 40px 40px 380px;}
 .passengers .card:after{content:'';display:block;clear:both}
@@ -979,7 +975,6 @@ tfoot .sum i{font-size: 20px;font-weight: 700;margin-right: 5px;}
 .table{width: 100%;border-collapse: collapse;table-layout: fixed}
 .hFix60{height: 60px !important;padding-top: 0 !important;padding-bottom: 0 !important;}
 
-.table-fares{}
 .table-fares thead th{color: #999;border-bottom: 2px solid #333;vertical-align: top;padding-bottom: 10px;font-weight: 500;}
 .table-fares tbody td{border-top: 1px solid #ddd;letter-spacing: 0;font-size: 16px;color: #666;padding: 25px 0;}
 .table-fares tbody tr:first-child td{border-top: 0;}
@@ -1018,7 +1013,6 @@ tfoot .sum i{font-size: 20px;font-weight: 700;margin-right: 5px;}
 .table-col-card thead th i{display: block;}
 .table-col-card tbody td{padding:20px 30px;text-align: center;border-top: 5px solid #f8fafe;line-height: 1.8;background-color: #fff;font-size: 16px;}
 
-.planInTable{}
 .planInTable + .planInTable{margin-top: 8px;}
 .planInTable span{font-size: 13px;color: #999;font-weight: 500;margin-right: 20px;}
 .planInTable strong{}
@@ -1061,7 +1055,6 @@ tfoot .sum i{font-size: 20px;font-weight: 700;margin-right: 5px;}
 .sortCoupon:after{content:'';display:block;clear:both}
 .sortCoupon select.medium {width: 185px;}
 
-.payment{}
 .payment .row{display: table;width: 100%;margin-top: 40px;}
 .payment .label{display: table-cell;vertical-align: middle;font-size: 16px;color: #666;width: 160px;}
 .payment .sel{display: table-cell;vertical-align: middle;}
@@ -1071,7 +1064,6 @@ tfoot .sum i{font-size: 20px;font-weight: 700;margin-right: 5px;}
 
 .referencePay {background-color: #fbfbfb;margin: 0 -40px;padding: 28px 40px;margin-top: 30px;margin-bottom: -40px;}
 
-.payMethod{}
 .payMethod li{float: left;width: 225px;text-align: center;background-color: #fff;}
 .payMethod li + li{margin-left: 20px;}
 .payMethod li a{display: block;text-decoration: none;color: #333;font-size: 15px;height: 90px;padding-top: 53px;position: relative;border: 1px solid #eee;box-shadow: 0 2px 3px rgba(0,0,0,0.05);border-radius: 2px}
@@ -1083,7 +1075,6 @@ tfoot .sum i{font-size: 20px;font-weight: 700;margin-right: 5px;}
 .payMethod li.on .creditGlobal:before{background-position: 0 100%;}
 .payMethod li.on .account:before{background-position: 0 100%;}
 
-.paySimpleMethod{}
 .paySimpleMethod li{float: left;width: 176px;text-align: center;background-color: #fff;}
 .paySimpleMethod li + li{margin-left: 20px;}
 .paySimpleMethod li a{display: block;text-decoration: none;color: #333;font-size: 15px;height: 90px;position: relative;border: 1px solid #eee;box-shadow: 0 2px 3px rgba(0,0,0,0.05);border-radius: 2px}
@@ -1154,7 +1145,6 @@ tfoot .sum i{font-size: 20px;font-weight: 700;margin-right: 5px;}
 .memberType p span{font-size: 16px;color: #666;font-weight: 400;display: block;margin-top: 10px;}
 .memberType .btn{position: absolute;right:40px;top:50%;margin-top: -25px;}
 
-.agreeWrap{}
 .agreeWrap .agree.first{border-bottom: 2px solid #333;padding-bottom: 30px;margin-top: 0;}
 .agreeWrap .agree.first label{font-size: 16px;font-weight: 500;}
 .agreeWrap .agree.first label span{top: 2px;}
@@ -1237,7 +1227,6 @@ tfoot .sum i{font-size: 20px;font-weight: 700;margin-right: 5px;}
 .paging a.last{box-shadow:0 1px 3px rgba(0,0,0,0.03);border:1px solid #ddd;width: 30px;height: 30px;background-color: #fff;background: url('../../images/pc/btn_paging_last.png') 50% 50% no-repeat;margin: 0 2px;}
 
 .board-write{border-top: 1px solid #000;border-bottom: 1px solid #ddd;padding: 15px 0;}
-.board-write table{}
 .board-write table tbody th{text-align: left;font-weight: 400;}
 .board-write table tbody td{padding:15px 0}
 .board-write table tbody td .textareaCont{width: 100%;height: 240px;border: 1px solid #ddd;padding: 20px 30px;}
@@ -1263,7 +1252,6 @@ tfoot .sum i{font-size: 20px;font-weight: 700;margin-right: 5px;}
 .board-view-foot .prev span:before{background: url('../../images/pc/arrow_up_prev.png') 0 0 no-repeat;}
 .board-view-foot .next span:before{background: url('../../images/pc/arrow_down_next.png') 0 0 no-repeat;}
 
-.board-view-toggle{}
 .board-view-toggle .list{border-bottom: 1px solid #333;}
 .board-view-toggle .list .q{padding: 20px;}
 .board-view-toggle .list .q:after{content:'';display:block;clear:both}
@@ -1369,8 +1357,6 @@ i.primary{display: inline-block;width: 18px;height: 18px;background: url('../../
 .eticketSubmit .close a{display: inline-block;position: relative;padding-right: 25px;font-size: 16px;}
 .eticketSubmit .close a:before{content: '';display: block;width: 14px;height: 8px;background: url('../../images/pc/arrow_up_prev.png') 0 0 no-repeat;position: absolute;right:0;top:50%;margin-top: -4px;}
 .dimEticket {width: 100%;height: 100%;position: absolute;left: 0;top: 380px;background-color: rgba(0,0,0,0.3);z-index: 998;display: block;}
-
-.eticket{}
 
 .passengerList{position: relative;height: 70px;overflow: hidden;margin-bottom: 40px;padding: 0 40px;}
 .passengerList.active{}
@@ -1674,7 +1660,6 @@ i.primary{display: inline-block;width: 18px;height: 18px;background: url('../../
 .serviceHelp p.red + .desc{margin-top: 10px;}
 #tabSeat .table-row-normal tbody td{padding: 25px 60px;}
 
-.serviceBaggage{}
 .serviceBaggage .bag:after{content:'';display:block;clear:both}
 .serviceBaggage .bag li{float: left;border: 1px solid #ddd;width: 410px;height: 200px;text-align: center;position: relative;padding-top: 90px;}
 .serviceBaggage .bag li span{font-size: 20px;display: block;}
@@ -1686,7 +1671,6 @@ i.primary{display: inline-block;width: 18px;height: 18px;background: url('../../
 .serviceBaggage .bag li.weight:before{background: url('../../images/pc/ico_bag_weight.png') 50% 50% no-repeat;}
 .serviceBaggage .bag li.size:before{background: url('../../images/pc/ico_bag_size.png') 50% 50% no-repeat;}
 .serviceBaggage .bag li.size strong{font-size: 26px;letter-spacing: -0.06em;margin-top: 15px;}
-.serviceBaggage .info{}
 .serviceBaggage .info strong{font-weight: 700;color: #083b68;display: block;margin-top: 20px;margin-bottom: 10px;}
 .serviceBaggage .info strong:before{content: '';display: inline-block;width: 20px;height: 23px;background: url('../../images/pc/ico_info.png') 0 0 no-repeat;vertical-align: middle;margin-right: 7px;}
 .serviceBaggage .info p{font-size: 14px;margin-bottom: 13px;}
