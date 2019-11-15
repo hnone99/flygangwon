@@ -1325,8 +1325,16 @@ tfoot .sum strong{font-size: 15px;font-weight: 700;color: #333;}
 .board-view-head .date span{font-family: 'NotoSans';letter-spacing: -0.055em;margin-right: 2px;}
 .board-view-head .share{position: absolute;right:0;bottom:10px;}
 .board-view-body{padding: 10px 0;}
-.board-view-body .view{font-size: 15px;color: #666;}
+.board-view-body .view{font-size: 15px;color: #666;word-break: break-all}
 .board-view-body .view img{max-width: 100%;width: auto !important;height: auto !important;}
+.board-view-body .view iframe,
+.board-view-body .view table{max-width:100% !important}
+.board-view-body .view ul {list-style-type: disc;list-style-position: inside; }
+.board-view-body .view ol {list-style-type: decimal;list-style-position: inside; }
+.board-view-body .view ul ul, 
+.board-view-body .view ol ul {list-style-type: circle;list-style-position: inside;margin-left: 10px;}
+.board-view-body .view ol ol, 
+.board-view-body .view ul ol {list-style-type: lower-latin;list-style-position: inside;margin-left: 10px;}
 .board-view-foot{border-top: 1px solid #000;border-bottom: 1px solid #000;margin-top: -1px;}
 .board-view-foot .prev,
 .board-view-foot .next{padding: 22px 0;line-height: 1.4;position: relative;padding-left: 155px;font-size: 16px;}

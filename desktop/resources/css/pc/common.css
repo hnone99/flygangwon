@@ -1241,8 +1241,14 @@ tfoot .sum i{font-size: 20px;font-weight: 700;margin-right: 5px;}
 .board-view-head .date .file:before{content: '';display: block;width: 2px;height: 12px;background-color: #eee;position: absolute;right:0;top:50%;margin-top: -6px;}
 .board-view-head .share{position: absolute;right:0;top:50%;margin-top: -11px;}
 .board-view-body{padding: 40px 0;border-bottom: 1px solid #333;}
-.board-view-body .view{line-height: 1.7;font-size: 16px;color: #666;}
+.board-view-body .view{line-height: 1.7;font-size: 16px;color: #666;word-break: break-all}
 .board-view-body .view img{max-width: 100%}
+.board-view-body .view ul {list-style-type: disc;list-style-position: inside; }
+.board-view-body .view ol {list-style-type: decimal;list-style-position: inside; }
+.board-view-body .view ul ul, 
+.board-view-body .view ol ul {list-style-type: circle;list-style-position: inside;margin-left: 15px;}
+.board-view-body .view ol ol, 
+.board-view-body .view ul ol {list-style-type: lower-latin;list-style-position: inside;margin-left: 15px;}
 .board-view-foot{border-top: 1px solid #000;border-bottom: 1px solid #000;margin-top: -1px;}
 .board-view-foot .prev,
 .board-view-foot .next{padding: 22px 0;line-height: 1.4;position: relative;padding-left: 155px;font-size: 16px;}
@@ -1853,11 +1859,11 @@ i.primary{display: inline-block;width: 18px;height: 18px;background: url('../../
 .special .inner{width: 1130px !important;}
 .specialSlider{margin-top: 80px;}
 .specialSlider .card{width: 340px;margin: 0 auto;border-radius: 6px;overflow: hidden;box-shadow: 0 8px 15px rgba(0,0,0,0.23)}
-.specialSlider .card a{display: block;text-decoration: none;}
+.specialSlider .card a{display: block;text-decoration: none;position: relative;}
 .specialSlider .card a:hover img{transform: scale(1.08)}
 .specialSlider .thumb{height: 311px;overflow: hidden;}
 .specialSlider .thumb img{width: 340px;height: 311px;transition: transform 2s 0.1s}
-.specialSlider .text{background-color: #fff;height: 120px;display: table-cell;width: 340px;vertical-align: middle;padding: 0 30px;position: relative;}
+.specialSlider .text{background-color: #fff;height: 120px;display: table-cell;width: 340px;vertical-align: middle;padding: 0 30px;}
 .specialSlider .text p{font-size: 20px;font-weight: 500;color: #000;}
 .specialSlider .text strong{color: #2d8dd1;font-size: 24px;font-weight: 700;font-family: 'NanumSquare';}
 .specialSlider .text strong i{font-size: 16px;font-weight: 400;}
