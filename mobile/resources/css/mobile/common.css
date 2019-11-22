@@ -746,7 +746,7 @@ div.txt + .desc{margin-top: 30px;}
 .scheduleCard .card .priceArea .price.active b{color: #fff;}
 
 .fareTermsWrap{margin: 15px -20px -20px;background-color: #fbfbfb;padding: 0 20px 20px;}
-.fareTerms{border-top: 1px dashed #ddd;padding-top: 15px;}
+.fareTerms{border-top: 1px dashed #ddd;padding-top: 15px;min-height:254px}
 .fareTerms .event{text-align: center;font-size: 12px;font-weight: 700;margin-top: 20px;}
 .fareTerms dl{text-align: left;letter-spacing: 0;}
 .fareTerms dt{font-weight: 700;color: #999;font-size: 13px;}
@@ -1329,6 +1329,7 @@ tfoot .sum strong{font-size: 15px;font-weight: 700;color: #333;}
 .board-view-body .view img{max-width: 100%;width: auto !important;height: auto !important;}
 .board-view-body .view iframe,
 .board-view-body .view table{max-width:100% !important}
+.board-view-body .view table{table-layout: auto;width:100% !important}
 .board-view-body .view ul {list-style-type: disc;list-style-position: inside; }
 .board-view-body .view ol {list-style-type: decimal;list-style-position: inside; }
 .board-view-body .view ul ul, 
@@ -2070,8 +2071,8 @@ box-shadow: 0 4px 4px rgba(15, 17, 22, 0.09);}
 .couponList .code{font-size: 13px;color: #2896eb;font-weight: 700;font-family: 'Noto';letter-spacing: 0;}
 .couponList .subject{font-size: 15px;color: #333;margin: 5px 0 10px;}
 .couponList .date{font-size: 14px;color: #999;font-family: 'Noto';letter-spacing: 0;font-weight: 500;}
-.couponList .price{background-color: #2e4b87;border-left: 1px dashed #fff;position: absolute;right:0;top:0;width: 100px;height: 100%;text-align: center;display: table;}
-.couponList .price .cell{display: table-cell;vertical-align: middle;text-align: left;padding-left: 18px;}
+.couponList .price{background-color: #2e4b87;border-left: 1px dashed #fff;position: absolute;right:0;top:0;width: 100px;height: 100%;text-align: center;display: block;}
+.couponList .price .cell{text-align: left;position: absolute;left:50%;top:50%;transform: translate(-50%,-50%)}
 .couponList .price i{display: block;font-size: 10px;color:#fff;font-family: 'Noto';letter-spacing: 0;}
 .couponList .price strong{display: block;font-size: 19px;color:#fff;font-weight: 700;font-family: 'Noto';letter-spacing: 0;}
 .couponList .use{font-size: 13px;color: #999;margin: 5px 0 0;}

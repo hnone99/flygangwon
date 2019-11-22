@@ -178,6 +178,44 @@
             });
         });
 
+		//191119 오픈 팝업 추가
+		function setCookie(cookieName, value, exdays){
+			var exdate = new Date();
+			exdate.setDate(exdate.getDate() + exdays);
+			var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+			document.cookie = cookieName + "=" + cookieValue;
+		}
+		function deleteCookie(cookieName){
+			var expireDate = new Date();
+			expireDate.setDate(expireDate.getDate() - 1);
+			document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
+		}
+		function getCookie(cookieName) {
+			cookieName = cookieName + '=';
+			var cookieData = document.cookie;
+			var start = cookieData.indexOf(cookieName);
+			var cookieValue = '';
+			if(start != -1){
+				start += cookieName.length;
+				var end = cookieData.indexOf(';', start);
+				if(end == -1)end = cookieData.length;
+				cookieValue = cookieData.substring(start, end);
+			}
+			return unescape(cookieValue);
+		}
+				
+		$(document).ready(function(){
+			if(getCookie("todayClose")!="Y"){
+				$(".popupMainWrap").show();
+			}
+		});
+		function closePopup(){
+			$(".popupMainWrap").hide();
+		}
+		function closePopupToday(){
+			setCookie('todayClose','Y', 1);
+			$(".popupMainWrap").hide();
+		}
     </script>
 </head>
 
@@ -994,5 +1032,18 @@
         </div>
     </div>
 </div>
+
+<!-- 191109 팝업 -->
+<div class="popupMainWrap">
+	<div class="backdrop"></div>
+	<div class="popupMain">
+		<div class="img"><a href="#"><img src="../../resources/images/pc/@banner_191119.jpg" alt=""></a></div>
+		<div class="close"><a href="javascript:closePopup()"><span class="sr-only">팝업 닫기</span></a></div>
+		<div class="today">
+			<a href="javascript:closePopupToday()">오늘 하루 그만보기</a>
+		</div>
+	</div>
+</div>
+
 </body>
 </html>
