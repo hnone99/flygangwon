@@ -167,7 +167,7 @@ h1.logo a{display: block;width: 235px;height: 40px;background: url('../../images
     -ms-transition: transform 0.4s cubic-bezier(0.77,0.2,0.05,1.0),background 0.4s cubic-bezier(0.77,0.2,0.05,1.0),opacity 0.4s ease;
     transition: transform 0.4s cubic-bezier(0.77,0.2,0.05,1.0),background 0.4s cubic-bezier(0.77,0.2,0.05,1.0),opacity 0.4s ease;
 }
-.in #allmenu{position: fixed;right: 15px;top: 15px;margin-left: 0;left: auto;}
+.in #allmenu{position: fixed;right: 15px;top: 8px;margin-left: 0;left: auto;}
 .in #allmenu a{height: 22px;}
 .in #allmenu i{background-color: transparent;top: 15px;}
 .in #allmenu i:before{transform: rotate(45deg) translate(-2px, -8px);opacity:1;width: 100%;}
@@ -181,6 +181,7 @@ h1.logo a{display: block;width: 235px;height: 40px;background: url('../../images
 .allmenuWrap .toparea .logBtn p{display: inline-block;font-size: 13px;}
 .allmenuWrap .toparea .logBtn p strong{color: #33558d;font-size: 15px;}
 .allmenuWrap .toparea .logBtn .btn{position: absolute;right:0;top:50%;margin-top: -20px;height: 36px;line-height: 36px;min-width: 80px;background-color: #4f5257;font-size: 14px;border-radius: 3px}
+.allmenuWrap .toparea .logBtn .setting {position: absolute;right: 0;top: 0;margin-top: -45px;background: #f7f8f9 url('../../images/mobile/ico_gear.png') 50% 50% no-repeat;background-size: 20px auto;height: 36px;line-height: 36px;width: 38px;border: 1px solid #dbdbdb;border-radius: 3px;}
 .allmenuWrap .toparea .quick{background-color: #fff;margin: 0 -15px;padding: 15px;}
 .allmenuWrap .toparea .quick ul{display: table;width: 100%;}
 .allmenuWrap .toparea .quick ul li{display: table-cell;width: 25%;text-align: center;}
@@ -2176,4 +2177,13 @@ body.mticket.in #allmenu i:after{background-color: #333;}
 .mticket .descBox .desc {margin:0;padding: 3px 0;}
 .mticket .btns {margin:0 -15px;padding:30px 15px;background-color:#FFF;}
 
+.setting{}
+.setting ul{margin: 0 -15px;border-bottom: 5px solid #f8fafe;}
+.setting ul li{border-bottom: 1px solid #eee;padding: 18px 15px;display: flex;justify-content: space-between;align-items: center;}
+.setting ul li + li{border-top: 5px solid #f8fafe;}
+.setting ul li div p{font-size: 13px;margin-top: 3px;color: #666;}
+.setting ul li em{color: #2896eb;}
 
+.langChg{margin: -20px -15px 0;}
+.langChg li{border-bottom: 5px solid #f8fafe;}
+.langChg li > a{display: block;padding: 15px 20px;}

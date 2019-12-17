@@ -72,6 +72,16 @@ input[type="radio"].withoutLabel + label{padding-left: 20px;width: 20px;height: 
 
 /*input[type="password"]{font-family: tahoma}*/
 
+.switch {display: inline-block;font-size: 14px;height: 1.6em;position: relative;}
+.switch > input[type="checkbox"] + span {height: 1.6em;left: 0;background: #ddd;-webkit-border-radius: 0.8em;border-radius: 0.8em;display: inline-block;position: relative;top: 0;-webkit-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;width: 3em;cursor: pointer;}
+.switch > input[type="checkbox"] + span:before {display: block;content: '';height: 1.4em;position: absolute;width: 1.4em;background-color: #fcfcfc;-webkit-border-radius: 50%;border-radius: 50%;left: 0.1em;top: 0.1em;-webkit-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;}
+.switch > input[type="checkbox"] { display: none;}
+.switch > input[type="checkbox"][disabled] + span {cursor: not-allowed;background-color: #D3DCE6;}
+.switch > input[type="checkbox"]:checked + span {background-color: #2e4b87;}
+.switch > input[type="checkbox"]:checked + span:before {left: 50%;}
+.switch > input[type="checkbox"]:checked[disabled] + span {background-color: #b0d7f5;}
+
+
 input::-ms-clear{position:absolute;overflow:hidden;top:0;left:0;width:0 !important;height:0 !important;font-size:0 !important;line-height:0 !important;}
 input::placeholder {color:#aaa;}
 input:-ms-input-placeholder{color:#aaa;}
