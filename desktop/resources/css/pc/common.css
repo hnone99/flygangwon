@@ -132,7 +132,7 @@ h1.logo a{display: block;width: 235px;height: 40px;background: url('../../images
 #header .languageMenu li a:hover{color: #111;background-color: #f8fafe;}
 #header .languageMenu li:first-child{border-top: 0;}
 
-#header .bg{height: 215px;position: absolute;width: 100%;left:0;top:110px;z-index: 3;display: none;background-color: #fff;border-top: 1px solid #efefef;box-shadow: 0 2px 15px rgba(0,0,0,0.05)}
+#header .bg{position: absolute;width: 100%;left:0;top:110px;z-index: 3;display: none;background-color: #fff;border-top: 1px solid #efefef;box-shadow: 0 2px 15px rgba(0,0,0,0.05)}
 #header .bg .banner{margin-top: 65px;}
 #header .bg .banner p{color: #bbb;font-size: 13px;font-family: 'Noto';letter-spacing: 0;margin-bottom: 5px;}
 #header .bg .banner a{display: block;}
@@ -150,7 +150,7 @@ h1.logo a{display: block;width: 235px;height: 40px;background: url('../../images
 #gnb .dep1 > li.active > a{}
 #gnb .dep1 > li.on .dep2{background-color: #f9fafb;}
 #gnb .dep1 > li:first-child .dep2{border-left: 1px solid #efefef;}
-#gnb .dep2{position: absolute;left:0;top:81px;z-index: 102;width: 100%;height: 215px;display: none;padding:20px 0 0 19px;border-right: 1px solid #efefef;}
+#gnb .dep2{position: absolute;left:0;top:81px;z-index: 102;width: 100%;display: none;padding:20px 0 8px 19px;border-right: 1px solid #efefef;}
 #gnb .dep2:before{content: '';display: block;width: 100%;height: 2px;background-color: #35a9df;transform: scaleX(0);transition: transform 250ms ease-in-out;position: absolute;left:0;top:-1px;}
 #gnb .on .dep2:before{transform: scaleX(1);}
 #gnb .active .dep2:before{transform: scaleX(1);}
@@ -245,7 +245,7 @@ h1.logo a{display: block;width: 235px;height: 40px;background: url('../../images
 #footer .menu li + li:before{content: '';display: inline-block;width: 1px;height: 12px;background-color: #888;margin: 0 11px 0 10px;vertical-align: text-bottom;}
 #footer .menu a{color: #fff;letter-spacing: -0.05em;}
 #footer .menu a strong{color: #fdc84e;font-weight: 400;}
-#footer .sns{position: absolute;right: 40px;top: 70px;}
+#footer .sns{position: absolute;right: 40px;top: 67px;}
 #footer .sns ul:after{content:'';display:block;clear:both}
 #footer .sns li{float: left;margin-left: 12px;}
 #footer .sns li:first-child{margin-left: 0;}
@@ -256,6 +256,8 @@ h1.logo a{display: block;width: 235px;height: 40px;background: url('../../images
 #footer .sns li.youtube a{background: url('../../images/pc/sns_youtube.png') 0 0 no-repeat;}
 #footer .info{color: #fff;line-height: 26px;letter-spacing: 0;padding-top: 35px;}
 #footer .copyright{color: #fff;font-family: 'Noto';letter-spacing: 0;padding-top: 15px;}
+#footer .korail{position: absolute;right:40px;top:135px}
+#footer .korail a{display: block;width: 180px;height: 65px;color: #fff;background: url('../../images/pc/logo_korail.png') 50% 0 no-repeat;background-size: 150px auto;font-size: 13px;text-align: center;padding-top: 42px;font-family: 'Noto';letter-spacing: 0;text-decoration: none;}
 #footer .gotop{position: absolute;right: 40px;top:-110px;z-index: 10;}
 #footer .gotop a{display: block;width: 65px;height: 65px;border-radius: 100px;background-color: #fff;overflow: hidden;box-shadow: 0 10px 40px rgba(0,0,0,0.16)}
 #footer .gotop a:before{content: '';display: block;width: 21px;height: 22px;background: url('../../images/pc/btn_top.png') 0 0 no-repeat;position: absolute;left:50%;top:50%;margin: -11px 0 0 -10.5px;}

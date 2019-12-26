@@ -73,9 +73,17 @@ var alertCustom = {
 }
 
 $(document).ready(function(){
-    $(window).resize(function(){
-    });
     //gnb
+    //191224 추가 시작
+    var _t = 0;
+    $('#gnb .dep1 > li > ul').each(function () {
+        $this = $(this);
+        if ($(this).outerHeight() > _t ) {
+            _t = $(this).outerHeight();
+        }    
+    });    
+    $('#header .bg, #gnb .dep2').css('height', _t);
+    //191224 추가 끝
     $('#gnb .dep1 > li').on('mouseenter',function(){
         $('#header').addClass('hover');
         $(this).siblings('li').removeClass('active');
