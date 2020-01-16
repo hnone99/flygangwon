@@ -49,14 +49,25 @@
                 <tr>
                     <td style="padding:0">&nbsp;</td>
                     <td>
-                        <div>성명</div>
-                        <div style="font-size: 24px;font-weight: 700;color:#111;margin: 6px 0 15px">홍길동</div>
+                        <!-- 200106 수정 시작 -->
+                        <table style="width:100%;height:40px;border:0;border-spacing: 0;margin-bottom: 10px;">
+                            <tr>
+                                <td style="text-align:left;vertical-align: bottom;">
+                                    <div style="margin-bottom:5px">성명</div>
+                                    <div style="font-size: 24px;font-weight: 700;color:#111;">홍길동</div>
+                                </td>
+                                <td style="text-align:right;vertical-align: bottom;">
+                                    <div style="font-size: 15px;">예약번호/항공권번호 : ABCDE/000000000</div>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- 200106 수정 끝 -->
                         <table style="width:100%;height:40px;background:url('../../resources/images/pc/email_title_bg.png') no-repeat 0 0">
                             <tr>
                                 <td style="padding: 0 20px;color:#fff;font-weight: 500;font-size: 16px">여정 <span style="color: #9db0c3;font-size: 14px">Itinerary</span></td>
                             </tr>
                         </table>
-                        <table style="table-layout:fixed;border-collapse:collapse;border-bottom:1px solid #ddd;line-height: 24px;border-spacing:0;border:0;width:100%">
+                        <table style="table-layout:fixed;border-collapse:collapse;border-bottom:1px solid #ddd;line-height: 24px;border-spacing:0;border:0;width:100%;letter-spacing: -0.03em;"><!-- 200106 수정 (자간) -->
                             <colgroup>
                                 <col>
                                 <col>
@@ -64,28 +75,28 @@
                                 <col>
                             </colgroup>
                             <tr>
-                                <th style="padding:10px 20px;border-bottom:1px solid #ddd;font-weight:400;background:#f8fafe">편명</th>
-                                <th style="padding:10px 20px;border-bottom:1px solid #ddd;font-weight:400;border-left:1px solid #ddd;background:#f8fafe">출발지</th>
-                                <th style="padding:10px 20px;border-bottom:1px solid #ddd;font-weight:400;border-left:1px solid #ddd;background:#f8fafe">목적지</th>
-                                <th style="padding:10px 20px;border-bottom:1px solid #ddd;font-weight:400;border-left:1px solid #ddd;background:#f8fafe">좌석</th>
+                                <th style="padding:10px 10px;border-bottom:1px solid #ddd;font-weight:400;background:#f8fafe">편명</th> <!-- 200106 padding 수정(이 테이블 내 th,td 에 모두 적용) -->
+                                <th style="padding:10px 10px;border-bottom:1px solid #ddd;font-weight:400;border-left:1px solid #ddd;background:#f8fafe">출발지</th>
+                                <th style="padding:10px 10px;border-bottom:1px solid #ddd;font-weight:400;border-left:1px solid #ddd;background:#f8fafe">목적지</th>
+                                <th style="padding:10px 10px;border-bottom:1px solid #ddd;font-weight:400;border-left:1px solid #ddd;background:#f8fafe">좌석</th>
                             </tr>
                             <tr>
-                                <td style="padding:10px 20px;border-bottom:1px solid #ddd;font-size:16px;font-weight:700;text-align:center">GW1234</td>
-                                <td style="padding:10px 20px;border-bottom:1px solid #ddd;font-size:16px;font-weight:700;border-left:1px solid #ddd;text-align:center">YANGYANG</td>
-                                <td style="padding:10px 20px;border-bottom:1px solid #ddd;font-size:16px;font-weight:700;border-left:1px solid #ddd;text-align:center">HANOI</td>
-                                <td style="padding:10px 20px;border-bottom:1px solid #ddd;font-size:16px;font-weight:700;border-left:1px solid #ddd;text-align:center">20A</td>
+                                <td style="padding:10px 10px;border-bottom:1px solid #ddd;font-size:16px;font-weight:700;text-align:center">GW1234</td>
+                                <td style="padding:10px 10px;border-bottom:1px solid #ddd;font-size:16px;font-weight:700;border-left:1px solid #ddd;text-align:center">YANGYANG</td>
+                                <td style="padding:10px 10px;border-bottom:1px solid #ddd;font-size:16px;font-weight:700;border-left:1px solid #ddd;text-align:center">HANOI</td>
+                                <td style="padding:10px 10px;border-bottom:1px solid #ddd;font-size:16px;font-weight:700;border-left:1px solid #ddd;text-align:center">20A</td>
                             </tr>
                             <tr>
-                                <th style="padding:10px 20px;border-bottom:1px solid #ddd;font-weight:400;background:#f8fafe">날짜</th>
-                                <th style="padding:10px 20px;border-bottom:1px solid #ddd;font-weight:400;border-left:1px solid #ddd;background:#f8fafe">탑승시간</th>
-                                <th style="padding:10px 20px;border-bottom:1px solid #ddd;font-weight:400;border-left:1px solid #ddd;background:#f8fafe">출발시간</th>
-                                <th style="padding:10px 20px;border-bottom:1px solid #ddd;font-weight:400;border-left:1px solid #ddd;background:#f8fafe">탑승구</th>
+                                <th style="padding:10px 10px;border-bottom:1px solid #ddd;font-weight:400;background:#f8fafe">날짜</th>
+                                <th style="padding:10px 10px;border-bottom:1px solid #ddd;font-weight:400;border-left:1px solid #ddd;background:#f8fafe">탑승시간</th>
+                                <th style="padding:10px 10px;border-bottom:1px solid #ddd;font-weight:400;border-left:1px solid #ddd;background:#f8fafe">출발시간</th>
+                                <th style="padding:10px 10px;border-bottom:1px solid #ddd;font-weight:400;border-left:1px solid #ddd;background:#f8fafe">탑승구</th>
                             </tr>
                             <tr>
-                                <td style="padding:10px 20px;border-bottom:1px solid #ddd;font-size:16px;font-weight:700;text-align:center">30 JUL. 2019</td>
-                                <td style="padding:10px 20px;border-bottom:1px solid #ddd;font-size:16px;font-weight:700;border-left:1px solid #ddd;text-align:center">15:30</td>
-                                <td style="padding:10px 20px;border-bottom:1px solid #ddd;font-size:16px;font-weight:700;border-left:1px solid #ddd;text-align:center">16:00</td>
-                                <td style="padding:10px 20px;border-bottom:1px solid #ddd;font-size:16px;border-left:1px solid #ddd;text-align:center">출발 당일 공항 확인</td>
+                                <td style="padding:10px 10px;border-bottom:1px solid #ddd;font-size:16px;font-weight:700;text-align:center">30 JUL. 2019</td>
+                                <td style="padding:10px 10px;border-bottom:1px solid #ddd;font-size:16px;font-weight:700;border-left:1px solid #ddd;text-align:center">15:30</td>
+                                <td style="padding:10px 10px;border-bottom:1px solid #ddd;font-size:16px;font-weight:700;border-left:1px solid #ddd;text-align:center">16:00</td>
+                                <td style="padding:10px 10px;border-bottom:1px solid #ddd;font-size:16px;border-left:1px solid #ddd;text-align:center">출발 당일 공항 확인</td>
                             </tr>
                         </table>
                         <div style="color:#111;font-size: 16px;font-weight: 500;margin-bottom:15px;margin-top: 40px">안내사항</div>

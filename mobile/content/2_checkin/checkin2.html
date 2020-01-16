@@ -166,7 +166,17 @@
                                         <th>구분</th>
                                         <td>성인</td>
                                     </tr>
-                                    <tr>
+									<!-- 추가 20191230 :: 국적과 생년월일 추가 -->
+									<tr>
+                                        <th>생년월일</th>
+                                        <td><input type="number" id="ipBirthday1_1" placeholder="예) 20181010"></td>
+                                    </tr>
+									<tr>
+                                        <th>국적(여권)</th>
+                                        <td><input type="text" id="ipNationality1_1" data-event="popup-open" data-target="#nationalPop" placeholder="국가 검색"></td>
+                                    </tr>
+									<!-- //추가 20191230 :: 국적과 생년월일 추가 -->
+									<tr>
                                         <th>체크인상태</th>
                                         <td class="blue">체크인가능</td>
                                     </tr>
@@ -190,6 +200,16 @@
                                         <th>구분</th>
                                         <td>성인</td>
                                     </tr>
+									<!-- 추가 20191230 :: 국적과 생년월일 추가 -->
+									<tr>
+                                        <th>생년월일</th>
+                                        <td><input type="number" id="ipBirthday1_2" placeholder="예) 20181010"></td>
+                                    </tr>
+									<tr>
+                                        <th>국적(여권)</th>
+                                        <td><input type="text" id="ipNationality1_2" data-event="popup-open" data-target="#nationalPop" placeholder="국가 검색"></td>
+                                    </tr>
+									<!-- //추가 20191230 :: 국적과 생년월일 추가 -->
                                     <tr>
                                         <th>체크인상태</th>
                                         <td class="blue">체크인가능</td>
@@ -214,6 +234,16 @@
                                         <th>구분</th>
                                         <td>성인</td>
                                     </tr>
+									<!-- 추가 20191230 :: 국적과 생년월일 추가 -->
+									<tr>
+                                        <th>생년월일</th>
+                                        <td><input type="number" id="ipBirthday1_3" value="20181010" readonly placeholder="예) 20181010"></td>
+                                    </tr>
+									<tr>
+                                        <th>국적(여권)</th>
+                                        <td><input type="text" id="ipNationality1_3" value="대한민국" readonly placeholder="국가 검색"></td>
+                                    </tr>
+									<!-- //추가 20191230 :: 국적과 생년월일 추가 -->
                                     <tr>
                                         <th>체크인상태</th>
                                         <td>체크인완료</td>
@@ -231,6 +261,61 @@
                     </div>
                     <div class="col-xs-6">
                         <a href="#none" class="btn block">다음</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 추가 20191230 :: 팝업 : 국가 검색 -->
+<!-- 팝업 : 국가 검색 -->
+<div class="popup popup-full" id="nationalPop"> 
+    <div class="popup-wrapper">
+        <div class="popup-wrap">
+            <div class="popup-header">
+                <div class="inner">
+                    <h1>국가 검색</h1>
+                    <a href="javascript:void(0)" class="close" data-event="popup-close"><span class="sr-only">레이어 팝업 닫기</span></a>
+                </div>
+            </div>
+            <div class="popup-body">
+                <div class="inner">
+                    <div class="popupSearchArea inputArea">
+                        <form action="#">
+                            <fieldset>
+                                <legend>국가 검색</legend>
+                                <label for="inputCountry" class="sr-only">검색어</label>
+                                <div class="group search">
+                                    <input type="text" id="inputCountry" placeholder="국가명 입력">
+                                    <input type="submit" value="검색" class="btn">
+                                </div>                                    
+                                <p class="txt">찾으시려는 국가명을 입력해 주시기 바랍니다.</p>
+                            </fieldset>                    
+                        </form>
+                    </div>
+                    <!-- 데이터 없을때 -->
+                    <!--<p class="dataEmpty">조회하신 데이터가 없습니다.</p>-->
+                    <!-- //데이터 없을때 -->
+                    <div class="zipResultWrap">
+                        <h2 class="tit">국가 검색 결과 <em>3건</em></h2>
+                        <div class="zipResult">
+                            <ul>
+                                <li><a href="#none">아르헨티나 Argentina</a></li>
+                                <li><a href="#none">독일 germany</a></li>
+                                <li><a href="#none">알제리 algeria</a></li>
+                                <li><a href="#none">조지아 georgia</a></li>
+                                <li><a href="#none">사우스조지아 &amp; 사우스샌드위치섬</a></li>
+                                <li><a href="#none">south georgia &amp; the south sandwich islands</a></li>
+                                <li><a href="#none">니제르 neger</a></li>
+                                <li><a href="#none">나이지리아 nigeria</a></li>
+                                <li><a href="#none">조지아 georgia</a></li>
+                                <li><a href="#none">나이지리아 nigeria</a></li>
+                            </ul>
+                        </div>
+                        <div class="btns pb0">
+                            <a href="#" class="btn more"><span>더보기</span></a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -188,8 +188,27 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
-                                <div class="label"><label for="ipBirth">생년월일</label></div>
-                                <input type="text" placeholder="DD.MM.YY" id="ipBirth">
+                                <!-- 200115 항목 변경 -->
+                                <div class="label"><label for="ipId">이메일</label></div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="withAt">
+                                            <input type="email" id="ipId">
+                                            <span class="at">@</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="emailDomain emailInputWrapper" style="display:none">
+                                            <input type="email" title="이메일 도메인 입력">
+                                            <button class="emailRefrash"><span class="sr-only">이메일 도메인 선택</span></button>
+                                        </div>
+                                        <select name="" id="" title="이메일 도메인 선택" class="emailDomain emailDomainSelect">
+                                            <option value="">선택</option>
+                                            <option value="직접입력">직접입력</option>
+                                            <option value="">gmail.com</option>
+                                        </select>  
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

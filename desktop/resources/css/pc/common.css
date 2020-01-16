@@ -75,6 +75,7 @@
 
 .lts0{letter-spacing: 0 !important}
 
+.w90{width: 90% !important;}
 .w100{width: 100% !important;}
 
 html{width: 100%;height: 100%;}
@@ -1201,7 +1202,10 @@ tfoot .sum i{font-size: 20px;font-weight: 700;margin-right: 5px;}
 .table-row.findid{border-top: 0;}
 .table-row.findid td{padding: 5px 30px;white-space: nowrap}
 .table-row.findid .nameLast {width:140px;margin-right: 4px;}
-.table-row.findid .nameFirst{width:222px}
+.table-row.findid .nameFirst{width:219px}
+.table-row.findid .emailId{float: left;width: 170px;}
+.table-row.findid .at{float: left;display: inline-block;width: 25px;line-height: 50px;text-align: center;}
+.table-row.findid .emailDomain{float: left;width: 170px;}
 
 .findResult{text-align: center;font-size: 20px;padding: 100px 0;}
 .findResult strong{color: #2e4b87;}
@@ -1747,7 +1751,7 @@ i.primary{display: inline-block;width: 18px;height: 18px;background: url('../../
 
 .checkinDesc{border-top: 1px solid #333;border-bottom: 1px solid #eee;padding: 20px 0;}
 
-.table-checkin td{background-color: #fff;color: #666;font-size: 16px;font-weight: 500;border-bottom: 2px solid #f8fafe;padding: 25px 0;letter-spacing: -0.02em;}
+.table-checkin td{background-color: #fff;color: #666;font-size: 16px;font-weight: 500;border-bottom: 2px solid #f8fafe;padding: 25px 0;letter-spacing: -0.02em;vertical-align:top;}/* css Style mod 20191230 */
 .table-checkin td strong{color: #333;letter-spacing: 0;}
 .table-checkin td .label{color: #999;font-size: 13px;margin-bottom: 5px;}
 .table-checkin td.plan{}
@@ -1997,6 +2001,3 @@ i.primary{display: inline-block;width: 18px;height: 18px;background: url('../../
 .popupMain .close{position: absolute;right:0;top:0}
 .popupMain .close a{display: block;width: 13px;height: 13px;background: url('../../images/pc/btn_close_layer_white_small.png') 50% 50% no-repeat;color: #595959;font-size: 14px;padding: 25px;}
 .popupMain .today{text-align: center;padding-bottom: 20px;background-color: #fff;margin-top: -1px;padding-top:1px;}
-
-
-

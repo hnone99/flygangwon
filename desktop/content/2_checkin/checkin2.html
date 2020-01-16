@@ -207,33 +207,49 @@
                     <li>05. 탑승권 발급</li>
                 </ol>
             </div>
-            <h3 class="subtitle">탑승객 선택</h3>
+            <h3 class="subtitle">탑승객 선택</h3>
             <p class="subtitleDesc">온라인 체크인할 탑승객을 선택하여 주세요.</p>
             <table class="table table-checkin mt30">
                 <caption>탑승객 선택</caption>
                 <colgroup>
-                    <col style="width:120px">
-                    <col style="width:320px">
-                    <col>
+                    <!-- 수정 20191230 :: td 필드추가&wid수정 -->
+					<col style="width:120px">
+                    <col style="width:250px">
                     <col style="width:180px">
+					<col style="width:180px">
+					<col>
+                    <col style="width:180px">
+					<!-- //수정 20191230 :: td 필드추가&wid수정 -->
                 </colgroup>
                 <tbody>
                     <tr>
                         <td class="align-center"><input type="checkbox" id="chk1" class="withoutLabel"><label for="chk1"><span></span></label></td>
                         <td><p class="label">성명</p>KANG JUNGWON</td>
-                        <td><p class="label">구분</p>성인</td>
+						<td><p class="label">구분</p>성인</td>
+						<!-- 추가 20191230 :: 국적과 생년월일 추가 -->
+						<td><p class="label">생년월일</p><input type="number" id="ipBirthday1_1" placeholder="예) 20181010" class="w90"></td>
+						<td><p class="label">국적(여권)</p><input type="text" id="ipNationality1_1" readonly data-event="popup-open" data-target="#nationalPop" placeholder="국가 검색" class="w90"></td>
+						<!-- //추가 20191230 :: 국적과 생년월일 추가 -->
                         <td><p class="label">체크인 상태</p><span class="blue">체크인가능</span></td>
                     </tr>
                     <tr>
                         <td class="align-center"><input type="checkbox" id="chk2" class="withoutLabel"><label for="chk2"><span></span></label></td>
                         <td><p class="label">성명</p>KANG JUNGWON</td>
                         <td><p class="label">구분</p>성인</td>
+						<!-- 추가 20191230 :: 국적과 생년월일 추가 -->
+						<td><p class="label">생년월일</p><input type="number" id="ipBirthday1_2" placeholder="예) 20181010" class="w90"></td>
+						<td><p class="label">국적(여권)</p><input type="text" id="ipNationality1_2" readonly data-event="popup-open" data-target="#nationalPop" placeholder="국가 검색" class="w90"></td>
+						<!-- //추가 20191230 :: 국적과 생년월일 추가 -->
                         <td><p class="label">체크인 상태</p><span class="blue">체크인가능</span></td>
                     </tr>
                     <tr>
                         <td class="align-center"><input type="checkbox" id="chk3" class="withoutLabel" disabled><label for="chk3"><span></span></label></td>
                         <td><p class="label">성명</p>KANG JUNGWON</td>
                         <td><p class="label">구분</p>성인</td>
+						<!-- 추가 20191230 :: 국적과 생년월일 추가 -->
+						<td><p class="label">생년월일</p><input type="number" id="ipBirthday1_3" value="20181010" readonly placeholder="예) 20181010" class="w90"></td>
+						<td><p class="label">국적(여권)</p><input type="text" id="ipNationality1_3" value="대한민국" readonly placeholder="국가 검색" class="w90"></td>
+						<!-- //추가 20191230 :: 국적과 생년월일 추가 -->
                         <td><p class="label">체크인 상태</p>체크인 완료</td>
                     </tr>
                 </tbody>
@@ -290,6 +306,85 @@
         <div class="alert-button two"> <!-- 버튼 한개일 경우 two 클래스 삭제 -->
             <button type="button" class="cancel" data-event="alert-close">취소</button>
             <button type="button" class="ok" data-event="alert-close">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 추가 20191230 :: 팝업 : 국가 검색 -->
+<!-- 팝업 : 국가 검색 -->
+<div class="popup" id="nationalPop"> 
+    <div class="popup-wrap" style="height:655px"> <!-- default : 790 x 760 -->
+        <div class="popup-header">
+            <div class="inner">
+                <h1>국가 검색</h1>
+                <a href="javascript:void(0)" class="close" data-event="popup-close"><span class="sr-only">레이어 팝업 닫기</span></a>
+            </div>
+        </div>
+        <div class="popup-body">
+            <div class="inner">
+                <div class="zip">
+                    <div class="zipSch">
+                        <form action="#">
+                            <fieldset>
+                                <legend>국가 검색</legend>
+                                <label for="inputCountry" class="sr-only">검색어</label>
+                                <input type="text" class="input-number" id="inputCountry" placeholder="국가명 입력">
+                                <input type="submit" value="검색" class="button">
+                                <p>찾으시려는 국가명을 입력해 주시기 바랍니다.</p>
+                            </fieldset>                    
+                        </form>
+                    </div>
+                    <!--<p class="zipEmpty">검색결과가 없습니다</p>-->
+                    <div class="zipResultWrap">
+                        <h2 class="tit">국가 검색 결과 <em>3건</em></h2>
+                        <div class="zipResult">
+                            <table class="table table-col">
+                                <caption>국가 검색 결과</caption>
+                                <colgroup>
+                                    <col style="width:14%">
+                                    <col>
+                                    <col>
+                                    <col style="width:18%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">국가명</th>
+                                        <th scope="col">영어 국가명</th>
+                                        <th scope="col">선택</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>괌</td>
+                                        <td>Guam</td>
+                                        <td><a href="#none">선택</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>사이판</td>
+                                        <td>Saipan</td>
+                                        <td><a href="#none">선택</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>괌</td>
+                                        <td>Guam</td>
+                                        <td><a href="#none">선택</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>사이판</td>
+                                        <td>Saipan</td>
+                                        <td><a href="#none">선택</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

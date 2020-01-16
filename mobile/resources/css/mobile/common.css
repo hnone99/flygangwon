@@ -974,7 +974,7 @@ tfoot .sum strong{font-size: 15px;font-weight: 700;color: #333;}
 .serviceSeat .seat .col.e:before{content: 'E';}
 .serviceSeat .seat .col.f:before{content: 'F';}
 
-.labelPlan {font-size: 12px;font-weight: 700;color: #fff;background-color: #2896eb;display: inline-block;width: 41px;height: 19px;text-align: center;line-height: 19px;margin-right: 10px;font-family: 'NotoSans';}
+.labelPlan {font-size: 12px;font-weight: 700;color: #fff;background-color: #2896eb;display: inline-block;min-width: 41px;height: 19px;text-align: center;line-height: 19px;margin-right: 10px;font-family: 'NotoSans';padding:0 5px} /* css Style mod 20191230 */
 .table-col i.airplane{margin: 0 10px;}
 
 .table{width: 100%;border-collapse: collapse;table-layout: fixed;font-size: 13px;}
@@ -2187,3 +2187,16 @@ body.mticket.in #allmenu i:after{background-color: #333;}
 .langChg{margin: -20px -15px 0;}
 .langChg li{border-bottom: 5px solid #f8fafe;}
 .langChg li > a{display: block;padding: 15px 20px;}
+
+
+/* css Style add 20191230 */
+.popup-body .warning.aLeft {text-align: left;margin: -20px -15px 0;padding: 25px 15px 20px;}
+.popup-body .warning.aLeft:before{content: '';display: inline-block;position: static;top: auto;left: auto;margin-left: 0;vertical-align: middle;margin-top: -2px;margin-right: 4px;}
+
+
+
+.serviceSelect .sshead .plan strong {position:relative;overflow:hidden;}
+.serviceSelect .sshead .plan strong .from {float:left;width:45%;}
+.serviceSelect .sshead .plan strong .to {float:right;width:40%;}
+.serviceSelect .sshead .plan strong  i.airplane {position:absolute;left:40%;top:50%;margin-top:-6px;}
+/* //css Style add 20191230 */
