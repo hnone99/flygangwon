@@ -14,7 +14,7 @@ var popup = {
             $(targetWrap).css({
                 'margin-left' : -($(targetWrap).outerWidth() / 2),
                 'margin-top' : -($(targetWrap).outerHeight() / 2)
-            });            
+            });
             $("body").css({"overflow": "hidden"});
         });
         $(document).off("click", "[data-event='popup-close']").on("click", "[data-event='popup-close']", function(e) {
@@ -80,8 +80,8 @@ $(document).ready(function(){
         $this = $(this);
         if ($(this).outerHeight() > _t ) {
             _t = $(this).outerHeight();
-        }    
-    });    
+        }
+    });
     $('#header .bg, #gnb .dep2').css('height', _t);
     //191224 추가 끝
     $('#gnb .dep1 > li').on('mouseenter',function(){
@@ -105,7 +105,7 @@ $(document).ready(function(){
     $('#gnb .dep2').on('mouseenter',function(){
         $('#gnb .dep1 > li').removeClass('active');
         $(this).parent('li').addClass('active');
-    })
+    });
 
     //location
     $('#location .inner > div > a').on('click',function(e){
@@ -114,14 +114,14 @@ $(document).ready(function(){
         $thisDiv = $(this).parent();
         $thisDiv.siblings().removeClass('on');
         if($thisDiv.hasClass('on')){
-            $thisDiv.removeClass('on')
+            $thisDiv.removeClass('on');
         }else{
             $thisDiv.addClass('on');
         }
     });
     //바깥 클릭시 location 닫기
     $(document).click(function(e){
-        $('#location .inner > div').removeClass('on')
+        $('#location .inner > div').removeClass('on');
     });
 
     //전체메뉴
@@ -196,7 +196,7 @@ $(document).ready(function(){
         $(this).parent(".emailInputWrapper").children("input[type=email]").val("");
         $(".emailDomain").val("");
     });
-    
+
     //190729 추가
     //언어 선택 토글
     $('#header .language > a').on('click',function(e){

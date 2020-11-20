@@ -1099,7 +1099,7 @@ tfoot .sum i{font-size: 20px;font-weight: 700;margin-right: 5px;}
 .line{width: 100%;height: 1px;background-color: #ddd;overflow: hidden;margin: 20px 0;}
 
 .cardList{border-bottom: 1px solid #ddd;margin-bottom: 30px;}
-.cardList .groupWrap{;margin: 0 -22px;}
+.cardList .groupWrap{margin: 0 -22px;}
 .cardList .groupWrap:after{content:'';display:block;clear:both}
 .cardList .group{float: left;width: 50%;padding-bottom: 30px}
 .cardList .item{float: left;width: 50%;padding: 0 22px;}
@@ -1251,9 +1251,9 @@ tfoot .sum i{font-size: 20px;font-weight: 700;margin-right: 5px;}
 .board-view-body .view img{max-width: 100%}
 .board-view-body .view ul {list-style-type: disc;list-style-position: inside; }
 .board-view-body .view ol {list-style-type: decimal;list-style-position: inside; }
-.board-view-body .view ul ul, 
+.board-view-body .view ul ul,
 .board-view-body .view ol ul {list-style-type: circle;list-style-position: inside;margin-left: 15px;}
-.board-view-body .view ol ol, 
+.board-view-body .view ol ol,
 .board-view-body .view ul ol {list-style-type: lower-latin;list-style-position: inside;margin-left: 15px;}
 .board-view-foot{border-top: 1px solid #000;border-bottom: 1px solid #000;margin-top: -1px;}
 .board-view-foot .prev,
@@ -1386,9 +1386,9 @@ i.primary{display: inline-block;width: 18px;height: 18px;background: url('../../
 .passengerList .swiper-slide.on strong,
 .passengerList .swiper-slide.on span{color: #fff;}
 .passengerList .swiper-slide.on span em:before{background-color: #fff;}
-.passengerList .swiper-button-next, 
+.passengerList .swiper-button-next,
 .passengerList .swiper-container-rtl .swiper-button-prev{width: 9px;height: 16px;margin-top: -8px;background: url('../../images/pc/btn_schedule_next.png') 0 50% no-repeat;}
-.passengerList .swiper-button-prev, 
+.passengerList .swiper-button-prev,
 .passengerList .swiper-container-rtl .swiper-button-next{width: 9px;height: 16px;margin-top: -8px;background: url('../../images/pc/btn_schedule_prev.png') 0 50% no-repeat;}
 .passengerList.seat{margin-bottom: 20px;}
 
@@ -1579,7 +1579,7 @@ i.primary{display: inline-block;width: 18px;height: 18px;background: url('../../
 .changeDate .inquiry ul.type li{float: none;display: inline-block;vertical-align:middle;width: auto;}
 .changeDate .inquiry ul.type li > div{display: inline-block;border: 0;border-radius: 2px;vertical-align:middle;width: 265px;}
 .changeDate .inquiry ul.type li input[type=text]{height: 48px;line-height: 48px;padding: 0 20px;font-size: 16px;color: #083b68;}
-.changeDate .inquiry ul.type li.i1 > div:before, 
+.changeDate .inquiry ul.type li.i1 > div:before,
 .changeDate .inquiry ul.type li.i2 > div:before{right: 20px;}
 .changeDate .inquiry .button{position: static;display: inline-block;margin: 0;}
 .changeDate .inquiry .button button{border: 0;background-color: #999;width: 80px;height: 60px;border-radius: 2px;display: inline-block;vertical-align:middle;}
@@ -1693,7 +1693,7 @@ i.primary{display: inline-block;width: 18px;height: 18px;background: url('../../
 .carryon .o{position: relative;padding-right: 25px;}
 .carryon .x i{position: absolute;right: 0;top: 0;width: 18px;height: 18px;}
 .carryon .x i:hover {opacity: 1;}
-.carryon .x i:before, 
+.carryon .x i:before,
 .carryon .x i:after {position: absolute;left: 8px;content: ' ';height: 18px;width: 2px;background-color: #083b68;}
 .carryon .x i:before {transform: rotate(45deg);}
 .carryon .x i:after {transform: rotate(-45deg);}
@@ -1795,7 +1795,7 @@ i.primary{display: inline-block;width: 18px;height: 18px;background: url('../../
 .mainSlider .pagerWrap .pager{text-align: center;}
 .mainSlider .swiper-pagination-switch{width: 4px;height: 47px;background: #c24b6c;box-shadow: none;margin: 0 5px;border-radius: 0;transform: skewX(-20deg);vertical-align: top;}
 .mainSlider .swiper-active-switch{background: #fff;}
-.mainSlider .swiper-button-next, 
+.mainSlider .swiper-button-next,
 .mainSlider .swiper-button-prev{position: static;margin-top: 0;display: inline-block;margin: 0 9px;vertical-align: middle;}
 .mainSlider .swiper-button-prev{width: 8px;height: 12px;background: url('../../images/pc/arrow_main_prev.png') 50% 50% no-repeat;background-size: 100% auto}
 .mainSlider .swiper-button-next{width: 8px;height: 12px;background: url('../../images/pc/arrow_main_next.png') 50% 50% no-repeat;background-size: 100% auto}
